@@ -136,12 +136,21 @@ h1 em{font-style:italic;color:var(--clay2)}
 
 .hero{min-height:660px;display:flex;align-items:center;padding:0}
 .heroshade{background:
-  linear-gradient(90deg, rgba(23,58,51,.93) 0%, rgba(23,58,51,.88) 42%, rgba(23,58,51,.80) 72%, rgba(23,58,51,.74) 100%),
-  linear-gradient(180deg, rgba(23,58,51,.55) 0%, rgba(23,58,51,.12) 32%, rgba(23,58,51,.58) 100%)}
-.hgrid{grid-template-columns:minmax(0,780px);justify-content:center;padding:88px 0 104px}
-/* hero headline grows because the column is narrower and centered */
-.hero h1{font-size:clamp(31px,4.15vw,60px)}
-.hero .hsub{max-width:64ch}
+  linear-gradient(90deg, rgba(23,58,51,.96) 0%, rgba(23,58,51,.92) 33%, rgba(23,58,51,.70) 62%, rgba(23,58,51,.52) 100%),
+  linear-gradient(180deg, rgba(23,58,51,.6) 0%, rgba(23,58,51,0) 28%, rgba(23,58,51,.5) 100%)}
+/* hero splits into four blocks so the form can jump the queue on phones.
+   DOM order is unchanged, so the answer capsule is still the first paragraph for crawlers. */
+.hgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,428px);grid-template-rows:auto auto auto;
+       gap:0 54px;align-items:center;padding:70px 0 88px}
+.htop{grid-column:1;grid-row:1}
+.hlede{grid-column:1;grid-row:2}
+.hbot{grid-column:1;grid-row:3;margin-top:24px}
+.heroformcol{grid-column:2;grid-row:1 / 4;align-self:center}
+@media(max-width:980px){
+  .hgrid{display:flex;flex-direction:column;gap:24px;padding:50px 0 72px}
+  .htop{order:1}.heroformcol{order:2}.hlede{order:3}.hbot{order:4}
+  .hbot{margin-top:0}
+}
 @media(max-width:980px){.hgrid{grid-template-columns:1fr;padding:58px 0 78px}}
 .herodots button[aria-current="true"]{background:var(--clay)}
 /* the stat belt lifts out of the hero into its own light band */
@@ -549,6 +558,69 @@ h1 .hl{display:block}
 .dialproof span{font-size:13.5px;line-height:1.55;color:var(--ink2);min-width:0;flex:1 1 190px}
 .dialproof b{display:inline;font-family:var(--body);font-size:inherit;line-height:inherit;letter-spacing:normal;color:var(--ink);font-weight:700}
 
+
+/* ===== hero lead form (treatment 2) ===== */
+.heroform{background:var(--cream);border-radius:var(--r);padding:26px 24px;box-shadow:0 30px 70px -30px rgba(12,28,24,.8);border:1px solid rgba(255,255,255,.16)}
+.heroform .ftitle{font-size:21px;margin:0 0 6px;padding-bottom:0;border-bottom:0}
+.heroform .fkicker{margin:0 0 18px;font-size:14px;line-height:1.55;color:var(--ink2)}
+.heroform .frow{margin-bottom:13px}
+.heroform .frow label{font-size:11px;margin-bottom:6px}
+.heroform .frow input,.heroform .frow select{padding:12px 14px;font-size:15px;background:#fff}
+.heroform .fsubmit{padding:16px 20px;margin-top:4px}
+.heroform .fmicro{margin:12px 0 0;font-size:12.5px;line-height:1.55;color:var(--ink3);text-align:center}
+
+
+/* ===== mobile navigation ===== */
+.vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.navtoggle{display:none;align-items:center;justify-content:center;width:48px;height:48px;margin-left:4px;
+  background:transparent;border:1px solid var(--line);border-radius:14px;color:var(--ink);cursor:pointer;flex:none;transition:background .2s,border-color .2s}
+.navtoggle:hover{background:var(--cream2);border-color:var(--forest)}
+.navtoggle:focus-visible{outline:2px solid var(--forest);outline-offset:2px}
+.navbars{display:block;width:20px}
+.navbars i{display:block;height:2px;border-radius:2px;background:currentColor;transition:transform .3s,opacity .2s}
+.navbars i+i{margin-top:5px}
+.navtoggle[aria-expanded="true"] .navbars i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.navtoggle[aria-expanded="true"] .navbars i:nth-child(2){opacity:0}
+.navtoggle[aria-expanded="true"] .navbars i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.mnav{position:fixed;inset:0;z-index:200;background:var(--cream);display:flex;flex-direction:column;
+  opacity:0;visibility:hidden;transform:translateY(-10px);
+  overflow-y:auto;-webkit-overflow-scrolling:touch}
+/* No transition and no animation on this panel, deliberately.
+   A pending transition holds the OLD computed value and a stalled animation holds
+   its from-state, so either one can leave the menu invisible while still reporting
+   itself as open. Navigation is not allowed to depend on an animation clock.
+   The panel appears instantly. The hamburger morph below is cosmetic and may
+   safely do nothing. */
+.mnav.open{opacity:1;visibility:visible;transform:none}
+.mnav-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px;border-bottom:1px solid var(--line);flex:none}
+.mnav-close{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;background:transparent;
+  border:1px solid var(--line);border-radius:14px;color:var(--ink);cursor:pointer;flex:none;transition:background .2s,border-color .2s}
+.mnav-close:hover{background:var(--cream2);border-color:var(--forest)}
+.mnav-close:focus-visible{outline:2px solid var(--forest);outline-offset:2px}
+.mnav-links{display:flex;flex-direction:column;padding:8px 20px;flex:0 0 auto}
+.mnav-note{flex:1 0 auto;padding:22px 24px 18px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.mnav-note p{margin:0;font-size:15px;line-height:1.6;color:var(--ink2);max-width:34ch}
+.mnav-note b{color:var(--ink);font-weight:700}
+.mnav-links a{display:flex;align-items:center;min-height:60px;padding:10px 4px;font-family:var(--disp);font-size:22px;
+  font-weight:700;color:var(--ink);border-bottom:1px solid var(--line)}
+.mnav-links a:last-child{border-bottom:0}
+.mnav-links a:focus-visible{outline:2px solid var(--forest);outline-offset:-2px}
+.mnav-foot{padding:18px 20px 30px;border-top:1px solid var(--line);flex:none;display:grid;gap:11px}
+.mnav-call,.mnav-est{display:flex;align-items:center;justify-content:center;min-height:54px;padding:14px 20px;
+  border-radius:100px;font-weight:700;font-size:16.5px;text-align:center}
+.mnav-call{background:var(--clay);color:#fff}
+.mnav-est{background:transparent;color:var(--ink);border:1.5px solid var(--forest)}
+.mnav-call:focus-visible,.mnav-est:focus-visible{outline:2px solid var(--forest);outline-offset:3px}
+.mnav-lic{margin:6px 0 0;text-align:center;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--ink3)}
+body.navopen{overflow:hidden}
+@media(max-width:1000px){.navtoggle{display:inline-flex}.hdr-in{gap:14px}}
+/* the sticky call bar covers calling below 820px, so the header button would only overflow */
+@media(max-width:820px){.hdr .callbtn{display:none}}
+@media(min-width:1001px){.mnav{display:none}}
+@media(max-width:420px){.mnav-links a{font-size:20px;min-height:56px}}
+@media(prefers-reduced-motion:reduce){.navbars i{transition:none}}
+
 /* sticky mobile call bar */
 .callbar{position:fixed;left:0;right:0;bottom:0;z-index:120;display:none;gap:1px;background:rgba(0,0,0,.3);transform:translateY(100%);transition:transform .35s cubic-bezier(.22,.61,.36,1)}
 .callbar.up{transform:none}
@@ -573,8 +645,38 @@ h1 .hl{display:block}
       <a href="#faq">FAQ</a>
     </nav>
     <a class="callbtn" href="tel:5042267070">(504) 226-7070</a>
+    <button class="navtoggle" id="navtoggle" type="button" aria-expanded="false" aria-controls="mnav">
+      <span class="navbars" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="vh">Menu</span>
+    </button>
   </div>
 </header>
+
+<div class="mnav" id="mnav" role="dialog" aria-modal="true" aria-label="Menu" inert>
+  <div class="mnav-top">
+    <span class="logo">Turn<em>Key</em> Roofer</span>
+    <button class="mnav-close" id="mnavclose" type="button">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <span class="vh">Close menu</span>
+    </button>
+  </div>
+  <nav class="mnav-links" aria-label="Main">
+    <a href="#services">Residential</a>
+    <a href="#services">Commercial</a>
+    <a href="#claims">Insurance Claims</a>
+    <a href="#areas">Service Areas</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <div class="mnav-note">
+    <p><b>Serving New Orleans</b> and 13 nearby towns across Southeast Louisiana, from Baton Rouge to Slidell.</p>
+    <p>Replacements completed within 24 hours of payment.</p>
+  </div>
+  <div class="mnav-foot">
+    <a class="mnav-call" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
+    <a class="mnav-est" href="#estimate">Get a free estimate</a>
+    <p class="mnav-lic">Residential #890459 &nbsp;&middot;&nbsp; Commercial #3667</p>
+  </div>
+</div>
 
 <section class="hero">
   <div class="heroslide" aria-hidden="true">
@@ -587,10 +689,52 @@ h1 .hl{display:block}
 
   <div class="wrap">
       <div class="hgrid">
-        <div class="reveal" data-anim>
+        <div class="htop reveal" data-anim>
           <p class="eyebrow">Local &amp; family-owned · New Orleans</p>
           <h1><span class="hl">New Orleans <em>Roofing Company</em></span> <span class="hl">Roof Replaced in 24 Hours</span></h1>
+        </div>
+
+        <div class="hlede reveal" data-anim style="transition-delay:.06s">
           <p class="hsub">TurnKey Roofer is a licensed, family-owned roofing company in New Orleans, Louisiana. We replace and repair residential and commercial roofs across Orleans, Jefferson and St. Tammany parishes. Replacements are completed within 24 hours of payment and carry a 15-year wind warranty with no maximum wind speed, including named hurricanes.</p>
+        </div>
+
+        <div class="heroformcol rise" data-anim style="transition-delay:.10s">
+          <form class="fform heroform" novalidate>
+            <h3 class="ftitle">Get a Free Roof Estimate</h3>
+            <p class="fkicker">Tell us where the roof is. We call you back to set a time that suits you.</p>
+            <div class="frow">
+              <label for="h-name">Your name</label>
+              <input id="h-name" name="name" type="text" autocomplete="name" placeholder="First and last name">
+            </div>
+            <div class="frow2">
+              <div class="frow">
+                <label for="h-phone">Phone</label>
+                <input id="h-phone" name="phone" type="tel" autocomplete="tel" placeholder="(504) 000-0000">
+              </div>
+              <div class="frow">
+                <label for="h-zip">City or ZIP</label>
+                <input id="h-zip" name="zip" type="text" autocomplete="postal-code" placeholder="Metairie, or 70003">
+              </div>
+            </div>
+            <div class="frow">
+              <label for="h-need">What do you need?</label>
+              <select id="h-need" name="need">
+                <option>Roof replacement</option>
+                <option>Roof repair</option>
+                <option>Storm or hail damage</option>
+                <option>Roof inspection</option>
+                <option>Insurance claim help</option>
+                <option>Commercial roofing</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <button class="fsubmit" type="submit">Get my free estimate</button>
+            <p class="fstatus" role="status" aria-live="polite"></p>
+            <p class="fmicro">Free estimate. No obligation to book the work.</p>
+          </form>
+        </div>
+
+        <div class="hbot reveal" data-anim style="transition-delay:.18s">
           <ul class="checks">
             <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M2 8.5l4 4 8-9" stroke="#f0b48a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Licensed residential <b>#890459</b> &nbsp;+&nbsp; commercial <b>#3667</b></span></li>
             <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M2 8.5l4 4 8-9" stroke="#f0b48a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Serving <b>New Orleans and 13 more towns</b> across Southeast Louisiana</span></li>
@@ -1137,6 +1281,70 @@ h1 .hl{display:block}
     });
   });
 
+
+
+  /* ---- mobile navigation ---- */
+  (function(){
+    var tog = document.getElementById('navtoggle'),
+        panel = document.getElementById('mnav'),
+        closeBtn = document.getElementById('mnavclose');
+    if(!tog || !panel) return;
+    var lastFocus = null;
+
+    function focusables(){
+      return [].slice.call(panel.querySelectorAll('a[href],button:not([disabled])'))
+              .filter(function(el){ return el.offsetParent !== null; });
+    }
+    function isOpen(){ return panel.classList.contains('open'); }
+    function open(){
+      lastFocus = document.activeElement;
+      panel.removeAttribute('inert');
+      panel.classList.add('open');
+      tog.setAttribute('aria-expanded','true');
+      document.body.classList.add('navopen');
+      var f = focusables();
+      (f.length ? f[0] : closeBtn || panel).focus();
+      /* belt and braces: never leave the panel unreadable */
+      if(parseFloat(getComputedStyle(panel).opacity) < 0.99){
+        panel.style.opacity = '1';
+        panel.style.transform = 'none';
+      }
+    }
+    function close(){
+      panel.classList.remove('open');
+      panel.style.opacity = '';
+      panel.style.transform = '';
+      tog.setAttribute('aria-expanded','false');
+      document.body.classList.remove('navopen');
+      panel.setAttribute('inert','');
+      /* always hand focus back to the button that opened it */
+      if(tog && tog.focus) tog.focus();
+      else if(lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    tog.addEventListener('click', function(){ if(isOpen()){ close(); } else { open(); } });
+    if(closeBtn){ closeBtn.addEventListener('click', close); }
+
+    panel.querySelectorAll('.mnav-links a, .mnav-foot a').forEach(function(a){
+      a.addEventListener('click', function(){ close(); });
+    });
+
+    document.addEventListener('keydown', function(e){
+      if(!isOpen()) return;
+      if(e.key === 'Escape'){ e.preventDefault(); close(); return; }
+      if(e.key === 'Tab'){
+        var f = focusables();
+        if(!f.length) return;
+        var first = f[0], last = f[f.length-1];
+        if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+        else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+      }
+    });
+
+    window.addEventListener('resize', function(){
+      if(isOpen() && window.innerWidth > 1000){ close(); }
+    });
+  })();
 
   /* testimonial slider */
   var tr = document.getElementById('tsltrack');
