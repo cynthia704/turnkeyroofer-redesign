@@ -7,7 +7,7 @@
 <title>New Orleans Roof Replacement in 24 Hours | TurnKey Roofer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400..800;1,400..700&family=Source+Sans+3:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&family=Figtree:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   --cream:#fbf7f2; --cream2:#f4ede4; --white:#fff;
@@ -15,8 +15,8 @@
   --clay:#c26a3a; --clay2:#f0b48a;
   --ink:#20302c; --ink2:rgba(32,48,44,.72); --ink3:rgba(32,48,44,.5);
   --line:rgba(32,48,44,.12);
-  --disp:"Bitter",Georgia,serif;
-  --body:"Source Sans 3",system-ui,sans-serif;
+  --disp:"Fraunces",Georgia,serif;
+  --body:"Figtree",system-ui,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,monospace;
   --r:20px;
 }
@@ -136,12 +136,21 @@ h1 em{font-style:italic;color:var(--clay2)}
 
 .hero{min-height:660px;display:flex;align-items:center;padding:0}
 .heroshade{background:
-  linear-gradient(90deg, rgba(23,58,51,.93) 0%, rgba(23,58,51,.88) 42%, rgba(23,58,51,.80) 72%, rgba(23,58,51,.74) 100%),
-  linear-gradient(180deg, rgba(23,58,51,.55) 0%, rgba(23,58,51,.12) 32%, rgba(23,58,51,.58) 100%)}
-.hgrid{grid-template-columns:minmax(0,780px);justify-content:center;padding:88px 0 104px}
-/* hero headline grows because the column is narrower and centered */
-.hero h1{font-size:clamp(31px,4.15vw,60px)}
-.hero .hsub{max-width:64ch}
+  linear-gradient(90deg, rgba(23,58,51,.96) 0%, rgba(23,58,51,.92) 33%, rgba(23,58,51,.70) 62%, rgba(23,58,51,.52) 100%),
+  linear-gradient(180deg, rgba(23,58,51,.6) 0%, rgba(23,58,51,0) 28%, rgba(23,58,51,.5) 100%)}
+/* hero splits into four blocks so the form can jump the queue on phones.
+   DOM order is unchanged, so the answer capsule is still the first paragraph for crawlers. */
+.hgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,428px);grid-template-rows:auto auto auto;
+       gap:0 54px;align-items:center;padding:70px 0 88px}
+.htop{grid-column:1;grid-row:1}
+.hlede{grid-column:1;grid-row:2}
+.hbot{grid-column:1;grid-row:3;margin-top:24px}
+.heroformcol{grid-column:2;grid-row:1 / 4;align-self:center}
+@media(max-width:980px){
+  .hgrid{display:flex;flex-direction:column;gap:24px;padding:50px 0 72px}
+  .htop{order:1}.heroformcol{order:2}.hlede{order:3}.hbot{order:4}
+  .hbot{margin-top:0}
+}
 @media(max-width:980px){.hgrid{grid-template-columns:1fr;padding:58px 0 78px}}
 .herodots button[aria-current="true"]{background:var(--clay)}
 /* the stat belt lifts out of the hero into its own light band */
@@ -549,6 +558,17 @@ h1 .hl{display:block}
 .dialproof span{font-size:13.5px;line-height:1.55;color:var(--ink2);min-width:0;flex:1 1 190px}
 .dialproof b{display:inline;font-family:var(--body);font-size:inherit;line-height:inherit;letter-spacing:normal;color:var(--ink);font-weight:700}
 
+
+/* ===== hero lead form (treatment 2) ===== */
+.heroform{background:var(--cream);border-radius:var(--r);padding:26px 24px;box-shadow:0 30px 70px -30px rgba(12,28,24,.8);border:1px solid rgba(255,255,255,.16)}
+.heroform .ftitle{font-size:21px;margin:0 0 6px;padding-bottom:0;border-bottom:0}
+.heroform .fkicker{margin:0 0 18px;font-size:14px;line-height:1.55;color:var(--ink2)}
+.heroform .frow{margin-bottom:13px}
+.heroform .frow label{font-size:11px;margin-bottom:6px}
+.heroform .frow input,.heroform .frow select{padding:12px 14px;font-size:15px;background:#fff}
+.heroform .fsubmit{padding:16px 20px;margin-top:4px}
+.heroform .fmicro{margin:12px 0 0;font-size:12.5px;line-height:1.55;color:var(--ink3);text-align:center}
+
 /* sticky mobile call bar */
 .callbar{position:fixed;left:0;right:0;bottom:0;z-index:120;display:none;gap:1px;background:rgba(0,0,0,.3);transform:translateY(100%);transition:transform .35s cubic-bezier(.22,.61,.36,1)}
 .callbar.up{transform:none}
@@ -560,7 +580,7 @@ h1 .hl{display:block}
 </head>
 <body>
 
-<div class="mock">DIRECTION D · FRONT PORCH &nbsp;·&nbsp; font option for review. <b>Not live.</b> Scroll slowly. Every fact shown is published on turnkeyroofer.com today.</div>
+<div class="mock">DIRECTION D · FRONT PORCH &nbsp;·&nbsp; hero option for review. <b>Not live.</b> Scroll slowly. Every fact shown is published on turnkeyroofer.com today.</div>
 
 <header class="hdr" id="hdr">
   <div class="wrap hdr-in">
@@ -587,10 +607,52 @@ h1 .hl{display:block}
 
   <div class="wrap">
       <div class="hgrid">
-        <div class="reveal" data-anim>
+        <div class="htop reveal" data-anim>
           <p class="eyebrow">Local &amp; family-owned · New Orleans</p>
           <h1><span class="hl">New Orleans <em>Roofing Company</em></span> <span class="hl">Roof Replaced in 24 Hours</span></h1>
+        </div>
+
+        <div class="hlede reveal" data-anim style="transition-delay:.06s">
           <p class="hsub">TurnKey Roofer is a licensed, family-owned roofing company in New Orleans, Louisiana. We replace and repair residential and commercial roofs across Orleans, Jefferson and St. Tammany parishes. Replacements are completed within 24 hours of payment and carry a 15-year wind warranty with no maximum wind speed, including named hurricanes.</p>
+        </div>
+
+        <div class="heroformcol rise" data-anim style="transition-delay:.10s">
+          <form class="fform heroform" novalidate>
+            <h3 class="ftitle">Get a Free Roof Estimate</h3>
+            <p class="fkicker">Tell us where the roof is. We call you back to set a time that suits you.</p>
+            <div class="frow">
+              <label for="h-name">Your name</label>
+              <input id="h-name" name="name" type="text" autocomplete="name" placeholder="First and last name">
+            </div>
+            <div class="frow2">
+              <div class="frow">
+                <label for="h-phone">Phone</label>
+                <input id="h-phone" name="phone" type="tel" autocomplete="tel" placeholder="(504) 000-0000">
+              </div>
+              <div class="frow">
+                <label for="h-zip">City or ZIP</label>
+                <input id="h-zip" name="zip" type="text" autocomplete="postal-code" placeholder="Metairie, or 70003">
+              </div>
+            </div>
+            <div class="frow">
+              <label for="h-need">What do you need?</label>
+              <select id="h-need" name="need">
+                <option>Roof replacement</option>
+                <option>Roof repair</option>
+                <option>Storm or hail damage</option>
+                <option>Roof inspection</option>
+                <option>Insurance claim help</option>
+                <option>Commercial roofing</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <button class="fsubmit" type="submit">Get my free estimate</button>
+            <p class="fstatus" role="status" aria-live="polite"></p>
+            <p class="fmicro">Free estimate. No obligation to book the work.</p>
+          </form>
+        </div>
+
+        <div class="hbot reveal" data-anim style="transition-delay:.18s">
           <ul class="checks">
             <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M2 8.5l4 4 8-9" stroke="#f0b48a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Licensed residential <b>#890459</b> &nbsp;+&nbsp; commercial <b>#3667</b></span></li>
             <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M2 8.5l4 4 8-9" stroke="#f0b48a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Serving <b>New Orleans and 13 more towns</b> across Southeast Louisiana</span></li>

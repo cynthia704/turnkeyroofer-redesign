@@ -136,9 +136,12 @@ h1 em{font-style:italic;color:var(--clay2)}
 
 .hero{min-height:660px;display:flex;align-items:center;padding:0}
 .heroshade{background:
-  linear-gradient(90deg, rgba(23,58,51,.96) 0%, rgba(23,58,51,.92) 33%, rgba(23,58,51,.64) 60%, rgba(23,58,51,.26) 100%),
-  linear-gradient(180deg, rgba(23,58,51,.6) 0%, rgba(23,58,51,0) 28%, rgba(23,58,51,.5) 100%)}
-.hgrid{grid-template-columns:minmax(0,740px);padding:78px 0 96px}
+  linear-gradient(90deg, rgba(23,58,51,.93) 0%, rgba(23,58,51,.88) 42%, rgba(23,58,51,.80) 72%, rgba(23,58,51,.74) 100%),
+  linear-gradient(180deg, rgba(23,58,51,.55) 0%, rgba(23,58,51,.12) 32%, rgba(23,58,51,.58) 100%)}
+.hgrid{grid-template-columns:minmax(0,780px);justify-content:center;padding:88px 0 104px}
+/* hero headline grows because the column is narrower and centered */
+.hero h1{font-size:clamp(31px,4.15vw,60px)}
+.hero .hsub{max-width:64ch}
 @media(max-width:980px){.hgrid{grid-template-columns:1fr;padding:58px 0 78px}}
 .herodots button[aria-current="true"]{background:var(--clay)}
 /* the stat belt lifts out of the hero into its own light band */
@@ -1124,8 +1127,7 @@ h1 .hl{display:block}
 
 
   /* estimate form — prototype only, never silently submits */
-  var ef = document.querySelector('.fform');
-  if(ef){
+  document.querySelectorAll('.fform').forEach(function(ef){
     ef.addEventListener('submit', function(e){
       e.preventDefault();
       var st = ef.querySelector('.fstatus');
@@ -1133,7 +1135,7 @@ h1 .hl{display:block}
       st.textContent = 'This is a design mockup, so nothing was sent. On the live site this form connects to the existing GoHighLevel account and routes the lead the same way the current forms do.';
       st.scrollIntoView({block:'center', behavior: reduce ? 'auto' : 'smooth'});
     });
-  }
+  });
 
 
   /* testimonial slider */

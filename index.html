@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>TurnKey Roofer — Front Porch, 4 Font Options</title>
+<title>TurnKey Roofer — Hero Options and Fonts</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter+Tight:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -25,6 +25,8 @@ h1{font-size:clamp(28px,4vw,46px);font-weight:900;text-transform:uppercase;margi
 
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:44px 0 8px}
 .grid4{grid-template-columns:repeat(4,1fr);gap:16px}
+.grid2{grid-template-columns:repeat(2,1fr);gap:22px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
 @media(max-width:1050px){.grid4{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:620px){.grid4{grid-template-columns:1fr}}
 @media(max-width:900px){.grid{grid-template-columns:1fr}}
@@ -58,37 +60,68 @@ li b{color:var(--paper);font-weight:600}
 <header class="top">
   <div class="wrap">
     <p class="kicker">TurnKey Roofer &middot; New Orleans, LA &middot; Homepage redesign</p>
-    <h1>Front Porch it is. Now pick a font.</h1>
-    <p class="lede">Thank you for reviewing the three directions. <b>D, Front Porch, won.</b> The dead
-    spaces you flagged are fixed, and the only thing left to settle is the typeface.</p>
-    <p class="lede">These four pages are the same homepage. Same content, same colors, same photos,
-    same phone number. <b>Only the fonts change.</b></p>
+    <h1>The hero dead space is fixed. Two ways.</h1>
+    <p class="lede">Thanks for the note about the empty right side of the hero. Both of the fixes that
+    were suggested are built, so we can look at them rather than describe them.</p>
     <div class="note">
-      <b>What changed since you last looked.</b> The empty half of the estimate section now carries a
-      "what happens after you send this" list. The gap beside the wind warranty now carries the GAF
-      WindProven proof. The cost section was rebuilt as two columns with the four things that actually
-      move a roofing price. Nothing was padded out with blank space.
+      <b>Option 1, centered.</b> The heading block is centered over the photo, the same way
+      bigeasypaverpatios.com does it. The headline gets bigger, the empty right side disappears,
+      and nothing new is added to the page.
+    </div>
+    <div class="note">
+      <b>Option 2, form in the hero.</b> The right side carries a short estimate form instead.
+      On a phone the form moves up directly under the headline, so it is visible without scrolling.
     </div>
     <div class="note" style="border-color:rgba(234,241,248,.3);background:rgba(234,241,248,.05)">
-      <b>Still mockups, still not live.</b> The forms do not send. Photography is stand-in stock from
-      the client's own media library. There is no mobile menu yet, that gets built once the font is
-      settled. turnkeyroofer.com is untouched.
+      <b>Still mockups, still not live.</b> Neither form sends anything, both show a notice instead.
+      Photography is stand-in stock from the client's own media library. There is no mobile menu yet.
+      turnkeyroofer.com is untouched.
     </div>
   </div>
 </header>
 
 <div class="wrap">
-  <div class="grid grid4">
+  <div class="wrap">
+  <div class="grid grid2">
+    <article class="card">
+      <div class="swatch"><i style="background:#1f4d43"></i><i style="background:#fbf7f2"></i><i style="background:#c26a3a"></i></div>
+      <div class="body">
+        <div class="tag">HERO OPTION 1</div>
+        <h2>Centered heading</h2>
+        <p>The heading block sits in the middle of the hero instead of hugging the left edge, so there is no empty half. Headline goes up to 60px. This is the same treatment as the paver patios site.</p>
+        <dl><div><dt>Trade-off</dt><dd>Nothing added</dd></div></dl>
+        <a class="open" href="d-front-porch.html">Open this version &rarr;</a>
+      </div>
+    </article>
 
+    <article class="card">
+      <div class="swatch"><i style="background:#1f4d43"></i><i style="background:#fbf7f2"></i><i style="background:#c26a3a"></i></div>
+      <div class="body">
+        <div class="tag">HERO OPTION 2</div>
+        <h2>Form in the hero</h2>
+        <p>A short estimate form fills the right side. Name, phone, city or ZIP, and what they need. On a phone it jumps above the paragraph so it lands in the first screen.</p>
+        <dl><div><dt>Trade-off</dt><dd>Captures leads sooner</dd></div></dl>
+        <a class="open" href="d-hero-2-form.html">Open this version &rarr;</a>
+      </div>
+    </article>
+  </div>
+</div>
+
+<section class="sec">
+  <div class="wrap">
+    <h3>Separately, the font is still open</h3>
+    <p class="lede" style="margin-bottom:6px">All four of these are serif. They all use hero option 1,
+    so the only thing changing between them is the typeface.</p>
+  </div>
+  <div class="wrap">
+    <div class="grid grid4">
     <article class="card">
       <div class="swatch"><i style="background:#1f4d43"></i><i style="background:#fbf7f2"></i><i style="background:#c26a3a"></i></div>
       <div class="body">
         <div class="tag">FONT 1 &middot; CURRENT</div>
         <h2>Fraunces + Figtree</h2>
-        <p>Warm, friendly, slightly quirky. The most distinctive of the four, and the most efficient. It fits the opening paragraph in five lines where the others need six.</p>
-        <dl>
-          <div><dt>Reads as</dt><dd>Most personality</dd></div>
-        </dl>
+        <p>Warmest and most distinctive.</p>
+        
         <a class="open" href="d-front-porch.html">Open this version &rarr;</a>
       </div>
     </article>
@@ -98,10 +131,8 @@ li b{color:var(--paper);font-weight:600}
       <div class="body">
         <div class="tag">FONT 2</div>
         <h2>Bitter + Source Sans</h2>
-        <p>Slab serif. Heavier, blunter, less decorative. Of the four, this is the one that most looks like a company that climbs on roofs for a living.</p>
-        <dl>
-          <div><dt>Reads as</dt><dd>Most tradesman</dd></div>
-        </dl>
+        <p>Slab serif. Sturdier, more workmanlike.</p>
+        
         <a class="open" href="d-font-2-bitter.html">Open this version &rarr;</a>
       </div>
     </article>
@@ -111,10 +142,8 @@ li b{color:var(--paper);font-weight:600}
       <div class="body">
         <div class="tag">FONT 3</div>
         <h2>Playfair + Karla</h2>
-        <p>High contrast and formal. Aimed at the higher-value replacement job. The thin strokes read upscale, which may or may not be the signal a roofer wants.</p>
-        <dl>
-          <div><dt>Reads as</dt><dd>Most upscale</dd></div>
-        </dl>
+        <p>Higher contrast. More formal.</p>
+        
         <a class="open" href="d-font-3-playfair.html">Open this version &rarr;</a>
       </div>
     </article>
@@ -124,36 +153,23 @@ li b{color:var(--paper);font-weight:600}
       <div class="body">
         <div class="tag">FONT 4</div>
         <h2>PT Serif + Public Sans</h2>
-        <p>The exact pairing already approved on the TurnKey Pool build. Safest for house consistency, and the least distinctive of the four.</p>
-        <dl>
-          <div><dt>Reads as</dt><dd>Most consistent with house</dd></div>
-        </dl>
+        <p>Same pairing as the TurnKey Pool build.</p>
+        
         <a class="open" href="d-font-4-ptserif.html">Open this version &rarr;</a>
       </div>
     </article>
-
-  </div>
-</div>
-
-<section class="sec">
-  <div class="wrap">
-    <h3>What to look for</h3>
-    <ul>
-      <li><b>Read the headline, then the paragraph under it.</b> That is where the four differ most.</li>
-      <li><b>Open it on your phone.</b> This market is phone first, and some of these fonts hold up smaller than others.</li>
-      <li><b>Scroll to the estimate form and the wind warranty.</b> Those are the two spots that were empty before.</li>
-      <li><b>Which one sounds like a roofer</b> a New Orleans homeowner would call back?</li>
-    </ul>
+    </div>
   </div>
 </section>
 
 <section class="sec">
   <div class="wrap">
-    <h3>A number and a sentence is all we need</h3>
+    <h3>What to look for</h3>
     <ul>
-      <li>Everything else about the page is settled. This is only the typeface.</li>
-      <li>Once the font is picked, the mobile menu gets built and this moves into staging.</li>
-      <li>Nothing goes live until the site is backed up in full.</li>
+      <li><b>Open both hero options on a phone.</b> That is where they differ most.</li>
+      <li><b>Does the form belong in the hero</b>, or does it feel pushy before anyone has read anything?</li>
+      <li><b>Does the centered version feel empty</b> without something on the right, or does it read as calm?</li>
+      <li>The paver patios site has <b>no form in its hero</b>, for reference. This is a genuine choice, not a rule.</li>
     </ul>
   </div>
 </section>
