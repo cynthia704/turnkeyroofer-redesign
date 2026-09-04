@@ -12,8 +12,8 @@
 :root{
   --cream:#fbf7f2; --cream2:#f4ede4; --white:#fff;
   --forest:#1f4d43; --forest2:#173a33; --forest3:#2b6154;
-  --clay:#c26a3a; --clay2:#f0b48a;
-  --ink:#20302c; --ink2:rgba(32,48,44,.72); --ink3:rgba(32,48,44,.5);
+  --clay:#a8552a; --clay2:#f0b48a;
+  --ink:#20302c; --ink2:rgba(32,48,44,.78); --ink3:rgba(32,48,44,.68);
   --line:rgba(32,48,44,.12);
   --disp:"PT Serif",Georgia,serif;
   --body:"Public Sans",system-ui,sans-serif;
@@ -243,7 +243,9 @@ h1 em{font-style:italic;color:var(--clay2)}
 .comm .band figure{margin:0;height:240px;overflow:hidden;position:relative}
 .comm .band img{width:100%;height:100%;object-fit:cover;filter:brightness(.82);transition:transform .9s,filter .5s}
 .comm .band figure:hover img{transform:scale(1.05);filter:brightness(.95)}
-.comm .band figcaption{position:absolute;left:20px;bottom:17px;font-family:var(--disp);font-weight:600;font-size:19px;color:#fff}
+.comm .band figure::after{content:"";position:absolute;left:0;right:0;bottom:0;height:96px;
+  background:linear-gradient(180deg,rgba(18,30,26,0),rgba(18,30,26,.78));pointer-events:none}
+.comm .band figcaption{position:absolute;z-index:1;left:20px;bottom:17px;font-family:var(--disp);font-weight:600;font-size:19px;color:#fff}
 
 /* wind */
 .wind{background:var(--white);border:1px solid var(--line);border-radius:28px;padding:52px 48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
@@ -323,7 +325,7 @@ h1 em{font-style:italic;color:var(--clay2)}
 .ftgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:40px}
 @media(max-width:900px){.ftgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.ftgrid{grid-template-columns:1fr}}
-.ft h5{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,232,.44);margin:0 0 15px;font-weight:500}
+.ft h5{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,232,.6);margin:0 0 15px;font-weight:500}
 .ft ul{list-style:none;margin:0;padding:0}
 .ft li{padding:5px 0}
 .ft li a:hover{color:#f4efe8}
@@ -331,7 +333,7 @@ h1 em{font-style:italic;color:var(--clay2)}
 .ftlic{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
 .ftlic div{font-family:var(--mono);font-size:10.5px;border:1px solid rgba(244,239,232,.26);border-radius:100px;padding:6px 12px}
 .flag{margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--clay2);border:1px dashed rgba(240,180,138,.5);border-radius:12px;padding:11px 14px;line-height:1.75}
-.ftbot{margin-top:42px;padding-top:22px;border-top:1px solid rgba(244,239,232,.16);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:rgba(244,239,232,.44)}
+.ftbot{margin-top:42px;padding-top:22px;border-top:1px solid rgba(244,239,232,.16);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:rgba(244,239,232,.6)}
 
 /* ===== estimate form ===== */
 .formsec{background:var(--cream2)}
@@ -622,6 +624,73 @@ body.navopen{overflow:hidden}
 .ftlogoimg{display:block;height:86px;width:auto;margin-bottom:18px;border-radius:8px}
 @media(max-width:700px){.ftlogoimg{height:72px}}
 
+
+/* ===================================================================
+   ROOFING TEXTURE SYSTEM
+   Staggered shingle courses, drawn as a repeating SVG. Low contrast on
+   purpose: it should read as a surface, not as a pattern shouting at you.
+   =================================================================== */
+.tone-dark, .tone-deep{position:relative}
+.tone-dark>*, .tone-deep>*{position:relative;z-index:1}
+.tone-dark::before, .tone-deep::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='44'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.055' stroke-width='1.4'%3E%3Cpath d='M0 22h128M0 44h128'/%3E%3Cpath d='M21 22v22M64 22v22M107 22v22'/%3E%3Cpath d='M0 0v22M43 0v22M85 0v22M128 0v22'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:128px 44px}
+/* the deep band reads as standing-seam metal instead: vertical ribs */
+.tone-deep::before{
+  background-image:
+    repeating-linear-gradient(90deg,
+      rgba(255,255,255,.055) 0 1px,
+      rgba(255,255,255,0) 1px 74px),
+    repeating-linear-gradient(90deg,
+      rgba(0,0,0,.10) 0 3px,
+      rgba(0,0,0,0) 3px 74px);
+  background-size:auto}
+@media(prefers-reduced-motion:no-preference){
+  .tone-dark::before{transition:opacity .4s}
+}
+
+/* ===================================================================
+   ROOF ASSEMBLY CUTAWAY
+   =================================================================== */
+.asm{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,500px);gap:52px;align-items:center}
+@media(max-width:980px){.asm{grid-template-columns:1fr;gap:32px}}
+
+.asmlist{list-style:none;margin:26px 0 0;padding:0}
+.asmlist li{margin:0 0 8px}
+.asmbtn{width:100%;display:grid;grid-template-columns:38px 1fr;gap:14px;align-items:start;
+  background:transparent;border:1px solid transparent;border-radius:14px;padding:13px 14px;
+  text-align:left;cursor:pointer;font-family:var(--body);color:inherit;
+  transition:background .2s,border-color .2s}
+.asmbtn:hover{background:rgba(244,239,232,.07);border-color:rgba(244,239,232,.16)}
+.asmbtn:focus-visible{outline:2px solid var(--clay2);outline-offset:2px}
+.asmbtn[aria-selected="true"]{background:rgba(244,239,232,.11);border-color:rgba(240,180,138,.55)}
+.asmnum{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(244,239,232,.1);color:#f4efe8;font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:12.5px;letter-spacing:.04em}
+.asmbtn[aria-selected="true"] .asmnum{background:var(--clay);color:#fff}
+.asmttl{display:block;font-family:var(--disp);font-size:18px;font-weight:700;color:#f4efe8;margin-bottom:3px}
+.asmsub{display:block;font-size:14.5px;line-height:1.6;color:rgba(244,239,232,.72)}
+.asmbtn[aria-selected="true"] .asmsub{color:rgba(244,239,232,.9)}
+
+.asmfig{position:relative;margin:0}
+.asmsvg{width:100%;height:auto;display:block;filter:drop-shadow(0 26px 46px rgba(0,0,0,.4))}
+.asmsvg .lyr{transition:opacity .25s,transform .3s;transform-box:fill-box;transform-origin:center}
+.asmsvg .lyr.sel{transform:translateX(-18px)}
+.asmsvg .lyr.sel path{filter:drop-shadow(0 6px 14px rgba(0,0,0,.55))}
+.asmsvg .lyr.dim{opacity:.42}
+.asmsvg .lbl{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.05em;
+  fill:rgba(244,239,232,.72);text-transform:uppercase}
+.asmsvg .lyr.sel .lbl{fill:#f0b48a}
+.asmsvg .lbl.on{fill:#f0b48a}
+.asmcap{margin:16px 0 0;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(244,239,232,.78);text-align:center}
+.pitch{display:inline-flex;align-items:center;gap:9px;margin-top:18px;padding:9px 15px;border-radius:100px;
+  background:rgba(244,239,232,.08);border:1px solid rgba(244,239,232,.16);
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:rgba(244,239,232,.78)}
+.pitch svg{flex:none}
+@media(prefers-reduced-motion:reduce){.asmsvg .lyr{transition:none}}
+
 /* sticky mobile call bar */
 .callbar{position:fixed;left:0;right:0;bottom:0;z-index:120;display:none;gap:1px;background:rgba(0,0,0,.3);transform:translateY(100%);transition:transform .35s cubic-bezier(.22,.61,.36,1)}
 .callbar.up{transform:none}
@@ -742,7 +811,7 @@ body.navopen{overflow:hidden}
 </section>
 
 <div class="roofline" aria-hidden="true"><svg viewBox="0 0 1440 52" preserveAspectRatio="none"><path d="M0,52 L720,8 L1440,52 L1440,52 L0,52 Z" fill="#1f4d43"/></svg></div>
-<section class="sec tone-dark">
+<section class="sec tone-deep">
   <div class="wrap">
     <div class="rise" data-anim>
       <p class="eyebrow">Everyone has a roofer story</p>
@@ -895,6 +964,76 @@ body.navopen{overflow:hidden}
     </div>
   </div>
 </section>
+
+<section class="sec tone-dark" id="assembly">
+  <div class="wrap">
+    <div class="asm">
+      <div class="reveal" data-anim>
+        <p class="eyebrow">Under the shingles</p>
+        <h2 class="h2">What Is Actually on Your Roof</h2>
+        <p class="lede">A roof is six layers, not one. Most of what keeps water out of your house is
+        underneath the part you can see. Tap a layer to find out what it does.</p>
+        <ul class="asmlist" role="tablist" aria-label="Roof assembly layers">
+            <li><button class="asmbtn" type="button" role="tab" data-layer="0" aria-selected="false" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">01</span><span><span class="asmttl">Roof deck</span><span class="asmsub">The plywood or OSB sheathing nailed to your rafters. Everything above it is only as sound as this is, which is why it gets inspected once the old roof is off.</span></span></button></li>
+            <li><button class="asmbtn" type="button" role="tab" data-layer="1" aria-selected="false" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">02</span><span><span class="asmttl">Ice and water shield</span><span class="asmsub">A self-adhering membrane along the eaves and in every valley. It seals around the nails driven through it, so wind-driven rain has nowhere to travel.</span></span></button></li>
+            <li><button class="asmbtn" type="button" role="tab" data-layer="2" aria-selected="false" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">03</span><span><span class="asmttl">Synthetic underlayment</span><span class="asmsub">Rolled over the whole deck as a second water barrier. It is what keeps the deck dry between tear-off and the new roof going on.</span></span></button></li>
+            <li><button class="asmbtn" type="button" role="tab" data-layer="3" aria-selected="false" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">04</span><span><span class="asmttl">Drip edge and starter course</span><span class="asmsub">Metal at the eaves and rakes, then a sealed first row of shingles. This edge is where uplift starts in a storm, so it is the row that matters most here.</span></span></button></li>
+            <li><button class="asmbtn" type="button" role="tab" data-layer="4" aria-selected="true" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">05</span><span><span class="asmttl">Field shingles</span><span class="asmsub">The courses you can see, each one overlapping the fasteners of the row below. Six nails per shingle is what a high-wind rating asks for.</span></span></button></li>
+            <li><button class="asmbtn" type="button" role="tab" data-layer="5" aria-selected="false" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">06</span><span><span class="asmttl">Ridge vent and cap</span><span class="asmsub">A vented ridge lets hot attic air out and caps the peak. Without it, a Gulf Coast attic cooks the shingles from underneath.</span></span></button></li>
+        </ul>
+        <span class="pitch">
+          <svg width="26" height="14" viewBox="0 0 26 14" fill="none" aria-hidden="true">
+            <path d="M1 13L13 1l12 12" stroke="#f0b48a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M13 1v12" stroke="rgba(244,239,232,.35)" stroke-width="1.2" stroke-dasharray="2 3"/>
+          </svg>
+          Most New Orleans homes sit between 4:12 and 8:12 pitch
+        </span>
+      </div>
+
+      <figure class="asmfig rise" data-anim>
+        <svg class="asmsvg" id="asmfig" viewBox="0 0 500 470" role="img"
+             aria-label="Exploded diagram of a roof assembly, six layers from the deck at the bottom up to the ridge cap">
+          <defs>
+            <linearGradient id="gShingle" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#4c5d55"/><stop offset="1" stop-color="#26312d"/>
+            </linearGradient>
+            <pattern id="pShingle" width="34" height="14" patternUnits="userSpaceOnUse">
+              <rect width="34" height="14" fill="url(#gShingle)"/>
+              <path d="M0 14h34M11 0v14M27 0v14" stroke="rgba(0,0,0,.5)" stroke-width="1"/>
+            </pattern>
+          </defs>
+      <g class="lyr" data-layer="0">
+        <path d="M20 418 L250 336 L480 418 L480 440 L250 358 L20 440 Z" fill="#8a6a45" stroke="rgba(0,0,0,.28)" stroke-width="1"/>
+        <path d="M20 440 v26 M480 440 v26" stroke="rgba(244,239,232,.16)" stroke-width="1"/>
+      </g>
+      <g class="lyr" data-layer="1">
+        <path d="M20 360 L250 278 L480 360 L480 374 L250 292 L20 374 Z" fill="#a3506f" stroke="rgba(0,0,0,.28)" stroke-width="1"/>
+      </g>
+      <g class="lyr" data-layer="2">
+        <path d="M20 302 L250 220 L480 302 L480 316 L250 234 L20 316 Z" fill="#3d8a7e" stroke="rgba(0,0,0,.28)" stroke-width="1"/>
+      </g>
+      <g class="lyr" data-layer="3">
+        <path d="M20 244 L250 162 L480 244 L480 255 L250 173 L20 255 Z" fill="#e0b93c" stroke="rgba(0,0,0,.28)" stroke-width="1"/>
+      </g>
+      <g class="lyr" data-layer="4">
+        <path d="M20 168 L250 86 L480 168 L480 188 L250 106 L20 188 Z" fill="url(#pShingle)" stroke="rgba(0,0,0,.28)" stroke-width="1"/>
+        <path d="M64 153 L250 86 L436 153" fill="none" stroke="rgba(0,0,0,.42)" stroke-width="1.2"/>
+        <path d="M108 137 L250 86 L392 137" fill="none" stroke="rgba(0,0,0,.42)" stroke-width="1.2"/>
+        <path d="M152 121 L250 86 L348 121" fill="none" stroke="rgba(0,0,0,.42)" stroke-width="1.2"/>
+        <path d="M196 106 L250 86 L304 106" fill="none" stroke="rgba(0,0,0,.42)" stroke-width="1.2"/>
+      </g>
+      <g class="lyr" data-layer="5">
+        <path d="M20 96 L250 14 L480 96 L480 112 L250 30 L20 112 Z" fill="#2a6055" stroke="rgba(0,0,0,.28)" stroke-width="1"/>
+        <path d="M224 18 v-12 M250 14 v-16 M276 18 v-12" stroke="#f0b48a" stroke-width="2.4" stroke-linecap="round"/>
+      </g>
+          <text class="lbl" x="250" y="462" text-anchor="middle">exploded, deck at the bottom</text>
+        </svg>
+        <figcaption class="asmcap" id="asmcap">Field shingles</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 
 <div class="roofline" aria-hidden="true"><svg viewBox="0 0 1440 52" preserveAspectRatio="none"><path d="M0,52 L720,8 L1440,52 L1440,52 L0,52 Z" fill="#173a33"/></svg></div>
 <section class="sec photosec">
@@ -1374,6 +1513,41 @@ body.navopen{overflow:hidden}
     sel.addEventListener('change', sync);
     sync();
   });
+
+
+  /* ---- roof assembly cutaway ---- */
+  (function(){
+    var btns = [].slice.call(document.querySelectorAll('.asmbtn'));
+    var svg  = document.getElementById('asmfig');
+    var cap  = document.getElementById('asmcap');
+    if(!btns.length || !svg) return;
+    var groups = [].slice.call(svg.querySelectorAll('.lyr'));
+
+    function select(n){
+      btns.forEach(function(b){
+        b.setAttribute('aria-selected', b.getAttribute('data-layer') === String(n) ? 'true' : 'false');
+      });
+      groups.forEach(function(g){
+        var isSel = g.getAttribute('data-layer') === String(n);
+        g.classList.toggle('dim', !isSel);
+        g.classList.toggle('sel', isSel);
+      });
+      var chosen = btns.filter(function(b){ return b.getAttribute('data-layer') === String(n); })[0];
+      if(chosen && cap){ cap.textContent = chosen.querySelector('.asmttl').textContent; }
+    }
+
+    btns.forEach(function(b){
+      b.addEventListener('click', function(){ select(b.getAttribute('data-layer')); });
+      b.addEventListener('keydown', function(e){
+        var i = btns.indexOf(b), n = null;
+        if(e.key === 'ArrowDown' || e.key === 'ArrowRight') n = (i + 1) % btns.length;
+        if(e.key === 'ArrowUp'   || e.key === 'ArrowLeft')  n = (i - 1 + btns.length) % btns.length;
+        if(n !== null){ e.preventDefault(); btns[n].focus(); select(btns[n].getAttribute('data-layer')); }
+      });
+    });
+    /* start on the layer people recognise, and never leave the drawing blank */
+    select(4);
+  })();
 
   /* testimonial slider */
   var tr = document.getElementById('tsltrack');
