@@ -140,7 +140,7 @@ h1 em{font-style:italic;color:var(--clay2)}
   linear-gradient(180deg, rgba(23,58,51,.6) 0%, rgba(23,58,51,0) 28%, rgba(23,58,51,.5) 100%)}
 /* hero splits into four blocks so the form can jump the queue on phones.
    DOM order is unchanged, so the answer capsule is still the first paragraph for crawlers. */
-.hgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,428px);grid-template-rows:auto auto auto;
+.hgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,470px);grid-template-rows:auto auto auto;
        gap:0 54px;align-items:center;padding:70px 0 88px}
 .htop{grid-column:1;grid-row:1}
 .hlede{grid-column:1;grid-row:2}
@@ -559,15 +559,70 @@ h1 .hl{display:block}
 .dialproof b{display:inline;font-family:var(--body);font-size:inherit;line-height:inherit;letter-spacing:normal;color:var(--ink);font-weight:700}
 
 
-/* ===== hero lead form (treatment 2) ===== */
-.heroform{background:var(--cream);border-radius:var(--r);padding:26px 24px;box-shadow:0 30px 70px -30px rgba(12,28,24,.8);border:1px solid rgba(255,255,255,.16)}
-.heroform .ftitle{font-size:21px;margin:0 0 6px;padding-bottom:0;border-bottom:0}
-.heroform .fkicker{margin:0 0 18px;font-size:14px;line-height:1.55;color:var(--ink2)}
+/* ===== hero lead form: one step, scrolls inside the card =====
+   Same idea as bigeasypatios.com, whose hero form is a 443x560 frame that scrolls
+   internally. The header and the submit button stay put; only the fields scroll,
+   so the call to action is never scrolled out of reach. */
+.heroform{background:var(--cream);border-radius:var(--r);padding:0;overflow:hidden;
+  box-shadow:0 30px 70px -30px rgba(12,28,24,.8);border:1px solid rgba(255,255,255,.16);
+  display:flex;flex-direction:column;max-height:min(624px, calc(100vh - 170px))}
+.heroform .fhead{flex:none;padding:22px 24px 15px;border-bottom:1px solid var(--line)}
+.heroform .ftitle{font-size:21px;margin:0 0 5px;padding-bottom:0;border-bottom:0}
+.heroform .fkicker{margin:0;font-size:13.5px;line-height:1.5;color:var(--ink2)}
+.heroform .fbody{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;
+  padding:16px 24px 10px;scrollbar-width:thin;scrollbar-color:rgba(31,77,67,.34) transparent}
+.heroform .fbody::-webkit-scrollbar{width:8px}
+.heroform .fbody::-webkit-scrollbar-thumb{background:rgba(31,77,67,.3);border-radius:8px}
+.heroform .fbody::-webkit-scrollbar-thumb:hover{background:rgba(31,77,67,.5)}
+.heroform .fbody:focus-visible{outline:2px solid var(--forest);outline-offset:-2px}
+.heroform .ffoot{flex:none;padding:13px 24px 18px;border-top:1px solid var(--line);
+  background:var(--cream);position:relative}
+/* a soft fade above the footer so it is obvious there is more to scroll */
+.heroform .ffoot::before{content:"";position:absolute;left:0;right:0;top:-26px;height:26px;
+  pointer-events:none;background:linear-gradient(180deg,rgba(251,247,242,0),var(--cream))}
 .heroform .frow{margin-bottom:13px}
 .heroform .frow label{font-size:11px;margin-bottom:6px}
 .heroform .frow input,.heroform .frow select{padding:14px;font-size:15px;background:#fff;min-height:48px}
-.heroform .fsubmit{padding:16px 20px;margin-top:4px}
-.heroform .fmicro{margin:12px 0 0;font-size:12.5px;line-height:1.55;color:var(--ink3);text-align:center}
+.heroform .fsubmit{padding:16px 20px;margin-top:0}
+.heroform .fmicro{margin:10px 0 0;font-size:12.5px;line-height:1.55;color:var(--ink3);text-align:center}
+.heroform .fstatus{margin:10px 0 0}
+.heroform textarea{min-height:64px}
+.heroform .fconsent{margin-bottom:4px}
+/* On a short laptop the hero is taller than the window, so centring the card pushes
+   the submit button below the fold. Pin it to the top of the hero instead. */
+@media(min-width:981px) and (max-height:860px){
+  .heroformcol{align-self:start}
+  .hgrid{padding-top:28px}
+  .heroform{max-height:calc(100vh - 148px)}
+}
+/* on a phone the page scrolls, never the card. Nested scrolling is miserable on touch. */
+@media(max-width:980px){
+  .heroform{max-height:none}
+  .heroform .fbody{overflow:visible;min-height:auto}
+  .heroform .ffoot::before{display:none}
+}
+
+/* ===== form fields, matching the live GoHighLevel field set ===== */
+.frow3{display:grid;grid-template-columns:1.5fr .7fr .9fr;gap:12px}
+@media(max-width:420px){.frow3{grid-template-columns:1fr 1fr}.frow3 .frow:first-child{grid-column:1/-1}}
+.req{color:var(--clay);font-weight:700}
+.opt{font-weight:500;letter-spacing:0;text-transform:none;color:var(--ink3);font-size:11px}
+.fcheck{display:flex;gap:10px;align-items:flex-start;margin:0 0 11px;cursor:pointer;font-size:13.5px;line-height:1.5;color:var(--ink2)}
+.fcheck input{margin:2px 0 0;width:18px;height:18px;flex:none;accent-color:var(--forest)}
+.fconsent{margin:6px 0 16px;font-size:11.5px;line-height:1.55;color:var(--ink3)}
+.fnav{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center}
+.fback{background:transparent;border:1.5px solid var(--line);border-radius:100px;padding:15px 22px;
+  font-family:var(--body);font-weight:700;font-size:15px;color:var(--ink2);cursor:pointer;min-height:52px;transition:border-color .2s,color .2s}
+.fback:hover{border-color:var(--forest);color:var(--ink)}
+.fback:focus-visible,.fsubmit:focus-visible{outline:2px solid var(--forest);outline-offset:2px}
+.frow input[type=file]{padding:10px 12px;font-size:13.5px;background:var(--cream);min-height:48px;display:flex;align-items:center}
+.frow input[type=file]::file-selector-button{margin-right:12px;border:1px solid var(--line);background:#fff;
+  border-radius:100px;padding:7px 14px;font-family:var(--body);font-weight:700;font-size:13px;color:var(--ink);cursor:pointer}
+.finvalid{border-color:var(--clay)!important;background:rgba(194,106,58,.06)!important}
+.heroform .fconsent{margin-bottom:14px}
+.heroform textarea{min-height:64px}
+/* the wide bottom form can use two columns for the address block */
+@media(min-width:781px){.fwide .frow3{grid-template-columns:1.6fr .6fr .8fr}}
 
 
 /* ===== mobile navigation ===== */
@@ -590,7 +645,7 @@ h1 .hl{display:block}
    A pending transition holds the OLD computed value and a stalled animation holds
    its from-state, so either one can leave the menu invisible while still reporting
    itself as open. Navigation is not allowed to depend on an animation clock.
-   The panel appears instantly. The hamburger morph below is cosmetic and may
+   The panel appears instantly. The hamburger morph above is cosmetic and may
    safely do nothing. */
 .mnav.open{opacity:1;visibility:visible;transform:none}
 .mnav-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px;border-bottom:1px solid var(--line);flex:none}
@@ -599,13 +654,13 @@ h1 .hl{display:block}
 .mnav-close:hover{background:var(--cream2);border-color:var(--forest)}
 .mnav-close:focus-visible{outline:2px solid var(--forest);outline-offset:2px}
 .mnav-links{display:flex;flex-direction:column;padding:8px 20px;flex:0 0 auto}
-.mnav-note{flex:1 0 auto;padding:22px 24px 18px;display:flex;flex-direction:column;justify-content:center;gap:10px}
-.mnav-note p{margin:0;font-size:15px;line-height:1.6;color:var(--ink2);max-width:34ch}
-.mnav-note b{color:var(--ink);font-weight:700}
 .mnav-links a{display:flex;align-items:center;min-height:60px;padding:10px 4px;font-family:var(--disp);font-size:22px;
   font-weight:700;color:var(--ink);border-bottom:1px solid var(--line)}
 .mnav-links a:last-child{border-bottom:0}
 .mnav-links a:focus-visible{outline:2px solid var(--forest);outline-offset:-2px}
+.mnav-note{flex:1 0 auto;padding:22px 24px 18px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.mnav-note p{margin:0;font-size:15px;line-height:1.6;color:var(--ink2);max-width:34ch}
+.mnav-note b{color:var(--ink);font-weight:700}
 .mnav-foot{padding:18px 20px 30px;border-top:1px solid var(--line);flex:none;display:grid;gap:11px}
 .mnav-call,.mnav-est{display:flex;align-items:center;justify-content:center;min-height:54px;padding:14px 20px;
   border-radius:100px;font-weight:700;font-size:16.5px;text-align:center}
@@ -623,7 +678,7 @@ body.navopen{overflow:hidden}
 
 
 /* ===== real client logo =====
-   Both files are the same artwork, 77%% transparent, no baked-in background.
+   Both files are the same artwork, 77% transparent, no baked-in background.
    The ink is light grey plus mid blue (average brightness 157/255), so it is a
    light logo. The live site already places it on near-white #EAF7FF, so cream is
    consistent with how the brand is presented today. No blend mode needed. */
@@ -634,32 +689,6 @@ body.navopen{overflow:hidden}
 .mnav-top .logoimg{height:50px}
 .ftlogoimg{display:block;height:86px;width:auto;margin-bottom:18px;border-radius:8px}
 @media(max-width:700px){.ftlogoimg{height:72px}}
-
-
-/* ===== form fields, matching the live GoHighLevel field set ===== */
-.frow3{display:grid;grid-template-columns:1.5fr .7fr .9fr;gap:12px}
-@media(max-width:420px){.frow3{grid-template-columns:1fr 1fr}.frow3 .frow:first-child{grid-column:1/-1}}
-.req{color:var(--clay);font-weight:700}
-.opt{font-weight:500;letter-spacing:0;text-transform:none;color:var(--ink3);font-size:11px}
-.fsteps{display:flex;gap:6px;margin-bottom:16px}
-.fsteps i{height:3px;flex:1;border-radius:3px;background:var(--line)}
-.fsteps i.on{background:var(--clay)}
-.fcheck{display:flex;gap:10px;align-items:flex-start;margin:0 0 11px;cursor:pointer;font-size:13.5px;line-height:1.5;color:var(--ink2)}
-.fcheck input{margin:2px 0 0;width:18px;height:18px;flex:none;accent-color:var(--forest)}
-.fconsent{margin:6px 0 16px;font-size:11.5px;line-height:1.55;color:var(--ink3)}
-.fnav{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center}
-.fback{background:transparent;border:1.5px solid var(--line);border-radius:100px;padding:15px 22px;
-  font-family:var(--body);font-weight:700;font-size:15px;color:var(--ink2);cursor:pointer;min-height:52px;transition:border-color .2s,color .2s}
-.fback:hover{border-color:var(--forest);color:var(--ink)}
-.fback:focus-visible,.fsubmit:focus-visible{outline:2px solid var(--forest);outline-offset:2px}
-.frow input[type=file]{padding:10px 12px;font-size:13.5px;background:var(--cream);min-height:48px;display:flex;align-items:center}
-.frow input[type=file]::file-selector-button{margin-right:12px;border:1px solid var(--line);background:#fff;
-  border-radius:100px;padding:7px 14px;font-family:var(--body);font-weight:700;font-size:13px;color:var(--ink);cursor:pointer}
-.finvalid{border-color:var(--clay)!important;background:rgba(194,106,58,.06)!important}
-.heroform .fconsent{margin-bottom:14px}
-.heroform textarea{min-height:64px}
-/* the wide bottom form can use two columns for the address block */
-@media(min-width:781px){.fwide .frow3{grid-template-columns:1.6fr .6fr .8fr}}
 
 /* sticky mobile call bar */
 .callbar{position:fixed;left:0;right:0;bottom:0;z-index:120;display:none;gap:1px;background:rgba(0,0,0,.3);transform:translateY(100%);transition:transform .35s cubic-bezier(.22,.61,.36,1)}
@@ -742,24 +771,25 @@ body.navopen{overflow:hidden}
 
         <div class="heroformcol rise" data-anim style="transition-delay:.10s">
           <form class="fform heroform" id="heroform" novalidate>
-            <div class="fsteps" aria-hidden="true"><i class="on"></i><i></i></div>
-            <h3 class="ftitle">Get a Free Roof Estimate</h3>
-            <p class="fkicker">Two quick steps. We call you back to set a time that suits you.</p>
+            <div class="fhead">
+              <h3 class="ftitle">Get a Free Roof Estimate</h3>
+              <p class="fkicker">Tell us where the roof is. We call you back to set a time that suits you.</p>
+            </div>
 
-            <div class="fstep" data-step="1">
+            <div class="fbody" tabindex="0">
+              <div class="frow">
+                <label for="h-name">Full name <span class="req">*</span></label>
+                <input id="h-name" name="full_name" type="text" autocomplete="name" placeholder="First and last name" required>
+              </div>
               <div class="frow2">
-                <div class="frow">
-                  <label for="h-name">Full name <span class="req">*</span></label>
-                  <input id="h-name" name="full_name" type="text" autocomplete="name" placeholder="First and last name" required>
-                </div>
                 <div class="frow">
                   <label for="h-phone">Phone <span class="req">*</span></label>
                   <input id="h-phone" name="phone" type="tel" autocomplete="tel" placeholder="(504) 000-0000" required>
                 </div>
-              </div>
-              <div class="frow">
-                <label for="h-email">Email <span class="req">*</span></label>
-                <input id="h-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                <div class="frow">
+                  <label for="h-email">Email <span class="req">*</span></label>
+                  <input id="h-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                </div>
               </div>
               <div class="frow">
                 <label for="h-service">Service type <span class="req">*</span></label>
@@ -769,11 +799,6 @@ body.navopen{overflow:hidden}
                   <option>Commercial</option>
                 </select>
               </div>
-              <button class="fsubmit" type="button" data-next="2">Continue</button>
-              <p class="fmicro">Step 1 of 2 &middot; Free estimate, no obligation to book.</p>
-            </div>
-
-            <div class="fstep" data-step="2" hidden>
               <div class="frow svc-resi" hidden>
                 <label for="h-resi">Residential service</label>
                 <select id="h-resi" name="residential_service">
@@ -834,13 +859,13 @@ body.navopen{overflow:hidden}
               <label class="fcheck"><input type="checkbox" name="terms_and_conditions" required><span>I agree to the terms and conditions. <span class="req">*</span></span></label>
               <label class="fcheck"><input type="checkbox" name="sms_optin"><span>Opt in to receive SMS notifications, alerts and occasional marketing communication.</span></label>
               <p class="fconsent">By submitting this form, I consent to receive calls, including automated calls using AI-generated voice technology, from TurnKey Roofer at the phone number provided above. Consent is not required as a condition of receiving a quote or service. I can revoke consent at any time.</p>
-              <div class="fnav">
-                <button class="fback" type="button" data-back="1">Back</button>
-                <button class="fsubmit" type="submit">Get my free estimate</button>
-              </div>
-              <p class="fmicro">Step 2 of 2</p>
             </div>
-            <p class="fstatus" role="status" aria-live="polite"></p>
+
+            <div class="ffoot">
+              <button class="fsubmit" type="submit">Get my free estimate</button>
+              <p class="fstatus" role="status" aria-live="polite"></p>
+              <p class="fmicro">Free estimate. No obligation to book the work.</p>
+            </div>
           </form>
         </div>
 
@@ -1524,35 +1549,16 @@ body.navopen{overflow:hidden}
     sync();
   });
 
-  /* ---- two-step hero form ---- */
+  /* the hero form is a single step now. If the field area scrolls, make sure a
+     validation failure brings the offending field into view rather than silently
+     failing somewhere out of sight. */
   (function(){
     var form = document.getElementById('heroform');
     if(!form) return;
-    var steps = form.querySelectorAll('.fstep'),
-        dots  = form.querySelectorAll('.fsteps i');
-    function show(n){
-      steps.forEach(function(st){ st.hidden = (st.getAttribute('data-step') !== String(n)); });
-      dots.forEach(function(d,i){ d.classList.toggle('on', i < n); });
-      var first = form.querySelector('.fstep:not([hidden]) input,.fstep:not([hidden]) select');
-      if(first) first.focus();
-    }
-    form.addEventListener('click', function(e){
-      var nxt = e.target.closest('[data-next]'), bk = e.target.closest('[data-back]');
-      if(nxt){
-        var bad = null;
-        form.querySelectorAll('.fstep[data-step="1"] [required]').forEach(function(f){
-          var empty = !f.value.trim();
-          f.classList.toggle('finvalid', empty);
-          if(empty && !bad) bad = f;
-        });
-        if(bad){ bad.focus(); return; }
-        show(2);
-      }
-      if(bk) show(1);
-    });
-    form.addEventListener('input', function(e){
-      if(e.target.classList.contains('finvalid') && e.target.value.trim()) e.target.classList.remove('finvalid');
-    });
+    form.addEventListener('submit', function(){
+      var bad = form.querySelector('[required]:invalid, .finvalid');
+      if(bad && bad.scrollIntoView) bad.scrollIntoView({block:'center'});
+    }, true);
   })();
 
   /* testimonial slider */
