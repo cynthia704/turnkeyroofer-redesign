@@ -851,16 +851,18 @@ body.navopen{overflow:hidden}
 
 .asmlist{list-style:none;margin:26px 0 0;padding:0}
 .asmlist li{margin:0 0 8px}
-.asmbtn{width:100%;display:grid;grid-template-columns:38px 1fr;gap:14px;align-items:start;
-  background:transparent;border:1px solid transparent;border-radius:14px;padding:13px 14px;
+.asmbtn{position:relative;width:100%;display:block;
+  background:transparent;border:1px solid transparent;border-radius:14px;padding:13px 16px 13px 20px;
   text-align:left;cursor:pointer;font-family:var(--body);color:inherit;
   transition:background .2s,border-color .2s}
+/* the selected layer takes a rule down its edge, where the number used to sit.
+   Absolutely positioned, so nothing shifts when the selection moves. */
+.asmbtn::before{content:"";position:absolute;left:8px;top:13px;bottom:13px;width:3px;
+  border-radius:2px;background:transparent;transition:background .2s}
+.asmbtn[aria-selected="true"]::before{background:var(--clay2)}
 .asmbtn:hover{background:rgba(244,239,232,.07);border-color:rgba(244,239,232,.16)}
 .asmbtn:focus-visible{outline:2px solid var(--clay2);outline-offset:2px}
 .asmbtn[aria-selected="true"]{background:rgba(244,239,232,.11);border-color:rgba(240,180,138,.55)}
-.asmnum{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
-  background:rgba(244,239,232,.1);color:#f4efe8;font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:12.5px;letter-spacing:.04em}
-.asmbtn[aria-selected="true"] .asmnum{background:var(--clay);color:#fff}
 .asmttl{display:block;font-family:var(--disp);font-size:18px;font-weight:700;color:#f4efe8;margin-bottom:3px}
 @media(max-width:420px){.asmttl{font-size:16.5px}}
 .asmsub{display:block;font-size:14.5px;line-height:1.6;color:rgba(244,239,232,.72)}
@@ -1620,12 +1622,12 @@ body.navopen{overflow:hidden}
         the part you can see. The list runs the way the roof does, from the cap down to the deck
         it is all nailed to. Tap a layer to see what it does.</p>
         <ul class="asmlist" role="tablist" aria-label="Roof assembly layers">
-            <li><button class="asmbtn" type="button" role="tab" data-layer="5" aria-selected="false" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">06</span><span><span class="asmttl">Ridge vent and cap</span><span class="asmsub">A vented ridge lets hot attic air out and caps the peak. Without it, a Gulf Coast attic cooks the shingles from underneath.</span></span></button></li>
-            <li><button class="asmbtn" type="button" role="tab" data-layer="4" aria-selected="true" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">05</span><span><span class="asmttl">Field shingles</span><span class="asmsub">The courses you can see, each one overlapping the fasteners of the row below. Six nails per shingle is what a high-wind rating asks for.</span></span></button></li>
-            <li><button class="asmbtn" type="button" role="tab" data-layer="3" aria-selected="false" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">04</span><span><span class="asmttl">Drip edge and starter course</span><span class="asmsub">Metal at the eaves and rakes, then a sealed first row of shingles. This edge is where uplift starts in a storm, so it is the row that matters most here.</span></span></button></li>
-            <li><button class="asmbtn" type="button" role="tab" data-layer="2" aria-selected="false" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">03</span><span><span class="asmttl">Synthetic underlayment</span><span class="asmsub">Rolled over the whole deck as a second water barrier. It is what keeps the deck dry between tear-off and the new roof going on.</span></span></button></li>
-            <li><button class="asmbtn" type="button" role="tab" data-layer="1" aria-selected="false" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">02</span><span><span class="asmttl">Ice and water shield</span><span class="asmsub">A self-adhering membrane along the eaves and in every valley. It seals around the nails driven through it, so wind-driven rain has nowhere to travel.</span></span></button></li>
-            <li><button class="asmbtn" type="button" role="tab" data-layer="0" aria-selected="false" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">01</span><span><span class="asmttl">Roof deck</span><span class="asmsub">The plywood or OSB sheathing nailed to your rafters. Everything above it is only as sound as this is, which is why it gets inspected once the old roof is off.</span></span></button></li>
+            <li><button class="asmbtn" type="button" role="tab" data-layer="5" aria-selected="false" aria-controls="asmfig"><span><span class="asmttl">Ridge vent and cap</span><span class="asmsub">A vented ridge lets hot attic air out and caps the peak. Without it, a Gulf Coast attic cooks the shingles from underneath.</span></span></button></li>
+            <li><button class="asmbtn" type="button" role="tab" data-layer="4" aria-selected="true" aria-controls="asmfig"><span><span class="asmttl">Field shingles</span><span class="asmsub">The courses you can see, each one overlapping the fasteners of the row below. Six nails per shingle is what a high-wind rating asks for.</span></span></button></li>
+            <li><button class="asmbtn" type="button" role="tab" data-layer="3" aria-selected="false" aria-controls="asmfig"><span><span class="asmttl">Drip edge and starter course</span><span class="asmsub">Metal at the eaves and rakes, then a sealed first row of shingles. This edge is where uplift starts in a storm, so it is the row that matters most here.</span></span></button></li>
+            <li><button class="asmbtn" type="button" role="tab" data-layer="2" aria-selected="false" aria-controls="asmfig"><span><span class="asmttl">Synthetic underlayment</span><span class="asmsub">Rolled over the whole deck as a second water barrier. It is what keeps the deck dry between tear-off and the new roof going on.</span></span></button></li>
+            <li><button class="asmbtn" type="button" role="tab" data-layer="1" aria-selected="false" aria-controls="asmfig"><span><span class="asmttl">Ice and water shield</span><span class="asmsub">A self-adhering membrane along the eaves and in every valley. It seals around the nails driven through it, so wind-driven rain has nowhere to travel.</span></span></button></li>
+            <li><button class="asmbtn" type="button" role="tab" data-layer="0" aria-selected="false" aria-controls="asmfig"><span><span class="asmttl">Roof deck</span><span class="asmsub">The plywood or OSB sheathing nailed to your rafters. Everything above it is only as sound as this is, which is why it gets inspected once the old roof is off.</span></span></button></li>
 </ul>
         <span class="pitch">
           <svg width="26" height="14" viewBox="0 0 26 14" fill="none" aria-hidden="true">
