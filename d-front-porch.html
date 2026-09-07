@@ -780,39 +780,44 @@ body.navopen{overflow:hidden}
 .gable{display:block;margin:0 0 14px}
 
 
-/* ===== worry ledger =====
-   The homeowner's words on the left, what goes in writing on the right.
-   Rows are separated by a hairline instead of being boxed. A row is its own
-   height, so nothing stretches to match a neighbour and there is no hole to
-   leave behind. */
-.wledger{margin-top:38px;border-top:1px solid rgba(244,239,232,.16)}
-.wrow{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:46px;
-  padding:30px 0;border-bottom:1px solid rgba(244,239,232,.16);align-items:start}
 
-.wq{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;align-items:start}
-.wtab{width:44px;height:46px;display:grid;place-items:center;
-  font-family:var(--mono);font-size:13px;letter-spacing:.05em;color:#f0b48a;
-  background:rgba(240,180,138,.12);border:1px solid rgba(240,180,138,.34);
-  /* a shingle tab: square shoulders, notched foot */
-  clip-path:polygon(0 0,100% 0,100% 72%,50% 100%,0 72%)}
-.wq h4{margin:0;font-size:21px;line-height:1.3;color:#fff;text-wrap:balance}
 
-.wa{padding-top:2px}
-.wtag{display:inline-flex;align-items:center;gap:7px;margin-bottom:9px;
-  font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
-  color:#f0b48a}
-.wtag::before{content:"";width:13px;height:13px;border-radius:50%;flex:none;
-  background:rgba(240,180,138,.16);border:1px solid rgba(240,180,138,.55);
-  box-shadow:inset 0 0 0 2px rgba(23,58,51,.9)}
-.wa p{margin:0;font-size:15.5px;line-height:1.66;color:rgba(244,239,232,.84);text-wrap:pretty}
-.wa p b{color:#fff;font-weight:700}
 
 @media(max-width:900px){
-  .wrow{grid-template-columns:1fr;gap:16px;padding:26px 0}
-  .wq{grid-template-columns:40px minmax(0,1fr);gap:14px}
-  .wtab{width:40px;height:42px;font-size:12px}
-  .wq h4{font-size:19px}
+    .wq{grid-template-columns:40px minmax(0,1fr);gap:14px}
+    .wq h4{font-size:19px}
 }
+
+
+/* ===== section header that fills its width ===== */
+.sechead{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:54px;align-items:end}
+.sechead .h2{margin-bottom:0}
+.sechead .lede{margin:0;padding-bottom:4px}
+@media(max-width:900px){.sechead{grid-template-columns:1fr;gap:16px;align-items:start}}
+
+/* ===== four houses =====
+   A gable over a panel, and the number on a plate the way a street number sits on
+   a wall. Four across, so no card is stretched to match a taller neighbour. */
+.hrow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin-top:42px;align-items:start}
+@media(max-width:1080px){.hrow{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}}
+@media(max-width:620px){.hrow{grid-template-columns:1fr}}
+
+.house{display:flex;flex-direction:column;transition:transform .3s}
+.house:hover{transform:translateY(-5px)}
+.hroof{display:block;width:100%;height:58px;margin-bottom:-1px}
+.hroofface{fill:rgba(240,180,138,.16)}
+.hroofline{stroke:#f0b48a;stroke-width:2;vector-effect:non-scaling-stroke;stroke-linejoin:round}
+.hbody{flex:1;background:rgba(12,28,24,.44);border:1px solid rgba(244,239,232,.2);
+  border-radius:0 0 14px 14px;padding:22px 20px 24px;position:relative;
+  backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.hplate{position:absolute;top:-15px;left:20px;min-width:44px;height:28px;padding:0 10px;
+  display:grid;place-items:center;background:var(--forest2);
+  border:1px solid rgba(240,180,138,.5);border-radius:5px;
+  font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:#f0b48a}
+.house h4{margin:16px 0 10px;font-size:18.5px;line-height:1.32;color:#fff;text-wrap:balance}
+.house p{margin:0;font-size:14.5px;line-height:1.62;color:rgba(244,239,232,.84);text-wrap:pretty}
+.house p b{color:#fff;font-weight:700}
+@media(prefers-reduced-motion:reduce){.house{transition:none}}
 
 /* sticky mobile call bar */
 .callbar{position:fixed;left:0;right:0;bottom:0;z-index:120;display:none;gap:1px;background:rgba(0,0,0,.3);transform:translateY(100%);transition:transform .35s cubic-bezier(.22,.61,.36,1)}
@@ -1046,52 +1051,59 @@ body.navopen{overflow:hidden}
 <div class="roofline" aria-hidden="true"><svg viewBox="0 0 1440 52" preserveAspectRatio="none"><path d="M0,52 L720,8 L1440,52 L1440,52 L0,52 Z" fill="#1f4d43"/><path d="M0,52 L720,8 L1440,52" fill="none" stroke="rgba(240,180,138,.55)" stroke-width="2" vector-effect="non-scaling-stroke"/></svg></div>
 <section class="sec tone-deep">
   <div class="wrap">
-    <div class="rise" data-anim>
-      <p class="eyebrow">Everyone has a roofer story</p>
-      <h2 class="h2">What New Orleans Homeowners Ask Before Hiring a Roofer</h2>
-      <p class="lede">Four things New Orleans homeowners actually worry about when a roofing contractor knocks. Here is where we stand on each of them.</p>
+    <div class="sechead rise" data-anim>
+      <div>
+        <p class="eyebrow">Everyone has a roofer story</p>
+        <h2 class="h2">What New Orleans Homeowners Ask Before Hiring a Roofer</h2>
+      </div>
+      <p class="lede">Four things New Orleans homeowners actually worry about when a roofing contractor knocks. Here is where we stand on each of them, in writing.</p>
     </div>
-    <div class="wledger reveal" data-anim>
-      <div class="wrow">
-        <div class="wq">
-          <span class="wtab" aria-hidden="true">01</span>
+    <div class="hrow reveal" data-anim>
+      <article class="house">
+        <svg class="hroof" viewBox="0 0 300 58" preserveAspectRatio="none" aria-hidden="true">
+          <path class="hroofface" d="M0 58 L150 0 L300 58 Z"/>
+          <path class="hroofline" d="M0 58 L150 0 L300 58" fill="none"/>
+        </svg>
+        <div class="hbody">
+          <span class="hplate" aria-hidden="true">01</span>
           <h4>&ldquo;They Take the Deposit and Disappear&rdquo;</h4>
+          <p>Our license numbers are on <b>every page of this site</b>. Residential #890459. Commercial #3667. Look us up before you pay us.</p>
         </div>
-        <div class="wa">
-          <span class="wtag">In writing</span>
-          <p>Our Louisiana license numbers are printed on <b>every page of this site</b>. Residential #890459. Commercial #3667. Look us up before you pay us.</p>
-        </div>
-      </div>
-      <div class="wrow">
-        <div class="wq">
-          <span class="wtab" aria-hidden="true">02</span>
+      </article>
+      <article class="house">
+        <svg class="hroof" viewBox="0 0 300 58" preserveAspectRatio="none" aria-hidden="true">
+          <path class="hroofface" d="M0 58 L150 0 L300 58 Z"/>
+          <path class="hroofline" d="M0 58 L150 0 L300 58" fill="none"/>
+        </svg>
+        <div class="hbody">
+          <span class="hplate" aria-hidden="true">02</span>
           <h4>&ldquo;It Fails in the Next Storm Anyway&rdquo;</h4>
+          <p><b>15-year wind warranty, no maximum wind speed</b>, named hurricanes included. Ask any other estimate to match it.</p>
         </div>
-        <div class="wa">
-          <span class="wtag">In writing</span>
-          <p><b>15-year wind warranty, no maximum wind speed</b>, named hurricanes included. Ask any other estimate to put that in writing.</p>
-        </div>
-      </div>
-      <div class="wrow">
-        <div class="wq">
-          <span class="wtab" aria-hidden="true">03</span>
+      </article>
+      <article class="house">
+        <svg class="hroof" viewBox="0 0 300 58" preserveAspectRatio="none" aria-hidden="true">
+          <path class="hroofface" d="M0 58 L150 0 L300 58 Z"/>
+          <path class="hroofline" d="M0 58 L150 0 L300 58" fill="none"/>
+        </svg>
+        <div class="hbody">
+          <span class="hplate" aria-hidden="true">03</span>
           <h4>&ldquo;The Price Doubles Once They Start&rdquo;</h4>
+          <p>The estimate is the price. <b>If we find rot under the old roof we show you first</b>, and you decide what happens next.</p>
         </div>
-        <div class="wa">
-          <span class="wtag">In writing</span>
-          <p>The estimate is the price. <b>If we find rot underneath, we show you before we touch it.</b></p>
-        </div>
-      </div>
-      <div class="wrow">
-        <div class="wq">
-          <span class="wtab" aria-hidden="true">04</span>
+      </article>
+      <article class="house">
+        <svg class="hroof" viewBox="0 0 300 58" preserveAspectRatio="none" aria-hidden="true">
+          <path class="hroofface" d="M0 58 L150 0 L300 58 Z"/>
+          <path class="hroofline" d="M0 58 L150 0 L300 58" fill="none"/>
+        </svg>
+        <div class="hbody">
+          <span class="hplate" aria-hidden="true">04</span>
           <h4>&ldquo;I Live Under a Tarp for Weeks&rdquo;</h4>
+          <p>Once payment is received the roof is <b>completed within 24 hours</b>. That is the guarantee on the front page.</p>
         </div>
-        <div class="wa">
-          <span class="wtag">In writing</span>
-          <p>Once payment is received, the roofing project is <b>completed within 24 hours</b>. That is the guarantee on the front page.</p>
-        </div>
-      </div>
+      </article>
+    </div>
     </div>
   </div>
 </section>
