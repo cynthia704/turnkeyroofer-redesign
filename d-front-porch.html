@@ -749,6 +749,10 @@ body.navopen{overflow:hidden}
 .spec dd{margin:0;font-size:14.5px;line-height:1.45;color:rgba(244,239,232,.86);text-wrap:pretty}
 .spec dd b{font-family:var(--disp);font-weight:700;font-size:16px;color:#fff}
 .spec dd i{font-style:normal;color:rgba(244,239,232,.42);padding:0 3px}
+/* the buttons were sitting against the shingle edge, and they read better
+   centred under the full width of the spec block above them */
+.hero .cta{margin-top:30px;justify-content:center}
+@media(max-width:560px){.hero .cta{margin-top:24px}}
 .plateedge{display:block;width:100%;height:12px;fill:rgba(12,28,24,.42);
   filter:drop-shadow(0 1px 0 rgba(244,239,232,.22))}
 /* below this the two-column row squeezes the value enough to wrap, so the label
