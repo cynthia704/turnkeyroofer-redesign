@@ -702,6 +702,7 @@ body.navopen{overflow:hidden}
    scroll, so the call to action is never scrolled out of reach. */
 .heroform{background:var(--cream);border-radius:var(--r);padding:0;overflow:hidden;
   box-shadow:0 30px 70px -30px rgba(12,28,24,.8);border:1px solid rgba(255,255,255,.16);
+  border-top:3px solid var(--clay);  /* ridge cap, after the shorthand or it is reset */
   display:flex;flex-direction:column;min-height:0}
 .heroform .fhead{flex:none;padding:20px 24px 14px;border-bottom:1px solid var(--line)}
 .heroform .ftitle{font-size:21px;margin:0 0 5px;padding-bottom:0;border-bottom:0}
@@ -766,6 +767,35 @@ body.navopen{overflow:hidden}
 .hero .hsub::before{content:"";position:absolute;left:0;top:5px;bottom:5px;width:2px;
   background:linear-gradient(180deg,var(--clay2),rgba(240,180,138,.15));border-radius:2px}
 @media(max-width:560px){.hero .hsub{padding-left:15px}}
+
+
+/* ===================================================================
+   HERO: PITCH
+   A 6:12 roof sits at 26.57 degrees. Every line in this section uses it,
+   so the geometry is the roof rather than decoration borrowed from
+   somewhere else.
+   =================================================================== */
+.pitchgrid{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    repeating-linear-gradient(26.57deg,  rgba(244,239,232,.085) 0 1px, transparent 1px 84px),
+    repeating-linear-gradient(-26.57deg, rgba(244,239,232,.035) 0 1px, transparent 1px 84px);
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.25) 62%,rgba(0,0,0,0) 100%);
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.25) 62%,rgba(0,0,0,0) 100%)}
+
+.gable{display:block;margin:0 0 14px}
+
+/* the drawing annotation that replaced the repeated licence line */
+.pitchnote{display:flex;align-items:center;gap:12px;margin-top:26px;flex-wrap:wrap}
+.pitchnote svg{flex:none}
+.pitchnote b{font-family:var(--mono);font-size:14px;letter-spacing:.06em;color:#f0b48a;font-weight:500}
+.pitchrule{flex:0 0 46px;height:1px;background:linear-gradient(90deg,rgba(240,180,138,.7),rgba(240,180,138,.1))}
+.pitchnote span:last-child{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;
+  text-transform:uppercase;color:rgba(244,239,232,.72);line-height:1.5;min-width:0;flex:1 1 240px}
+@media(max-width:560px){
+  .pitchnote{gap:9px}
+  .pitchrule{display:none}
+  .pitchnote span:last-child{flex:1 1 100%;font-size:11px}
+}
 
 /* sticky mobile call bar */
 .callbar{position:fixed;left:0;right:0;bottom:0;z-index:120;display:none;gap:1px;background:rgba(0,0,0,.3);transform:translateY(100%);transition:transform .35s cubic-bezier(.22,.61,.36,1)}
@@ -834,10 +864,15 @@ body.navopen{overflow:hidden}
     <img class="hs" src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/rooftop-made-of-tile-roofing.webp" alt="" loading="eager" decoding="async">
   </div>
   <div class="heroshade" aria-hidden="true"></div>
+  <div class="pitchgrid" aria-hidden="true"></div>
 
   <div class="wrap">
       <div class="hgrid">
         <div class="htop reveal" data-anim>
+          <svg class="gable" width="46" height="17" viewBox="0 0 46 17" fill="none" aria-hidden="true">
+            <path d="M1 16L23 2l22 14" stroke="#f0b48a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 16L23 8l11 8" stroke="rgba(240,180,138,.4)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
           <p class="eyebrow">Local &amp; family-owned · New Orleans</p>
           <h1><span class="hl">New Orleans <em>Roofing Company</em></span> <span class="hl">Roof Replaced in 24 Hours</span></h1>
         </div>
@@ -874,7 +909,16 @@ body.navopen{overflow:hidden}
             <a class="btn1" href="tel:5042267070">Call (504) 226-7070</a>
             <a class="btn2" href="#estimate">Book a free roof inspection</a>
           </div>
-          <div class="lic" style="margin-top:24px"><span>RESIDENTIAL #890459</span><span>COMMERCIAL #3667</span></div>
+          <div class="pitchnote">
+            <svg width="34" height="18" viewBox="0 0 34 18" fill="none" aria-hidden="true">
+              <path d="M1 17h32L1 1z" fill="rgba(240,180,138,.14)"/>
+              <path d="M1 17h32L1 1z" stroke="#f0b48a" stroke-width="1.3" stroke-linejoin="round"/>
+              <path d="M1 11h6" stroke="rgba(244,239,232,.55)" stroke-width="1.1"/>
+            </svg>
+            <b>6:12</b>
+            <span class="pitchrule" aria-hidden="true"></span>
+            <span>Typical New Orleans pitch. We work 3:12 flat through 12:12 steep.</span>
+          </div>
         </div>
 
         <div class="heroformcol rise" data-anim style="transition-delay:.10s">
@@ -996,7 +1040,7 @@ body.navopen{overflow:hidden}
   </div>
 </section>
 
-<div class="roofline" aria-hidden="true"><svg viewBox="0 0 1440 52" preserveAspectRatio="none"><path d="M0,52 L720,8 L1440,52 L1440,52 L0,52 Z" fill="#1f4d43"/></svg></div>
+<div class="roofline" aria-hidden="true"><svg viewBox="0 0 1440 52" preserveAspectRatio="none"><path d="M0,52 L720,8 L1440,52 L1440,52 L0,52 Z" fill="#1f4d43"/><path d="M0,52 L720,8 L1440,52" fill="none" stroke="rgba(240,180,138,.55)" stroke-width="2" vector-effect="non-scaling-stroke"/></svg></div>
 <section class="sec tone-deep">
   <div class="wrap">
     <div class="rise" data-anim>
