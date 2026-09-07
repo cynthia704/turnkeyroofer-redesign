@@ -180,71 +180,93 @@ h1 em{font-style:italic;color:var(--clay2)}
 
 /* services */
 .svc{background:var(--cream2)}
-/* ===== the two divisions =====
-   These are the two top services on the site, so each card opens on a dark
-   masthead and closes on its own licence number. Both carry ten services, so
-   five rows in two columns, and both mastheads and footers are built the same
-   way -- the cards are level by construction rather than by tuning. */
-.scards{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:36px;align-items:start}
-@media(max-width:1080px){.scards{grid-template-columns:1fr}}
-.scard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
-  border-radius:var(--r);overflow:hidden;transition:transform .35s,box-shadow .35s}
-.scard:hover{transform:translateY(-4px);box-shadow:0 26px 56px -30px rgba(32,48,44,.5)}
-@media(prefers-reduced-motion:reduce){.scard{transition:none}.scard:hover{transform:none}}
+/* ===== the two divisions, one section each =====
+   Side by side neither had room to be more than a list. Each now owns a section:
+   copy on one side, a two-photo composition on the other, mirrored and on forest
+   for commercial.
 
-/* the masthead. Pitch lines rather than a drawn roof: a texture holds its angle
-   at any card width, where a stretched roof shape does not. */
-.scap{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;
-  grid-template-rows:auto auto;column-gap:16px;row-gap:12px;align-items:center;
-  padding:20px 24px;background:var(--forest2);
-  background-image:repeating-linear-gradient(26.57deg,rgba(244,239,232,.075) 0 1px,transparent 1px 58px)}
-@media(max-width:560px){.scap{padding:18px 20px;column-gap:13px}}
-.scapicon{grid-column:1;grid-row:1;align-self:center}
-.scard h3{grid-column:2;grid-row:1;align-self:center}
-.scapn{grid-column:3;grid-row:1;align-self:center}
-/* the coverage line gets its own row across the whole masthead, which is the
-   widest run available to it */
-.scaparea{grid-column:2 / -1;grid-row:2}
-/* on a phone it takes the whole masthead, which is where it has least room */
-@media(max-width:520px){.scaparea{grid-column:1 / -1}}
-.scapicon{width:48px;height:48px;flex:none;display:grid;place-items:center;color:#f0b48a;
-  background:rgba(240,180,138,.11);border:1px solid rgba(240,180,138,.42);border-radius:12px}
-.scapicon svg{width:26px;height:26px;display:block}
-.scard h3{font-size:23px;margin:0;color:#fff;line-height:1.16}
-.scard h3 em{font-style:italic;color:var(--clay2)}
-@media(max-width:430px){.scard h3{font-size:20px}}
-.scaparea{font-family:var(--mono);font-size:10px;letter-spacing:.11em;text-transform:uppercase;
-  color:rgba(244,239,232,.72);margin:0;line-height:1.5}
-@media(max-width:520px){.scaparea{font-size:9px;letter-spacing:.07em}}
-.scapn{text-align:center;padding:8px 12px;border-radius:9px;align-self:center;
-  background:rgba(244,239,232,.08);border:1px solid rgba(244,239,232,.2)}
-.scapn b{display:block;font-family:var(--disp);font-size:20px;font-weight:700;color:#fff;line-height:1}
-.scapn i{display:block;margin-top:3px;font-style:normal;font-family:var(--mono);font-size:8.5px;
-  letter-spacing:.13em;text-transform:uppercase;color:rgba(244,239,232,.66)}
-@media(max-width:400px){.scapn{display:none}}
+   No dead space, the same way the hero does it: the picture column is stretched
+   by the grid and its photographs are absolutely positioned inside, so a photo
+   can never set the row height. Whatever the copy comes to, the pictures match. */
+.dsec{overflow:hidden}
+.dgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);gap:56px;align-items:start}
+@media(max-width:1000px){.dgrid{grid-template-columns:1fr;gap:34px}}
+
+/* commercial runs the other way round: the track sizes reverse too, or the copy
+   would land in the column meant for the photographs */
+.dsec-mirror .dgrid{grid-template-columns:minmax(0,.82fr) minmax(0,1fr)}
+.dsec-mirror .dbody{grid-column:2;grid-row:1}
+.dsec-mirror .dpiccol{grid-column:1;grid-row:1}
+@media(max-width:1000px){
+  /* the track sizes have to come back too, or the mirrored block stays two-up */
+  .dsec-mirror .dgrid{grid-template-columns:1fr}
+  .dsec-mirror .dbody{grid-column:1;grid-row:1}
+  .dsec-mirror .dpiccol{grid-column:1;grid-row:2}
+}
+
+.dhead{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:center}
+@media(max-width:480px){.dhead{gap:14px}}
+.dicon{width:54px;height:54px;display:grid;place-items:center;border-radius:14px;color:var(--clay);
+  background:rgba(168,85,42,.08);border:1px solid rgba(168,85,42,.3)}
+.dicon svg{width:29px;height:29px;display:block}
+@media(max-width:480px){.dicon{width:46px;height:46px}.dicon svg{width:25px;height:25px}}
+.dhead .eyebrow{margin:0 0 7px}
+.dhead .h2{margin:0}
+.dsec .h2 em{font-style:italic;color:var(--clay)}
+.dsec .lede{margin:22px 0 0;max-width:54ch}
 
 /* five rows, two columns, filled down then across */
-.scard ul{list-style:none;margin:0;padding:16px 24px 4px;
+.dlist{list-style:none;margin:28px 0 0;padding:0;
   display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(5,auto);
-  grid-auto-flow:column;column-gap:22px}
-@media(max-width:520px){.scard ul{grid-template-columns:1fr;grid-template-rows:auto;
-  grid-auto-flow:row;padding:14px 20px 4px}}
-.scard li a{position:relative;display:block;padding:9px 22px 9px 0;font-size:14.5px;
+  grid-auto-flow:column;column-gap:26px}
+@media(max-width:520px){.dlist{grid-template-columns:1fr;grid-template-rows:auto;grid-auto-flow:row}}
+.dlist a{position:relative;display:block;padding:10px 22px 10px 0;font-size:15px;
   color:var(--ink2);border-bottom:1px solid var(--line);transition:color .22s}
-.scard li a::after{content:"";position:absolute;right:6px;top:50%;width:6px;height:6px;
+.dlist a::after{content:"";position:absolute;right:6px;top:50%;width:6px;height:6px;
   border-right:1.6px solid var(--clay);border-top:1.6px solid var(--clay);
   transform:translateY(-50%) rotate(45deg);opacity:0;transition:opacity .22s,right .22s}
-.scard li a:hover{color:var(--forest)}
-.scard li a:hover::after{opacity:1;right:1px}
-@media(prefers-reduced-motion:reduce){.scard li a,.scard li a::after{transition:none}}
+.dlist a:hover{color:var(--forest)}
+.dlist a:hover::after{opacity:1;right:1px}
+@media(prefers-reduced-motion:reduce){.dlist a,.dlist a::after{transition:none}}
 
-/* the footer carries the licence, so the last hairline is followed by content
-   rather than by a gap */
-.sclic{margin:auto 0 0;padding:14px 24px;background:var(--cream2);
-  border-top:1px solid var(--line);font-family:var(--mono);font-size:10.5px;
-  letter-spacing:.11em;text-transform:uppercase;color:var(--ink3)}
-.sclic b{color:var(--clay);font-weight:500}
-@media(max-width:560px){.sclic{padding:13px 20px}}
+.dfoot{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:32px}
+.dlic{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--ink3)}
+.dlic b{color:var(--clay);font-weight:500}
+
+/* the picture column */
+.dpiccol{align-self:stretch;position:relative;min-height:360px}
+.dpic{position:absolute;inset:0;display:grid;grid-template-rows:1.52fr 1fr;gap:14px}
+.dshot{position:relative;margin:0;overflow:hidden;border-radius:16px;background:var(--forest2)}
+.dshot img{width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform 1s cubic-bezier(.22,.61,.36,1)}
+.dsec:hover .dshot img{transform:scale(1.04)}
+@media(prefers-reduced-motion:reduce){.dshot img{transition:none}.dsec:hover .dshot img{transform:none}}
+.dshot figcaption{position:absolute;left:14px;bottom:14px;right:14px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.11em;text-transform:uppercase;
+  color:rgba(244,239,232,.9);background:rgba(23,58,51,.9);border:1px solid rgba(240,180,138,.4);
+  border-radius:8px;padding:8px 11px;line-height:1.5}
+.dshot figcaption b{color:#f0b48a;font-weight:500}
+@media(max-width:1000px){
+  .dpiccol{position:static;min-height:0}
+  .dpic{position:static;grid-template-rows:auto auto}
+  .dshot img{aspect-ratio:16/9;height:auto}
+}
+
+/* commercial sits on forest */
+.dsec-dark{background:var(--forest);color:#f4efe8}
+.dsec-dark .h2{color:#fff}
+.dsec-dark .h2 em{color:var(--clay2)}
+.dsec-dark .eyebrow{color:var(--clay2)}
+.dsec-dark .lede{color:rgba(244,239,232,.84)}
+.dsec-dark .dicon{color:var(--clay2);background:rgba(240,180,138,.1);border-color:rgba(240,180,138,.42)}
+.dsec-dark .dlist a{color:rgba(244,239,232,.86);border-bottom-color:rgba(244,239,232,.18)}
+.dsec-dark .dlist a::after{border-right-color:var(--clay2);border-top-color:var(--clay2)}
+.dsec-dark .dlist a:hover{color:#fff}
+.dsec-dark .dlic{color:rgba(244,239,232,.74)}
+.dsec-dark .dlic b{color:var(--clay2)}
+.dsec-dark .dshot{background:var(--forest3)}
+
 .typebox{margin-top:20px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px 30px}
 .typebox h4{font-family:var(--mono);font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin:0 0 16px;font-weight:500}
 .chips{display:flex;flex-wrap:wrap;gap:10px}
@@ -1272,21 +1294,19 @@ body.navopen{overflow:hidden}
   </div>
 </section>
 
-<section class="sec svc" id="services">
+<section class="sec dsec" id="services">
   <div class="wrap">
-    <div class="rise" data-anim>
-      <p class="eyebrow">Two crews, one company</p>
-      <h2 class="h2">Residential and Commercial Roofing Services</h2>
-    </div>
-    <div class="scards reveal" data-anim>
-      <section class="scard">
-        <header class="scap">
-          <span class="scapicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 11.5 12 3.7l9.4 7.8"/><path d="M5.1 9.6v10.7h13.8V9.6"/><path d="M9.9 20.3v-5.1h4.2v5.1"/></svg></span>
-          <h3>Residential <em>Roofing</em></h3>
-          <span class="scapn"><b>10</b><i>services</i></span>
-          <p class="scaparea">Orleans &middot; Jefferson &middot; St. Tammany</p>
-        </header>
-        <ul>
+    <div class="dgrid">
+      <div class="dbody rise" data-anim>
+        <div class="dhead">
+          <span class="dicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 11.5 12 3.7l9.4 7.8"/><path d="M5.1 9.6v10.7h13.8V9.6"/><path d="M9.9 20.3v-5.1h4.2v5.1"/></svg></span>
+          <div>
+            <p class="eyebrow">Homes across three parishes</p>
+            <h2 class="h2"><em>Residential</em> Roofing in New Orleans</h2>
+          </div>
+        </div>
+        <p class="lede">One crew takes the job from the tear-off to the last ridge cap. Shingle, metal, slate and tile, on homes across Orleans, Jefferson and St. Tammany.</p>
+        <ul class="dlist">
           <li><a href="#">Roof Replacement</a></li>
           <li><a href="#">Asbestos Roof Removal</a></li>
           <li><a href="#">Roof Repair</a></li>
@@ -1298,16 +1318,39 @@ body.navopen{overflow:hidden}
           <li><a href="#">Hail Damage Roof Repair</a></li>
           <li><a href="#">Siding Installation</a></li>
         </ul>
-        <p class="sclic">Louisiana Residential License <b>#890459</b></p>
-      </section>
-      <section class="scard">
-        <header class="scap">
-          <span class="scapicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 20.7h18.8"/><path d="M5.9 20.7V7.4h12.2v13.3"/><path d="M4.7 7.4h14.6"/><path d="M13.6 7.4V5.1h3.4v2.3"/><path d="M8.6 5.9v1.5"/><path d="M8.4 10.9h2.1M13.5 10.9h2.1M8.4 14.2h2.1M13.5 14.2h2.1M8.4 17.5h2.1M13.5 17.5h2.1"/></svg></span>
-          <h3>Commercial <em>Roofing</em></h3>
-          <span class="scapn"><b>10</b><i>services</i></span>
-          <p class="scaparea">Property managers &middot; Retail &middot; Multi-unit</p>
-        </header>
-        <ul>
+        <div class="dfoot">
+          <a class="btn1" href="#estimate">Get a free estimate</a>
+          <span class="dlic">Louisiana Residential License <b>#890459</b></span>
+        </div>
+      </div>
+      <div class="dpiccol reveal" data-anim>
+        <div class="dpic">
+          <figure class="dshot">
+            <img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/House-with-white-fascia-board.jpg" alt="Fascia board and roof edge on a house" loading="lazy">
+            <figcaption><b>14 towns</b> across three parishes</figcaption>
+          </figure>
+          <figure class="dshot">
+            <img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Close-up-photo-of-Professional-and-qualified-roofer-in-protective.jpg" alt="Roofer in protective gear working on a roof" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="roofline" aria-hidden="true"><svg viewBox="0 0 1440 52" preserveAspectRatio="none"><path d="M0,52 L720,8 L1440,52 L1440,52 L0,52 Z" fill="#1f4d43"/><path d="M0,52 L720,8 L1440,52" fill="none" stroke="rgba(240,180,138,.55)" stroke-width="2" vector-effect="non-scaling-stroke"/></svg></div>
+<section class="sec dsec dsec-dark dsec-mirror">
+  <div class="wrap">
+    <div class="dgrid">
+      <div class="dbody rise" data-anim>
+        <div class="dhead">
+          <span class="dicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 20.7h18.8"/><path d="M5.9 20.7V7.4h12.2v13.3"/><path d="M4.7 7.4h14.6"/><path d="M13.6 7.4V5.1h3.4v2.3"/><path d="M8.6 5.9v1.5"/><path d="M8.4 10.9h2.1M13.5 10.9h2.1M8.4 14.2h2.1M13.5 14.2h2.1M8.4 17.5h2.1M13.5 17.5h2.1"/></svg></span>
+          <div>
+            <p class="eyebrow">Low-slope and flat decks</p>
+            <h2 class="h2"><em>Commercial</em> Roofing in New Orleans</h2>
+          </div>
+        </div>
+        <p class="lede">A low-slope deck needs different work from a house. We inspect, coat, patch and replace on retail, warehouse and multi-unit buildings, and work around the hours your tenants keep.</p>
+        <ul class="dlist">
           <li><a href="#">Roof Replacement</a></li>
           <li><a href="#">Roof Inspection</a></li>
           <li><a href="#">Roof Repairs</a></li>
@@ -1319,10 +1362,29 @@ body.navopen{overflow:hidden}
           <li><a href="#">Elastomeric Coatings</a></li>
           <li><a href="#">Roof Insulation</a></li>
         </ul>
-        <p class="sclic">Louisiana Commercial License <b>#3667</b></p>
-      </section>
+        <div class="dfoot">
+          <a class="btn1" href="#estimate">Get a commercial estimate</a>
+          <span class="dlic">Louisiana Commercial License <b>#3667</b></span>
+        </div>
+      </div>
+      <div class="dpiccol reveal" data-anim>
+        <div class="dpic">
+          <figure class="dshot">
+            <img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/10/Commercial-siding.jpg" alt="Siding and roof edge on a commercial building" loading="lazy">
+            <figcaption><b>Low-slope</b> decks and flat roofs</figcaption>
+          </figure>
+          <figure class="dshot">
+            <img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/commercial-roof-ventilation.jpg" alt="Rooftop ventilation units on a commercial building" loading="lazy">
+          </figure>
+        </div>
+      </div>
     </div>
-    <div class="rise" data-anim style="margin-top:56px">
+  </div>
+</section>
+
+<section class="sec svc" id="roofing-types">
+  <div class="wrap">
+    <div class="rise" data-anim>
       <p class="eyebrow">Pick the roof that suits the block</p>
       <h2 class="h2">Roofing Types We Install in New Orleans</h2>
     </div>
