@@ -378,26 +378,69 @@ h1 em{font-style:italic;color:var(--clay2)}
 .svcband{background:var(--forest2);color:#f4efe8;padding:40px 0;text-align:center}
 .svcband h3{font-size:clamp(22px,2.9vw,32px);color:#fff;margin-bottom:8px}
 .svcband p{margin:0 auto;max-width:60ch;color:rgba(244,239,232,.78);font-size:16.5px}
-.svcrows{display:grid;gap:26px;margin-top:40px}
-.svcrow{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .35s,box-shadow .35s}
-.svcrow:hover{transform:translateY(-4px);box-shadow:0 26px 56px -30px rgba(32,48,44,.55)}
-@media(max-width:820px){.svcrow{grid-template-columns:1fr}}
-.svcrow .pic{min-height:300px;overflow:hidden;position:relative}
-.svcrow .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.22,.61,.36,1)}
-.svcrow:hover .pic img{transform:scale(1.05)}
-@media(max-width:820px){.svcrow .pic{min-height:220px}}
-.svcrow .body{padding:38px 40px;display:flex;flex-direction:column;justify-content:center}
-@media(max-width:560px){.svcrow .body{padding:28px 24px}}
-.svcrow .tag{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);margin-bottom:12px}
-.svcrow h4{font-size:clamp(22px,2.6vw,30px);margin-bottom:12px;line-height:1.2}
-.svcrow h4 em{font-style:italic;color:var(--clay)}
-.svcrow p{margin:0 0 18px;font-size:16px;color:var(--ink2);line-height:1.66}
-.svcrow .go{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15px;color:var(--forest);min-height:46px}
-.svcrow .go svg{transition:transform .3s}
-.svcrow:hover .go svg{transform:translateX(5px)}
-/* alternate the image side */
-.svcrow:nth-child(even) .pic{order:2}
-@media(max-width:820px){.svcrow:nth-child(even) .pic{order:0}}
+/* ===== the job board =====
+   Two by two, photo over copy. Nothing here can open a hole: every photo has the
+   same aspect-ratio so a photo cannot set the height, the four bodies are written
+   to the same line count, and the CTA sits on a footer rule pushed down by
+   margin-top:auto so the four bottom edges land level regardless.
+   The photo's bottom edge is cut into shingle tabs. */
+.jobs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin-top:44px}
+@media(max-width:1200px){.jcard p{font-size:14.5px}.jbody{padding:22px 20px 18px}}
+@media(max-width:1120px){.jobs{grid-template-columns:1fr;gap:22px}}
+
+.jcard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
+  border-radius:var(--r);overflow:hidden;transition:transform .35s,box-shadow .35s}
+.jcard:hover{transform:translateY(-5px);box-shadow:0 26px 56px -30px rgba(32,48,44,.5)}
+@media(prefers-reduced-motion:reduce){.jcard{transition:none}.jcard:hover{transform:none}}
+
+.jpic{position:relative;aspect-ratio:16/8;overflow:hidden;background:var(--forest2)}
+@media(max-width:1120px){.jpic{aspect-ratio:3/1}}
+@media(max-width:620px){.jpic{aspect-ratio:3/2}}
+.jpic img{width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform 1s cubic-bezier(.22,.61,.36,1)}
+.jcard:hover .jpic img{transform:scale(1.05)}
+@media(prefers-reduced-motion:reduce){.jpic img{transition:none}.jcard:hover .jpic img{transform:none}}
+
+.jbadge{position:absolute;top:14px;left:14px;z-index:2;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;
+  color:#f0b48a;background:rgba(23,58,51,.94);padding:6px 11px;border-radius:5px;
+  border:1px solid rgba(240,180,138,.42)}
+.jbadge i{font-style:normal;color:rgba(240,180,138,.5);padding:0 2px}
+/* the shingle course that closes the photo off. A course seen from below is a
+   straight butt line with thin keyways cut up between the tabs; both are drawn
+   in fixed pixels so the tab pitch is the same on every card at every width. */
+.jshingle{position:absolute;left:0;right:0;bottom:-1px;z-index:2;display:block;height:14px;
+  background:
+    repeating-linear-gradient(90deg,#fff 0 3px,transparent 3px 44px),
+    linear-gradient(#fff,#fff);
+  background-size:100% 100%,100% 8px;
+  background-position:0 0,0 100%;
+  background-repeat:repeat-x,no-repeat}
+
+.jbody{flex:1;display:flex;flex-direction:column;padding:24px 26px 20px}
+@media(max-width:560px){.jbody{padding:22px 22px 18px}}
+.jcard h4{font-size:clamp(21px,2.1vw,26px);margin:0 0 10px;line-height:1.22;text-wrap:balance}
+.jcard h4 em{font-style:italic;color:var(--clay)}
+.jcard p{margin:0 0 auto;font-size:15.5px;color:var(--ink2);line-height:1.62;text-wrap:pretty}
+
+/* a fixed two-by-two, so the spec block is the same height in all four cards */
+.jspec{list-style:none;margin:18px 0 0;padding:15px 0 0;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px}
+@media(max-width:420px){.jspec{grid-template-columns:1fr;gap:7px}}
+.jspec li{position:relative;padding-left:14px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);line-height:1.5}
+/* a gable, not a dot */
+.jspec li::before{content:"";position:absolute;left:0;top:.34em;width:8px;height:7px;
+  background:var(--clay);clip-path:polygon(0 100%,50% 0,100% 100%)}
+
+.jgo{margin-top:auto;display:flex;align-items:center;gap:9px;
+  padding:16px 26px;border-top:1px solid var(--line);
+  font-weight:700;font-size:15px;color:var(--forest);transition:background .3s}
+@media(max-width:560px){.jgo{padding:15px 22px}}
+.jgo svg{transition:transform .3s}
+.jcard:hover .jgo{background:var(--cream)}
+.jcard:hover .jgo svg{transform:translateX(5px)}
+@media(prefers-reduced-motion:reduce){.jgo,.jgo svg{transition:none}.jcard:hover .jgo svg{transform:none}}
 
 /* =========================================================
    PHOTO-BACKED DARK SECTION
@@ -511,7 +554,7 @@ p,.lede,.hsub{text-wrap:pretty}
 
 /* --- heading line control (from Cynthia's mark-ups) --- */
 h1 .hl{display:block}
-.svcrow h4 em{white-space:nowrap}
+.jcard h4 em{white-space:nowrap}
 
 /* ===== dead-space fixes (team review, September 2026) ===== */
 .costgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
@@ -1117,42 +1160,58 @@ body.navopen{overflow:hidden}
 </div>
 <section class="sec">
   <div class="wrap">
-    <div class="svcrows">
-      <article class="svcrow rise" data-anim>
-        <div class="pic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/asphalt-roof.jpg" alt="Finished shingle roof on a house" loading="lazy"></div>
-        <div class="body">
-          <div class="tag">RESIDENTIAL &middot; MOST REQUESTED</div>
-          <h4>Roof <em>Replacement</em> in New Orleans</h4>
-          <p>Full tear-off, decking inspection, dry-in and finish. Shingle, metal, slate or tile. Once payment is received the project is completed within 24 hours, and it is covered for 15 years against any wind speed.</p>
-          <a class="go" href="#estimate">Get a free estimate <svg width="17" height="12" viewBox="0 0 17 12" fill="none"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <div class="jobs">
+      <article class="jcard rise" data-anim>
+        <div class="jpic">
+          <img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/asphalt-roof.jpg" alt="Finished shingle roof on a New Orleans house" loading="lazy">
+          <span class="jbadge">Residential <i>&middot;</i> Most requested</span>
+          <span class="jshingle" aria-hidden="true"></span>
         </div>
+        <div class="jbody">
+          <h4>Roof <em>Replacement</em></h4>
+          <p>Full tear-off down to the decking, then dry-in and finish in shingle, metal, slate or tile. Completed within 24 hours of payment and covered 15 years against any wind speed.</p>
+          <ul class="jspec"><li>Tear-off</li><li>Decking inspection</li><li>Dry-in</li><li>Ridge ventilation</li></ul>
+        </div>
+        <a class="jgo" href="#estimate">Get a free estimate <svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </article>
-      <article class="svcrow rise" data-anim>
-        <div class="pic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Damaged-roof-tiles-with-Hail.jpg" alt="Hail damage on roof tiles" loading="lazy"></div>
-        <div class="body">
-          <div class="tag">RESIDENTIAL &middot; STORM SEASON</div>
-          <h4>Storm and <em>Hail Damage</em> Roof Repair</h4>
-          <p>Hurricane season runs June 1 to November 30. We survey the roof, document what the storm actually did, and go up with your insurance adjuster so the damage is on the record before anyone decides what gets paid for.</p>
-          <a class="go" href="#claims">See how claims work <svg width="17" height="12" viewBox="0 0 17 12" fill="none"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <article class="jcard rise" data-anim>
+        <div class="jpic">
+          <img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Damaged-roof-tiles-with-Hail.jpg" alt="Hail damage on roof tiles" loading="lazy">
+          <span class="jbadge">Residential <i>&middot;</i> Storm season</span>
+          <span class="jshingle" aria-hidden="true"></span>
         </div>
+        <div class="jbody">
+          <h4><em>Storm Damage</em> Repair</h4>
+          <p>Hurricane season runs June 1 to November 30. We survey the roof, document what the storm did, and go up with your adjuster so the damage is on the record before anyone decides.</p>
+          <ul class="jspec"><li>Storm survey</li><li>Hail strike count</li><li>Adjuster meeting</li><li>Emergency tarp</li></ul>
+        </div>
+        <a class="jgo" href="#claims">See how claims work <svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </article>
-      <article class="svcrow rise" data-anim>
-        <div class="pic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Repair-leak-water-pipe-on-gypsum-ceiling-interior-office.jpg" alt="Water damage on an interior ceiling" loading="lazy"></div>
-        <div class="body">
-          <div class="tag">RESIDENTIAL &middot; BEFORE IT SPREADS</div>
-          <h4>Roof <em>Leak Detection</em> and Repair</h4>
-          <p>A stain on the ceiling is the last step of a problem that started somewhere else. We find where the water is actually getting in, show you, and price the repair before we touch anything.</p>
-          <a class="go" href="#estimate">Book a free inspection <svg width="17" height="12" viewBox="0 0 17 12" fill="none"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <article class="jcard rise" data-anim>
+        <div class="jpic">
+          <img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Repair-leak-water-pipe-on-gypsum-ceiling-interior-office.jpg" alt="Water staining on an interior ceiling" loading="lazy">
+          <span class="jbadge">Residential <i>&middot;</i> Leaks and flashing</span>
+          <span class="jshingle" aria-hidden="true"></span>
         </div>
+        <div class="jbody">
+          <h4>Roof <em>Leak Detection</em></h4>
+          <p>A stain on the ceiling is the last step of a problem that started somewhere else. We find where the water is getting in, show you the source, and price the repair before we start.</p>
+          <ul class="jspec"><li>Leak trace</li><li>Flashing check</li><li>Attic inspection</li><li>Written quote</li></ul>
+        </div>
+        <a class="jgo" href="#estimate">Book a free inspection <svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </article>
-      <article class="svcrow rise" data-anim>
-        <div class="pic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/flat-roofing-service.jpg" alt="Large commercial flat roof" loading="lazy"></div>
-        <div class="body">
-          <div class="tag">COMMERCIAL &middot; PROPERTY MANAGERS</div>
-          <h4>Commercial Roofing and <em>Re-Roofing</em></h4>
-          <p>Elastomeric coatings, roof coating, rooftop unit work, siding and full replacement for retail, warehouse and multi-unit buildings. Commercial License #3667.</p>
-          <a class="go" href="tel:5042267070">Talk to an expert <svg width="17" height="12" viewBox="0 0 17 12" fill="none"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <article class="jcard rise" data-anim>
+        <div class="jpic">
+          <img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/flat-roofing-service.jpg" alt="Large commercial flat roof" loading="lazy">
+          <span class="jbadge">Commercial <i>&middot;</i> Property managers</span>
+          <span class="jshingle" aria-hidden="true"></span>
         </div>
+        <div class="jbody">
+          <h4>Commercial <em>Re-Roofing</em></h4>
+          <p>Elastomeric coatings, rooftop unit work, siding and full replacement for retail, warehouse and multi-unit buildings, scheduled around the hours your tenants and customers keep.</p>
+          <ul class="jspec"><li>Roof coating</li><li>Single ply</li><li>Built-up</li><li>Re-roofing</li></ul>
+        </div>
+        <a class="jgo" href="tel:5042267070">Talk to an expert <svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </article>
     </div>
   </div>
