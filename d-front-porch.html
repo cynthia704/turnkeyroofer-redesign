@@ -138,14 +138,28 @@ h1 em{font-style:italic;color:var(--clay2)}
 .heroshade{background:
   linear-gradient(90deg, rgba(23,58,51,.93) 0%, rgba(23,58,51,.88) 42%, rgba(23,58,51,.80) 72%, rgba(23,58,51,.74) 100%),
   linear-gradient(180deg, rgba(23,58,51,.55) 0%, rgba(23,58,51,.12) 32%, rgba(23,58,51,.58) 100%)}
-/* centered heading hero. One column, centered over the photo, the same treatment
-   as bigeasypaverpatios.com. The three blocks simply stack. */
-.hgrid{display:grid;grid-template-columns:minmax(0,780px);justify-content:center;
-       align-items:center;gap:0;padding:88px 0 104px}
-/* the three blocks are only wrappers now. Let each element's own margin set the
-   rhythm, exactly as it did before the hero was split for the form. */
-.hlede,.hbot{margin-top:0}
-@media(max-width:980px){.hgrid{grid-template-columns:1fr;padding:58px 0 78px}}
+/* Text left, form right, and the two columns are the SAME HEIGHT by construction.
+   The form is never given a height of its own: the grid stretches it to whatever
+   the text column measures, and the fields scroll inside that. No dead space at
+   any width, and no magic numbers to go stale. */
+.hgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,470px);
+       grid-template-rows:auto auto 1fr;gap:0 54px;align-items:start;padding:74px 0 86px}
+.htop{grid-column:1;grid-row:1}
+.hlede{grid-column:1;grid-row:2;margin-top:0}
+.hbot{grid-column:1;grid-row:3;margin-top:0}
+.heroformcol{grid-column:2;grid-row:1 / 4;align-self:stretch;position:relative;min-height:0}  /* align-self:stretch is what gives this box the height of its grid area.
+     The grid sets align-items:start, so without it the box collapses to the
+     height of its content, and its only child is absolutely positioned. */
+/* The card is taken out of flow so it cannot push the grid rows taller than the
+   text beside it. A spanning grid item DOES contribute to row sizing, which is
+   what made the first attempt at this leave a 353px gap under the text. */
+.heroform{position:absolute;inset:0}
+@media(max-width:980px){
+  .hgrid{display:flex;flex-direction:column;gap:26px;padding:52px 0 74px}
+  .htop{order:1}.heroformcol{order:2}.hlede{order:3}.hbot{order:4}
+  .heroformcol{position:static}
+  .heroform{position:static}
+}
 .herodots button[aria-current="true"]{background:var(--clay)}
 /* the stat belt lifts out of the hero into its own light band */
 .beltsec{background:var(--cream)}
@@ -497,8 +511,7 @@ h1 em{font-style:italic;color:var(--clay2)}
 .hero>.wrap{width:100%}
 
 /* D hero text sits on the photo now, not inside the old green card */
-.hero h1{color:#fff;font-size:clamp(31px,4.15vw,60px)}
-.hero .hsub{max-width:64ch}
+.hero h1{color:#fff}
 .hero .hsub{color:rgba(244,239,232,.9)}
 .hero .checks li{color:rgba(244,239,232,.88)}
 .hero .checks b{color:#fff}
@@ -691,6 +704,42 @@ body.navopen{overflow:hidden}
 .pitch svg{flex:none}
 @media(prefers-reduced-motion:reduce){.asmsvg .lyr{transition:none}}
 
+
+/* ===== hero lead form =====
+   Height comes from the grid, not from a viewport calculation, so the card always
+   ends level with the text beside it. Header and submit stay put; only the fields
+   scroll, so the call to action is never scrolled out of reach. */
+.heroform{background:var(--cream);border-radius:var(--r);padding:0;overflow:hidden;
+  box-shadow:0 30px 70px -30px rgba(12,28,24,.8);border:1px solid rgba(255,255,255,.16);
+  display:flex;flex-direction:column;min-height:0}
+.heroform .fhead{flex:none;padding:20px 24px 14px;border-bottom:1px solid var(--line)}
+.heroform .ftitle{font-size:21px;margin:0 0 5px;padding-bottom:0;border-bottom:0}
+.heroform .fkicker{margin:0;font-size:13.5px;line-height:1.5;color:var(--ink2)}
+.heroform .fbody{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;
+  padding:16px 24px 10px;scrollbar-width:thin;scrollbar-color:rgba(31,77,67,.34) transparent}
+.heroform .fbody::-webkit-scrollbar{width:8px}
+.heroform .fbody::-webkit-scrollbar-thumb{background:rgba(31,77,67,.3);border-radius:8px}
+.heroform .fbody::-webkit-scrollbar-thumb:hover{background:rgba(31,77,67,.5)}
+.heroform .fbody:focus-visible{outline:2px solid var(--forest);outline-offset:-2px}
+.heroform .ffoot{flex:none;padding:13px 24px 17px;border-top:1px solid var(--line);
+  background:var(--cream);position:relative}
+.heroform .ffoot::before{content:"";position:absolute;left:0;right:0;top:-26px;height:26px;
+  pointer-events:none;background:linear-gradient(180deg,rgba(251,247,242,0),var(--cream))}
+.heroform .frow{margin-bottom:13px}
+.heroform .frow label{font-size:11px;margin-bottom:6px}
+.heroform .frow input,.heroform .frow select{padding:14px;font-size:15px;background:#fff;min-height:48px}
+.heroform .fsubmit{padding:16px 20px;margin-top:0}
+.heroform .fmicro{margin:10px 0 0;font-size:12.5px;line-height:1.55;color:var(--ink3);text-align:center}
+.heroform .fstatus{margin:10px 0 0}
+.heroform textarea{min-height:64px}
+.heroform .fconsent{margin-bottom:4px}
+/* on a phone the page scrolls, never the card */
+@media(max-width:980px){
+  .heroform{flex:none}
+  .heroform .fbody{overflow:visible;min-height:auto}
+  .heroform .ffoot::before{display:none}
+}
+
 /* sticky mobile call bar */
 .callbar{position:fixed;left:0;right:0;bottom:0;z-index:120;display:none;gap:1px;background:rgba(0,0,0,.3);transform:translateY(100%);transition:transform .35s cubic-bezier(.22,.61,.36,1)}
 .callbar.up{transform:none}
@@ -761,7 +810,7 @@ body.navopen{overflow:hidden}
 
   <div class="wrap">
       <div class="hgrid">
-        <div class="reveal" data-anim>
+        <div class="htop reveal" data-anim>
           <p class="eyebrow">Local &amp; family-owned · New Orleans</p>
           <h1><span class="hl">New Orleans <em>Roofing Company</em></span> <span class="hl">Roof Replaced in 24 Hours</span></h1>
         </div>
@@ -781,6 +830,106 @@ body.navopen{overflow:hidden}
             <a class="btn2" href="#estimate">Book a free roof inspection</a>
           </div>
           <div class="lic" style="margin-top:24px"><span>RESIDENTIAL #890459</span><span>COMMERCIAL #3667</span></div>
+        </div>
+
+        <div class="heroformcol rise" data-anim style="transition-delay:.10s">
+          <form class="fform heroform" id="heroform" novalidate>
+            <div class="fhead">
+              <h3 class="ftitle">Get a Free Roof Estimate</h3>
+              <p class="fkicker">Tell us where the roof is. We call you back to set a time that suits you.</p>
+            </div>
+
+            <div class="fbody" tabindex="0">
+              <div class="frow">
+                <label for="h-name">Full name <span class="req">*</span></label>
+                <input id="h-name" name="full_name" type="text" autocomplete="name" placeholder="First and last name" required>
+              </div>
+              <div class="frow2">
+                <div class="frow">
+                  <label for="h-phone">Phone <span class="req">*</span></label>
+                  <input id="h-phone" name="phone" type="tel" autocomplete="tel" placeholder="(504) 000-0000" required>
+                </div>
+                <div class="frow">
+                  <label for="h-email">Email <span class="req">*</span></label>
+                  <input id="h-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                </div>
+              </div>
+              <div class="frow">
+                <label for="h-service">Service type <span class="req">*</span></label>
+                <select id="h-service" name="service_type" required>
+                  <option value="">Choose one</option>
+                  <option>Residential</option>
+                  <option>Commercial</option>
+                </select>
+              </div>
+              <div class="frow svc-resi" hidden>
+                <label for="h-resi">Residential service</label>
+                <select id="h-resi" name="residential_service">
+                  <option value="">Choose one</option>
+                <option>Asbestos Roof Removal</option>
+                <option>Hail Damage Roof Repair</option>
+                <option>Metal Roofing</option>
+                <option>Metal Standing Seam Roofing</option>
+                <option>Roof Leak Detection</option>
+                <option>Roofing Insulation</option>
+                <option>Shingle Roofing</option>
+                <option>Soffit Installation</option>
+                <option>Tile Roofing</option>
+                </select>
+              </div>
+              <div class="frow svc-comm" hidden>
+                <label for="h-comm">Commercial services</label>
+                <select id="h-comm" name="commercial_services">
+                  <option value="">Choose one</option>
+                <option>Hail Damage Roof</option>
+                <option>Roof Inspection</option>
+                <option>Roof Repairs</option>
+                <option>Roof Leak Detection</option>
+                <option>Roof Replacement</option>
+                <option>Roof Ventilation</option>
+                <option>Roofing Insulation</option>
+                <option>Shingle Roofing</option>
+                <option>Siding Installation</option>
+                <option>Slate Roofing</option>
+                </select>
+              </div>
+              <div class="frow">
+                <label for="h-address">Property address</label>
+                <input id="h-address" name="address" type="text" autocomplete="street-address" placeholder="Start typing the address">
+              </div>
+              <div class="frow3">
+                <div class="frow">
+                  <label for="h-city">City</label>
+                  <input id="h-city" name="city" type="text" autocomplete="address-level2" placeholder="Metairie">
+                </div>
+                <div class="frow">
+                  <label for="h-state">State</label>
+                  <input id="h-state" name="state" type="text" autocomplete="address-level1" placeholder="LA">
+                </div>
+                <div class="frow">
+                  <label for="h-zip">ZIP</label>
+                  <input id="h-zip" name="postal_code" type="text" autocomplete="postal-code" placeholder="70003">
+                </div>
+              </div>
+              <div class="frow">
+                <label for="h-msg">Message</label>
+                <textarea id="h-msg" name="message" rows="2" placeholder="Stain on the ceiling, missing shingles after the storm..."></textarea>
+              </div>
+              <div class="frow">
+                <label for="h-file">Photos or video <span class="opt">optional</span></label>
+                <input id="h-file" name="upload" type="file" accept="image/*,video/*" multiple>
+              </div>
+              <label class="fcheck"><input type="checkbox" name="terms_and_conditions" required><span>I agree to the terms and conditions. <span class="req">*</span></span></label>
+              <label class="fcheck"><input type="checkbox" name="sms_optin"><span>Opt in to receive SMS notifications, alerts and occasional marketing communication.</span></label>
+              <p class="fconsent">By submitting this form, I consent to receive calls, including automated calls using AI-generated voice technology, from TurnKey Roofer at the phone number provided above. Consent is not required as a condition of receiving a quote or service. I can revoke consent at any time.</p>
+            </div>
+
+            <div class="ffoot">
+              <button class="fsubmit" type="submit">Get my free estimate</button>
+              <p class="fstatus" role="status" aria-live="polite"></p>
+              <p class="fmicro">Free estimate. No obligation to book the work.</p>
+            </div>
+          </form>
         </div>
       </div>
   </div>
@@ -1547,6 +1696,17 @@ body.navopen{overflow:hidden}
     });
     /* start on the layer people recognise, and never leave the drawing blank */
     select(4);
+  })();
+
+
+  /* a validation failure inside a scrolling field area must be brought into view */
+  (function(){
+    var form = document.getElementById('heroform');
+    if(!form) return;
+    form.addEventListener('submit', function(){
+      var bad = form.querySelector('[required]:invalid, .finvalid');
+      if(bad && bad.scrollIntoView) bad.scrollIntoView({block:'center'});
+    }, true);
   })();
 
   /* testimonial slider */
