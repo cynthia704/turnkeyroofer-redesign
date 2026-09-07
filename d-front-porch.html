@@ -180,6 +180,26 @@ h1 em{font-style:italic;color:var(--clay2)}
 
 /* services */
 .svc{background:var(--cream2)}
+/* ===== section divider =====
+   Between two sections on the same cream a filled roofline reads as nothing, so
+   this is line art instead: a hairline fading out at both ends with a king post
+   truss on it -- rafters at the 6:12 pitch the hero uses, a bottom chord with the
+   eaves running past it, a king post and two struts. The truss is a fixed size
+   and only the rules stretch, so the pitch holds at any width. */
+.secdiv{display:flex;align-items:flex-end;gap:26px;max-width:1200px;
+  margin:-18px auto -20px;padding:0 32px;color:var(--clay)}
+@media(max-width:760px){.secdiv{gap:16px;padding:0 20px;margin:-14px auto -16px}}
+/* 8px is where the truss bottom chord sits in a 48px box, so the rule
+   continues the chord rather than cutting across the eaves */
+.secdivrule{flex:1 1 0;min-width:0;height:1px;margin-bottom:8px}
+.secdivrule:first-child{background:linear-gradient(90deg,transparent,rgba(32,48,44,.06) 34%,rgba(32,48,44,.2))}
+.secdivrule:last-child{background:linear-gradient(270deg,transparent,rgba(32,48,44,.06) 34%,rgba(32,48,44,.2))}
+.secdivmark{flex:none;display:block}
+@media(max-width:480px){.secdivmark{width:104px;height:38px}.secdivrule{margin-bottom:6px}}
+.sdmain{stroke-width:1.7}
+.sdweb{stroke-width:1.15;opacity:.42}
+.sdcap{stroke-width:3}
+
 /* ===== the two divisions, one section each =====
    Side by side neither had room to be more than a list. Each now owns a section:
    copy on one side, a two-photo composition on the other, mirrored and on forest
@@ -1294,6 +1314,16 @@ body.navopen{overflow:hidden}
   </div>
 </section>
 
+<div class="secdiv" aria-hidden="true">
+  <span class="secdivrule"></span>
+  <svg class="secdivmark" viewBox="0 0 132 48" width="132" height="48" fill="none"
+       stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path class="sdweb" d="M66 40 40 27M66 40 92 27M66 40V14"/>
+    <path class="sdmain" d="M8 43 66 14l58 29M14 40h104"/>
+    <path class="sdcap" d="M59.5 10.5h13"/>
+  </svg>
+  <span class="secdivrule"></span>
+</div>
 <section class="sec dsec" id="services">
   <div class="wrap">
     <div class="dgrid">
