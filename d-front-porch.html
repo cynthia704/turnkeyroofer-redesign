@@ -733,33 +733,32 @@ body.navopen{overflow:hidden}
 }
 
 
-/* ===== hero spec plate =====
-   Laid out the way a shingle bundle or a warranty certificate is labelled:
-   a small mono caption over a hard value. The bottom edge is cut into shingle
-   tabs, which is the one shape nobody outside roofing uses. */
+/* ===== hero spec sheet =====
+   Label left, value right, one line per row. A row is exactly as tall as its line,
+   so there is nowhere for dead space to appear. The bottom edge stays cut into
+   shingle tabs, which is the one shape nobody outside roofing uses. */
 .plate{position:relative;margin:28px 0 0;background:rgba(12,28,24,.42);
   border:1px solid rgba(244,239,232,.22);border-bottom:0;border-radius:14px 14px 0 0;
   backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
-.platerow{display:grid;grid-template-columns:repeat(3,1fr);margin:0;padding:0}
-.platecell{padding:15px 18px 16px;border-left:1px solid rgba(244,239,232,.16)}
-.platecell:first-child{border-left:0}
-.plate dt{margin:0 0 10px;font-family:var(--mono);font-size:10px;letter-spacing:.15em;
-  text-transform:uppercase;color:#f0b48a}
-.plate dd{margin:0;display:flex;flex-direction:column;gap:1px}
-.plate dd.second{margin-top:9px;padding-top:9px;border-top:1px solid rgba(244,239,232,.13)}
-.plate dd b{font-family:var(--disp);font-size:17px;font-weight:700;line-height:1.15;color:#fff}
-.plate dd span{font-size:12.5px;line-height:1.45;color:rgba(244,239,232,.82)}
+.spec{margin:0;padding:3px 20px 5px}
+.specrow{display:grid;grid-template-columns:118px minmax(0,1fr);gap:16px;align-items:baseline;
+  padding:12px 0;border-top:1px solid rgba(244,239,232,.14)}
+.specrow:first-child{border-top:0}
+.spec dt{margin:0;font-family:var(--mono);font-size:10px;letter-spacing:.15em;
+  text-transform:uppercase;color:#f0b48a;white-space:nowrap}
+.spec dd{margin:0;font-size:14.5px;line-height:1.45;color:rgba(244,239,232,.86);text-wrap:pretty}
+.spec dd b{font-family:var(--disp);font-weight:700;font-size:16px;color:#fff}
+.spec dd i{font-style:normal;color:rgba(244,239,232,.42);padding:0 3px}
 .plateedge{display:block;width:100%;height:12px;fill:rgba(12,28,24,.42);
   filter:drop-shadow(0 1px 0 rgba(244,239,232,.22))}
+/* below this the two-column row squeezes the value enough to wrap, so the label
+   moves above it and the value gets the full width. One line per row, always. */
 @media(max-width:1180px){
-  .platerow{grid-template-columns:1fr 1fr}
-  .platecell:nth-child(3){grid-column:1 / -1;border-left:0;border-top:1px solid rgba(244,239,232,.16)}
+  .specrow{grid-template-columns:1fr;gap:5px;padding:11px 0}
 }
-@media(max-width:560px){
-  .platerow{grid-template-columns:1fr}
-  .platecell{border-left:0;border-top:1px solid rgba(244,239,232,.16)}
-  .platecell:first-child{border-top:0}
-  .platecell:nth-child(3){grid-column:auto}
+@media(max-width:620px){
+  .spec{padding:3px 16px 5px}
+  .spec dd{font-size:14px}
 }
 
 /* the answer capsule reads as a note on a drawing rather than a wall of text */
@@ -783,19 +782,6 @@ body.navopen{overflow:hidden}
   mask-image:linear-gradient(180deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.25) 62%,rgba(0,0,0,0) 100%)}
 
 .gable{display:block;margin:0 0 14px}
-
-/* the drawing annotation that replaced the repeated licence line */
-.pitchnote{display:flex;align-items:center;gap:12px;margin-top:26px;flex-wrap:wrap}
-.pitchnote svg{flex:none}
-.pitchnote b{font-family:var(--mono);font-size:14px;letter-spacing:.06em;color:#f0b48a;font-weight:500}
-.pitchrule{flex:0 0 46px;height:1px;background:linear-gradient(90deg,rgba(240,180,138,.7),rgba(240,180,138,.1))}
-.pitchnote span:last-child{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;
-  text-transform:uppercase;color:rgba(244,239,232,.72);line-height:1.5;min-width:0;flex:1 1 240px}
-@media(max-width:560px){
-  .pitchnote{gap:9px}
-  .pitchrule{display:none}
-  .pitchnote span:last-child{flex:1 1 100%;font-size:11px}
-}
 
 /* sticky mobile call bar */
 .callbar{position:fixed;left:0;right:0;bottom:0;z-index:120;display:none;gap:1px;background:rgba(0,0,0,.3);transform:translateY(100%);transition:transform .35s cubic-bezier(.22,.61,.36,1)}
@@ -883,22 +869,18 @@ body.navopen{overflow:hidden}
 
         <div class="hbot reveal" data-anim style="transition-delay:.18s">
           <div class="plate">
-            <dl class="platerow">
-              <div class="platecell">
+            <dl class="spec">
+              <div class="specrow">
                 <dt>Licensed</dt>
-                <dd><b>#890459</b><span>Residential</span></dd>
-                <dd class="second"><b>#3667</b><span>Commercial</span></dd>
+                <dd><b>#890459</b> residential <i>·</i> <b>#3667</b> commercial</dd>
               </div>
-              <div class="platecell">
+              <div class="specrow">
                 <dt>Warranties</dt>
-                <dd><b>15 yr</b><span>Wind, no speed cap, named storms</span></dd>
-                <dd class="second"><b>50 yr</b><span>Product, non-prorated</span></dd>
-                <dd class="second"><b>10 yr</b><span>Workmanship on our labor</span></dd>
+                <dd><b>15 yr</b> wind <i>·</i> <b>50 yr</b> product <i>·</i> <b>10 yr</b> labor</dd>
               </div>
-              <div class="platecell">
+              <div class="specrow">
                 <dt>Service area</dt>
-                <dd><b>14 towns</b><span>New Orleans metro</span></dd>
-                <dd class="second"><b>3 parishes</b><span>Orleans, Jefferson, St. Tammany</span></dd>
+                <dd><b>14 towns</b> across <b>3 parishes</b></dd>
               </div>
             </dl>
             <svg class="plateedge" viewBox="0 0 240 12" preserveAspectRatio="none" aria-hidden="true">
@@ -908,16 +890,6 @@ body.navopen{overflow:hidden}
           <div class="cta">
             <a class="btn1" href="tel:5042267070">Call (504) 226-7070</a>
             <a class="btn2" href="#estimate">Book a free roof inspection</a>
-          </div>
-          <div class="pitchnote">
-            <svg width="34" height="18" viewBox="0 0 34 18" fill="none" aria-hidden="true">
-              <path d="M1 17h32L1 1z" fill="rgba(240,180,138,.14)"/>
-              <path d="M1 17h32L1 1z" stroke="#f0b48a" stroke-width="1.3" stroke-linejoin="round"/>
-              <path d="M1 11h6" stroke="rgba(244,239,232,.55)" stroke-width="1.1"/>
-            </svg>
-            <b>6:12</b>
-            <span class="pitchrule" aria-hidden="true"></span>
-            <span>Typical New Orleans pitch. We work 3:12 flat through 12:12 steep.</span>
           </div>
         </div>
 
