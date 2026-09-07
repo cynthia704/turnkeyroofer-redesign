@@ -143,11 +143,11 @@ h1 em{font-style:italic;color:var(--clay2)}
    the text column measures, and the fields scroll inside that. No dead space at
    any width, and no magic numbers to go stale. */
 .hgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,470px);
-       grid-template-rows:auto auto 1fr;gap:0 54px;align-items:start;padding:74px 0 86px}
+       grid-template-rows:auto auto auto;gap:0 54px;align-items:start;padding:74px 0 86px}
 .htop{grid-column:1;grid-row:1}
 .hlede{grid-column:1;grid-row:2;margin-top:0}
 .hbot{grid-column:1;grid-row:3;margin-top:0}
-.heroformcol{grid-column:2;grid-row:1 / 4;align-self:stretch;position:relative;min-height:0}  /* align-self:stretch is what gives this box the height of its grid area.
+.heroformcol{grid-column:2;grid-row:1 / -1;align-self:stretch;position:relative;min-height:0}  /* align-self:stretch is what gives this box the height of its grid area.
      The grid sets align-items:start, so without it the box collapses to the
      height of its content, and its only child is absolutely positioned. */
 /* The card is taken out of flow so it cannot push the grid rows taller than the
@@ -740,6 +740,42 @@ body.navopen{overflow:hidden}
   .heroform .ffoot::before{display:none}
 }
 
+
+/* ===== hero spec plate =====
+   Laid out the way a shingle bundle or a warranty certificate is labelled:
+   a small mono caption over a hard value. The bottom edge is cut into shingle
+   tabs, which is the one shape nobody outside roofing uses. */
+.plate{position:relative;margin:28px 0 0;background:rgba(12,28,24,.42);
+  border:1px solid rgba(244,239,232,.22);border-bottom:0;border-radius:14px 14px 0 0;
+  backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.platerow{display:grid;grid-template-columns:repeat(3,1fr);margin:0;padding:0}
+.platecell{padding:15px 18px 16px;border-left:1px solid rgba(244,239,232,.16)}
+.platecell:first-child{border-left:0}
+.plate dt{margin:0 0 10px;font-family:var(--mono);font-size:10px;letter-spacing:.15em;
+  text-transform:uppercase;color:#f0b48a}
+.plate dd{margin:0;display:flex;flex-direction:column;gap:1px}
+.plate dd.second{margin-top:9px;padding-top:9px;border-top:1px solid rgba(244,239,232,.13)}
+.plate dd b{font-family:var(--disp);font-size:17px;font-weight:700;line-height:1.15;color:#fff}
+.plate dd span{font-size:12.5px;line-height:1.45;color:rgba(244,239,232,.82)}
+.plateedge{display:block;width:100%;height:12px;fill:rgba(12,28,24,.42);
+  filter:drop-shadow(0 1px 0 rgba(244,239,232,.22))}
+@media(max-width:1180px){
+  .platerow{grid-template-columns:1fr 1fr}
+  .platecell:nth-child(3){grid-column:1 / -1;border-left:0;border-top:1px solid rgba(244,239,232,.16)}
+}
+@media(max-width:560px){
+  .platerow{grid-template-columns:1fr}
+  .platecell{border-left:0;border-top:1px solid rgba(244,239,232,.16)}
+  .platecell:first-child{border-top:0}
+  .platecell:nth-child(3){grid-column:auto}
+}
+
+/* the answer capsule reads as a note on a drawing rather than a wall of text */
+.hero .hsub{position:relative;padding-left:20px;max-width:60ch}
+.hero .hsub::before{content:"";position:absolute;left:0;top:5px;bottom:5px;width:2px;
+  background:linear-gradient(180deg,var(--clay2),rgba(240,180,138,.15));border-radius:2px}
+@media(max-width:560px){.hero .hsub{padding-left:15px}}
+
 /* sticky mobile call bar */
 .callbar{position:fixed;left:0;right:0;bottom:0;z-index:120;display:none;gap:1px;background:rgba(0,0,0,.3);transform:translateY(100%);transition:transform .35s cubic-bezier(.22,.61,.36,1)}
 .callbar.up{transform:none}
@@ -820,11 +856,28 @@ body.navopen{overflow:hidden}
         </div>
 
         <div class="hbot reveal" data-anim style="transition-delay:.18s">
-          <ul class="checks">
-            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M2 8.5l4 4 8-9" stroke="#f0b48a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Licensed residential <b>#890459</b> &nbsp;+&nbsp; commercial <b>#3667</b></span></li>
-            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M2 8.5l4 4 8-9" stroke="#f0b48a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Serving <b>New Orleans and 13 more towns</b> across Southeast Louisiana</span></li>
-            <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M2 8.5l4 4 8-9" stroke="#f0b48a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Wind warranty with <b>no maximum wind speed</b>, named storms included</span></li>
-          </ul>
+          <div class="plate">
+            <dl class="platerow">
+              <div class="platecell">
+                <dt>Licensed</dt>
+                <dd><b>#890459</b><span>Residential</span></dd>
+                <dd class="second"><b>#3667</b><span>Commercial</span></dd>
+              </div>
+              <div class="platecell">
+                <dt>Wind warranty</dt>
+                <dd><b>15 yr</b><span>No maximum speed</span></dd>
+                <dd class="second"><b>Named storms</b><span>Included</span></dd>
+              </div>
+              <div class="platecell">
+                <dt>Service area</dt>
+                <dd><b>14 towns</b><span>New Orleans metro</span></dd>
+                <dd class="second"><b>3 parishes</b><span>Orleans, Jefferson, St. Tammany</span></dd>
+              </div>
+            </dl>
+            <svg class="plateedge" viewBox="0 0 240 12" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M0 0h240v4c0 0-6 8-15 8s-15-8-15-8-6 8-15 8-15-8-15-8-6 8-15 8-15-8-15-8-6 8-15 8-15-8-15-8-6 8-15 8-15-8-15-8-6 8-15 8-15-8-15-8-6 8-15 8-15-8-15-8-6 8-15 8-15-8-15-8z"/>
+            </svg>
+          </div>
           <div class="cta">
             <a class="btn1" href="tel:5042267070">Call (504) 226-7070</a>
             <a class="btn2" href="#estimate">Book a free roof inspection</a>
