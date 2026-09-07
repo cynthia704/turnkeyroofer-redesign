@@ -862,6 +862,7 @@ body.navopen{overflow:hidden}
   background:rgba(244,239,232,.1);color:#f4efe8;font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:12.5px;letter-spacing:.04em}
 .asmbtn[aria-selected="true"] .asmnum{background:var(--clay);color:#fff}
 .asmttl{display:block;font-family:var(--disp);font-size:18px;font-weight:700;color:#f4efe8;margin-bottom:3px}
+@media(max-width:420px){.asmttl{font-size:16.5px}}
 .asmsub{display:block;font-size:14.5px;line-height:1.6;color:rgba(244,239,232,.72)}
 .asmbtn[aria-selected="true"] .asmsub{color:rgba(244,239,232,.9)}
 
@@ -1615,16 +1616,17 @@ body.navopen{overflow:hidden}
       <div class="reveal" data-anim>
         <p class="eyebrow">Under the shingles</p>
         <h2 class="h2">What Is Actually on Your Roof</h2>
-        <p class="lede">A roof is six layers, not one. Most of what keeps water out of your house is
-        underneath the part you can see. Tap a layer to find out what it does.</p>
+        <p class="lede">A roof is six layers, not one, and most of what keeps water out sits under
+        the part you can see. The list runs the way the roof does, from the cap down to the deck
+        it is all nailed to. Tap a layer to see what it does.</p>
         <ul class="asmlist" role="tablist" aria-label="Roof assembly layers">
-            <li><button class="asmbtn" type="button" role="tab" data-layer="0" aria-selected="false" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">01</span><span><span class="asmttl">Roof deck</span><span class="asmsub">The plywood or OSB sheathing nailed to your rafters. Everything above it is only as sound as this is, which is why it gets inspected once the old roof is off.</span></span></button></li>
-            <li><button class="asmbtn" type="button" role="tab" data-layer="1" aria-selected="false" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">02</span><span><span class="asmttl">Ice and water shield</span><span class="asmsub">A self-adhering membrane along the eaves and in every valley. It seals around the nails driven through it, so wind-driven rain has nowhere to travel.</span></span></button></li>
-            <li><button class="asmbtn" type="button" role="tab" data-layer="2" aria-selected="false" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">03</span><span><span class="asmttl">Synthetic underlayment</span><span class="asmsub">Rolled over the whole deck as a second water barrier. It is what keeps the deck dry between tear-off and the new roof going on.</span></span></button></li>
-            <li><button class="asmbtn" type="button" role="tab" data-layer="3" aria-selected="false" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">04</span><span><span class="asmttl">Drip edge and starter course</span><span class="asmsub">Metal at the eaves and rakes, then a sealed first row of shingles. This edge is where uplift starts in a storm, so it is the row that matters most here.</span></span></button></li>
-            <li><button class="asmbtn" type="button" role="tab" data-layer="4" aria-selected="true" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">05</span><span><span class="asmttl">Field shingles</span><span class="asmsub">The courses you can see, each one overlapping the fasteners of the row below. Six nails per shingle is what a high-wind rating asks for.</span></span></button></li>
             <li><button class="asmbtn" type="button" role="tab" data-layer="5" aria-selected="false" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">06</span><span><span class="asmttl">Ridge vent and cap</span><span class="asmsub">A vented ridge lets hot attic air out and caps the peak. Without it, a Gulf Coast attic cooks the shingles from underneath.</span></span></button></li>
-        </ul>
+            <li><button class="asmbtn" type="button" role="tab" data-layer="4" aria-selected="true" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">05</span><span><span class="asmttl">Field shingles</span><span class="asmsub">The courses you can see, each one overlapping the fasteners of the row below. Six nails per shingle is what a high-wind rating asks for.</span></span></button></li>
+            <li><button class="asmbtn" type="button" role="tab" data-layer="3" aria-selected="false" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">04</span><span><span class="asmttl">Drip edge and starter course</span><span class="asmsub">Metal at the eaves and rakes, then a sealed first row of shingles. This edge is where uplift starts in a storm, so it is the row that matters most here.</span></span></button></li>
+            <li><button class="asmbtn" type="button" role="tab" data-layer="2" aria-selected="false" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">03</span><span><span class="asmttl">Synthetic underlayment</span><span class="asmsub">Rolled over the whole deck as a second water barrier. It is what keeps the deck dry between tear-off and the new roof going on.</span></span></button></li>
+            <li><button class="asmbtn" type="button" role="tab" data-layer="1" aria-selected="false" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">02</span><span><span class="asmttl">Ice and water shield</span><span class="asmsub">A self-adhering membrane along the eaves and in every valley. It seals around the nails driven through it, so wind-driven rain has nowhere to travel.</span></span></button></li>
+            <li><button class="asmbtn" type="button" role="tab" data-layer="0" aria-selected="false" aria-controls="asmfig"><span class="asmnum" aria-hidden="true">01</span><span><span class="asmttl">Roof deck</span><span class="asmsub">The plywood or OSB sheathing nailed to your rafters. Everything above it is only as sound as this is, which is why it gets inspected once the old roof is off.</span></span></button></li>
+</ul>
         <span class="pitch">
           <svg width="26" height="14" viewBox="0 0 26 14" fill="none" aria-hidden="true">
             <path d="M1 13L13 1l12 12" stroke="#f0b48a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
