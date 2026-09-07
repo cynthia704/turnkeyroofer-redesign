@@ -161,17 +161,8 @@ h1 em{font-style:italic;color:var(--clay2)}
   .heroform{position:static}
 }
 .herodots button[aria-current="true"]{background:var(--clay)}
-/* the stat belt lifts out of the hero into its own light band */
-.beltsec{background:var(--cream)}
-.beltsec .belt{margin-top:0;padding:38px 0}
+.beltsec{background:var(--cream);padding-top:34px}
 
-/* belt */
-.belt{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
-@media(max-width:900px){.belt{grid-template-columns:repeat(2,1fr)}}
-.belt div{background:#fff;border-radius:var(--r);padding:26px 22px;border:1px solid var(--line);transition:transform .3s,box-shadow .3s}
-.belt div:hover{transform:translateY(-4px);box-shadow:0 18px 40px -22px rgba(32,48,44,.5)}
-.belt b{display:block;font-family:var(--disp);font-size:35px;font-weight:600;color:var(--forest);line-height:1.15;margin-bottom:6px;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.belt p{margin:0;font-size:13.5px;line-height:1.55;color:var(--ink2)}
 .badges{display:flex;gap:30px;align-items:center;flex-wrap:wrap;margin-top:34px;padding-top:28px;border-top:1px solid var(--line)}
 .badges img{height:40px;width:auto;mix-blend-mode:multiply;opacity:.76;transition:opacity .25s,transform .25s}
 .badges img:hover{opacity:1;transform:translateY(-3px)}
@@ -864,9 +855,10 @@ body.navopen{overflow:hidden}
                 <dd class="second"><b>#3667</b><span>Commercial</span></dd>
               </div>
               <div class="platecell">
-                <dt>Wind warranty</dt>
-                <dd><b>15 yr</b><span>No maximum speed</span></dd>
-                <dd class="second"><b>Named storms</b><span>Included</span></dd>
+                <dt>Warranties</dt>
+                <dd><b>15 yr</b><span>Wind, no speed cap, named storms</span></dd>
+                <dd class="second"><b>50 yr</b><span>Product, non-prorated</span></dd>
+                <dd class="second"><b>10 yr</b><span>Workmanship on our labor</span></dd>
               </div>
               <div class="platecell">
                 <dt>Service area</dt>
@@ -989,14 +981,6 @@ body.navopen{overflow:hidden}
   <div class="herodots" id="herodots" role="group" aria-label="Hero photo"><button type="button" aria-current="true" aria-label="Show roof photo 1"></button><button type="button" aria-current="false" aria-label="Show roof photo 2"></button><button type="button" aria-current="false" aria-label="Show roof photo 3"></button><button type="button" aria-current="false" aria-label="Show roof photo 4"></button></div>
 </section>
 <section class="beltsec">
-  <div class="wrap">
-    <div class="belt reveal" data-anim>
-      <div><b><span class="count" data-to="24">0</span> hrs</b><p>Replacement finished after payment received</p></div>
-      <div><b><span class="count" data-to="15">0</span> yrs</b><p>Wind warranty, no speed cap, named storms</p></div>
-      <div><b><span class="count" data-to="50">0</span> yrs</b><p>Non-prorated product warranty</p></div>
-      <div><b><span class="count" data-to="10">0</span> yrs</b><p>Workmanship warranty on our labor</p></div>
-    </div>
-  </div>
   <div class="ticker">
     <div class="ticker-track" id="tick">
       <span class="bdg"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/04/master-elite-logo.png" alt="GAF Master Elite contractor" loading="lazy"></span>
