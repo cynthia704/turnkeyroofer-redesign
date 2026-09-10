@@ -670,6 +670,34 @@ h1 em{font-style:italic;color:var(--clay2)}
 .fpromise li>span>span{display:block;margin-top:3px;font-size:14px;line-height:1.55;
   color:rgba(244,239,232,.84);text-wrap:pretty}
 
+/* ===== the row that closes a section =====
+   A line that follows on from what the section just said, and the action on the
+   right, over a hairline. Flex, so it fills the width and cannot leave a hole;
+   stacks on a phone. Three of the six sit on forest, hence the dark modifier
+   rather than an ancestor selector. */
+.seccta{display:flex;align-items:center;justify-content:space-between;gap:20px 30px;
+  flex-wrap:wrap;margin-top:44px;padding-top:26px;border-top:1px solid var(--line)}
+.seccta p{margin:0;font-size:16.5px;line-height:1.55;color:var(--ink2);max-width:62ch;
+  text-wrap:pretty}
+.seccta .btn1{flex:none}
+.seccta-d{border-top-color:rgba(244,239,232,.2)}
+.seccta-d p{color:rgba(244,239,232,.84)}
+
+.sectalink{flex:none;display:inline-flex;align-items:center;gap:10px;font-weight:700;
+  font-size:15.5px;color:var(--forest);padding:6px 0;border-bottom:1.5px solid rgba(168,85,42,.45);
+  transition:border-color .25s,color .25s}
+.sectalink:hover{color:var(--clay);border-bottom-color:var(--clay)}
+.sectalink svg{transition:transform .3s}
+.sectalink:hover svg{transform:translateX(4px)}
+.seccta-d .sectalink{color:#fff;border-bottom-color:rgba(240,180,138,.5)}
+.seccta-d .sectalink:hover{color:var(--clay2);border-bottom-color:var(--clay2)}
+@media(prefers-reduced-motion:reduce){.sectalink,.sectalink svg{transition:none}
+  .sectalink:hover svg{transform:none}}
+@media(max-width:640px){
+  .seccta{margin-top:34px;padding-top:22px;gap:16px}
+  .seccta p{font-size:15.5px}
+}
+
 /* ===== reviews, one at a time =====
    Three white cards sliding three at a time was the page's fifth card grid.
    One review instead, set large on forest with the same pitch-line texture as
@@ -1417,6 +1445,9 @@ body.navopen{overflow:hidden}
         </div>
       </article>
     </div>
+    <div class="seccta seccta-d rise" data-anim>
+      <p>All four of those are in writing, and the estimate is free either way.</p>
+      <a class="btn1" href="#estimate">Get a free estimate</a>
     </div>
   </div>
 </section>
@@ -1600,6 +1631,10 @@ body.navopen{overflow:hidden}
       <a class="gcard" href="#"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Roof-coating.jpg" alt="Single Ply roofing in New Orleans" loading="lazy"><i>COMMERCIAL</i><b>Single Ply</b><span></span></a>
       <a class="gcard" href="#"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/Slate-roof-against-the-sky.webp" alt="Slate roofing in New Orleans" loading="lazy"><i>HISTORIC</i><b>Slate</b><span></span></a>
       <a class="gcard" href="#"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/rooftop-made-of-tile-roofing.webp" alt="Tile roofing in New Orleans" loading="lazy"><i>RES + COM</i><b>Tile</b><span></span></a>
+    </div>
+    <div class="seccta rise" data-anim>
+      <p>Not sure which of these is on your roof? The estimator will tell you.</p>
+      <a class="btn1" href="#estimate">Book a free inspection</a>
     </div>
   </div>
 </section>
@@ -1810,6 +1845,10 @@ body.navopen{overflow:hidden}
         <figcaption class="asmcap" id="asmcap">Field shingles</figcaption>
       </figure>
     </div>
+    <div class="seccta seccta-d rise" data-anim>
+      <p>Every layer above is covered for 15 years against any wind speed.</p>
+      <a class="sectalink" href="/unlimited-wind-warranty/">Read the wind warranty <svg width="16" height="12" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
   </div>
 </section>
 
@@ -1827,6 +1866,10 @@ body.navopen{overflow:hidden}
       <div class="stage"><div class="pic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Roof-damaged-to-repair.jpg" alt="Old roof stripped back to the decking" loading="lazy"></div><div class="body"><em>STAGE 01</em><h4>Strip and Inspect</h4><p>The old roof comes off and the decking underneath is exposed. This is where rot and hidden damage get found, and where you get shown before anything is covered.</p></div></div>
       <div class="stage"><div class="pic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Townhouse-roof-after-removal-of-the-old-shingles-ready-for-reroof.jpg" alt="Roof dried in with underlayment before shingles" loading="lazy"></div><div class="body"><em>STAGE 02</em><h4>Dry-In</h4><p>Underlayment goes down. This is the layer that does the work when wind lifts a shingle, and it is the reason a roof survives the next named storm.</p></div></div>
       <div class="stage"><div class="pic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/asphalt-roof.jpg" alt="Finished shingle roof" loading="lazy"></div><div class="body"><em>STAGE 03</em><h4>Finish and Clean</h4><p>Shingle, metal, slate or tile goes on. Ventilation is set to the attic. Once payment is received, the project is completed within 24 hours.</p></div></div>
+    </div>
+    <div class="seccta seccta-d rise" data-anim>
+      <p>Once payment is received, all three stages happen inside 24 hours.</p>
+      <a class="btn1" href="#estimate">Get a free estimate</a>
     </div>
   </div>
 </section>
@@ -1847,6 +1890,10 @@ body.navopen{overflow:hidden}
       <figure><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/House-with-white-fascia-board.jpg" alt="White fascia board on a house" loading="lazy"><figcaption>Fascia board</figcaption></figure>
       <figure><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Repair-leak-water-pipe-on-gypsum-ceiling-interior-office.jpg" alt="Water damage on an interior ceiling" loading="lazy"><figcaption>Leak detection</figcaption></figure>
     </div>
+    <div class="seccta rise" data-anim>
+      <p>Any of these sound like the roof you are standing under?</p>
+      <a class="sectalink" href="tel:5042267070">Call (504)&nbsp;226-7070 <svg width="16" height="12" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
   </div>
 </section>
 
@@ -1863,6 +1910,10 @@ body.navopen{overflow:hidden}
         <figure><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/commercial-roof-ventilation.jpg" alt="Rooftop ventilation units on a commercial building" loading="lazy"><figcaption>Rooftop units</figcaption></figure>
         <figure><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/10/Commercial-siding.jpg" alt="Commercial building siding" loading="lazy"><figcaption>Commercial siding</figcaption></figure>
       </div>
+    </div>
+    <div class="seccta rise" data-anim>
+      <p>Managing more than one building? The commercial crew prices them together.</p>
+      <a class="btn1" href="#estimate">Get a commercial estimate</a>
     </div>
   </div>
 </section>
