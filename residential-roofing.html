@@ -670,46 +670,6 @@ h1 em{font-style:italic;color:var(--clay2)}
 .fpromise li>span>span{display:block;margin-top:3px;font-size:14px;line-height:1.55;
   color:rgba(244,239,232,.84);text-wrap:pretty}
 
-/* ===== hub page hero =====
-   Shorter than the homepage hero: no photo cycle and no form, because the form
-   is already the last thing on the page. The spec sheet carries over unchanged. */
-.phero{background:var(--forest);color:#f4efe8;padding:34px 0 66px;
-  background-image:repeating-linear-gradient(26.57deg,rgba(244,239,232,.055) 0 1px,transparent 1px 84px)}
-.crumbs{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
-  color:rgba(244,239,232,.66);margin-bottom:30px}
-.crumbs a{color:var(--clay2)}
-.crumbs a:hover{text-decoration:underline}
-.crumbs span[aria-hidden]{padding:0 8px;color:rgba(244,239,232,.74)}
-.pherogrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:54px;align-items:end}
-@media(max-width:980px){.pherogrid{grid-template-columns:1fr;gap:34px;align-items:start}}
-.phtitle{font-size:clamp(31px,4.4vw,52px);line-height:1.08;margin:0;color:#fff;letter-spacing:-.022em}
-.phtitle em{font-style:italic;color:var(--clay2)}
-.phero .eyebrow{color:var(--clay2)}
-.phero .lede{color:rgba(244,239,232,.86);margin-top:20px;max-width:58ch}
-.pspec{margin:0;padding:3px 20px 5px;background:rgba(12,28,24,.42);
-  border:1px solid rgba(244,239,232,.22);border-radius:14px;
-  backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
-
-/* ===== the service list =====
-   Ten items, so two columns of five: 10 divides by 2 and 5, and five rows of two
-   leaves room for a line of copy under each name. Nothing is ragged. */
-.svlist{list-style:none;margin:40px 0 0;padding:0;
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-@media(max-width:820px){.svlist{grid-template-columns:1fr}}
-.svlist a{display:block;height:100%;background:#fff;border:1px solid var(--line);
-  border-radius:var(--r);padding:24px 26px 20px;
-  transition:transform .3s,box-shadow .3s,border-color .3s}
-.svlist a:hover{transform:translateY(-4px);border-color:rgba(168,85,42,.4);
-  box-shadow:0 22px 46px -28px rgba(32,48,44,.5)}
-@media(prefers-reduced-motion:reduce){.svlist a{transition:none}.svlist a:hover{transform:none}}
-.svlist h3{font-size:20px;margin:0 0 7px;line-height:1.25}
-.svlist p{margin:0 0 14px;font-size:15px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
-.svgo{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;
-  letter-spacing:.14em;text-transform:uppercase;color:var(--clay)}
-.svgo svg{transition:transform .3s}
-.svlist a:hover .svgo svg{transform:translateX(4px)}
-@media(prefers-reduced-motion:reduce){.svgo svg{transition:none}.svlist a:hover .svgo svg{transform:none}}
-
 /* ===== the row that closes a section =====
    A line that follows on from what the section just said, and the action on the
    right, over a hairline. Flex, so it fills the width and cannot leave a hole;
@@ -1212,11 +1172,116 @@ body.navopen{overflow:hidden}
 .callbar .c1{background:var(--forest);color:#fff}
 .callbar .c2{background:var(--clay);color:#fff}
 @media(max-width:820px){.callbar{display:flex}body{padding-bottom:56px}}
+
+/* ============ SERVICE PAGE TEMPLATE ============
+   Its own architecture, not the homepage's. The homepage is a stack of
+   full-width bands; a service page is a document with a rail beside it. Same
+   type, same palette, same roofing motifs -- different structure. */
+
+/* --- hero: typographic, no photo cycle, no form --- */
+.shero{background:var(--forest);color:#f4efe8;padding:30px 0 58px;
+  background-image:repeating-linear-gradient(26.57deg,rgba(244,239,232,.055) 0 1px,transparent 1px 84px)}
+.crumbs{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:rgba(244,239,232,.78);margin-bottom:34px}
+.crumbs a{color:var(--clay2)}
+.crumbs a:hover{text-decoration:underline}
+.crumbs span[aria-hidden]{padding:0 10px;color:rgba(244,239,232,.74)}
+.shero .eyebrow{color:var(--clay2);margin-bottom:14px}
+.shtitle{font-size:clamp(32px,5vw,58px);line-height:1.06;margin:0;color:#fff;letter-spacing:-.024em}
+.shtitle em{font-style:italic;color:var(--clay2)}
+.shlede{margin:22px 0 0;max-width:56ch;font-size:17.5px;line-height:1.62;color:rgba(244,239,232,.86)}
+.shcta{margin-top:30px}
+/* the four facts sit on a shingle course, the same fixed-pixel keyway as the
+   job board photos, so the tab pitch holds at any width */
+.shfacts{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px;
+  margin:44px 0 0;padding:26px 0 0;position:relative}
+.shfacts::before{content:"";position:absolute;left:0;right:0;top:0;height:12px;
+  background:repeating-linear-gradient(90deg,rgba(244,239,232,.28) 0 3px,transparent 3px 44px),
+             linear-gradient(rgba(244,239,232,.28),rgba(244,239,232,.28));
+  background-size:100% 100%,100% 1.5px;background-position:0 0,0 100%;background-repeat:repeat-x,no-repeat}
+@media(max-width:820px){.shfacts{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}}
+@media(max-width:420px){.shfacts{grid-template-columns:1fr}}
+.shfacts b{display:block;font-family:var(--disp);font-size:25px;font-weight:700;color:#fff;line-height:1.1}
+.shfacts span{display:block;margin-top:5px;font-family:var(--mono);font-size:10px;letter-spacing:.11em;
+  text-transform:uppercase;color:rgba(244,239,232,.8);line-height:1.5}
+
+/* --- the body: content column plus a rail that stays with you --- */
+.spage{background:var(--cream);padding:74px 0 82px}
+.sgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,344px);gap:64px;align-items:start}
+@media(max-width:1020px){.sgrid{grid-template-columns:1fr;gap:44px}}
+.scol{min-width:0}
+.sblock{margin:0 0 58px}
+.sblock:last-of-type{margin-bottom:0}
+.sblock h2{font-size:clamp(25px,3vw,34px);line-height:1.16;margin:0 0 14px}
+.sintro{margin:0 0 26px;font-size:16.5px;line-height:1.65;color:var(--ink2);max-width:62ch;text-wrap:pretty}
+
+/* ten services: 10 divides by 2 and 5, so five rows of two fills exactly */
+.svlist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media(max-width:640px){.svlist{grid-template-columns:1fr}}
+.svlist a{display:block;height:100%;background:#fff;border:1px solid var(--line);border-radius:16px;
+  padding:20px 22px 17px;transition:transform .3s,box-shadow .3s,border-color .3s}
+.svlist a:hover{transform:translateY(-3px);border-color:rgba(168,85,42,.4);
+  box-shadow:0 20px 40px -26px rgba(32,48,44,.5)}
+@media(prefers-reduced-motion:reduce){.svlist a{transition:none}.svlist a:hover{transform:none}}
+.svlist h3{font-size:18.5px;margin:0 0 6px;line-height:1.25}
+.svlist p{margin:0 0 12px;font-size:14.5px;line-height:1.58;color:var(--ink2);text-wrap:pretty}
+.svgo{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--clay)}
+.svgo svg{transition:transform .3s}
+.svlist a:hover .svgo svg{transform:translateX(4px)}
+@media(prefers-reduced-motion:reduce){.svgo svg{transition:none}.svlist a:hover .svgo svg{transform:none}}
+
+/* scope list: the gable bullet from the job board, not a tick */
+.scope{list-style:none;margin:0;padding:0;display:grid;gap:20px}
+.scope li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:start}
+.scmark{width:13px;height:12px;margin-top:6px;background:var(--clay);
+  clip-path:polygon(0 100%,50% 0,100% 100%)}
+.scope b{display:block;font-family:var(--disp);font-size:18px;font-weight:700;line-height:1.3}
+.scope span{display:block;margin-top:5px;font-size:15px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
+
+/* one review, as a card in the column -- not the homepage's full-width band */
+.squote{margin:0 0 58px;padding:26px 28px;background:var(--forest);color:#f4efe8;border-radius:var(--r);
+  background-image:repeating-linear-gradient(26.57deg,rgba(244,239,232,.06) 0 1px,transparent 1px 62px)}
+.squote blockquote{margin:0;font-family:var(--disp);font-size:clamp(17px,1.8vw,21px);line-height:1.55;color:#fff}
+.squote figcaption{margin-top:20px;display:flex;align-items:center;gap:13px}
+.sqav{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+  font-family:var(--disp);font-weight:700;font-size:14px;color:#f4efe8;
+  background:rgba(240,180,138,.12);border:1px solid rgba(240,180,138,.42)}
+.squote figcaption b{display:block;font-family:var(--body);font-size:15px;font-weight:700;color:#fff}
+.squote figcaption span span{display:block;margin-top:2px;font-family:var(--mono);font-size:9.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:rgba(244,239,232,.86)}
+
+.sxlink{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:16px;
+  color:var(--forest);padding:6px 0;border-bottom:1.5px solid rgba(168,85,42,.45);
+  transition:color .25s,border-color .25s}
+.sxlink:hover{color:var(--clay);border-bottom-color:var(--clay)}
+.sxlink svg{transition:transform .3s}
+.sxlink:hover svg{transform:translateX(4px)}
+@media(prefers-reduced-motion:reduce){.sxlink,.sxlink svg{transition:none}.sxlink:hover svg{transform:none}}
+
+/* --- the rail --- */
+.saside{min-width:0}
+@media(min-width:1021px){.saside{position:sticky;top:104px}}
+.scard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px 26px 24px;
+  box-shadow:0 26px 56px -38px rgba(32,48,44,.5)}
+.scardk{margin:0 0 8px;font-family:var(--mono);font-size:10px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--clay)}
+.scard h2{font-size:23px;line-height:1.2;margin:0 0 10px}
+.scard>p{margin:0 0 20px;font-size:15px;line-height:1.6;color:var(--ink2)}
+.scardbtn{display:block;text-align:center;padding:15px 20px}
+.scardtel{display:block;text-align:center;margin-top:12px;font-size:14.5px;font-weight:600;
+  color:var(--forest);text-decoration:underline;text-underline-offset:3px}
+.scardtel:hover{color:var(--clay)}
+.scardspec{margin:22px 0 0;padding:20px 0 0;border-top:1px solid var(--line);display:grid;gap:15px}
+.scardspec div{display:grid;grid-template-columns:82px minmax(0,1fr);gap:14px;align-items:start}
+.scardspec dt{margin:0;font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--clay);padding-top:2px}
+.scardspec dd{margin:0;font-size:14px;line-height:1.5;color:var(--ink2)}
 </style>
 </head>
 <body>
 
-<div class="mock">RESIDENTIAL HUB &nbsp;·&nbsp; mockup for review. <b>Not live.</b> Scroll slowly. Every fact shown is published on turnkeyroofer.com today.</div>
+<div class="mock">SERVICE PAGE TEMPLATE &nbsp;·&nbsp; mockup for review. <b>Not live.</b> Scroll slowly. Every fact shown is published on turnkeyroofer.com today.</div>
 
 <header class="hdr" id="hdr">
   <div class="wrap hdr-in">
@@ -1238,64 +1303,162 @@ body.navopen{overflow:hidden}
   </div>
 </header>
 
-<div class="mnav" id="mnav" role="dialog" aria-modal="true" aria-label="Menu" inert>
-  <div class="mnav-top">
-    <img class="logoimg" src="https://www.turnkeyroofer.com/wp-content/uploads/2024/03/logonew.png" alt="TurnKey Roofer" width="212" height="150">
-    <button class="mnav-close" id="mnavclose" type="button">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
-      <span class="vh">Close menu</span>
-    </button>
+<section class="shero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span aria-hidden="true">&#47;</span><span aria-current="page">Residential Roofing</span>
+    </nav>
+    <p class="eyebrow">Homes across Orleans, Jefferson and St. Tammany</p>
+    <h1 class="shtitle">Residential <em>Roofing</em><br>in New Orleans</h1>
+    <p class="shlede">Ten residential services, one licensed crew. The estimator goes up on the roof before you get a price, and once payment is received the work is completed within 24 hours.</p>
+    <div class="cta shcta">
+      <a class="btn1" href="#estimate">Get a free estimate</a>
+      <a class="btn2" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
+    </div>
+    <ul class="shfacts">
+      <li><b>#890459</b><span>Louisiana residential licence</span></li>
+      <li><b>15 yr</b><span>Wind warranty, no speed cap</span></li>
+      <li><b>24 hr</b><span>From payment to finished roof</span></li>
+      <li><b>14 towns</b><span>Across three parishes</span></li>
+    </ul>
   </div>
-  <nav class="mnav-links" aria-label="Main">
-    <a href="#services">Residential</a>
-    <a href="#services">Commercial</a>
-    <a href="#claims">Insurance Claims</a>
-    <a href="#areas">Service Areas</a>
-    <a href="#faq">FAQ</a>
-  </nav>
-  <div class="mnav-note">
-    <p><b>Serving New Orleans</b> and 13 nearby towns across Southeast Louisiana, from Baton Rouge to Slidell.</p>
-    <p>Replacements completed within 24 hours of payment.</p>
-  </div>
-  <div class="mnav-foot">
-    <a class="mnav-call" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
-    <a class="mnav-est" href="#estimate">Get a free estimate</a>
-    <p class="mnav-lic">Residential #890459 &nbsp;&middot;&nbsp; Commercial #3667</p>
+</section>
+
+<div class="spage">
+  <div class="wrap">
+    <div class="sgrid">
+      <main class="scol">
+
+        <section class="sblock" id="services">
+          <h2>The ten things we do on a house</h2>
+          <p class="sintro">Every one is handled in-house by the same crew, under the same Louisiana licence. Pick the one that sounds like your roof, or call and describe it and we will tell you which it is.</p>
+          <ul class="svlist">
+            <li>
+              <a href="/residential-roofing/roof-replacement-services/">
+                <h3>Roof Replacement</h3>
+                <p>Full tear-off down to the decking, then dry-in and a new roof in shingle, metal, slate or tile.</p>
+                <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
+            </li>
+            <li>
+              <a href="/residential-roofing/roof-repair/">
+                <h3>Roof Repair</h3>
+                <p>Targeted work on the section that failed, rather than a whole roof you did not need.</p>
+                <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
+            </li>
+            <li>
+              <a href="/residential-roofing/hail-damage-roof-repair/">
+                <h3>Hail Damage Roof Repair</h3>
+                <p>Storm survey, a photo record of what the hail did, and a walk of the roof with your adjuster.</p>
+                <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
+            </li>
+            <li>
+              <a href="/residential-roofing/roof-leak-detection/">
+                <h3>Roof Leak Detection</h3>
+                <p>Finding where the water is actually getting in, which is rarely where the ceiling stain is.</p>
+                <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
+            </li>
+            <li>
+              <a href="/residential-roofing/roof-inspection/">
+                <h3>Roof Inspection</h3>
+                <p>A written condition report on the deck, the flashing, the valleys and every penetration.</p>
+                <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
+            </li>
+            <li>
+              <a href="/residential-roofing/roof-ventilation/">
+                <h3>Roof Ventilation</h3>
+                <p>Intake at the soffit and exhaust at the ridge, so the attic stops cooking the shingles.</p>
+                <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
+            </li>
+            <li>
+              <a href="/residential-roofing/roofing-insulation/">
+                <h3>Roofing Insulation</h3>
+                <p>Attic insulation that stops Gulf Coast heat before it reaches the rooms underneath.</p>
+                <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
+            </li>
+            <li>
+              <a href="/residential-roofing/asbestos-roof-removal/">
+                <h3>Asbestos Roof Removal</h3>
+                <p>Removal and disposal of older roofing that contains asbestos, handled to the safety rules.</p>
+                <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
+            </li>
+            <li>
+              <a href="/residential-roofing/fascia-board/">
+                <h3>Fascia Board</h3>
+                <p>The board your gutter hangs on, replaced while it is still holding rather than after.</p>
+                <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
+            </li>
+            <li>
+              <a href="/residential-roofing/siding-installation/">
+                <h3>Siding Installation</h3>
+                <p>Siding replaced alongside the roof, so the two edges meet the way they are supposed to.</p>
+                <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="sblock">
+          <h2>What every residential job includes</h2>
+          <ul class="scope">
+            <li>
+              <span class="scmark" aria-hidden="true"></span>
+              <div><b>A written estimate before anything starts</b><span>The estimator goes up on the roof and prices what is actually there. Free, and no obligation to book.</span></div>
+            </li>
+            <li>
+              <span class="scmark" aria-hidden="true"></span>
+              <div><b>The decking checked once the old roof is off</b><span>Nobody knows what is under a roof until it comes off. If we find rot, we show you before we touch it.</span></div>
+            </li>
+            <li>
+              <span class="scmark" aria-hidden="true"></span>
+              <div><b>Finished within 24 hours of payment</b><span>That is the guarantee on the front page, and it is the same on every residential job.</span></div>
+            </li>
+            <li>
+              <span class="scmark" aria-hidden="true"></span>
+              <div><b>15 years of wind cover, with no speed cap</b><span>Named hurricanes included. Ask any other estimate to match that line.</span></div>
+            </li>
+          </ul>
+        </section>
+
+        <figure class="squote">
+          <blockquote>&ldquo;After a recent storm, my home&rsquo;s roof suffered extensive hail damage, leaving me worried about the structural integrity of my property. I contacted this company based on a friend&rsquo;s recommendation, and I couldn&rsquo;t be happier with the results.&rdquo;</blockquote>
+          <figcaption><span class="sqav" aria-hidden="true">IG</span><span><b>Irish Grand</b><span>Hail damage &middot; Residential</span></span></figcaption>
+        </figure>
+
+        <section class="sblock">
+          <h2>Running a building instead?</h2>
+          <p class="sintro">Flat and low-slope decks are different work. Same licences, same warranties, same phone number, different crew and different materials.</p>
+          <a class="sxlink" href="/commercial-roofing/">Commercial roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </section>
+
+      </main>
+
+      <aside class="saside">
+        <div class="scard">
+          <p class="scardk">Free estimate</p>
+          <h2>Tell us what the roof is doing</h2>
+          <p>Somebody who has been on a roof will call you back, come out, and give you a number in writing.</p>
+          <a class="btn1 scardbtn" href="#estimate">Get a free estimate</a>
+          <a class="scardtel" href="tel:5042267070">or call (504)&nbsp;226-7070</a>
+          <dl class="scardspec">
+            <div><dt>Licensed</dt><dd>#890459 residential<br>#3667 commercial</dd></div>
+            <div><dt>Warranty</dt><dd>15 yr wind, no speed cap<br>Named hurricanes included</dd></div>
+            <div><dt>Turnaround</dt><dd>Completed within 24 hours<br>of payment</dd></div>
+          </dl>
+        </div>
+      </aside>
+    </div>
   </div>
 </div>
 
-<section class="phero">
-  <div class="wrap">
-    <nav class="crumbs" aria-label="Breadcrumb">
-      <a href="/">Home</a> <span aria-hidden="true">/</span> <span aria-current="page">Residential Roofing</span>
-    </nav>
-    <div class="pherogrid">
-      <div class="rise" data-anim>
-        <p class="eyebrow">Homes across Orleans, Jefferson and St. Tammany</p>
-        <h1 class="phtitle">Residential <em>Roofing</em> in New Orleans</h1>
-        <p class="lede">Ten residential services and one licensed crew. The estimator goes up on the roof before you get a price, and once payment is received the work is completed within 24 hours.</p>
-        <div class="cta" style="margin-top:30px">
-          <a class="btn1" href="#estimate">Get a free estimate</a>
-          <a class="btn1d" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
-        </div>
-      </div>
-      <dl class="spec pspec rise" data-anim>
-        <div class="specrow">
-          <dt>Licensed</dt>
-          <dd><b>#890459</b> residential <i>&middot;</i> <b>#3667</b> commercial</dd>
-        </div>
-        <div class="specrow">
-          <dt>Warranties</dt>
-          <dd><b>15 yr</b> wind <i>&middot;</i> <b>50 yr</b> product <i>&middot;</i> <b>10 yr</b> labor</dd>
-        </div>
-        <div class="specrow">
-          <dt>Service area</dt>
-          <dd><b>14 towns</b> across Orleans, Jefferson and St. Tammany</dd>
-        </div>
-      </dl>
-    </div>
-  </div>
-</section>
 <section class="beltsec">
   <div class="ticker">
     <div class="ticker-track" id="tick">
@@ -1308,416 +1471,6 @@ body.navopen{overflow:hidden}
       <span class="bdg"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/04/seal-logo.png" alt="100% Satisfaction Guaranteed" loading="lazy"></span>
       <span class="bdg"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/04/facebook-star-logo.png" alt="Facebook 5.0 rating" loading="lazy"></span>
       <span class="bdg"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/04/guaranteed-logo.png" alt="Quality Premium Guaranteed" loading="lazy"></span>
-    </div>
-  </div>
-</section>
-
-<section class="sec svc" id="services">
-  <div class="wrap">
-    <div class="sechead rise" data-anim>
-      <div>
-        <p class="eyebrow">Everything we do on a house</p>
-        <h2 class="h2">Residential Roofing Services</h2>
-      </div>
-      <p class="lede">Ten services, all handled in-house by the same crew, under the same Louisiana licence.</p>
-    </div>
-    <ul class="svlist reveal" data-anim>
-        <li>
-          <a href="/residential-roofing/roof-replacement-services/">
-            <h3>Roof Replacement</h3>
-            <p>Full tear-off down to the decking, then dry-in and a new roof in shingle, metal, slate or tile.</p>
-            <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a href="/residential-roofing/roof-repair/">
-            <h3>Roof Repair</h3>
-            <p>Targeted work on the section that failed, rather than a whole roof you did not need.</p>
-            <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a href="/residential-roofing/hail-damage-roof-repair/">
-            <h3>Hail Damage Roof Repair</h3>
-            <p>Storm survey, a photo record of what the hail did, and a walk of the roof with your adjuster.</p>
-            <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a href="/residential-roofing/roof-leak-detection/">
-            <h3>Roof Leak Detection</h3>
-            <p>Finding where the water is actually getting in, which is rarely where the ceiling stain is.</p>
-            <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a href="/residential-roofing/roof-inspection/">
-            <h3>Roof Inspection</h3>
-            <p>A written condition report on the deck, the flashing, the valleys and every penetration.</p>
-            <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a href="/residential-roofing/roof-ventilation/">
-            <h3>Roof Ventilation</h3>
-            <p>Intake at the soffit and exhaust at the ridge, so the attic stops cooking the shingles.</p>
-            <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a href="/residential-roofing/roofing-insulation/">
-            <h3>Roofing Insulation</h3>
-            <p>Attic insulation that stops Gulf Coast heat before it reaches the rooms underneath.</p>
-            <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a href="/residential-roofing/asbestos-roof-removal/">
-            <h3>Asbestos Roof Removal</h3>
-            <p>Removal and disposal of older roofing that contains asbestos, handled to the safety rules.</p>
-            <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a href="/residential-roofing/fascia-board/">
-            <h3>Fascia Board</h3>
-            <p>The board your gutter hangs on, replaced while it is still holding rather than after.</p>
-            <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a href="/residential-roofing/siding-installation/">
-            <h3>Siding Installation</h3>
-            <p>Siding replaced alongside the roof, so the two edges meet the way they are supposed to.</p>
-            <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-        </li>
-    </ul>
-    <div class="seccta rise" data-anim>
-      <p>Not sure which one you need? The estimator will tell you when he goes up.</p>
-      <a class="btn1" href="#estimate">Book a free inspection</a>
-    </div>
-  </div>
-</section>
-
-<div class="roofline" aria-hidden="true"><svg viewBox="0 0 1440 52" preserveAspectRatio="none"><path d="M0,52 L720,8 L1440,52 L1440,52 L0,52 Z" fill="#1f4d43"/><path d="M0,52 L720,8 L1440,52" fill="none" stroke="rgba(240,180,138,.55)" stroke-width="2" vector-effect="non-scaling-stroke"/></svg></div>
-<section class="sec tone-deep">
-  <div class="wrap">
-    <div class="sechead rise" data-anim>
-      <div>
-        <p class="eyebrow">Everyone has a roofer story</p>
-        <h2 class="h2">What New Orleans Homeowners Ask Before Hiring a Roofer</h2>
-      </div>
-      <p class="lede">Four things New Orleans homeowners actually worry about when a roofing contractor knocks. Here is where we stand on each of them, in writing.</p>
-    </div>
-    <div class="hrow reveal" data-anim>
-      <article class="house">
-        <svg class="hroof" viewBox="0 0 300 58" preserveAspectRatio="none" aria-hidden="true">
-          <path class="hroofface" d="M0 58 L150 0 L300 58 Z"/>
-          <path class="hroofline" d="M0 58 L150 0 L300 58" fill="none"/>
-        </svg>
-        <div class="hbody">
-          <span class="hplate" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9.6" r="6.4"/><path d="M9.3 9.7l1.9 1.9 3.5-3.7"/><path d="M8.5 15.4L7.2 21l4.8-2.1 4.8 2.1-1.3-5.6"/></svg></span>
-          <h4>&ldquo;They Take the Deposit and Disappear&rdquo;</h4>
-          <p>Our license numbers are on <b>every page of this site</b>. Residential #890459. Commercial #3667. Look us up before you pay us.</p>
-        </div>
-      </article>
-      <article class="house">
-        <svg class="hroof" viewBox="0 0 300 58" preserveAspectRatio="none" aria-hidden="true">
-          <path class="hroofface" d="M0 58 L150 0 L300 58 Z"/>
-          <path class="hroofline" d="M0 58 L150 0 L300 58" fill="none"/>
-        </svg>
-        <div class="hbody">
-          <span class="hplate" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 20.5L12 13l9.4 7.5"/><path d="M3 6h7.6a2.1 2.1 0 1 0-2.1-2.1"/><path d="M3 10h11a2.1 2.1 0 1 1-2.1 2.1"/></svg></span>
-          <h4>&ldquo;It Fails in the Next Storm Anyway&rdquo;</h4>
-          <p><b>15-year wind warranty, no maximum wind speed</b>, named hurricanes included. Ask any other estimate to match it.</p>
-        </div>
-      </article>
-      <article class="house">
-        <svg class="hroof" viewBox="0 0 300 58" preserveAspectRatio="none" aria-hidden="true">
-          <path class="hroofface" d="M0 58 L150 0 L300 58 Z"/>
-          <path class="hroofline" d="M0 58 L150 0 L300 58" fill="none"/>
-        </svg>
-        <div class="hbody">
-          <span class="hplate" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="4" width="15" height="16.5" rx="2.2"/><path d="M9 4V2.6h6V4"/><path d="M8.4 12.4l2.2 2.2 4.6-4.8"/></svg></span>
-          <h4>&ldquo;The Price Doubles Once They Start&rdquo;</h4>
-          <p>The estimate is the price. <b>If we find rot under the old roof we show you first</b>, and you decide what happens next.</p>
-        </div>
-      </article>
-      <article class="house">
-        <svg class="hroof" viewBox="0 0 300 58" preserveAspectRatio="none" aria-hidden="true">
-          <path class="hroofface" d="M0 58 L150 0 L300 58 Z"/>
-          <path class="hroofline" d="M0 58 L150 0 L300 58" fill="none"/>
-        </svg>
-        <div class="hbody">
-          <span class="hplate" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.4"/><path d="M12 6.9v5.4l3.5 2"/></svg></span>
-          <h4>&ldquo;I Live Under a Tarp for Weeks&rdquo;</h4>
-          <p>Once payment is received the roof is <b>completed within 24 hours</b>. That is the guarantee on the front page.</p>
-        </div>
-      </article>
-    </div>
-    <div class="seccta seccta-d rise" data-anim>
-      <p>All four of those are in writing, and the estimate is free either way.</p>
-      <a class="btn1" href="#estimate">Get a free estimate</a>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-<div class="secdiv" aria-hidden="true">
-  <span class="secdivrule"></span>
-  <svg class="secdivmark" viewBox="0 0 132 48" width="132" height="48" fill="none"
-       stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-    <path class="sdweb" d="M66 40 40 27M66 40 92 27M66 40V14"/>
-    <path class="sdmain" d="M8 43 66 14l58 29M14 40h104"/>
-    <path class="sdcap" d="M59.5 10.5h13"/>
-  </svg>
-  <span class="secdivrule"></span>
-</div>
-
-<section class="sec" style="padding-bottom:0">
-  <div class="wrap">
-    <div class="wind rise" data-anim>
-      <div>
-        <p class="eyebrow">The one nobody else advertises</p>
-        <h2>A 15-Year Wind Warranty With <em>No Maximum Wind Speed</em></h2>
-        <p>Most roofing warranties stop covering you at a stated wind speed. That number is the one that matters in a city where a named storm arrives most years.</p>
-        <p>Ours does not have that number in it. 15 years, named hurricanes included.</p>
-        <div class="cta" style="margin-top:22px"><a class="btn1d" href="/unlimited-wind-warranty/">Read the warranty in full</a></div>
-      </div>
-      <div class="wdial">
-        <b>No cap</b>
-        <u>Maximum wind speed covered</u>
-        <p>15-Year Unlimited Wind Warranty. Named storms included, with no wind-speed ceiling.</p>
-        <div class="dialproof">
-          <img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/08/Untitled-1.png" alt="GAF WindProven" loading="lazy">
-          <span>Backed by <b>GAF WindProven</b>, the manufacturer program for infinite wind speed protection.</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="wrap">
-    <div class="sechead rise" data-anim>
-      <div>
-        <p class="eyebrow">No sales visit. No week of waiting for a number</p>
-        <h2 class="h2">How a Roof Replacement Works in Three Steps</h2>
-      </div>
-      <p class="lede">Three steps, one phone number, and a price that comes from someone who has been up on the roof.</p>
-    </div>
-    <ol class="flow reveal" data-anim>
-      <li class="flowstep">
-        <span class="flowmark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 3.5h3.1l1.6 3.9-2 1.2a11 11 0 0 0 5.9 5.9l1.2-2 3.9 1.6v3.1a1.7 1.7 0 0 1-1.9 1.7A16.7 16.7 0 0 1 4.9 5.4 1.7 1.7 0 0 1 6.6 3.5z"/></svg></span>
-        <p class="flowtag">Step 01</p>
-        <h4>You Call Us</h4>
-        <p class="flowcopy">Call <b>(504) 226-7070</b> or send the form, and we book the estimator.</p>
-      </li>
-      <li class="flowstep">
-        <span class="flowmark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M2.4 14.6 9.4 9.2l4.2 3.2"/><path d="M4.6 20.2h6.6"/><circle cx="16" cy="12.6" r="4.4"/><path d="M19.2 15.8 21.8 18.4"/></svg></span>
-        <p class="flowtag">Step 02</p>
-        <h4>We Survey the Roof</h4>
-        <p class="flowcopy">The estimator comes out, goes up on the roof, and prices what is there.</p>
-      </li>
-      <li class="flowstep">
-        <span class="flowmark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M2.8 14.8 12 7.8l9.2 7"/><path d="M6.4 17.8h11.2"/><path d="M4.6 20.8h14.8"/></svg></span>
-        <p class="flowtag">Step 03</p>
-        <h4>We Do the Work</h4>
-        <p class="flowcopy">Once payment is received, the roofing project is <b>completed within 24 hours</b>.</p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section class="sec tone-dark" id="assembly">
-  <div class="wrap">
-    <div class="asm">
-      <div class="reveal" data-anim>
-        <p class="eyebrow">Under the shingles</p>
-        <h2 class="h2">What Is Actually on Your Roof</h2>
-        <p class="lede">A roof is six layers, not one, and most of what keeps water out sits under
-        the part you can see. The list runs the way the roof does, from the cap down to the deck
-        it is all nailed to. Tap a layer to see what it does.</p>
-        <ul class="asmlist" role="tablist" aria-label="Roof assembly layers">
-            <li><button class="asmbtn" type="button" role="tab" data-layer="5" aria-selected="false" aria-controls="asmfig"><span><span class="asmttl">Ridge vent and cap</span><span class="asmsub">A vented ridge lets hot attic air out and caps the peak. Without it, a Gulf Coast attic cooks the shingles from underneath.</span></span></button></li>
-            <li><button class="asmbtn" type="button" role="tab" data-layer="4" aria-selected="true" aria-controls="asmfig"><span><span class="asmttl">Field shingles</span><span class="asmsub">The courses you can see, each one overlapping the fasteners of the row below. Six nails per shingle is what a high-wind rating asks for.</span></span></button></li>
-            <li><button class="asmbtn" type="button" role="tab" data-layer="3" aria-selected="false" aria-controls="asmfig"><span><span class="asmttl">Drip edge and starter course</span><span class="asmsub">Metal at the eaves and rakes, then a sealed first row of shingles. This edge is where uplift starts in a storm, so it is the row that matters most here.</span></span></button></li>
-            <li><button class="asmbtn" type="button" role="tab" data-layer="2" aria-selected="false" aria-controls="asmfig"><span><span class="asmttl">Synthetic underlayment</span><span class="asmsub">Rolled over the whole deck as a second water barrier. It is what keeps the deck dry between tear-off and the new roof going on.</span></span></button></li>
-            <li><button class="asmbtn" type="button" role="tab" data-layer="1" aria-selected="false" aria-controls="asmfig"><span><span class="asmttl">Ice and water shield</span><span class="asmsub">A self-adhering membrane along the eaves and in every valley. It seals around the nails driven through it, so wind-driven rain has nowhere to travel.</span></span></button></li>
-            <li><button class="asmbtn" type="button" role="tab" data-layer="0" aria-selected="false" aria-controls="asmfig"><span><span class="asmttl">Roof deck</span><span class="asmsub">The plywood or OSB sheathing nailed to your rafters. Everything above it is only as sound as this is, which is why it gets inspected once the old roof is off.</span></span></button></li>
-</ul>
-        <span class="pitch">
-          <svg width="26" height="14" viewBox="0 0 26 14" fill="none" aria-hidden="true">
-            <path d="M1 13L13 1l12 12" stroke="#f0b48a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M13 1v12" stroke="rgba(244,239,232,.35)" stroke-width="1.2" stroke-dasharray="2 3"/>
-          </svg>
-          Most New Orleans homes sit between 4:12 and 8:12 pitch
-        </span>
-      </div>
-
-      <figure class="asmfig rise" data-anim>
-        <svg class="asmsvg" id="asmfig" viewBox="0 0 500 470" role="img"
-             aria-label="Exploded diagram of a roof assembly, six layers from the deck at the bottom up to the ridge cap">
-          <defs>
-            <linearGradient id="gShingle" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#4c5d55"/><stop offset="1" stop-color="#26312d"/>
-            </linearGradient>
-            <pattern id="pShingle" width="34" height="14" patternUnits="userSpaceOnUse">
-              <rect width="34" height="14" fill="url(#gShingle)"/>
-              <path d="M0 14h34M11 0v14M27 0v14" stroke="rgba(0,0,0,.5)" stroke-width="1"/>
-            </pattern>
-          </defs>
-      <g class="lyr" data-layer="0">
-        <path d="M20 418 L250 336 L480 418 L480 440 L250 358 L20 440 Z" fill="#8a6a45" stroke="rgba(0,0,0,.28)" stroke-width="1"/>
-        <path d="M20 440 v26 M480 440 v26" stroke="rgba(244,239,232,.16)" stroke-width="1"/>
-      </g>
-      <g class="lyr" data-layer="1">
-        <path d="M20 360 L250 278 L480 360 L480 374 L250 292 L20 374 Z" fill="#a3506f" stroke="rgba(0,0,0,.28)" stroke-width="1"/>
-      </g>
-      <g class="lyr" data-layer="2">
-        <path d="M20 302 L250 220 L480 302 L480 316 L250 234 L20 316 Z" fill="#3d8a7e" stroke="rgba(0,0,0,.28)" stroke-width="1"/>
-      </g>
-      <g class="lyr" data-layer="3">
-        <path d="M20 244 L250 162 L480 244 L480 255 L250 173 L20 255 Z" fill="#e0b93c" stroke="rgba(0,0,0,.28)" stroke-width="1"/>
-      </g>
-      <g class="lyr" data-layer="4">
-        <path d="M20 168 L250 86 L480 168 L480 188 L250 106 L20 188 Z" fill="url(#pShingle)" stroke="rgba(0,0,0,.28)" stroke-width="1"/>
-        <path d="M64 153 L250 86 L436 153" fill="none" stroke="rgba(0,0,0,.42)" stroke-width="1.2"/>
-        <path d="M108 137 L250 86 L392 137" fill="none" stroke="rgba(0,0,0,.42)" stroke-width="1.2"/>
-        <path d="M152 121 L250 86 L348 121" fill="none" stroke="rgba(0,0,0,.42)" stroke-width="1.2"/>
-        <path d="M196 106 L250 86 L304 106" fill="none" stroke="rgba(0,0,0,.42)" stroke-width="1.2"/>
-      </g>
-      <g class="lyr" data-layer="5">
-        <path d="M20 96 L250 14 L480 96 L480 112 L250 30 L20 112 Z" fill="#2a6055" stroke="rgba(0,0,0,.28)" stroke-width="1"/>
-        <path d="M224 18 v-12 M250 14 v-16 M276 18 v-12" stroke="#f0b48a" stroke-width="2.4" stroke-linecap="round"/>
-      </g>
-          <text class="lbl" x="250" y="462" text-anchor="middle">exploded, deck at the bottom</text>
-        </svg>
-        <figcaption class="asmcap" id="asmcap">Field shingles</figcaption>
-      </figure>
-    </div>
-    <div class="seccta seccta-d rise" data-anim>
-      <p>Every layer above is covered for 15 years against any wind speed.</p>
-      <span class="sectaduo">
-        <a class="btn1" href="#estimate">Get a free estimate</a>
-  <a class="sectalink" href="/unlimited-wind-warranty/">Read the wind warranty <svg width="16" height="12" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </span>
-    </div>
-  </div>
-</section>
-
-
-
-
-<section class="sec" style="padding-top:0">
-  <div class="wrap">
-    <div class="rise" data-anim>
-      <p class="eyebrow">Every kind of roof in this parish</p>
-      <h2 class="h2">Roofing Work Across New Orleans and Jefferson Parish</h2>
-    </div>
-    <div class="mos reveal" data-anim>
-      <figure class="m-a"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Close-up-photo-of-Professional-and-qualified-roofer-in-protective.jpg" alt="Roofer in protective gear working on a metal roof" loading="lazy"><figcaption>Crew on a metal roof</figcaption></figure>
-      <figure><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Damaged-roof-tiles-with-Hail.jpg" alt="Hail damage on roof tiles" loading="lazy"><figcaption>Hail damage</figcaption></figure>
-      <figure><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/worker-on-a-roof.jpg" alt="Roofer fixing panels on a roof" loading="lazy"><figcaption>Panel install</figcaption></figure>
-      <figure class="m-b"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Roof-ready-for-reroofing.jpg" alt="Crew preparing a roof for reroofing" loading="lazy"><figcaption>Reroofing prep</figcaption></figure>
-      <figure><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/roof-ventilation.jpg" alt="Roof ventilation unit on shingles" loading="lazy"><figcaption>Ventilation</figcaption></figure>
-      <figure><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/insulation-house-roof.jpg" alt="Installing roof insulation" loading="lazy"><figcaption>Insulation</figcaption></figure>
-      <figure><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/House-with-white-fascia-board.jpg" alt="White fascia board on a house" loading="lazy"><figcaption>Fascia board</figcaption></figure>
-      <figure><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Repair-leak-water-pipe-on-gypsum-ceiling-interior-office.jpg" alt="Water damage on an interior ceiling" loading="lazy"><figcaption>Leak detection</figcaption></figure>
-    </div>
-    <div class="seccta rise" data-anim>
-      <p>Any of these sound like the roof you are standing under?</p>
-      <a class="sectalink" href="tel:5042267070">Call (504)&nbsp;226-7070 <svg width="16" height="12" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-<section class="sec" style="padding-top:0">
-  <div class="wrap">
-    <div class="money rise" data-anim>
-      <div>
-        <h3>Roof Financing in New Orleans</h3>
-        <p>Ask what the monthly number looks like before you decide it is out of reach.</p>
-      </div>
-      <a href="tel:5042267070">Call (504) 226-7070</a>
-    </div>
-  </div>
-</section>
-
-<section class="sec voxsec">
-  <div class="wrap">
-    <div class="sechead rise" data-anim>
-      <div>
-        <p class="eyebrow">Published on turnkeyroofer.com</p>
-        <h2 class="h2">What Our New Orleans Customers Say</h2>
-      </div>
-      <p class="lede">Storm damage, asbestos, insulation, inspections. Six jobs, in the words of the people who paid for them.</p>
-    </div>
-
-    <div class="vox rise" data-anim>
-      <div class="voxmain">
-        <div class="voxview">
-          <div class="voxtrack" id="tsltrack">
-            <figure class="voxslide" aria-hidden="false"><blockquote>&ldquo;After a recent storm, my home&rsquo;s roof suffered extensive hail damage, leaving me worried about the structural integrity of my property. I contacted this company based on a friend&rsquo;s recommendation, and I couldn&rsquo;t be happier with the results.&rdquo;</blockquote></figure>
-            <figure class="voxslide" aria-hidden="true"><blockquote>&ldquo;When I discovered our aging roof contained asbestos, I was immediately concerned about the health risks it posed. Their team meticulously planned and executed the removal process, adhering to strict safety protocols. My family can breathe easier.&rdquo;</blockquote></figure>
-            <figure class="voxslide" aria-hidden="true"><blockquote>&ldquo;I recently hired their crew to install roof insulation in my home. The installation process was quick and efficient, and I noticed a significant difference in my home&rsquo;s energy efficiency almost immediately. I am saving money on my energy bills.&rdquo;</blockquote></figure>
-            <figure class="voxslide" aria-hidden="true"><blockquote>&ldquo;As a property manager responsible for multiple residential buildings, I often encounter various roofing issues that require immediate attention. This company has been my go-to roofing company for years, and they have never disappointed.&rdquo;</blockquote></figure>
-            <figure class="voxslide" aria-hidden="true"><blockquote>&ldquo;When purchasing our new home, one of our top priorities was to have a comprehensive roof inspection. Their inspectors meticulously examined every inch of our roof, identifying potential issues and providing detailed recommendations.&rdquo;</blockquote></figure>
-            <figure class="voxslide" aria-hidden="true"><blockquote>&ldquo;Living in an area prone to severe weather, our roof endured its fair share of hail damage over the years. Their prompt response and thorough inspection put my mind at ease. Thank you guys for your service!&rdquo;</blockquote></figure>
-          </div>
-        </div>
-          <div class="voxnav">
-          <p class="voxcount"><b id="voxnow">1</b> <i>/</i> 6</p>
-          <div class="voxbtns">
-            <button type="button" id="tslprev" aria-label="Previous review"><svg width="16" height="14" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M16 6H2M7 1L2 6l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            <button type="button" id="tslnext" aria-label="Next review"><svg width="16" height="14" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          </div>
-        </div>
-      </div>
-      <div class="voxside">
-        <div class="voxroster" role="tablist" aria-label="Reviews">
-          <button class="voxpick" type="button" role="tab" data-i="0" aria-selected="true" aria-controls="tsltrack"><span class="voxav" aria-hidden="true">IG</span><span class="voxwho"><b>Irish Grand</b><span class="voxjob">Hail damage &middot; Residential</span></span></button>
-          <button class="voxpick" type="button" role="tab" data-i="1" aria-selected="false" aria-controls="tsltrack"><span class="voxav" aria-hidden="true">LS</span><span class="voxwho"><b>Laurie Stanley</b><span class="voxjob">Asbestos roof removal</span></span></button>
-          <button class="voxpick" type="button" role="tab" data-i="2" aria-selected="false" aria-controls="tsltrack"><span class="voxav" aria-hidden="true">TW</span><span class="voxwho"><b>Tom Woodward</b><span class="voxjob">Roof insulation</span></span></button>
-          <button class="voxpick" type="button" role="tab" data-i="3" aria-selected="false" aria-controls="tsltrack"><span class="voxav" aria-hidden="true">MD</span><span class="voxwho"><b>Michael Davis</b><span class="voxjob">Commercial &middot; Property manager</span></span></button>
-          <button class="voxpick" type="button" role="tab" data-i="4" aria-selected="false" aria-controls="tsltrack"><span class="voxav" aria-hidden="true">CB</span><span class="voxwho"><b>Charmaine Brown</b><span class="voxjob">Roof inspection &middot; Home purchase</span></span></button>
-          <button class="voxpick" type="button" role="tab" data-i="5" aria-selected="false" aria-controls="tsltrack"><span class="voxav" aria-hidden="true">AS</span><span class="voxwho"><b>Adam Stokes</b><span class="voxjob">Hail damage &middot; Residential</span></span></button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-<section class="sec" id="areas">
-  <div class="wrap">
-    <div class="sechead rise" data-anim>
-      <div>
-        <p class="eyebrow">Where we work every week</p>
-        <h2 class="h2">Service Areas: New Orleans, Metairie, Kenner and 11 More</h2>
-      </div>
-      <p class="lede">Roof damage in your parish? We are licensed in Louisiana and we work these towns every week. Call for a free estimate. Most replacements are finished within 24 hours.</p>
-    </div>
-    <div class="hood rise" data-anim>
-      <a href="#">New Orleans</a><a href="#">Metairie</a><a href="#">Kenner</a><a href="#">Gretna</a>
-      <a href="#">Harahan</a><a href="#">River Ridge</a><a href="#">Slidell</a><a href="#">Mandeville</a>
-      <a href="#">Covington</a><a href="#">Madisonville</a><a href="#">Laplace</a><a href="#">St. Rose</a>
-      <a href="#">Hammond</a><a href="#">Baton Rouge</a>
     </div>
   </div>
 </section>
