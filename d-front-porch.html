@@ -642,21 +642,76 @@ h1 em{font-style:italic;color:var(--clay2)}
 /* =========================================================
    TESTIMONIAL SLIDER
    ========================================================= */
-.tsl{position:relative;margin-top:34px}
-.tslview{overflow:hidden}
-.tsltrack{display:flex;gap:20px;transition:transform .6s cubic-bezier(.22,.61,.36,1);will-change:transform}
-.tslcard{flex:0 0 calc((100% - 40px)/3);background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;display:flex;flex-direction:column}
-@media(max-width:900px){.tslcard{flex:0 0 calc((100% - 20px)/2)}}
-@media(max-width:620px){.tslcard{flex:0 0 100%}}
-.tslcard p{margin:0 0 22px;font-size:15.5px;line-height:1.68;color:var(--ink2)}
-.tslcard footer{margin-top:auto;display:flex;align-items:center;gap:12px}
-.tslcard .av{width:44px;height:44px;border-radius:50%;background:var(--cream2);display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;color:var(--forest);font-size:16px;flex:none}
-.tslcard b{display:block;font-size:15px;font-weight:700;font-family:var(--body)}
-.tslcard span{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)}
-.tslnav{display:flex;gap:10px;justify-content:flex-end;margin-top:22px}
-.tslnav button{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--line);background:#fff;color:var(--forest);cursor:pointer;display:grid;place-items:center;transition:.25s}
-.tslnav button:hover:not(:disabled){background:var(--forest);color:#fff;border-color:var(--forest)}
-.tslnav button:disabled{opacity:.35;cursor:default}
+/* ===== reviews, one at a time =====
+   Three white cards sliding three at a time was the page's fifth card grid.
+   One review instead, set large on forest with the same pitch-line texture as
+   the division mastheads. The six run 207 to 248 characters, so the measure is
+   set where they all land on the same number of lines and the slide height
+   never moves -- no hole opens under a short one. */
+.voxsec{background:var(--forest);color:#f4efe8;
+  background-image:repeating-linear-gradient(26.57deg,rgba(244,239,232,.05) 0 1px,transparent 1px 76px)}
+.voxsec .h2{color:#fff}
+.voxsec .eyebrow{color:var(--clay2)}
+.voxsec .lede{color:rgba(244,239,232,.82)}
+
+.vox{position:relative;margin-top:44px;display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,.44fr);gap:54px;align-items:stretch}
+@media(max-width:980px){.vox{grid-template-columns:1fr;gap:34px}}
+.voxmain{position:relative;min-width:0;display:flex;flex-direction:column}
+/* the opening mark sits behind the first line of the quote, out of the flow */
+.voxmain::before{content:"\201C";position:absolute;left:-8px;top:-46px;z-index:0;
+  font-family:var(--disp);font-size:132px;line-height:1;color:rgba(240,180,138,.17);pointer-events:none}
+@media(max-width:700px){.voxmain::before{font-size:96px;top:-32px;left:-3px}}
+
+.voxview{overflow:hidden;position:relative;z-index:1}
+.voxtrack{display:flex;gap:20px;align-items:stretch;
+  transition:transform .6s cubic-bezier(.22,.61,.36,1);will-change:transform}
+@media(prefers-reduced-motion:reduce){.voxtrack{transition:none}}
+
+.voxslide{flex:0 0 100%;margin:0;min-width:0}
+.voxslide blockquote{margin:0;font-family:var(--disp);font-weight:400;
+  font-size:clamp(19px,2.45vw,29px);line-height:1.5;color:#fff;text-wrap:pretty}
+
+.voxside{min-width:0}
+/* the roster is the attribution: printing the name beside the quote as well
+   would set the same name twice, side by side */
+.voxroster{display:grid;gap:2px}
+.voxpick{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;
+  align-items:center;width:100%;text-align:left;cursor:pointer;
+  background:transparent;border:0;border-radius:11px;padding:7px 12px 7px 16px;
+  color:inherit;font-family:var(--body);transition:background .22s}
+.voxpick:hover{background:rgba(244,239,232,.07)}
+.voxpick:focus-visible{outline:2px solid var(--clay2);outline-offset:2px}
+.voxpick[aria-selected="true"]{background:rgba(244,239,232,.1)}
+.voxpick::before{content:"";position:absolute;left:5px;top:9px;bottom:9px;width:3px;
+  border-radius:2px;background:transparent;transition:background .22s}
+.voxpick[aria-selected="true"]::before{background:var(--clay2)}
+@media(prefers-reduced-motion:reduce){.voxpick,.voxpick::before{transition:none}}
+
+.voxav{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
+  font-family:var(--disp);font-weight:700;font-size:14px;color:#f4efe8;
+  background:rgba(240,180,138,.12);border:1px solid rgba(240,180,138,.42)}
+.voxwho{min-width:0}
+.voxwho b{display:block;font-family:var(--body);font-size:14.5px;font-weight:700;
+  color:rgba(244,239,232,.78)}
+.voxpick[aria-selected="true"] .voxwho b{color:#fff}
+.voxjob{display:block;margin-top:2px;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(244,239,232,.86)}
+
+.voxnav{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding-top:20px;border-top:1px solid rgba(244,239,232,.18)}
+.voxcount{margin:0;font-family:var(--mono);font-size:12px;letter-spacing:.12em;
+  color:rgba(244,239,232,.7)}
+.voxcount b{color:#fff;font-weight:500}
+.voxcount i{font-style:normal;color:rgba(244,239,232,.4);padding:0 4px}
+.voxbtns{display:flex;gap:10px}
+.voxbtns button{width:44px;height:44px;border-radius:50%;cursor:pointer;display:grid;place-items:center;
+  background:transparent;border:1.5px solid rgba(244,239,232,.3);color:#f4efe8;
+  transition:background .25s,border-color .25s,color .25s}
+.voxbtns button:hover:not(:disabled){background:var(--clay);border-color:var(--clay);color:#fff}
+.voxbtns button:focus-visible{outline:2px solid var(--clay2);outline-offset:2px}
+.voxbtns button:disabled{opacity:.3;cursor:default}
+@media(prefers-reduced-motion:reduce){.voxbtns button{transition:none}}
 
 /* =========================================================
    FLOATING CALL BUTTON (desktop)
@@ -1811,26 +1866,45 @@ body.navopen{overflow:hidden}
   </div>
 </section>
 
-<section class="sec tone-tint">
+<section class="sec voxsec">
   <div class="wrap">
-    <div class="rise" data-anim>
-      <p class="eyebrow">Published on turnkeyroofer.com</p>
-      <h2 class="h2">What Our New Orleans Customers Say</h2>
+    <div class="sechead rise" data-anim>
+      <div>
+        <p class="eyebrow">Published on turnkeyroofer.com</p>
+        <h2 class="h2">What Our New Orleans Customers Say</h2>
+      </div>
+      <p class="lede">Storm damage, asbestos, insulation, inspections. Six jobs, in the words of the people who paid for them.</p>
     </div>
-    <div class="tsl rise" data-anim>
-      <div class="tslview">
-        <div class="tsltrack" id="tsltrack">
-          <div class="tslcard"><p>&ldquo;After a recent storm, my home&rsquo;s roof suffered extensive hail damage, leaving me worried about the structural integrity of my property. I contacted this company based on a friend&rsquo;s recommendation, and I couldn&rsquo;t be happier with the results.&rdquo;</p><footer><div class="av">IG</div><div><b>Irish Grand</b><span>Hail damage &middot; Residential</span></div></footer></div>
-          <div class="tslcard"><p>&ldquo;When I discovered our aging roof contained asbestos, I was immediately concerned about the health risks it posed. Their team meticulously planned and executed the removal process, adhering to strict safety protocols. My family can breathe easier.&rdquo;</p><footer><div class="av">LS</div><div><b>Laurie Stanley</b><span>Asbestos roof removal</span></div></footer></div>
-          <div class="tslcard"><p>&ldquo;I recently hired their crew to install roof insulation in my home. The installation process was quick and efficient, and I noticed a significant difference in my home&rsquo;s energy efficiency almost immediately. I am saving money on my energy bills.&rdquo;</p><footer><div class="av">TW</div><div><b>Tom Woodward</b><span>Roof insulation</span></div></footer></div>
-          <div class="tslcard"><p>&ldquo;As a property manager responsible for multiple residential buildings, I often encounter various roofing issues that require immediate attention. This company has been my go-to roofing company for years, and they have never disappointed.&rdquo;</p><footer><div class="av">MD</div><div><b>Michael Davis</b><span>Commercial &middot; Property manager</span></div></footer></div>
-          <div class="tslcard"><p>&ldquo;When purchasing our new home, one of our top priorities was to have a comprehensive roof inspection. Their inspectors meticulously examined every inch of our roof, identifying potential issues and providing detailed recommendations.&rdquo;</p><footer><div class="av">CB</div><div><b>Charmaine Brown</b><span>Roof inspection &middot; Home purchase</span></div></footer></div>
-          <div class="tslcard"><p>&ldquo;Living in an area prone to severe weather, our roof endured its fair share of hail damage over the years. Their prompt response and thorough inspection put my mind at ease. Thank you guys for your service!&rdquo;</p><footer><div class="av">AS</div><div><b>Adam Stokes</b><span>Hail damage &middot; Residential</span></div></footer></div>
+
+    <div class="vox rise" data-anim>
+      <div class="voxmain">
+        <div class="voxview">
+          <div class="voxtrack" id="tsltrack">
+            <figure class="voxslide" aria-hidden="false"><blockquote>&ldquo;After a recent storm, my home&rsquo;s roof suffered extensive hail damage, leaving me worried about the structural integrity of my property. I contacted this company based on a friend&rsquo;s recommendation, and I couldn&rsquo;t be happier with the results.&rdquo;</blockquote></figure>
+            <figure class="voxslide" aria-hidden="true"><blockquote>&ldquo;When I discovered our aging roof contained asbestos, I was immediately concerned about the health risks it posed. Their team meticulously planned and executed the removal process, adhering to strict safety protocols. My family can breathe easier.&rdquo;</blockquote></figure>
+            <figure class="voxslide" aria-hidden="true"><blockquote>&ldquo;I recently hired their crew to install roof insulation in my home. The installation process was quick and efficient, and I noticed a significant difference in my home&rsquo;s energy efficiency almost immediately. I am saving money on my energy bills.&rdquo;</blockquote></figure>
+            <figure class="voxslide" aria-hidden="true"><blockquote>&ldquo;As a property manager responsible for multiple residential buildings, I often encounter various roofing issues that require immediate attention. This company has been my go-to roofing company for years, and they have never disappointed.&rdquo;</blockquote></figure>
+            <figure class="voxslide" aria-hidden="true"><blockquote>&ldquo;When purchasing our new home, one of our top priorities was to have a comprehensive roof inspection. Their inspectors meticulously examined every inch of our roof, identifying potential issues and providing detailed recommendations.&rdquo;</blockquote></figure>
+            <figure class="voxslide" aria-hidden="true"><blockquote>&ldquo;Living in an area prone to severe weather, our roof endured its fair share of hail damage over the years. Their prompt response and thorough inspection put my mind at ease. Thank you guys for your service!&rdquo;</blockquote></figure>
+          </div>
+        </div>
+          <div class="voxnav">
+          <p class="voxcount"><b id="voxnow">1</b> <i>/</i> 6</p>
+          <div class="voxbtns">
+            <button type="button" id="tslprev" aria-label="Previous review"><svg width="16" height="14" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M16 6H2M7 1L2 6l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button type="button" id="tslnext" aria-label="Next review"><svg width="16" height="14" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
         </div>
       </div>
-      <div class="tslnav">
-        <button type="button" id="tslprev" aria-label="Previous testimonials"><svg width="16" height="14" viewBox="0 0 17 12" fill="none"><path d="M16 6H2M7 1L2 6l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button type="button" id="tslnext" aria-label="More testimonials"><svg width="16" height="14" viewBox="0 0 17 12" fill="none"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="voxside">
+        <div class="voxroster" role="tablist" aria-label="Reviews">
+          <button class="voxpick" type="button" role="tab" data-i="0" aria-selected="true" aria-controls="tsltrack"><span class="voxav" aria-hidden="true">IG</span><span class="voxwho"><b>Irish Grand</b><span class="voxjob">Hail damage &middot; Residential</span></span></button>
+          <button class="voxpick" type="button" role="tab" data-i="1" aria-selected="false" aria-controls="tsltrack"><span class="voxav" aria-hidden="true">LS</span><span class="voxwho"><b>Laurie Stanley</b><span class="voxjob">Asbestos roof removal</span></span></button>
+          <button class="voxpick" type="button" role="tab" data-i="2" aria-selected="false" aria-controls="tsltrack"><span class="voxav" aria-hidden="true">TW</span><span class="voxwho"><b>Tom Woodward</b><span class="voxjob">Roof insulation</span></span></button>
+          <button class="voxpick" type="button" role="tab" data-i="3" aria-selected="false" aria-controls="tsltrack"><span class="voxav" aria-hidden="true">MD</span><span class="voxwho"><b>Michael Davis</b><span class="voxjob">Commercial &middot; Property manager</span></span></button>
+          <button class="voxpick" type="button" role="tab" data-i="4" aria-selected="false" aria-controls="tsltrack"><span class="voxav" aria-hidden="true">CB</span><span class="voxwho"><b>Charmaine Brown</b><span class="voxjob">Roof inspection &middot; Home purchase</span></span></button>
+          <button class="voxpick" type="button" role="tab" data-i="5" aria-selected="false" aria-controls="tsltrack"><span class="voxav" aria-hidden="true">AS</span><span class="voxwho"><b>Adam Stokes</b><span class="voxjob">Hail damage &middot; Residential</span></span></button>
+        </div>
       </div>
     </div>
   </div>
@@ -2256,22 +2330,31 @@ body.navopen{overflow:hidden}
     }, true);
   })();
 
-  /* testimonial slider */
+  /* reviews: one at a time */
   var tr = document.getElementById('tsltrack');
   if(tr){
-    var prev = document.getElementById('tslprev'), next = document.getElementById('tslnext'), idx = 0;
-    function perView(){ return window.innerWidth <= 620 ? 1 : (window.innerWidth <= 900 ? 2 : 3); }
-    function maxIdx(){ return Math.max(0, tr.children.length - perView()); }
+    var prev = document.getElementById('tslprev'), next = document.getElementById('tslnext');
+    var now = document.getElementById('voxnow'), idx = 0, last = tr.children.length - 1;
     function paint(){
-      idx = Math.min(idx, maxIdx());
-      var card = tr.children[0];
-      var step = card.getBoundingClientRect().width + 20;
+      idx = Math.max(0, Math.min(idx, last));
+      var step = tr.children[0].getBoundingClientRect().width + 20;
       tr.style.transform = 'translateX(-' + (idx * step) + 'px)';
       prev.disabled = idx <= 0;
-      next.disabled = idx >= maxIdx();
+      next.disabled = idx >= last;
+      if(now){ now.textContent = idx + 1; }
+      /* the offscreen slides are clipped, not hidden, so say so */
+      [].forEach.call(tr.children, function(sl, i){
+        sl.setAttribute('aria-hidden', i === idx ? 'false' : 'true');
+      });
+      [].forEach.call(document.querySelectorAll('.voxpick'), function(pk, i){
+        pk.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+      });
     }
-    prev.addEventListener('click', function(){ idx = Math.max(0, idx - 1); paint(); });
-    next.addEventListener('click', function(){ idx = Math.min(maxIdx(), idx + 1); paint(); });
+    [].forEach.call(document.querySelectorAll('.voxpick'), function(pk){
+      pk.addEventListener('click', function(){ idx = +pk.getAttribute('data-i'); paint(); });
+    });
+    prev.addEventListener('click', function(){ idx -= 1; paint(); });
+    next.addEventListener('click', function(){ idx += 1; paint(); });
     window.addEventListener('resize', paint);
     paint();
   }
