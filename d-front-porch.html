@@ -491,7 +491,9 @@ h1 em{font-style:italic;color:var(--clay2)}
 @keyframes faq-in{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 
 /* areas */
-.hood{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.hood{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:30px auto 0;
+  max-width:920px}
+@media(max-width:960px){.hood{max-width:none}}
 .hood a{background:#fff;border:1px solid var(--line);border-radius:100px;padding:12px 22px;font-size:15px;font-weight:500;transition:.25s}
 .hood a:hover{background:var(--forest);color:#fff;border-color:var(--forest);transform:translateY(-2px)}
 
