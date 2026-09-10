@@ -642,6 +642,32 @@ h1 em{font-style:italic;color:var(--clay2)}
 /* =========================================================
    TESTIMONIAL SLIDER
    ========================================================= */
+/* ===== estimate: the promises panel =====
+   The left column ran 633px against the form's 1000px and left 367px blank
+   underneath. It carries the three promises the rest of the page makes, pushed
+   to the foot of the column so the two end level. Every fact here is published
+   elsewhere on this page; the licence numbers are left out because the form
+   prints them just below. */
+.fside{align-self:stretch;display:flex;flex-direction:column;justify-content:space-between;gap:34px;min-width:0}
+/* the header, checks and call line stay one block, so the leftover space
+   falls between blocks rather than between an eyebrow and its heading */
+.fintro{min-width:0}
+.fpromise{padding:26px 26px 24px;background:var(--forest);color:#f4efe8;
+  border-radius:var(--r);
+  background-image:repeating-linear-gradient(26.57deg,rgba(244,239,232,.06) 0 1px,transparent 1px 62px)}
+@media(max-width:560px){.fpromise{padding:20px 20px 18px}}
+.fpromise h3{margin:0 0 16px;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--clay2);font-weight:500}
+.fpromise ul{list-style:none;margin:0;padding:0;display:grid;gap:15px}
+.fpromise li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start}
+.fpico{width:38px;height:38px;flex:none;display:grid;place-items:center;border-radius:11px;
+  color:var(--clay2);background:rgba(240,180,138,.12);border:1px solid rgba(240,180,138,.42)}
+.fpico svg{width:21px;height:21px;display:block}
+.fpromise b{display:block;font-family:var(--body);font-size:15.5px;font-weight:700;color:#fff;
+  line-height:1.3}
+.fpromise li>span>span{display:block;margin-top:3px;font-size:14px;line-height:1.55;
+  color:rgba(244,239,232,.84);text-wrap:pretty}
+
 /* ===== reviews, one at a time =====
    Three white cards sliding three at a time was the page's fifth card grid.
    One review instead, set large on forest with the same pitch-line texture as
@@ -1954,9 +1980,11 @@ body.navopen{overflow:hidden}
 
 <section class="sec" id="areas">
   <div class="wrap">
-    <div class="rise" data-anim>
-      <p class="eyebrow">Where we work every week</p>
-      <h2 class="h2">Service Areas: New Orleans, Metairie, Kenner and 11 More</h2>
+    <div class="sechead rise" data-anim>
+      <div>
+        <p class="eyebrow">Where we work every week</p>
+        <h2 class="h2">Service Areas: New Orleans, Metairie, Kenner and 11 More</h2>
+      </div>
       <p class="lede">Roof damage in your parish? We are licensed in Louisiana and we work these towns every week. Call for a free estimate. Most replacements are finished within 24 hours.</p>
     </div>
     <div class="hood rise" data-anim>
@@ -1971,16 +1999,17 @@ body.navopen{overflow:hidden}
 <section class="sec formsec" id="estimate">
   <div class="wrap">
     <div class="fgrid">
-      <div class="rise" data-anim>
+      <div class="fside rise" data-anim>
+        <div class="fintro">
         <p class="eyebrow">Get the number before the next storm</p>
         <h2 class="h2">Get a Free Roof Estimate in New Orleans</h2>
         <p class="lede">A licensed estimator goes up, looks at your actual roof, and gives you an actual price. No charge, and no obligation to book the work.</p>
         <ul class="checks fchecks">
           <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="#1f4d43" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Licensed residential <b>#890459</b> &nbsp;+&nbsp; commercial <b>#3667</b></span></li>
-          <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="#1f4d43" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Most replacements are <b>completed within 24 hours</b> of payment</span></li>
           <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="#1f4d43" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Roof financing in New Orleans</b> Ask what the monthly number looks like</span></li>
         </ul>
         <p class="fcall">Rather talk to someone now? <a href="tel:5042267070">(504)&nbsp;226-7070</a></p>
+        </div>
         <div class="afterform">
           <h3>What happens after you send this</h3>
           <ol>
@@ -1988,6 +2017,23 @@ body.navopen{overflow:hidden}
             <li><b>An estimator comes out</b> and goes up on the roof to see what is actually there.</li>
             <li><b>You get a written price.</b> No obligation to book the work.</li>
           </ol>
+        </div>
+        <div class="fpromise">
+          <h3>What we put in writing</h3>
+          <ul>
+            <li>
+              <span class="fpico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12.6" r="8.4"/><path d="M12 7.5v5.4l3.5 2"/></svg></span>
+              <span><b>Completed within 24 hours</b><span>Once payment is received, the roofing project is finished inside a day.</span></span>
+            </li>
+            <li>
+              <span class="fpico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 20.5 12 13l9.4 7.5"/><path d="M3 6h7.6a2.1 2.1 0 1 0-2.1-2.1"/><path d="M3 10h11a2.1 2.1 0 1 1-2.1 2.1"/></svg></span>
+              <span><b>15-year wind warranty</b><span>No maximum wind speed, named hurricanes included.</span></span>
+            </li>
+            <li>
+              <span class="fpico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="4" width="15" height="16.5" rx="2.2"/><path d="M9 4V2.6h6V4"/><path d="M8.4 12.4l2.2 2.2 4.6-4.8"/></svg></span>
+              <span><b>The estimate is the price</b><span>If we find rot under the old roof, we show you before we touch it.</span></span>
+            </li>
+          </ul>
         </div>
       </div>
       <form class="fform rise fwide" data-anim novalidate>
