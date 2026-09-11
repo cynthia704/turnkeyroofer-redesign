@@ -1,0 +1,2118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Residential and commercial roofing in New Orleans and 13 nearby towns: Metairie, Kenner, Gretna, Covington, Mandeville, Slidell, Baton Rouge and more.">
+<title>Roofing Across 14 Louisiana Towns | TurnKey Roofer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Public+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#fbf7f2; --cream2:#f4ede4; --white:#fff;
+  --forest:#1f4d43; --forest2:#173a33; --forest3:#2b6154;
+  --clay:#a8552a; --clay2:#f0b48a;
+  --ink:#20302c; --ink2:rgba(32,48,44,.78); --ink3:rgba(32,48,44,.68);
+  --line:rgba(32,48,44,.12);
+  --disp:"PT Serif",Georgia,serif;
+  --body:"Public Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --r:20px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip}
+img{max-width:100%;display:block}
+/* an element marked hidden stays hidden, whatever display its own rule gives it */
+[hidden]{display:none!important}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:var(--disp);font-weight:600;margin:0;line-height:1.12;letter-spacing:-.022em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+@media(max-width:760px){.wrap{padding:0 20px}body{font-size:16px}}
+.sec{padding:82px 0}
+@media(max-width:760px){.sec{padding:54px 0}}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--clay);margin:0 0 18px}
+.h2{font-size:clamp(27px,3.8vw,44px)}
+.lede{font-size:17.5px;color:var(--ink2);max-width:58ch;margin:14px 0 0}
+
+/* ============ MOTION SYSTEM ============ */
+.reveal>*{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+.reveal.in>*{opacity:1;transform:none}
+.reveal.in>*:nth-child(1){transition-delay:0s}
+.reveal.in>*:nth-child(2){transition-delay:.08s}
+.reveal.in>*:nth-child(3){transition-delay:.16s}
+.reveal.in>*:nth-child(4){transition-delay:.24s}
+.reveal.in>*:nth-child(5){transition-delay:.32s}
+.reveal.in>*:nth-child(6){transition-delay:.40s}
+.reveal.in>*:nth-child(7){transition-delay:.48s}
+.reveal.in>*:nth-child(8){transition-delay:.56s}
+.rise{opacity:0;transform:translateY(22px);transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1)}
+.rise.in{opacity:1;transform:none}
+.zoom{opacity:0;transform:scale(.97);transition:opacity .9s ease,transform .9s cubic-bezier(.22,.61,.36,1)}
+.zoom.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal>*,.rise,.zoom{opacity:1!important;transform:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .ticker-track{animation:none!important}
+  .fainner{animation:none!important}
+}
+
+.mock{background:var(--forest2);color:rgba(244,239,232,.68);font-family:var(--mono);font-size:11.5px;text-align:center;padding:8px 16px;letter-spacing:.04em}
+.mock b{color:var(--clay2)}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:80;background:rgba(251,247,242,.9);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
+.hdr.stuck{border-bottom-color:var(--line);background:rgba(251,247,242,.98)}
+.hdr-in{display:flex;align-items:center;gap:26px;padding:9px 0}
+.logo{font-family:var(--disp);font-weight:700;font-size:23px;white-space:nowrap}
+.logo em{font-style:normal;color:var(--clay)}
+.nav{display:flex;gap:26px;margin-left:auto;font-size:15px;font-weight:500;color:var(--ink2)}
+.nav a{position:relative;padding:3px 0}
+.nav a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--clay);border-radius:2px;transition:width .3s}
+.nav a:hover{color:var(--ink)}
+.nav a:hover::after{width:100%}
+.callbtn{background:var(--forest);color:#fff;font-weight:700;font-size:15px;padding:13px 24px;border-radius:100px;white-space:nowrap;transition:transform .25s,box-shadow .25s}
+.callbtn:hover{transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(31,77,67,.8)}
+@media(max-width:1000px){.nav{display:none}}
+
+/* hero */
+.hero{padding:26px 0 0}
+.hcard{background:var(--forest);border-radius:28px;padding:60px 56px;color:#f4efe8;position:relative;overflow:hidden}
+.hcard::before{content:"";position:absolute;right:-100px;top:-110px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(194,106,58,.42),transparent 68%)}
+@media(max-width:760px){.hcard{padding:38px 26px;border-radius:20px}}
+.hgrid{display:grid;grid-template-columns:1.06fr .94fr;gap:48px;align-items:center;position:relative}
+@media(max-width:980px){.hgrid{grid-template-columns:1fr;gap:32px}}
+.hcard .eyebrow{color:var(--clay2)}
+h1{font-size:clamp(29px,3.65vw,50px);max-width:none;margin-bottom:22px}
+h1 em{font-style:italic;color:var(--clay2)}
+.hsub{font-size:18.5px;color:rgba(244,239,232,.82);max-width:44ch;margin:0 0 26px;line-height:1.7}
+.checks{list-style:none;margin:0 0 30px;padding:0;display:grid;gap:11px}
+.checks li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:rgba(244,239,232,.8)}
+.checks svg{flex:none;margin-top:4px}
+.checks b{color:#fff;font-weight:700}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn1{background:var(--clay);color:#fff;font-weight:700;font-size:15.5px;padding:16px 32px;border-radius:100px;transition:transform .25s,box-shadow .25s}
+.btn1:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(194,106,58,.9)}
+.btn2{color:#f4efe8;font-weight:600;font-size:15.5px;padding:15px 28px;border-radius:100px;border:1.5px solid rgba(244,239,232,.36);transition:background .25s,border-color .25s}
+.btn2:hover{background:rgba(255,255,255,.1);border-color:#f4efe8}
+.btn1d{background:var(--forest);color:#fff;font-weight:700;font-size:15.5px;padding:16px 32px;border-radius:100px;transition:transform .25s}
+.btn1d:hover{transform:translateY(-2px)}
+.btn2d{color:var(--ink);font-weight:600;font-size:15.5px;padding:15px 28px;border-radius:100px;border:1.5px solid var(--line);background:#fff;transition:border-color .25s}
+.btn2d:hover{border-color:var(--forest)}
+.lic{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px;color:rgba(244,239,232,.74)}
+.portrait{height:410px;border-radius:20px;border:1px solid rgba(244,239,232,.22);overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 2s cubic-bezier(.22,.61,.36,1)}
+.portrait.in img{transform:scale(1)}
+@media(max-width:980px){.portrait{height:280px}}
+.ph{position:relative;background:#25332f;overflow:hidden}
+.ph::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 12px,transparent 12px 24px)}
+.ph::after{content:attr(data-ph);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);text-align:center;width:84%;line-height:1.85}
+/* placeholder note over a stand-in photo: ribbon, not a centered overlay */
+.ph.has-img::before{background-image:none}
+.ph.has-img::after{left:0;top:auto;bottom:0;transform:none;width:100%;background:rgba(10,16,22,.86);color:#fff;padding:10px 14px;font-size:9.5px;line-height:1.6;text-align:left;letter-spacing:.06em}
+
+/* ================= HERO: full-bleed cycling roof photography =================
+   The photo is the hero background. The shade is heavy on the text side and
+   thins out to the right so the roof stays visible there. */
+.hero{position:relative;overflow:hidden}
+.heroslide{position:absolute;inset:0;z-index:0}
+.heroslide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;
+  transition:opacity 1.8s ease-in-out;will-change:opacity}
+.heroslide img.on{opacity:1;animation:heroDrift 9s ease-out forwards}
+@keyframes heroDrift{from{transform:scale(1.0)}to{transform:scale(1.075)}}
+.heroshade{position:absolute;inset:0;z-index:1;pointer-events:none}
+.hero>.wrap{position:relative;z-index:2}
+.herodots{position:absolute;left:0;right:0;bottom:22px;z-index:3;display:flex;gap:9px;justify-content:center}
+.herodots button{width:34px;height:4px;border:0;border-radius:4px;padding:0;cursor:pointer;
+  background:rgba(255,255,255,.34);transition:background .3s,width .3s}
+.herodots button[aria-current="true"]{width:52px}
+@media(max-width:980px){.herodots{bottom:14px}}
+@media(prefers-reduced-motion:reduce){
+  .heroslide img{transition:none}
+  .heroslide img.on{animation:none}
+  .herodots button{transition:none}
+}
+
+.hero{min-height:660px;display:flex;align-items:center;padding:0}
+/* evened out. With the text centered, a left-heavy gradient makes the right side
+   read as empty, which is the dead space the team flagged in the first place. */
+.heroshade{background:
+  linear-gradient(90deg, rgba(23,58,51,.93) 0%, rgba(23,58,51,.88) 42%, rgba(23,58,51,.80) 72%, rgba(23,58,51,.74) 100%),
+  linear-gradient(180deg, rgba(23,58,51,.55) 0%, rgba(23,58,51,.12) 32%, rgba(23,58,51,.58) 100%)}
+/* Text left, form right, and the two columns are the SAME HEIGHT by construction.
+   The form is never given a height of its own: the grid stretches it to whatever
+   the text column measures, and the fields scroll inside that. No dead space at
+   any width, and no magic numbers to go stale. */
+.hgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,470px);
+       grid-template-rows:auto auto auto;gap:0 54px;align-items:start;padding:74px 0 86px}
+.htop{grid-column:1;grid-row:1}
+.hlede{grid-column:1;grid-row:2;margin-top:0}
+.hbot{grid-column:1;grid-row:3;margin-top:0}
+.heroformcol{grid-column:2;grid-row:1 / -1;align-self:stretch;position:relative;min-height:0}  /* align-self:stretch is what gives this box the height of its grid area.
+     The grid sets align-items:start, so without it the box collapses to the
+     height of its content, and its only child is absolutely positioned. */
+/* The card is taken out of flow so it cannot push the grid rows taller than the
+   text beside it. A spanning grid item DOES contribute to row sizing, which is
+   what made the first attempt at this leave a 353px gap under the text. */
+.heroform{position:absolute;inset:0}
+@media(max-width:980px){
+  .hgrid{display:flex;flex-direction:column;gap:26px;padding:52px 0 74px}
+  .htop{order:1}.heroformcol{order:2}.hlede{order:3}.hbot{order:4}
+  .heroformcol{position:static}
+  .heroform{position:static}
+}
+.herodots button[aria-current="true"]{background:var(--clay)}
+.beltsec{background:var(--cream)}
+
+.badges{display:flex;gap:30px;align-items:center;flex-wrap:wrap;margin-top:34px;padding-top:28px;border-top:1px solid var(--line)}
+.badges img{height:40px;width:auto;mix-blend-mode:multiply;opacity:.76;transition:opacity .25s,transform .25s}
+.badges img:hover{opacity:1;transform:translateY(-3px)}
+
+/* ticker */
+.ticker{background:var(--forest);overflow:hidden;padding:13px 0;margin-top:16px}
+.ticker-track{display:flex;width:max-content;animation:slide 42s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+.ticker span{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,232,.78);padding:0 24px;white-space:nowrap;display:inline-flex;align-items:center;gap:24px}
+.ticker span::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--clay2)}
+
+/* pain */
+.pain{background:var(--cream2)}
+
+/* services */
+.svc{background:var(--cream2)}
+/* ===== soffit and fascia =====
+   Most homeowners cannot say what a soffit is, so the right half is an eave
+   detail on a gridded sheet: deck and rafter down to the drip edge, the fascia
+   the gutter hangs on, the soffit under it, the vent slots, and dashed arrows for
+   the air those slots feed into the attic. Four markers key to the legend.
+
+   No dead space: the sheet is absolutely positioned inside a stretched column, so
+   the drawing can never set the row height. It scales to fit and centres, and the
+   sheet grid is what any spare room reads as. */
+.sfgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:52px;align-items:start}
+@media(max-width:1000px){.sfgrid{grid-template-columns:1fr;gap:32px}}
+.sfbody{min-width:0}
+.sfsec .h2 em{font-style:italic;color:var(--clay)}
+.sfsec .lede{margin:20px 0 0;max-width:54ch}
+
+.sflist{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:20px}
+.sflist li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:start}
+.sfico{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;color:var(--clay);
+  background:rgba(168,85,42,.08);border:1px solid rgba(168,85,42,.28)}
+.sfico svg{width:24px;height:24px;display:block}
+.sflist h4{font-size:18px;margin:0 0 4px;line-height:1.25}
+.sflist p{margin:0;font-size:15px;color:var(--ink2);line-height:1.6;text-wrap:pretty}
+
+.eavecol{align-self:stretch;position:relative;min-height:330px}
+.eave{position:absolute;inset:0;margin:0;display:flex;flex-direction:column;gap:12px;
+  padding:22px 22px 18px;background:#fff;border:1px solid var(--line);border-radius:var(--r);
+  background-image:
+    linear-gradient(rgba(32,48,44,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(32,48,44,.05) 1px,transparent 1px);
+  background-size:26px 26px}
+@media(max-width:1000px){
+  .eavecol{position:static;min-height:0}
+  .eave{position:static;height:auto}
+}
+@media(max-width:560px){.eave{padding:16px 16px 14px}}
+
+.eavetitle{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+  padding-bottom:11px;border-bottom:1px solid var(--line);
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase}
+.eavetitle b{color:var(--ink);font-weight:500}
+.eavetitle span{color:var(--ink3);text-align:right}
+@media(max-width:420px){.eavetitle span{display:none}}
+.eavedraw{flex:1;min-width:0;min-height:0;width:100%;display:block}
+.eavedraw .ln{stroke:rgba(32,48,44,.34);stroke-width:2}
+.eavedraw .hv{stroke:var(--clay);stroke-width:2.6}
+.eavedraw .bd{stroke:rgba(32,48,44,.52);stroke-width:2;fill:rgba(168,85,42,.1)}
+.eavedraw .air{stroke:var(--clay);stroke-width:1.6;opacity:.62;stroke-dasharray:5 5}
+.eavedraw .airhead{stroke:var(--clay);stroke-width:1.6;opacity:.62}
+.eavedraw .sd{stroke:rgba(32,48,44,.22);stroke-width:1.4}
+.eavedraw .gt{stroke:rgba(32,48,44,.34);stroke-width:1.8}
+.eavedraw .lead{stroke:rgba(32,48,44,.32);stroke-width:1;stroke-dasharray:3 4}
+.eavedraw .mk circle{fill:var(--clay)}
+.eavedraw .mk text{fill:#fff;font-family:var(--mono);font-size:13px;font-weight:500;text-anchor:middle}
+
+.eavekey{list-style:none;margin:0;padding:12px 0 0;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px}
+@media(max-width:420px){.eavekey{grid-template-columns:1fr}}
+.eavekey li{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--ink2);line-height:1.4}
+.eavekey b{flex:none;width:18px;height:18px;display:grid;place-items:center;border-radius:50%;
+  background:var(--clay);color:#fff;font-family:var(--mono);font-size:10px;font-weight:500}
+
+/* ===== section divider =====
+   Between two sections on the same cream a filled roofline reads as nothing, so
+   this is line art instead: a hairline fading out at both ends with a king post
+   truss on it -- rafters at the 6:12 pitch the hero uses, a bottom chord with the
+   eaves running past it, a king post and two struts. The truss is a fixed size
+   and only the rules stretch, so the pitch holds at any width. */
+.secdiv{display:flex;align-items:flex-end;gap:26px;max-width:1200px;
+  margin:-18px auto -20px;padding:0 32px;color:var(--clay)}
+@media(max-width:760px){.secdiv{gap:16px;padding:0 20px;margin:-14px auto -16px}}
+/* 8px is where the truss bottom chord sits in a 48px box, so the rule
+   continues the chord rather than cutting across the eaves */
+.secdivrule{flex:1 1 0;min-width:0;height:1px;margin-bottom:8px}
+.secdivrule:first-child{background:linear-gradient(90deg,transparent,rgba(32,48,44,.06) 34%,rgba(32,48,44,.2))}
+.secdivrule:last-child{background:linear-gradient(270deg,transparent,rgba(32,48,44,.06) 34%,rgba(32,48,44,.2))}
+.secdivmark{flex:none;display:block}
+@media(max-width:480px){.secdivmark{width:104px;height:38px}.secdivrule{margin-bottom:6px}}
+.sdmain{stroke-width:1.7}
+.sdweb{stroke-width:1.15;opacity:.42}
+.sdcap{stroke-width:3}
+
+/* ===== the two divisions, one section each =====
+   Side by side neither had room to be more than a list. Each now owns a section:
+   copy on one side, a two-photo composition on the other, mirrored and on forest
+   for commercial.
+
+   No dead space, the same way the hero does it: the picture column is stretched
+   by the grid and its photographs are absolutely positioned inside, so a photo
+   can never set the row height. Whatever the copy comes to, the pictures match. */
+.dsec{overflow:hidden}
+.dgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);gap:56px;align-items:start}
+@media(max-width:1000px){.dgrid{grid-template-columns:1fr;gap:34px}}
+
+/* commercial runs the other way round: the track sizes reverse too, or the copy
+   would land in the column meant for the photographs */
+.dsec-mirror .dgrid{grid-template-columns:minmax(0,.82fr) minmax(0,1fr)}
+.dsec-mirror .dbody{grid-column:2;grid-row:1}
+.dsec-mirror .dpiccol{grid-column:1;grid-row:1}
+@media(max-width:1000px){
+  /* the track sizes have to come back too, or the mirrored block stays two-up */
+  .dsec-mirror .dgrid{grid-template-columns:1fr}
+  .dsec-mirror .dbody{grid-column:1;grid-row:1}
+  .dsec-mirror .dpiccol{grid-column:1;grid-row:2}
+}
+
+.dhead{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:center}
+@media(max-width:480px){.dhead{gap:14px}}
+.dicon{width:54px;height:54px;display:grid;place-items:center;border-radius:14px;color:var(--clay);
+  background:rgba(168,85,42,.08);border:1px solid rgba(168,85,42,.3)}
+.dicon svg{width:29px;height:29px;display:block}
+@media(max-width:480px){.dicon{width:46px;height:46px}.dicon svg{width:25px;height:25px}}
+.dhead .eyebrow{margin:0 0 7px}
+.dhead .h2{margin:0}
+.dsec .h2 em{font-style:italic;color:var(--clay)}
+.dsec .lede{margin:22px 0 0;max-width:54ch}
+
+/* five rows, two columns, filled down then across */
+.dlist{list-style:none;margin:28px 0 0;padding:0;
+  display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(5,auto);
+  grid-auto-flow:column;column-gap:26px}
+@media(max-width:520px){.dlist{grid-template-columns:1fr;grid-template-rows:auto;grid-auto-flow:row}}
+.dlist a{position:relative;display:block;padding:10px 22px 10px 0;font-size:15px;
+  color:var(--ink2);border-bottom:1px solid var(--line);transition:color .22s}
+.dlist a::after{content:"";position:absolute;right:6px;top:50%;width:6px;height:6px;
+  border-right:1.6px solid var(--clay);border-top:1.6px solid var(--clay);
+  transform:translateY(-50%) rotate(45deg);opacity:0;transition:opacity .22s,right .22s}
+.dlist a:hover{color:var(--forest)}
+.dlist a:hover::after{opacity:1;right:1px}
+@media(prefers-reduced-motion:reduce){.dlist a,.dlist a::after{transition:none}}
+
+.dfoot{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:32px}
+.dlic{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--ink3)}
+.dlic b{color:var(--clay);font-weight:500}
+
+/* the picture column */
+.dpiccol{align-self:stretch;position:relative;min-height:360px}
+.dpic{position:absolute;inset:0;display:grid;grid-template-rows:1.52fr 1fr;gap:14px}
+.dshot{position:relative;margin:0;overflow:hidden;border-radius:16px;background:var(--forest2)}
+.dshot img{width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform 1s cubic-bezier(.22,.61,.36,1)}
+.dsec:hover .dshot img{transform:scale(1.04)}
+@media(prefers-reduced-motion:reduce){.dshot img{transition:none}.dsec:hover .dshot img{transform:none}}
+.dshot figcaption{position:absolute;left:14px;bottom:14px;right:14px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.11em;text-transform:uppercase;
+  color:rgba(244,239,232,.9);background:rgba(23,58,51,.9);border:1px solid rgba(240,180,138,.4);
+  border-radius:8px;padding:8px 11px;line-height:1.5}
+.dshot figcaption b{color:#f0b48a;font-weight:500}
+@media(max-width:1000px){
+  .dpiccol{position:static;min-height:0}
+  .dpic{position:static;grid-template-rows:auto auto}
+  .dshot img{aspect-ratio:16/9;height:auto}
+}
+
+/* commercial sits on forest */
+.dsec-dark{background:var(--forest);color:#f4efe8}
+.dsec-dark .h2{color:#fff}
+.dsec-dark .h2 em{color:var(--clay2)}
+.dsec-dark .eyebrow{color:var(--clay2)}
+.dsec-dark .lede{color:rgba(244,239,232,.84)}
+.dsec-dark .dicon{color:var(--clay2);background:rgba(240,180,138,.1);border-color:rgba(240,180,138,.42)}
+.dsec-dark .dlist a{color:rgba(244,239,232,.86);border-bottom-color:rgba(244,239,232,.18)}
+.dsec-dark .dlist a::after{border-right-color:var(--clay2);border-top-color:var(--clay2)}
+.dsec-dark .dlist a:hover{color:#fff}
+.dsec-dark .dlic{color:rgba(244,239,232,.74)}
+.dsec-dark .dlic b{color:var(--clay2)}
+.dsec-dark .dshot{background:var(--forest3)}
+
+
+/* ===== image-led sections ===== */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
+@media(max-width:1000px){.gal{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.gal{grid-template-columns:1fr}}
+.gcard{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;border-radius:var(--r);border:1px solid var(--line);background:var(--cream2);transition:transform .3s,box-shadow .3s}
+.gcard:hover{transform:translateY(-4px);box-shadow:0 20px 44px -24px rgba(32,48,44,.55)}
+.gcard img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.22,.61,.36,1)}
+.gcard:hover img{transform:scale(1.06)}
+.gcard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(23,58,51,.9) 100%)}
+.gcard b,.gcard i{position:absolute;z-index:2;left:20px}
+.gcard b{bottom:17px;font-family:var(--disp);font-weight:600;font-size:21px;color:#fff}
+.gcard i{top:15px;font-style:normal;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;color:#fff;background:rgba(23,58,51,.76);padding:5px 10px;border-radius:100px}
+.gcard span{display:none}
+
+.mos{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:16px;margin-top:34px}
+@media(max-width:900px){.mos{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}}
+.mos figure{margin:0;position:relative;overflow:hidden;border-radius:var(--r);border:1px solid var(--line)}
+.mos img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.22,.61,.36,1)}
+.mos figure:hover img{transform:scale(1.05)}
+.mos figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:#fff;background:linear-gradient(180deg,transparent,rgba(23,58,51,.88))}
+.m-a{grid-column:span 2;grid-row:span 2}
+.m-b{grid-column:span 2}
+
+.stages{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+@media(max-width:820px){.stages{grid-template-columns:1fr}}
+.stage{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .3s,box-shadow .3s}
+.stage:hover{transform:translateY(-4px);box-shadow:0 20px 44px -26px rgba(32,48,44,.5)}
+.stage .pic{aspect-ratio:5/4;overflow:hidden}
+.stage img{width:100%;height:100%;object-fit:cover}
+.stage .body{padding:24px 26px}
+.stage em{font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.13em;color:var(--clay);display:block;margin-bottom:9px}
+.stage h4{font-size:21px;margin:0 0 8px}
+.stage p{margin:0;font-size:15px;color:var(--ink2);line-height:1.62}
+
+.comm{border-radius:28px;overflow:hidden;border:1px solid var(--line);background:#fff}
+@media(max-width:760px){.comm{border-radius:20px}}
+.comm .lead{padding:42px 38px}
+.comm .lead h3{font-size:clamp(24px,3vw,34px);margin-bottom:10px}
+.comm .lead p{margin:0;color:var(--ink2);font-size:16.5px;max-width:64ch}
+.comm .band{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line)}
+@media(max-width:820px){.comm .band{grid-template-columns:1fr}}
+.comm .band figure{margin:0;height:240px;overflow:hidden;position:relative}
+.comm .band img{width:100%;height:100%;object-fit:cover;filter:brightness(.82);transition:transform .9s,filter .5s}
+.comm .band figure:hover img{transform:scale(1.05);filter:brightness(.95)}
+.comm .band figure::after{content:"";position:absolute;left:0;right:0;bottom:0;height:96px;
+  background:linear-gradient(180deg,rgba(18,30,26,0),rgba(18,30,26,.78));pointer-events:none}
+.comm .band figcaption{position:absolute;z-index:1;left:20px;bottom:17px;font-family:var(--disp);font-weight:600;font-size:19px;color:#fff}
+
+/* wind */
+.wind{background:var(--white);border:1px solid var(--line);border-radius:28px;padding:52px 48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:900px){.wind{grid-template-columns:1fr;gap:28px;padding:34px 26px;border-radius:20px}}
+.wind h2{font-size:clamp(26px,3.4vw,42px);margin-bottom:16px}
+.wind h2 em{font-style:italic;color:var(--clay)}
+.wind p{color:var(--ink2);margin:0 0 16px;font-size:16.5px}
+.wdial{background:var(--cream2);border-radius:var(--r);padding:34px 30px;text-align:center}
+.wdial b{display:block;font-family:var(--disp);font-size:clamp(48px,7vw,76px);font-weight:700;color:var(--forest);line-height:1.1;letter-spacing:-.04em}
+.wdial u{text-decoration:none;display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin-top:8px}
+.wdial p{margin:18px 0 0;font-size:15px;color:var(--ink2)}
+
+/* process */
+/* ===== the three steps, on a rail =====
+   Three boxed cards with numbered circles is the commonest pattern on the web,
+   and the boxes were what made the dead space: one card's copy ran a line longer
+   and the grid stretched the other two to match, leaving them with a hole.
+
+   No boxes now. A shingle course runs across the top, the three stations sit on
+   it, and the copy hangs beneath. Without boxes an uneven column reads as a list
+   rather than as a gap, and the copy is cut to the same line count anyway. The
+   rail is the fixed-pixel keyway from the job board photos, so its tab pitch
+   holds at any width. */
+.flow{position:relative;list-style:none;margin:44px 0 0;padding:0;
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 36px}
+@media(max-width:950px){.flow{grid-template-columns:1fr;gap:34px 0}}
+
+/* the rail runs station to station, not edge to edge, so it never trails off
+   past the last one. -65px reaches across the 36px gap plus half the next tile. */
+.flowstep::before{content:"";position:absolute;left:29px;right:-65px;top:22px;height:14px;z-index:0;
+  background:
+    repeating-linear-gradient(90deg,var(--line) 0 3px,transparent 3px 44px),
+    linear-gradient(var(--line),var(--line));
+  background-size:100% 100%,100% 1.5px;
+  background-position:0 0,0 100%;
+  background-repeat:repeat-x,no-repeat}
+.flowstep:last-child::before{display:none}
+@media(max-width:950px){.flowstep::before{display:none}}
+
+.flowstep{position:relative;z-index:1;min-width:0}
+.flowmark{position:relative;z-index:1;display:grid;place-items:center;width:58px;height:58px;border-radius:50%;
+  background:var(--cream);border:1.5px solid rgba(168,85,42,.34);color:var(--clay)}
+.flowmark svg{width:28px;height:28px;display:block}
+@media(max-width:950px){.flowmark{width:52px;height:52px}.flowmark svg{width:26px;height:26px}}
+
+.flowtag{margin:18px 0 6px;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--clay)}
+.flow h4{font-size:21px;margin:0 0 8px;line-height:1.24}
+.flowcopy{margin:0;font-size:15px;color:var(--ink2);line-height:1.62;text-wrap:pretty}
+.flowcopy b{color:var(--ink);font-weight:700}
+
+/* claims */
+.claims{background:var(--forest);border-radius:28px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;color:#f4efe8}
+@media(max-width:900px){.claims{grid-template-columns:1fr;border-radius:20px}}
+.claims-l{padding:50px 46px}
+.claims-r{min-height:430px;overflow:hidden}
+@media(max-width:900px){.claims-l{padding:34px 26px}.claims-r{min-height:250px}}
+.claims .eyebrow{color:var(--clay2)}
+.claims h2{font-size:clamp(26px,3.4vw,40px);margin-bottom:18px}
+.claims p{color:rgba(244,239,232,.8);margin:0 0 15px;font-size:16.5px}
+
+/* money */
+.money{background:var(--clay);color:#fff;border-radius:28px;padding:42px 44px;display:flex;gap:30px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+@media(max-width:760px){.money{padding:30px 26px;border-radius:20px}}
+.money h3{font-size:clamp(24px,3vw,34px);color:#fff}
+.money p{margin:8px 0 0;font-size:16.5px;color:rgba(255,255,255,.9)}
+.money a{background:#fff;color:var(--ink);font-weight:700;font-size:15.5px;padding:16px 30px;border-radius:100px;white-space:nowrap;transition:transform .25s}
+.money a:hover{transform:translateY(-2px)}
+
+/* testimonials */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px}
+@media(max-width:900px){.tgrid{grid-template-columns:1fr}}
+.t{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+.t:hover{transform:translateY(-4px);box-shadow:0 18px 40px -24px rgba(32,48,44,.45)}
+.t p{margin:0 0 22px;font-size:15.5px;line-height:1.68;color:var(--ink2)}
+.t footer{margin-top:auto;display:flex;align-items:center;gap:12px}
+.t .av{width:44px;height:44px;border-radius:50%;background:var(--cream2);display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;color:var(--forest);font-size:16px;flex:none}
+.t b{display:block;font-size:15px;font-weight:700;font-family:var(--body)}
+.t span{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)}
+
+/* FAQ */
+.faq{max-width:860px;margin:36px auto 0}
+.fitem{background:#fff;border:1px solid var(--line);border-radius:var(--r);margin-bottom:12px;overflow:hidden}
+.fitem summary{list-style:none;cursor:pointer;font-family:var(--disp);font-size:19px;font-weight:600;padding:22px 52px 22px 26px;position:relative;line-height:1.34;transition:color .25s}
+.fitem summary::-webkit-details-marker{display:none}
+.fitem summary:hover{color:var(--clay)}
+.fitem summary::after{content:"";position:absolute;right:24px;top:50%;width:11px;height:11px;margin-top:-8px;border-right:2px solid var(--clay);border-bottom:2px solid var(--clay);transform:rotate(45deg);transition:transform .32s}
+.fitem[open] summary::after{transform:rotate(-135deg) translate(-3px,-3px)}
+.fainner{padding:0 30px 26px 26px;color:var(--ink2);font-size:16px;line-height:1.72}
+.fainner b{color:var(--ink);font-weight:700}
+.fitem[open] .fainner{animation:faq-in .4s cubic-bezier(.22,.61,.36,1)}
+@keyframes faq-in{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+
+/* areas */
+.hood{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:30px auto 0;
+  max-width:920px}
+@media(max-width:960px){.hood{max-width:none}}
+.hood a{background:#fff;border:1px solid var(--line);border-radius:100px;padding:12px 22px;font-size:15px;font-weight:500;transition:.25s}
+.hood a:hover{background:var(--forest);color:#fff;border-color:var(--forest);transform:translateY(-2px)}
+
+/* final */
+.final{text-align:center;background:var(--cream2)}
+.final h2{max-width:18ch;margin:0 auto 16px}
+.final p{color:var(--ink2);font-size:18px;max-width:50ch;margin:0 auto 30px}
+.final .cta{justify-content:center}
+
+/* footer */
+/* the bottom padding leaves room for the back-to-top arrow (bottom left), so at
+   the very end of the page it never sits on the last line */
+.ft{background:var(--forest2);color:rgba(244,239,232,.66);padding:62px 0 80px;font-size:14.5px}
+@media(max-width:820px){.ft{padding-bottom:70px}}
+.ftgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:40px}
+@media(max-width:900px){.ftgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ftgrid{grid-template-columns:1fr}}
+.ft h5{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,232,.6);margin:0 0 15px;font-weight:500}
+.ft ul{list-style:none;margin:0;padding:0}
+.ft li{padding:5px 0}
+.ft li a:hover{color:#f4efe8}
+.nap b{display:block;font-family:var(--disp);font-size:23px;font-weight:700;color:#f4efe8;margin-bottom:9px}
+.ftlic{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.ftlic div{font-family:var(--mono);font-size:10.5px;border:1px solid rgba(244,239,232,.26);border-radius:100px;padding:6px 12px}
+.flag{margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--clay2);border:1px dashed rgba(240,180,138,.5);border-radius:12px;padding:11px 14px;line-height:1.75}
+.ftbot{margin-top:42px;padding-top:22px;border-top:1px solid rgba(244,239,232,.16);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:rgba(244,239,232,.6)}
+
+/* ===== estimate form ===== */
+.formsec{background:var(--cream2)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+@media(max-width:900px){.fgrid{grid-template-columns:1fr;gap:32px}}
+.fchecks{margin:26px 0 24px}
+.fchecks li{color:var(--ink2)}
+.fchecks b{color:var(--ink)}
+.fcall{margin:0;font-size:16.5px;color:var(--ink2)}
+.fcall a{font-family:var(--disp);font-weight:700;font-size:20px;color:var(--forest);white-space:nowrap}
+.fform{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:34px 32px;box-shadow:0 22px 54px -34px rgba(32,48,44,.5)}
+@media(max-width:560px){.fform{padding:26px 20px}}
+.ftitle{font-family:var(--disp);font-size:24px;font-weight:600;margin:0 0 22px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.frow{margin-bottom:16px}
+.frow2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:520px){.frow2{grid-template-columns:1fr}}
+.frow label{display:block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:7px}
+.frow input,.frow select,.frow textarea{width:100%;min-height:48px;background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:var(--ink);font-family:var(--body);font-size:15.5px;transition:border-color .2s,background .2s}
+.frow textarea{resize:vertical;min-height:96px}
+.frow input::placeholder,.frow textarea::placeholder{color:rgba(32,48,44,.4)}
+.frow input:focus,.frow select:focus,.frow textarea:focus{outline:none;border-color:var(--forest);background:#fff}
+.fsubmit{width:100%;background:var(--clay);color:#fff;border:0;border-radius:100px;padding:17px 20px;font-family:var(--body);font-weight:700;font-size:16px;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.fsubmit:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(194,106,58,.85)}
+.fstatus{margin:14px 0 0;font-size:14px;line-height:1.6;color:var(--clay);min-height:0}
+.fstatus.on{padding:13px 15px;border:1px dashed rgba(194,106,58,.5);background:rgba(194,106,58,.08);border-radius:12px}
+.fsmall{margin:16px 0 0;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;color:var(--ink3);text-align:center}
+
+/* =========================================================
+   SECTION SYSTEM  — alternating tone + wave separators
+   ========================================================= */
+.tone-tint{background:var(--cream2)}
+.tone-dark{background:var(--forest);color:#f4efe8}
+.tone-deep{background:var(--forest2);color:#f4efe8}
+.tone-dark .h2,.tone-deep .h2,.tone-dark h3,.tone-deep h3,.tone-dark h4,.tone-deep h4{color:#fff}
+.tone-dark .lede,.tone-deep .lede,.tone-dark p,.tone-deep p{color:rgba(244,239,232,.8)}
+.tone-dark .eyebrow,.tone-deep .eyebrow{color:var(--clay2)}
+
+.roofline{display:block;width:100%;height:52px;line-height:0}
+.roofline svg{display:block;width:100%;height:100%}
+@media(max-width:760px){.roofline{height:30px}}
+
+/* =========================================================
+   ZIG-ZAG SERVICE ROWS
+   ========================================================= */
+.svcband{background:var(--forest2);color:#f4efe8;padding:40px 0;text-align:center}
+.svcband h3{font-size:clamp(22px,2.9vw,32px);color:#fff;margin-bottom:8px}
+.svcband p{margin:0 auto;max-width:60ch;color:rgba(244,239,232,.78);font-size:16.5px}
+/* ===== the job board =====
+   Two by two, photo over copy. Nothing here can open a hole: every photo has the
+   same aspect-ratio so a photo cannot set the height, the four bodies are written
+   to the same line count, and the CTA sits on a footer rule pushed down by
+   margin-top:auto so the four bottom edges land level regardless.
+   The photo's bottom edge is cut into shingle tabs. */
+.jobs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin-top:44px}
+@media(max-width:1200px){.jcard p{font-size:14.5px}.jbody{padding:22px 20px 18px}}
+@media(max-width:1120px){.jobs{grid-template-columns:1fr;gap:22px}}
+
+.jcard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
+  border-radius:var(--r);overflow:hidden;transition:transform .35s,box-shadow .35s}
+.jcard:hover{transform:translateY(-5px);box-shadow:0 26px 56px -30px rgba(32,48,44,.5)}
+@media(prefers-reduced-motion:reduce){.jcard{transition:none}.jcard:hover{transform:none}}
+
+.jpic{position:relative;aspect-ratio:16/8;overflow:hidden;background:var(--forest2)}
+@media(max-width:1120px){.jpic{aspect-ratio:3/1}}
+@media(max-width:620px){.jpic{aspect-ratio:3/2}}
+.jpic img{width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform 1s cubic-bezier(.22,.61,.36,1)}
+.jcard:hover .jpic img{transform:scale(1.05)}
+@media(prefers-reduced-motion:reduce){.jpic img{transition:none}.jcard:hover .jpic img{transform:none}}
+
+.jbadge{position:absolute;top:14px;left:14px;z-index:2;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;
+  color:#f0b48a;background:rgba(23,58,51,.94);padding:6px 11px;border-radius:5px;
+  border:1px solid rgba(240,180,138,.42)}
+.jbadge i{font-style:normal;color:rgba(240,180,138,.5);padding:0 2px}
+/* the shingle course that closes the photo off. A course seen from below is a
+   straight butt line with thin keyways cut up between the tabs; both are drawn
+   in fixed pixels so the tab pitch is the same on every card at every width. */
+.jshingle{position:absolute;left:0;right:0;bottom:-1px;z-index:2;display:block;height:14px;
+  background:
+    repeating-linear-gradient(90deg,#fff 0 3px,transparent 3px 44px),
+    linear-gradient(#fff,#fff);
+  background-size:100% 100%,100% 8px;
+  background-position:0 0,0 100%;
+  background-repeat:repeat-x,no-repeat}
+
+.jbody{flex:1;display:flex;flex-direction:column;padding:24px 26px 20px}
+@media(max-width:560px){.jbody{padding:22px 22px 18px}}
+.jcard h4{font-size:clamp(21px,2.1vw,26px);margin:0 0 10px;line-height:1.22;text-wrap:balance}
+.jcard h4 em{font-style:italic;color:var(--clay)}
+.jcard p{margin:0 0 auto;font-size:15.5px;color:var(--ink2);line-height:1.62;text-wrap:pretty}
+
+/* a fixed two-by-two, so the spec block is the same height in all four cards */
+.jspec{list-style:none;margin:18px 0 0;padding:15px 0 0;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px}
+@media(max-width:420px){.jspec{grid-template-columns:1fr;gap:7px}}
+.jspec li{position:relative;padding-left:14px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);line-height:1.5}
+/* a gable, not a dot */
+.jspec li::before{content:"";position:absolute;left:0;top:.34em;width:8px;height:7px;
+  background:var(--clay);clip-path:polygon(0 100%,50% 0,100% 100%)}
+
+.jgo{margin-top:auto;display:flex;align-items:center;gap:9px;
+  padding:16px 26px;border-top:1px solid var(--line);
+  font-weight:700;font-size:15px;color:var(--forest);transition:background .3s}
+@media(max-width:560px){.jgo{padding:15px 22px}}
+.jgo svg{transition:transform .3s}
+.jcard:hover .jgo{background:var(--cream)}
+.jcard:hover .jgo svg{transform:translateX(5px)}
+@media(prefers-reduced-motion:reduce){.jgo,.jgo svg{transition:none}.jcard:hover .jgo svg{transform:none}}
+
+/* =========================================================
+   PHOTO-BACKED DARK SECTION
+   ========================================================= */
+.photosec{position:relative;overflow:hidden;background:var(--forest2)}
+.photosec>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.24;filter:saturate(.7)}
+.photosec::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,58,51,.9),rgba(23,58,51,.75))}
+.photosec>.wrap{position:relative;z-index:2}
+.photosec .stage{background:rgba(12,32,28,.72);border:1px solid rgba(244,239,232,.16);backdrop-filter:blur(3px)}
+.photosec .stage .body{background:transparent}
+.photosec .stage h4{color:#fff}
+.photosec .stage p{color:rgba(244,239,232,.78)}
+.photosec .stage em{color:var(--clay2)}
+
+/* =========================================================
+   TESTIMONIAL SLIDER
+   ========================================================= */
+/* ===== estimate: the promises panel =====
+   The left column ran 633px against the form's 1000px and left 367px blank
+   underneath. It carries the three promises the rest of the page makes, pushed
+   to the foot of the column so the two end level. Every fact here is published
+   elsewhere on this page; the license numbers are left out because the form
+   prints them just below. */
+.fside{align-self:stretch;display:flex;flex-direction:column;justify-content:space-between;gap:34px;min-width:0}
+/* the header, checks and call line stay one block, so the leftover space
+   falls between blocks rather than between an eyebrow and its heading */
+.fintro{min-width:0}
+.fpromise{padding:26px 26px 24px;background:var(--forest);color:#f4efe8;
+  border-radius:var(--r);
+  background-image:repeating-linear-gradient(26.57deg,rgba(244,239,232,.06) 0 1px,transparent 1px 62px)}
+@media(max-width:560px){.fpromise{padding:20px 20px 18px}}
+.fpromise h3{margin:0 0 16px;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--clay2);font-weight:500}
+.fpromise ul{list-style:none;margin:0;padding:0;display:grid;gap:15px}
+.fpromise li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start}
+.fpico{width:38px;height:38px;flex:none;display:grid;place-items:center;border-radius:11px;
+  color:var(--clay2);background:rgba(240,180,138,.12);border:1px solid rgba(240,180,138,.42)}
+.fpico svg{width:21px;height:21px;display:block}
+.fpromise b{display:block;font-family:var(--body);font-size:15.5px;font-weight:700;color:#fff;
+  line-height:1.3}
+.fpromise li>span>span{display:block;margin-top:3px;font-size:14px;line-height:1.55;
+  color:rgba(244,239,232,.84);text-wrap:pretty}
+
+/* ===== the row that closes a section =====
+   A line that follows on from what the section just said, and the action on the
+   right, over a hairline. Flex, so it fills the width and cannot leave a hole;
+   stacks on a phone. Three of the six sit on forest, hence the dark modifier
+   rather than an ancestor selector. */
+.seccta{display:flex;align-items:center;justify-content:space-between;gap:20px 30px;
+  flex-wrap:wrap;margin-top:44px;padding-top:26px;border-top:1px solid var(--line)}
+.seccta p{margin:0;font-size:16.5px;line-height:1.55;color:var(--ink2);max-width:62ch;
+  text-wrap:pretty}
+.seccta .btn1{flex:none}
+/* one row can carry both a button and a link */
+.sectaduo{display:flex;align-items:center;gap:14px 26px;flex-wrap:wrap;flex:none}
+.seccta-d{border-top-color:rgba(244,239,232,.2)}
+.seccta-d p{color:rgba(244,239,232,.84)}
+
+.sectalink{flex:none;display:inline-flex;align-items:center;gap:10px;font-weight:700;
+  font-size:15.5px;color:var(--forest);padding:6px 0;border-bottom:1.5px solid rgba(168,85,42,.45);
+  transition:border-color .25s,color .25s}
+.sectalink:hover{color:var(--clay);border-bottom-color:var(--clay)}
+.sectalink svg{transition:transform .3s}
+.sectalink:hover svg{transform:translateX(4px)}
+.seccta-d .sectalink{color:#fff;border-bottom-color:rgba(240,180,138,.5)}
+.seccta-d .sectalink:hover{color:var(--clay2);border-bottom-color:var(--clay2)}
+@media(prefers-reduced-motion:reduce){.sectalink,.sectalink svg{transition:none}
+  .sectalink:hover svg{transform:none}}
+@media(max-width:640px){
+  .seccta{margin-top:34px;padding-top:22px;gap:16px}
+  .seccta p{font-size:15.5px}
+}
+
+/* ===== reviews, one at a time =====
+   Three white cards sliding three at a time was the page's fifth card grid.
+   One review instead, set large on forest with the same pitch-line texture as
+   the division mastheads. The six run 207 to 248 characters, so the measure is
+   set where they all land on the same number of lines and the slide height
+   never moves -- no hole opens under a short one. */
+.voxsec{background:var(--forest);color:#f4efe8;
+  background-image:repeating-linear-gradient(26.57deg,rgba(244,239,232,.05) 0 1px,transparent 1px 76px)}
+.voxsec .h2{color:#fff}
+.voxsec .eyebrow{color:var(--clay2)}
+.voxsec .lede{color:rgba(244,239,232,.82)}
+
+.vox{position:relative;margin-top:44px;display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,.44fr);gap:54px;align-items:stretch}
+@media(max-width:980px){.vox{grid-template-columns:1fr;gap:34px}}
+.voxmain{position:relative;min-width:0;display:flex;flex-direction:column}
+/* the opening mark sits behind the first line of the quote, out of the flow */
+.voxmain::before{content:"\201C";position:absolute;left:-8px;top:-46px;z-index:0;
+  font-family:var(--disp);font-size:132px;line-height:1;color:rgba(240,180,138,.17);pointer-events:none}
+@media(max-width:700px){.voxmain::before{font-size:96px;top:-32px;left:-3px}}
+
+.voxview{overflow:hidden;position:relative;z-index:1}
+.voxtrack{display:flex;gap:20px;align-items:stretch;
+  transition:transform .6s cubic-bezier(.22,.61,.36,1);will-change:transform}
+@media(prefers-reduced-motion:reduce){.voxtrack{transition:none}}
+
+.voxslide{flex:0 0 100%;margin:0;min-width:0}
+.voxslide blockquote{margin:0;font-family:var(--disp);font-weight:400;
+  font-size:clamp(19px,2.45vw,29px);line-height:1.5;color:#fff;text-wrap:pretty}
+
+.voxside{min-width:0}
+/* the roster is the attribution: printing the name beside the quote as well
+   would set the same name twice, side by side */
+.voxroster{display:grid;gap:2px}
+.voxpick{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;
+  align-items:center;width:100%;text-align:left;cursor:pointer;
+  background:transparent;border:0;border-radius:11px;padding:7px 12px 7px 16px;
+  color:inherit;font-family:var(--body);transition:background .22s}
+.voxpick:hover{background:rgba(244,239,232,.07)}
+.voxpick:focus-visible{outline:2px solid var(--clay2);outline-offset:2px}
+.voxpick[aria-selected="true"]{background:rgba(244,239,232,.1)}
+.voxpick::before{content:"";position:absolute;left:5px;top:9px;bottom:9px;width:3px;
+  border-radius:2px;background:transparent;transition:background .22s}
+.voxpick[aria-selected="true"]::before{background:var(--clay2)}
+@media(prefers-reduced-motion:reduce){.voxpick,.voxpick::before{transition:none}}
+
+.voxav{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
+  font-family:var(--disp);font-weight:700;font-size:14px;color:#f4efe8;
+  background:rgba(240,180,138,.12);border:1px solid rgba(240,180,138,.42)}
+.voxwho{min-width:0}
+.voxwho b{display:block;font-family:var(--body);font-size:14.5px;font-weight:700;
+  color:rgba(244,239,232,.78)}
+.voxpick[aria-selected="true"] .voxwho b{color:#fff}
+.voxjob{display:block;margin-top:2px;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(244,239,232,.86)}
+
+.voxnav{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding-top:20px;border-top:1px solid rgba(244,239,232,.18)}
+.voxcount{margin:0;font-family:var(--mono);font-size:12px;letter-spacing:.12em;
+  color:rgba(244,239,232,.7)}
+.voxcount b{color:#fff;font-weight:500}
+.voxcount i{font-style:normal;color:rgba(244,239,232,.4);padding:0 4px}
+.voxbtns{display:flex;gap:10px}
+.voxbtns button{width:44px;height:44px;border-radius:50%;cursor:pointer;display:grid;place-items:center;
+  background:transparent;border:1.5px solid rgba(244,239,232,.3);color:#f4efe8;
+  transition:background .25s,border-color .25s,color .25s}
+.voxbtns button:hover:not(:disabled){background:var(--clay);border-color:var(--clay);color:#fff}
+.voxbtns button:focus-visible{outline:2px solid var(--clay2);outline-offset:2px}
+.voxbtns button:disabled{opacity:.3;cursor:default}
+@media(prefers-reduced-motion:reduce){.voxbtns button{transition:none}}
+
+
+/* ===== credential marquee (replaces the service-area ticker) ===== */
+.ticker{background:#fff;overflow:hidden;padding:0;border-top:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08)}
+.ticker-track{display:flex;align-items:center;width:max-content;animation:slide 46s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+.ticker span::after{display:none!important;content:none!important}
+.bdg{flex:none;display:flex;align-items:center;justify-content:center;padding:18px 34px;height:96px}
+.bdg img{height:60px;width:auto;max-width:none;display:block;transition:transform .3s}
+.bdg:hover img{transform:scale(1.06)}
+@media(max-width:760px){.bdg{padding:14px 22px;height:76px}.bdg img{height:46px}}
+@media(prefers-reduced-motion:reduce){
+  .ticker{overflow-x:auto}
+  .ticker-track{animation:none!important}
+}
+
+/* --- contrast guard: a dark section must not repaint text inside light cards --- */
+.tone-dark .pcard,.tone-dark .scard,.tone-dark .step,.tone-dark .t,.tone-dark .tslcard,.tone-dark .svcrow,.tone-dark .typebox,.tone-dark .types,.tone-dark .fform,.tone-dark .wdial,.tone-dark .belt div,.tone-dark .comm,.tone-dark .doc,.tone-dark .stat,.tone-dark .q{color:var(--ink)}
+.tone-dark .pcard h3,.tone-dark .pcard h4,.tone-dark .pcard h5,.tone-dark .scard h3,.tone-dark .scard h4,.tone-dark .scard h5,.tone-dark .step h3,.tone-dark .step h4,.tone-dark .step h5,.tone-dark .t h3,.tone-dark .t h4,.tone-dark .t h5,.tone-dark .tslcard h3,.tone-dark .tslcard h4,.tone-dark .tslcard h5,.tone-dark .svcrow h3,.tone-dark .svcrow h4,.tone-dark .svcrow h5,.tone-dark .typebox h3,.tone-dark .typebox h4,.tone-dark .typebox h5,.tone-dark .types h3,.tone-dark .types h4,.tone-dark .types h5,.tone-dark .fform h3,.tone-dark .fform h4,.tone-dark .fform h5,.tone-dark .wdial h3,.tone-dark .wdial h4,.tone-dark .wdial h5,.tone-dark .belt div h3,.tone-dark .belt div h4,.tone-dark .belt div h5,.tone-dark .comm h3,.tone-dark .comm h4,.tone-dark .comm h5,.tone-dark .doc h3,.tone-dark .doc h4,.tone-dark .doc h5,.tone-dark .stat h3,.tone-dark .stat h4,.tone-dark .stat h5,.tone-dark .q h3,.tone-dark .q h4,.tone-dark .q h5{color:var(--ink)}
+.tone-dark .pcard p,.tone-dark .pcard li,.tone-dark .pcard span,.tone-dark .scard p,.tone-dark .scard li,.tone-dark .scard span,.tone-dark .step p,.tone-dark .step li,.tone-dark .step span,.tone-dark .t p,.tone-dark .t li,.tone-dark .t span,.tone-dark .tslcard p,.tone-dark .tslcard li,.tone-dark .tslcard span,.tone-dark .svcrow p,.tone-dark .svcrow li,.tone-dark .svcrow span,.tone-dark .typebox p,.tone-dark .typebox li,.tone-dark .typebox span,.tone-dark .types p,.tone-dark .types li,.tone-dark .types span,.tone-dark .fform p,.tone-dark .fform li,.tone-dark .fform span,.tone-dark .wdial p,.tone-dark .wdial li,.tone-dark .wdial span,.tone-dark .belt div p,.tone-dark .belt div li,.tone-dark .belt div span,.tone-dark .comm p,.tone-dark .comm li,.tone-dark .comm span,.tone-dark .doc p,.tone-dark .doc li,.tone-dark .doc span,.tone-dark .stat p,.tone-dark .stat li,.tone-dark .stat span,.tone-dark .q p,.tone-dark .q li,.tone-dark .q span{color:var(--ink2)}
+.tone-dark .pcard b,.tone-dark .pcard strong,.tone-dark .scard b,.tone-dark .scard strong,.tone-dark .step b,.tone-dark .step strong,.tone-dark .t b,.tone-dark .t strong,.tone-dark .tslcard b,.tone-dark .tslcard strong,.tone-dark .svcrow b,.tone-dark .svcrow strong,.tone-dark .typebox b,.tone-dark .typebox strong,.tone-dark .types b,.tone-dark .types strong,.tone-dark .fform b,.tone-dark .fform strong,.tone-dark .wdial b,.tone-dark .wdial strong,.tone-dark .belt div b,.tone-dark .belt div strong,.tone-dark .comm b,.tone-dark .comm strong,.tone-dark .doc b,.tone-dark .doc strong,.tone-dark .stat b,.tone-dark .stat strong,.tone-dark .q b,.tone-dark .q strong{color:var(--ink)}
+
+/* --- contrast guard: a dark section must not repaint text inside light cards --- */
+.tone-deep .pcard,.tone-deep .scard,.tone-deep .step,.tone-deep .t,.tone-deep .tslcard,.tone-deep .svcrow,.tone-deep .typebox,.tone-deep .types,.tone-deep .fform,.tone-deep .wdial,.tone-deep .belt div,.tone-deep .comm,.tone-deep .doc,.tone-deep .stat,.tone-deep .q{color:var(--ink)}
+.tone-deep .pcard h3,.tone-deep .pcard h4,.tone-deep .pcard h5,.tone-deep .scard h3,.tone-deep .scard h4,.tone-deep .scard h5,.tone-deep .step h3,.tone-deep .step h4,.tone-deep .step h5,.tone-deep .t h3,.tone-deep .t h4,.tone-deep .t h5,.tone-deep .tslcard h3,.tone-deep .tslcard h4,.tone-deep .tslcard h5,.tone-deep .svcrow h3,.tone-deep .svcrow h4,.tone-deep .svcrow h5,.tone-deep .typebox h3,.tone-deep .typebox h4,.tone-deep .typebox h5,.tone-deep .types h3,.tone-deep .types h4,.tone-deep .types h5,.tone-deep .fform h3,.tone-deep .fform h4,.tone-deep .fform h5,.tone-deep .wdial h3,.tone-deep .wdial h4,.tone-deep .wdial h5,.tone-deep .belt div h3,.tone-deep .belt div h4,.tone-deep .belt div h5,.tone-deep .comm h3,.tone-deep .comm h4,.tone-deep .comm h5,.tone-deep .doc h3,.tone-deep .doc h4,.tone-deep .doc h5,.tone-deep .stat h3,.tone-deep .stat h4,.tone-deep .stat h5,.tone-deep .q h3,.tone-deep .q h4,.tone-deep .q h5{color:var(--ink)}
+.tone-deep .pcard p,.tone-deep .pcard li,.tone-deep .pcard span,.tone-deep .scard p,.tone-deep .scard li,.tone-deep .scard span,.tone-deep .step p,.tone-deep .step li,.tone-deep .step span,.tone-deep .t p,.tone-deep .t li,.tone-deep .t span,.tone-deep .tslcard p,.tone-deep .tslcard li,.tone-deep .tslcard span,.tone-deep .svcrow p,.tone-deep .svcrow li,.tone-deep .svcrow span,.tone-deep .typebox p,.tone-deep .typebox li,.tone-deep .typebox span,.tone-deep .types p,.tone-deep .types li,.tone-deep .types span,.tone-deep .fform p,.tone-deep .fform li,.tone-deep .fform span,.tone-deep .wdial p,.tone-deep .wdial li,.tone-deep .wdial span,.tone-deep .belt div p,.tone-deep .belt div li,.tone-deep .belt div span,.tone-deep .comm p,.tone-deep .comm li,.tone-deep .comm span,.tone-deep .doc p,.tone-deep .doc li,.tone-deep .doc span,.tone-deep .stat p,.tone-deep .stat li,.tone-deep .stat span,.tone-deep .q p,.tone-deep .q li,.tone-deep .q span{color:var(--ink2)}
+.tone-deep .pcard b,.tone-deep .pcard strong,.tone-deep .scard b,.tone-deep .scard strong,.tone-deep .step b,.tone-deep .step strong,.tone-deep .t b,.tone-deep .t strong,.tone-deep .tslcard b,.tone-deep .tslcard strong,.tone-deep .svcrow b,.tone-deep .svcrow strong,.tone-deep .typebox b,.tone-deep .typebox strong,.tone-deep .types b,.tone-deep .types strong,.tone-deep .fform b,.tone-deep .fform strong,.tone-deep .wdial b,.tone-deep .wdial strong,.tone-deep .belt div b,.tone-deep .belt div strong,.tone-deep .comm b,.tone-deep .comm strong,.tone-deep .doc b,.tone-deep .doc strong,.tone-deep .stat b,.tone-deep .stat strong,.tone-deep .q b,.tone-deep .q strong{color:var(--ink)}
+
+.tone-dark .pcard i,.tone-dark .svcrow .tag,.tone-dark .step em{color:var(--clay)}
+
+/* --- photo-backed section: the backdrop is dark, so section text must be light --- */
+.photosec .h2,.photosec h2,.photosec h3{color:#fff}
+.photosec>.wrap>*>p,.photosec .lede{color:rgba(244,239,232,.82)}
+.photosec .eyebrow{color:var(--clay2)}
+
+/* --- tap-target guard: every phone/CTA link reaches 44px --- */
+/* superseded by the real logo image */
+.fcall a{display:inline-flex;align-items:center;min-height:46px;padding:4px 2px}
+.pull .side a,.photosec a:not(.btn1):not(.btn2):not(.btn1d):not(.btn2d):not(.go){display:inline-flex;align-items:center;min-height:46px}
+.nap a{display:inline-flex;align-items:center;min-height:44px}
+
+/* --- caption legibility over bright photos (found in the visual sweep) --- */
+.mos figcaption{padding:26px 14px 12px!important;font-size:10.5px!important;font-weight:600;
+  text-shadow:0 1px 3px rgba(0,0,0,.85);
+  background:linear-gradient(180deg,transparent 0%,rgba(8,14,12,.55) 45%,rgba(8,14,12,.92) 100%)!important}
+.comm .band figcaption{text-shadow:0 2px 6px rgba(0,0,0,.8)}
+.comm .band img{filter:saturate(.85) brightness(.66)!important}
+.comm .band figure:hover img{filter:saturate(1) brightness(.8)!important}
+.gcard b{text-shadow:0 1px 4px rgba(0,0,0,.55)}
+
+
+/* hero wrap must fill the flex row, otherwise it shrinks to content and centers */
+.hero>.wrap{width:100%}
+
+/* D hero text sits on the photo now, not inside the old green card */
+.hero h1{color:#fff}
+.hero .hsub{color:rgba(244,239,232,.9)}
+.hero .checks li{color:rgba(244,239,232,.88)}
+.hero .checks b{color:#fff}
+.hero .eyebrow{color:var(--clay2)}
+.hero .lic{color:rgba(244,239,232,.8)}
+
+/* ===== heading typography: no orphan words, no broken sentences ===== */
+h1,h2,h3,h4,.h2,summary{text-wrap:balance}
+p,.lede,.hsub{text-wrap:pretty}
+@supports not (text-wrap:balance){
+  h1,h2,h3,h4,.h2,summary{max-width:22ch}
+  .hero h1{max-width:18ch}
+}
+
+/* --- heading line control (from Cynthia's mark-ups) --- */
+h1 .hl{display:block}
+.jcard h4 em{white-space:nowrap}
+
+/* ===== dead-space fixes (team review, September 2026) ===== */
+.costgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+@media(max-width:900px){.costgrid{grid-template-columns:1fr;gap:30px}}
+.pricecard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:34px 32px}
+@media(max-width:560px){.pricecard{padding:26px 22px}}
+.pricecard h3{font-size:21px;margin:0 0 20px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.pricelist{list-style:none;margin:0;padding:0;counter-reset:pl}
+.pricelist li{position:relative;padding:0 0 18px 44px;margin-bottom:18px;border-bottom:1px solid var(--line)}
+.pricelist li:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.pricelist li::before{counter-increment:pl;content:counter(pl);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--cream2);color:var(--forest);font-family:var(--disp);font-weight:700;font-size:14px;display:grid;place-items:center}
+.pricelist b{display:block;font-family:var(--disp);font-weight:600;font-size:17px;margin-bottom:4px;color:var(--ink)}
+.pricelist span{display:block;font-size:14.5px;line-height:1.6;color:var(--ink2)}
+.pricenote{margin:22px 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:14.5px;line-height:1.6;color:var(--ink2)}
+
+.afterform{margin-top:34px;padding-top:28px;border-top:1px solid var(--line)}
+.afterform h3{font-size:19px;margin:0 0 18px}
+.afterform ol{margin:0;padding:0;list-style:none;counter-reset:af}
+.afterform li{position:relative;padding:0 0 14px 40px;font-size:15.5px;line-height:1.6;color:var(--ink2)}
+.afterform li:last-child{padding-bottom:0}
+.afterform li::before{counter-increment:af;content:counter(af);position:absolute;left:0;top:-1px;width:27px;height:27px;border-radius:50%;background:var(--forest);color:#fff;font-family:var(--disp);font-weight:700;font-size:13px;display:grid;place-items:center}
+.afterform b{color:var(--ink);font-weight:700}
+
+.dialproof{margin-top:22px;padding-top:20px;border-top:1px solid var(--line);display:flex;gap:14px;align-items:center;text-align:left;flex-wrap:wrap;justify-content:center}
+.dialproof img{height:46px;width:auto;flex:none}
+.dialproof span{font-size:13.5px;line-height:1.55;color:var(--ink2);min-width:0;flex:1 1 190px}
+.dialproof b{display:inline;font-family:var(--body);font-size:inherit;line-height:inherit;letter-spacing:normal;color:var(--ink);font-weight:700}
+
+/* ===== form fields, matching the live GoHighLevel field set ===== */
+.frow3{display:grid;grid-template-columns:1.5fr .7fr .9fr;gap:12px}
+@media(max-width:420px){.frow3{grid-template-columns:1fr 1fr}.frow3 .frow:first-child{grid-column:1/-1}}
+.req{color:var(--clay);font-weight:700}
+.opt{font-weight:500;letter-spacing:0;text-transform:none;color:var(--ink3);font-size:11px}
+.fcheck{display:flex;gap:10px;align-items:flex-start;margin:0 0 11px;cursor:pointer;font-size:13.5px;line-height:1.5;color:var(--ink2)}
+.fcheck input{margin:2px 0 0;width:18px;height:18px;flex:none;accent-color:var(--forest)}
+.fconsent{margin:6px 0 16px;font-size:11.5px;line-height:1.55;color:var(--ink3)}
+.fsubmit:focus-visible{outline:2px solid var(--forest);outline-offset:2px}
+.frow input[type=file]{padding:10px 12px;font-size:13.5px;background:var(--cream);min-height:48px;display:flex;align-items:center}
+.frow input[type=file]::file-selector-button{margin-right:12px;border:1px solid var(--line);background:#fff;
+  border-radius:100px;padding:7px 14px;font-family:var(--body);font-weight:700;font-size:13px;color:var(--ink);cursor:pointer}
+.finvalid{border-color:var(--clay)!important;background:rgba(194,106,58,.06)!important}
+/* the wide bottom form can use two columns for the address block */
+@media(min-width:781px){.fwide .frow3{grid-template-columns:1.6fr .6fr .8fr}}
+
+/* ===== mobile navigation ===== */
+.vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.navtoggle{display:none;align-items:center;justify-content:center;width:48px;height:48px;margin-left:4px;
+  background:transparent;border:1px solid var(--line);border-radius:14px;color:var(--ink);cursor:pointer;flex:none;transition:background .2s,border-color .2s}
+.navtoggle:hover{background:var(--cream2);border-color:var(--forest)}
+.navtoggle:focus-visible{outline:2px solid var(--forest);outline-offset:2px}
+.navbars{display:block;width:20px}
+.navbars i{display:block;height:2px;border-radius:2px;background:currentColor;transition:transform .3s,opacity .2s}
+.navbars i+i{margin-top:5px}
+.navtoggle[aria-expanded="true"] .navbars i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.navtoggle[aria-expanded="true"] .navbars i:nth-child(2){opacity:0}
+.navtoggle[aria-expanded="true"] .navbars i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.mnav{position:fixed;inset:0;z-index:200;background:var(--cream);display:flex;flex-direction:column;
+  opacity:0;visibility:hidden;transform:translateY(-10px);
+  overflow-y:auto;-webkit-overflow-scrolling:touch}
+/* No transition and no animation on this panel, deliberately.
+   A pending transition holds the OLD computed value and a stalled animation holds
+   its from-state, so either one can leave the menu invisible while still reporting
+   itself as open. Navigation is not allowed to depend on an animation clock.
+   The panel appears instantly. The hamburger morph above is cosmetic and may
+   safely do nothing. */
+.mnav.open{opacity:1;visibility:visible;transform:none}
+.mnav-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px;border-bottom:1px solid var(--line);flex:none}
+.mnav-close{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;background:transparent;
+  border:1px solid var(--line);border-radius:14px;color:var(--ink);cursor:pointer;flex:none;transition:background .2s,border-color .2s}
+.mnav-close:hover{background:var(--cream2);border-color:var(--forest)}
+.mnav-close:focus-visible{outline:2px solid var(--forest);outline-offset:2px}
+.mnav-links{display:flex;flex-direction:column;padding:8px 20px;flex:0 0 auto}
+.mnav-links a{display:flex;align-items:center;min-height:60px;padding:10px 4px;font-family:var(--disp);font-size:22px;
+  font-weight:700;color:var(--ink);border-bottom:1px solid var(--line)}
+.mnav-links a:last-child{border-bottom:0}
+.mnav-links a:focus-visible{outline:2px solid var(--forest);outline-offset:-2px}
+.mnav-note{flex:1 0 auto;padding:22px 24px 18px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.mnav-note p{margin:0;font-size:15px;line-height:1.6;color:var(--ink2);max-width:34ch}
+.mnav-note b{color:var(--ink);font-weight:700}
+.mnav-foot{padding:18px 20px 30px;border-top:1px solid var(--line);flex:none;display:grid;gap:11px}
+.mnav-call,.mnav-est{display:flex;align-items:center;justify-content:center;min-height:54px;padding:14px 20px;
+  border-radius:100px;font-weight:700;font-size:16.5px;text-align:center}
+.mnav-call{background:var(--clay);color:#fff}
+.mnav-est{background:transparent;color:var(--ink);border:1.5px solid var(--forest)}
+.mnav-call:focus-visible,.mnav-est:focus-visible{outline:2px solid var(--forest);outline-offset:3px}
+.mnav-lic{margin:6px 0 0;text-align:center;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--ink3)}
+body.navopen{overflow:hidden}
+@media(max-width:1000px){.navtoggle{display:inline-flex}.hdr-in{gap:14px}}
+/* the sticky call bar covers calling below 820px, so the header button would only overflow */
+@media(max-width:820px){.hdr .callbtn{display:none}}
+@media(min-width:1001px){.mnav{display:none}}
+@media(max-width:420px){.mnav-links a{font-size:20px;min-height:56px}}
+@media(prefers-reduced-motion:reduce){.navbars i{transition:none}}
+
+/* ===== real client logo =====
+   Both files are the same artwork, 77% transparent, no baked-in background.
+   The ink is light grey plus mid blue (average brightness 157/255), so it is a
+   light logo. The live site already places it on near-white #EAF7FF, so cream is
+   consistent with how the brand is presented today. No blend mode needed. */
+.logoimg{display:block;height:72px;width:auto}
+@media(max-width:1000px){.logoimg{height:58px}}
+@media(max-width:600px){.logoimg{height:50px}}
+.logo{display:inline-block;padding:0;line-height:0}
+.mnav-top .logoimg{height:50px}
+.ftlogoimg{display:block;height:86px;width:auto;margin-bottom:18px;border-radius:8px}
+@media(max-width:700px){.ftlogoimg{height:72px}}
+
+
+/* ===================================================================
+   ROOFING TEXTURE SYSTEM
+   Staggered shingle courses, drawn as a repeating SVG. Low contrast on
+   purpose: it should read as a surface, not as a pattern shouting at you.
+   =================================================================== */
+.tone-dark, .tone-deep{position:relative}
+.tone-dark>*, .tone-deep>*{position:relative;z-index:1}
+.tone-dark::before, .tone-deep::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='44'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.055' stroke-width='1.4'%3E%3Cpath d='M0 22h128M0 44h128'/%3E%3Cpath d='M21 22v22M64 22v22M107 22v22'/%3E%3Cpath d='M0 0v22M43 0v22M85 0v22M128 0v22'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:128px 44px}
+/* the deep band reads as standing-seam metal instead: vertical ribs */
+.tone-deep::before{
+  background-image:
+    repeating-linear-gradient(90deg,
+      rgba(255,255,255,.055) 0 1px,
+      rgba(255,255,255,0) 1px 74px),
+    repeating-linear-gradient(90deg,
+      rgba(0,0,0,.10) 0 3px,
+      rgba(0,0,0,0) 3px 74px);
+  background-size:auto}
+@media(prefers-reduced-motion:no-preference){
+  .tone-dark::before{transition:opacity .4s}
+}
+
+/* ===================================================================
+   ROOF ASSEMBLY CUTAWAY
+   =================================================================== */
+.asm{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,500px);gap:52px;align-items:start}
+@media(max-width:980px){.asm{grid-template-columns:1fr;gap:32px}}
+
+.asmlist{list-style:none;margin:26px 0 0;padding:0}
+.asmlist li{margin:0 0 8px}
+.asmbtn{position:relative;width:100%;display:block;
+  background:transparent;border:1px solid transparent;border-radius:14px;padding:13px 16px 13px 20px;
+  text-align:left;cursor:pointer;font-family:var(--body);color:inherit;
+  transition:background .2s,border-color .2s}
+/* the selected layer takes a rule down its edge, where the number used to sit.
+   Absolutely positioned, so nothing shifts when the selection moves. */
+.asmbtn::before{content:"";position:absolute;left:8px;top:13px;bottom:13px;width:3px;
+  border-radius:2px;background:transparent;transition:background .2s}
+.asmbtn[aria-selected="true"]::before{background:var(--clay2)}
+.asmbtn:hover{background:rgba(244,239,232,.07);border-color:rgba(244,239,232,.16)}
+.asmbtn:focus-visible{outline:2px solid var(--clay2);outline-offset:2px}
+.asmbtn[aria-selected="true"]{background:rgba(244,239,232,.11);border-color:rgba(240,180,138,.55)}
+.asmttl{display:block;font-family:var(--disp);font-size:18px;font-weight:700;color:#f4efe8;margin-bottom:3px}
+@media(max-width:420px){.asmttl{font-size:16.5px}}
+.asmsub{display:block;font-size:14.5px;line-height:1.6;color:rgba(244,239,232,.72)}
+.asmbtn[aria-selected="true"] .asmsub{color:rgba(244,239,232,.9)}
+
+/* the list drives the diagram, so the diagram follows the list rather than
+   sitting centred with a gap above and below it. 104px clears the sticky header. */
+.asmfig{position:sticky;top:104px;align-self:start;margin:0}
+@media(max-width:980px){.asmfig{position:relative;top:auto}}
+.asmsvg{width:100%;height:auto;display:block;filter:drop-shadow(0 26px 46px rgba(0,0,0,.4))}
+.asmsvg .lyr{transition:opacity .25s,transform .3s;transform-box:fill-box;transform-origin:center}
+.asmsvg .lyr.sel{transform:translateX(-18px)}
+.asmsvg .lyr.sel path{filter:drop-shadow(0 6px 14px rgba(0,0,0,.55))}
+.asmsvg .lyr.dim{opacity:.42}
+.asmsvg .lbl{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.05em;
+  fill:rgba(244,239,232,.72);text-transform:uppercase}
+.asmsvg .lyr.sel .lbl{fill:#f0b48a}
+.asmsvg .lbl.on{fill:#f0b48a}
+.asmcap{margin:16px 0 0;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(244,239,232,.78);text-align:center}
+.pitch{display:inline-flex;align-items:center;gap:9px;margin-top:18px;padding:9px 15px;border-radius:100px;
+  background:rgba(244,239,232,.08);border:1px solid rgba(244,239,232,.16);
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:rgba(244,239,232,.78)}
+.pitch svg{flex:none}
+@media(prefers-reduced-motion:reduce){.asmsvg .lyr{transition:none}}
+
+
+/* ===== hero lead form =====
+   Height comes from the grid, not from a viewport calculation, so the card always
+   ends level with the text beside it. Header and submit stay put; only the fields
+   scroll, so the call to action is never scrolled out of reach. */
+.heroform{background:var(--cream);border-radius:var(--r);padding:0;overflow:hidden;
+  box-shadow:0 30px 70px -30px rgba(12,28,24,.8);border:1px solid rgba(255,255,255,.16);
+  border-top:3px solid var(--clay);  /* ridge cap, after the shorthand or it is reset */
+  display:flex;flex-direction:column;min-height:0}
+.heroform .fhead{flex:none;padding:20px 24px 14px;border-bottom:1px solid var(--line)}
+.heroform .ftitle{font-size:21px;margin:0 0 5px;padding-bottom:0;border-bottom:0}
+.heroform .fkicker{margin:0;font-size:13.5px;line-height:1.5;color:var(--ink2)}
+.heroform .fbody{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;
+  padding:16px 24px 10px;scrollbar-width:thin;scrollbar-color:rgba(31,77,67,.34) transparent}
+.heroform .fbody::-webkit-scrollbar{width:8px}
+.heroform .fbody::-webkit-scrollbar-thumb{background:rgba(31,77,67,.3);border-radius:8px}
+.heroform .fbody::-webkit-scrollbar-thumb:hover{background:rgba(31,77,67,.5)}
+.heroform .fbody:focus-visible{outline:2px solid var(--forest);outline-offset:-2px}
+.heroform .ffoot{flex:none;padding:13px 24px 17px;border-top:1px solid var(--line);
+  background:var(--cream);position:relative}
+.heroform .ffoot::before{content:"";position:absolute;left:0;right:0;top:-26px;height:26px;
+  pointer-events:none;background:linear-gradient(180deg,rgba(251,247,242,0),var(--cream))}
+.heroform .frow{margin-bottom:13px}
+.heroform .frow label{font-size:11px;margin-bottom:6px}
+.heroform .frow input,.heroform .frow select{padding:14px;font-size:15px;background:#fff;min-height:48px}
+.heroform .fsubmit{padding:16px 20px;margin-top:0}
+.heroform .fmicro{margin:10px 0 0;font-size:12.5px;line-height:1.55;color:var(--ink3);text-align:center}
+.heroform .fstatus{margin:10px 0 0}
+.heroform textarea{min-height:64px}
+.heroform .fconsent{margin-bottom:4px}
+/* on a phone the page scrolls, never the card */
+@media(max-width:980px){
+  .heroform{flex:none}
+  .heroform .fbody{overflow:visible;min-height:auto}
+  .heroform .ffoot::before{display:none}
+}
+
+
+/* ===== hero spec sheet =====
+   Label left, value right, one line per row. A row is exactly as tall as its line,
+   so there is nowhere for dead space to appear. The bottom edge stays cut into
+   shingle tabs, which is the one shape nobody outside roofing uses. */
+.plate{position:relative;margin:28px 0 0;background:rgba(12,28,24,.42);
+  border:1px solid rgba(244,239,232,.22);border-bottom:0;border-radius:14px 14px 0 0;
+  backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.spec{margin:0;padding:3px 20px 5px}
+.specrow{display:grid;grid-template-columns:118px minmax(0,1fr);gap:16px;align-items:baseline;
+  padding:12px 0;border-top:1px solid rgba(244,239,232,.14)}
+.specrow:first-child{border-top:0}
+.spec dt{margin:0;font-family:var(--mono);font-size:10px;letter-spacing:.15em;
+  text-transform:uppercase;color:#f0b48a;white-space:nowrap}
+.spec dd{margin:0;font-size:14.5px;line-height:1.45;color:rgba(244,239,232,.86);text-wrap:pretty}
+.spec dd b{font-family:var(--disp);font-weight:700;font-size:16px;color:#fff}
+.spec dd i{font-style:normal;color:rgba(244,239,232,.42);padding:0 3px}
+/* the buttons were sitting against the shingle edge, and they read better
+   centred under the full width of the spec block above them */
+.hero .cta{margin-top:30px;justify-content:center}
+@media(max-width:560px){.hero .cta{margin-top:24px}}
+.plateedge{display:block;width:100%;height:12px;fill:rgba(12,28,24,.42);
+  filter:drop-shadow(0 1px 0 rgba(244,239,232,.22))}
+/* below this the two-column row squeezes the value enough to wrap, so the label
+   moves above it and the value gets the full width. One line per row, always. */
+@media(max-width:1180px){
+  .specrow{grid-template-columns:1fr;gap:5px;padding:11px 0}
+}
+@media(max-width:620px){
+  .spec{padding:3px 16px 5px}
+  .spec dd{font-size:14px}
+}
+
+/* the answer capsule reads as a note on a drawing rather than a wall of text */
+.hero .hsub{position:relative;padding-left:20px;max-width:60ch}
+.hero .hsub::before{content:"";position:absolute;left:0;top:5px;bottom:5px;width:2px;
+  background:linear-gradient(180deg,var(--clay2),rgba(240,180,138,.15));border-radius:2px}
+@media(max-width:560px){.hero .hsub{padding-left:15px}}
+
+
+/* ===================================================================
+   HERO: PITCH
+   A 6:12 roof sits at 26.57 degrees. Every line in this section uses it,
+   so the geometry is the roof rather than decoration borrowed from
+   somewhere else.
+   =================================================================== */
+.pitchgrid{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    repeating-linear-gradient(26.57deg,  rgba(244,239,232,.085) 0 1px, transparent 1px 84px),
+    repeating-linear-gradient(-26.57deg, rgba(244,239,232,.035) 0 1px, transparent 1px 84px);
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.25) 62%,rgba(0,0,0,0) 100%);
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.25) 62%,rgba(0,0,0,0) 100%)}
+
+.gable{display:block;margin:0 0 14px}
+
+
+
+
+
+@media(max-width:900px){
+    .wq{grid-template-columns:40px minmax(0,1fr);gap:14px}
+    .wq h4{font-size:19px}
+}
+
+
+/* ===== section header that fills its width ===== */
+.sechead{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:54px;align-items:end}
+.sechead .h2{margin-bottom:0}
+.sechead .lede{margin:0;padding-bottom:4px}
+@media(max-width:900px){.sechead{grid-template-columns:1fr;gap:16px;align-items:start}}
+
+/* ===== four houses =====
+   A gable over a panel, and the number on a plate the way a street number sits on
+   a wall. Four across, so no card is stretched to match a taller neighbour. */
+.hrow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin-top:42px;align-items:start}
+@media(max-width:1080px){.hrow{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}}
+@media(max-width:620px){.hrow{grid-template-columns:1fr}}
+
+.house{display:flex;flex-direction:column;transition:transform .3s}
+.house:hover{transform:translateY(-5px)}
+.hroof{display:block;width:100%;height:58px;margin-bottom:-1px}
+.hroofface{fill:rgba(240,180,138,.16)}
+.hroofline{stroke:#f0b48a;stroke-width:2;vector-effect:non-scaling-stroke;stroke-linejoin:round}
+.hbody{flex:1;background:rgba(12,28,24,.44);border:1px solid rgba(244,239,232,.2);
+  border-radius:0 0 14px 14px;padding:22px 20px 24px;position:relative;
+  backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.hplate{position:absolute;top:-21px;left:20px;width:42px;height:42px;
+  display:grid;place-items:center;background:var(--forest2);
+  border:1px solid rgba(240,180,138,.5);border-radius:11px;color:#f0b48a}
+.hplate svg{width:22px;height:22px;display:block}
+.house h4{margin:22px 0 10px;font-size:18.5px;line-height:1.32;color:#fff;text-wrap:balance}
+.house p{margin:0;font-size:14.5px;line-height:1.62;color:rgba(244,239,232,.84);text-wrap:pretty}
+.house p b{color:#fff;font-weight:700}
+@media(prefers-reduced-motion:reduce){.house{transition:none}}
+
+/* =========================================================
+   CHAT WIDGET + BACK TO TOP
+   The live site's GoHighLevel chat widget owns the bottom right (a 301x150 box
+   while its prompt shows), so back to top takes the bottom left.
+   ========================================================= */
+.totop{position:fixed;left:20px;bottom:20px;z-index:115;width:46px;height:46px;border-radius:50%;padding:0;
+  display:grid;place-items:center;cursor:pointer;color:var(--forest);background:#fff;
+  /* white with a forest ring: the white carries it over the forest sections and
+     the footer, the ring carries it over cream */
+  border:2px solid var(--forest);box-shadow:0 12px 28px -10px rgba(0,0,0,.45);
+  opacity:0;visibility:hidden;transform:translateY(12px);
+  transition:opacity .3s,transform .3s,visibility .3s,background .25s}
+.totop.on{opacity:1;visibility:visible;transform:none}
+.totop:hover{background:var(--clay);border-color:#fff;color:#fff}
+.totop:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+/* phones: the call bar takes the bottom. The arrow sits above it, and the chat
+   widget's host gets a transform -- that makes it the frame the bubble's fixed
+   position is measured from -- so lifting the host by the bar's height lifts the
+   bubble clear of "Free estimate". It moves with the bar. */
+@media(max-width:820px){
+  .totop{left:12px;bottom:calc(var(--barh,57px) + 12px);width:42px;height:42px}
+  chat-widget{position:fixed;right:0;bottom:0;width:0;height:0;z-index:125;
+    transform:translateY(0);transition:transform .35s cubic-bezier(.22,.61,.36,1)}
+  body.barup chat-widget{transform:translateY(calc(-1 * var(--barh,57px)))}
+}
+@media(prefers-reduced-motion:reduce){.totop,chat-widget{transition:none}}
+
+/* sticky mobile call bar */
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:120;display:none;gap:1px;background:rgba(0,0,0,.3);transform:translateY(100%);transition:transform .35s cubic-bezier(.22,.61,.36,1)}
+.callbar.up{transform:none}
+.callbar a{flex:1;text-align:center;padding:16px 10px;font-weight:700;font-size:15px}
+.callbar .c1{background:var(--forest);color:#fff}
+.callbar .c2{background:var(--clay);color:#fff}
+@media(max-width:820px){.callbar{display:flex}body{padding-bottom:56px}}
+
+/* ============ SERVICE PAGE TEMPLATE ============
+   Its own architecture, not the homepage's. The homepage is a stack of
+   full-width bands; a service page is a document with a rail beside it. Same
+   type, same palette, same roofing motifs -- different structure. */
+
+/* --- hero: typographic, no photo cycle, no form --- */
+.shero{background:var(--forest);color:#f4efe8;padding:30px 0 46px;
+  background-image:repeating-linear-gradient(26.57deg,rgba(244,239,232,.055) 0 1px,transparent 1px 84px)}
+.crumbs{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:rgba(244,239,232,.78);margin-bottom:34px}
+.crumbs a{color:var(--clay2)}
+.crumbs a:hover{text-decoration:underline}
+.crumbs span[aria-hidden]{padding:0 10px;color:rgba(244,239,232,.74)}
+.shero .eyebrow{color:var(--clay2);margin-bottom:14px}
+.shtitle{font-size:clamp(32px,5vw,58px);line-height:1.06;margin:0;color:#fff;letter-spacing:-.024em}
+.shtitle em{font-style:italic;color:var(--clay2)}
+.shlede{margin:18px 0 0;font-size:18px;line-height:1.6;color:rgba(244,239,232,.86);text-wrap:balance}
+.shcta{margin-top:26px}
+/* the four facts sit on a shingle course, the same fixed-pixel keyway as the
+   job board photos, so the tab pitch holds at any width */
+.shfacts{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px;
+  margin:44px 0 0;padding:26px 0 0;position:relative}
+.shfacts::before{content:"";position:absolute;left:0;right:0;top:0;height:12px;
+  background:repeating-linear-gradient(90deg,rgba(244,239,232,.28) 0 3px,transparent 3px 44px),
+             linear-gradient(rgba(244,239,232,.28),rgba(244,239,232,.28));
+  background-size:100% 100%,100% 1.5px;background-position:0 0,0 100%;background-repeat:repeat-x,no-repeat}
+@media(max-width:820px){.shfacts{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}}
+@media(max-width:420px){.shfacts{grid-template-columns:1fr}}
+.shfacts b{display:block;font-family:var(--disp);font-size:25px;font-weight:700;color:#fff;line-height:1.1}
+.shfacts span{display:block;margin-top:5px;font-family:var(--mono);font-size:10px;letter-spacing:.11em;
+  text-transform:uppercase;color:rgba(244,239,232,.8);line-height:1.5}
+
+/* --- the body: content column plus a rail that stays with you --- */
+.spage{background:var(--cream);padding:74px 0 82px}
+/* one column now that the side card is gone */
+.sgrid{display:block}
+.scol{min-width:0}
+.sblock{margin:0 0 58px}
+.sblock:last-of-type{margin-bottom:0}
+.sblock h2{font-size:clamp(25px,3vw,34px);line-height:1.16;margin:0 0 14px}
+.sintro{margin:0 0 26px;font-size:16.5px;line-height:1.65;color:var(--ink2);max-width:62ch;text-wrap:pretty}
+
+/* ten services: 10 divides by 2 and 5, so five rows of two fills exactly */
+/* ===== the ten services as photo tiles =====
+   Each tile is its photo, edge to edge. The shade is the background of the text
+   block itself, so it covers exactly the words plus a fade and never more of the
+   photo. Three columns, two tiles double width: four full rows, no hole. */
+.svhead{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:16px 56px;align-items:end;margin:0 0 30px}
+.svhead .eyebrow{margin:0 0 12px}
+.svhead h2{margin:0}
+.svhead .sintro{margin:0;max-width:none}
+@media(max-width:1100px){.svhead{grid-template-columns:1fr}}
+.svlist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-auto-rows:320px;gap:14px}
+.svlist .svwide{grid-column:span 2}
+.svlist a{position:relative;display:block;height:100%;overflow:hidden;border-radius:18px;background:var(--forest2);
+  box-shadow:0 20px 40px -30px rgba(23,58,51,.6);transition:transform .35s,box-shadow .35s}
+.svlist a:hover{transform:translateY(-4px);box-shadow:0 30px 54px -30px rgba(23,58,51,.78)}
+.svlist a:focus-visible{outline:3px solid var(--clay);outline-offset:3px}
+.svpic{position:absolute;inset:0}
+.svpic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s cubic-bezier(.22,.61,.36,1)}
+.svlist a:hover .svpic img{transform:scale(1.06)}
+.svtxt{position:absolute;left:0;right:0;bottom:0;padding:40px 24px 20px;display:flex;flex-direction:column;
+  background:linear-gradient(0deg,rgba(12,28,24,.88) 0,rgba(12,28,24,.8) calc(100% - 40px),rgba(12,28,24,0) 100%)}
+.svlist h3{margin:0 0 6px;font-size:21px;line-height:1.22;color:#fff;text-wrap:balance}
+.svwide h3{font-size:27px}
+.svlist p{margin:0 0 12px;font-size:14.5px;line-height:1.55;color:rgba(244,239,232,.88);text-wrap:balance;max-width:46ch}
+.svgo{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--clay2)}
+.svgo svg{transition:transform .3s}
+.svlist a:hover .svgo svg{transform:translateX(4px)}
+@media(prefers-reduced-motion:reduce){.svlist a,.svpic img,.svgo svg{transition:none}
+  .svlist a:hover,.svlist a:hover .svpic img,.svlist a:hover .svgo svg{transform:none}}
+@media(max-width:1000px){.svlist{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:300px}}
+@media(max-width:560px){.svlist{grid-template-columns:1fr;grid-auto-rows:300px}.svlist .svwide{grid-column:auto}
+  .svtxt{padding:36px 20px 18px}.svwide h3{font-size:23px}}
+
+/* scope list: the gable bullet from the job board, not a tick */
+/* the four promises: four cards in a row, an icon each, no numbers */
+.scope{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media(max-width:1000px){.scope{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.scope{grid-template-columns:1fr}}
+.scope li{display:flex;flex-direction:column;gap:16px;padding:24px 22px 22px;background:#fff;border:1px solid var(--line);
+  border-radius:16px;border-top:3px solid var(--clay)}
+.scico{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;color:var(--clay);
+  background:rgba(168,85,42,.08);border:1px solid rgba(168,85,42,.28)}
+.scico svg{width:25px;height:25px;display:block}
+.scope b{display:block;font-family:var(--disp);font-size:18.5px;font-weight:700;line-height:1.28;text-wrap:balance}
+.scope span{display:block;margin-top:5px;font-size:15px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
+
+
+/* the commercial cross-link runs the full width as a banner: words left, link
+   right, so the column no longer ends in an empty right half */
+.sxband{display:flex;align-items:center;justify-content:space-between;gap:18px 40px;flex-wrap:wrap;
+  padding:30px 34px;background:var(--cream2);border:1px solid var(--line);border-radius:var(--r)}
+.sxband h2{margin-bottom:8px}
+.sxband .sintro{margin:0}
+.sxband .sxlink{flex:none}
+@media(max-width:560px){.sxband{padding:24px 22px}}
+.sxlink{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:16px;
+  color:var(--forest);padding:6px 0;border-bottom:1.5px solid rgba(168,85,42,.45);
+  transition:color .25s,border-color .25s}
+.sxlink:hover{color:var(--clay);border-bottom-color:var(--clay)}
+.sxlink svg{transition:transform .3s}
+.sxlink:hover svg{transform:translateX(4px)}
+@media(prefers-reduced-motion:reduce){.sxlink,.sxlink svg{transition:none}.sxlink:hover svg{transform:none}}
+
+/* --- the rail --- */
+/* ===== residential: the sections added on September 11, 2026 =====
+   Each one shares facts with a homepage section but is built in this page's own
+   template. Every header reuses .svhead (eyebrow and H2 left, intro right). */
+/* how a job works: three cards joined by a short clay rule */
+.rsteps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.rsteps li{position:relative;padding:26px 24px 24px;background:#fff;border:1px solid var(--line);border-radius:16px}
+.rsteps li:not(:last-child)::after{content:"";position:absolute;top:50px;right:-18px;width:18px;height:2px;background:var(--clay)}
+.rsico{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;margin-bottom:18px;
+  background:var(--forest);color:#fff;box-shadow:0 0 0 6px var(--cream2)}
+.rsico svg{width:24px;height:24px}
+.rsteps h3{margin:0 0 8px;font-size:20px;line-height:1.25}
+.rsteps p{margin:0;font-size:15px;line-height:1.6;color:var(--ink2)}
+.rsteps b{color:var(--ink)}
+@media(max-width:800px){.rsteps{grid-template-columns:1fr}
+  .rsteps li:not(:last-child)::after{top:auto;bottom:-18px;right:auto;left:48px;width:2px;height:18px}}
+
+/* materials: five tall photo tiles, the words on their own shade */
+.rtypes{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.rtypes a{position:relative;display:block;height:320px;overflow:hidden;border-radius:18px;background:var(--forest2);
+  box-shadow:0 20px 40px -30px rgba(23,58,51,.6)}
+.rtypes a:focus-visible{outline:3px solid var(--clay);outline-offset:3px}
+.rtypes img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s cubic-bezier(.22,.61,.36,1)}
+.rtypes a:hover img{transform:scale(1.06)}
+.rttxt{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 18px;display:flex;flex-direction:column;gap:6px;
+  background:linear-gradient(0deg,rgba(12,28,24,.88) 0,rgba(12,28,24,.8) calc(100% - 40px),rgba(12,28,24,0) 100%)}
+.rttxt b{font-family:var(--disp);font-size:clamp(18px,1.72vw,22px);font-weight:600;line-height:1.2;color:#fff;white-space:nowrap}
+.rttxt span{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--clay2)}
+@media(max-width:1000px){.rtypes{grid-template-columns:repeat(2,minmax(0,1fr))}.rtypes li:first-child{grid-column:span 2}.rtypes a{height:260px}.rttxt b{font-size:22px}}
+@media(max-width:560px){.rtypes{grid-template-columns:1fr}.rtypes li:first-child{grid-column:auto}}
+
+/* reviews: one quote across the full width on forest, three cards in a row beneath */
+.rrevs{display:grid;gap:16px}
+.rrfeat{position:relative;overflow:hidden;margin:0;display:flex;flex-direction:column;gap:22px;
+  padding:34px 40px 30px;background:var(--forest);color:#f4efe8;border-radius:var(--r)}
+.rrfeat::before{content:"\201C";position:absolute;right:30px;bottom:-96px;font-family:var(--disp);font-size:190px;line-height:1;
+  color:rgba(240,180,138,.2);pointer-events:none}
+.rrfeat blockquote{position:relative;margin:0;font-family:var(--disp);font-size:clamp(19px,2vw,23px);line-height:1.5;color:#fff;text-wrap:pretty}
+.rrlist{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.rrcard{margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:14px;padding:20px 22px;
+  background:#fff;border:1px solid var(--line);border-radius:16px}
+.rrcard blockquote{margin:0;font-size:15px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
+.rrwho{display:flex;align-items:center;gap:12px}
+.rrav{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-family:var(--disp);font-weight:700;
+  font-size:14px;background:var(--cream2);color:var(--forest);border:1px solid var(--line)}
+.rrfeat .rrav{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.28)}
+.rrwho b{display:block;font-size:15px;color:var(--ink)}
+.rrfeat .rrwho b{color:#fff}
+.rrwho span span{display:block;margin-top:2px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+.rrfeat .rrwho span span{color:rgba(244,239,232,.74)}
+@media(max-width:900px){.rrlist{grid-template-columns:1fr}.rrfeat{padding:28px 24px 24px}}
+@media(max-width:560px){.rrfeat::before{font-size:120px;right:18px;bottom:-60px}}
+@media(max-width:400px){.rrfeat::before{display:none}}
+
+/* storm damage and insurance: words left on forest, photo right filling the height */
+.rclaim{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);overflow:hidden;border-radius:var(--r);
+  background:var(--forest2);color:#f4efe8}
+.rcltxt{padding:40px 40px 38px}
+.rcltxt .eyebrow{color:var(--clay2);margin:0 0 12px}
+.rcltxt h2{color:#fff}
+.rcltxt p:not(.eyebrow){margin:0 0 14px;font-size:16.5px;line-height:1.65;color:rgba(244,239,232,.86)}
+.rclcta{display:flex;align-items:center;gap:14px 24px;flex-wrap:wrap;margin-top:24px}
+.rclink{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15px;color:#fff;padding:6px 0;
+  border-bottom:1.5px solid rgba(240,180,138,.55)}
+.rclink:hover{color:var(--clay2);border-bottom-color:var(--clay2)}
+.rclpic{position:relative;min-height:300px}
+.rclpic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:900px){.rclaim{grid-template-columns:1fr}.rclpic{min-height:240px}.rcltxt{padding:30px 24px}}
+
+/* FAQ: the page's header above, the questions full width below */
+.sintro .rfaqtel{font-weight:700;color:var(--forest);white-space:nowrap;border-bottom:1.5px solid rgba(168,85,42,.45)}
+.sintro .rfaqtel:hover{color:var(--clay);border-bottom-color:var(--clay)}
+.rfaqlist{display:grid;gap:10px}
+.rfaqlist details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:0 20px}
+.rfaqlist summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:18px 0;font-family:var(--disp);font-weight:600;font-size:17.5px;line-height:1.35;color:var(--ink)}
+.rfaqlist summary::-webkit-details-marker{display:none}
+.rfaqlist summary::after{content:"+";flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+  background:var(--cream2);color:var(--clay);font-family:var(--body);font-size:18px;font-weight:700}
+.rfaqlist details[open] summary::after{content:"\2212"}
+.rfaqlist summary:focus-visible{outline:2px solid var(--clay);outline-offset:3px;border-radius:6px}
+.rfa{padding:0 0 18px;max-width:80ch;font-size:15.5px;line-height:1.65;color:var(--ink2);text-wrap:pretty}
+
+/* towns: 14 towns and the phone make 15 cells, so every row is full:
+   5 x 3, then 3 x 5, then 2 columns with the phone across the last row */
+.rtowns{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.rtowns a{display:flex;align-items:center;justify-content:center;gap:9px;padding:13px 12px;border-radius:12px;
+  border:1px solid var(--line);background:#fff;font-size:15px;font-weight:600;color:var(--ink);white-space:nowrap;
+  transition:border-color .2s,color .2s,background .2s}
+.rtowns a::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--clay)}
+.rtowns a:hover{border-color:var(--clay);color:var(--clay)}
+.rtowns a:focus-visible{outline:2px solid var(--clay);outline-offset:2px}
+.rtowns .rtcall{background:var(--forest);border-color:var(--forest);color:#fff;font-weight:700}
+.rtowns .rtcall::before{display:none}
+.rtowns .rtcall:hover{background:var(--clay);border-color:var(--clay);color:#fff}
+@media(max-width:1000px){.rtowns{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.rtowns{grid-template-columns:repeat(2,minmax(0,1fr))}.rtowns .rtcall{grid-column:span 2}}
+@media(prefers-reduced-motion:reduce){.rtypes img,.rtowns a{transition:none}.rtypes a:hover img{transform:none}}
+/* ===== single-service page: split hero, the run of work, warning signs, warranty band =====
+   First built for Residential Roof Replacement; the model for the other 20 service pages. */
+.rpgrid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr);gap:40px;align-items:stretch}
+.rptxt{min-width:0}
+.rphero .shtitle{font-size:clamp(32px,3.5vw,48px)}
+/* the crumb items touch in the markup, so the only safe break is between whole items */
+.rphero .crumbs{display:flex;flex-wrap:wrap;align-items:baseline;row-gap:6px}
+.rpfig{position:relative;margin:0;min-height:300px;border-radius:18px;overflow:hidden;background:var(--forest2);
+  box-shadow:0 24px 50px -30px rgba(0,0,0,.6)}
+.rpfig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.rpfig figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 14px;font-family:var(--mono);font-size:10px;
+  letter-spacing:.12em;text-transform:uppercase;color:#f4efe8;
+  background:linear-gradient(0deg,rgba(12,28,24,.86) 0,rgba(12,28,24,.78) calc(100% - 34px),rgba(12,28,24,0) 100%)}
+@media(max-width:1000px){.rpgrid{grid-template-columns:1fr;gap:28px}.rpfig{min-height:260px}}
+/* the run of work: heading, intro and a photo that fills the rest of the column; the steps beside it */
+.rpflow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px 52px;align-items:stretch}
+.rpflowl{display:flex;flex-direction:column;min-width:0}
+.rpflowl .eyebrow{margin:0 0 12px}
+.rpflowl h2{margin:0 0 14px}
+.rpflowl .sintro{margin:0 0 22px}
+.rpflowpic{position:relative;flex:1;min-height:220px;border-radius:18px;overflow:hidden;background:var(--forest2)}
+.rpflowpic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.rptl{list-style:none;margin:0;padding:0;counter-reset:rp;display:grid;gap:12px}
+.rptl li{position:relative;display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;align-items:start;
+  padding:18px 22px 18px 18px;background:#fff;border:1px solid var(--line);border-radius:16px}
+.rptl li::before{counter-increment:rp;content:counter(rp,decimal-leading-zero);width:44px;height:44px;border-radius:50%;
+  display:grid;place-items:center;background:var(--forest);color:#fff;font-family:var(--mono);font-size:13px;letter-spacing:.04em}
+.rptl li:not(:last-child)::after{content:"";position:absolute;left:39px;bottom:-13px;width:2px;height:14px;background:var(--clay)}
+.rptl h3{margin:2px 0 4px;font-size:19px;line-height:1.25}
+.rptl p{margin:0;font-size:15px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
+.rptl b{color:var(--ink)}
+@media(max-width:1000px){.rpflow{grid-template-columns:1fr}.rpflowpic{flex:none;height:240px}}
+/* warning signs: six cards, 3 x 2, then 2 x 3, then one column */
+.rpsigns{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.rpsigns li{padding:22px 22px 20px;background:#fff;border:1px solid var(--line);border-radius:16px}
+.rpsico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--cream2);color:var(--clay);margin-bottom:14px}
+.rpsico svg{width:22px;height:22px}
+.rpsigns h3{margin:0 0 6px;font-size:19px;line-height:1.25}
+.rpsigns p{margin:0;font-size:15px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
+@media(max-width:900px){.rpsigns{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.rpsigns{grid-template-columns:1fr}}
+/* wind warranty band: the number on the left, the words on the right */
+.rpwarr{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px 48px;align-items:center;padding:36px 44px;
+  border-radius:var(--r);background:var(--forest);color:#f4efe8;
+  background-image:repeating-linear-gradient(26.57deg,rgba(244,239,232,.055) 0 1px,transparent 1px 84px)}
+.rpnum{margin:0;text-align:center;font-family:var(--disp);font-weight:700;font-size:clamp(84px,9vw,128px);line-height:.9;color:var(--clay2);letter-spacing:-.04em}
+.rpnum small{display:block;margin-top:10px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(244,239,232,.82)}
+.rpwarr .eyebrow{color:var(--clay2);margin:0 0 10px}
+.rpwarr h2{color:#fff;margin:0 0 12px}
+.rpwarr p:not(.eyebrow):not(.rpnum){margin:0;font-size:16.5px;line-height:1.65;color:rgba(244,239,232,.86)}
+@media(max-width:700px){.rpwarr{grid-template-columns:1fr;padding:28px 24px}}
+/* related services: the hub's photo tiles, two across */
+.svlist.rprel{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:280px}
+@media(max-width:560px){.svlist.rprel{grid-template-columns:1fr}}
+/* ===== roofing types hub: eight tiles four across, and the houses / buildings split ===== */
+.svlist.rtgrid{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:320px}
+.rtag{position:absolute;top:14px;left:14px;z-index:1;padding:6px 11px;border-radius:100px;background:rgba(12,28,24,.8);
+  color:#fff;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;line-height:1.2}
+@media(max-width:1000px){.svlist.rtgrid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:300px}}
+@media(max-width:560px){.svlist.rtgrid{grid-template-columns:1fr}}
+.rtwhere{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.rtw{display:flex;flex-direction:column;padding:30px 30px 26px;border-radius:var(--r);border:1px solid var(--line);background:#fff}
+.rtwh{background:var(--forest);border-color:var(--forest);color:#f4efe8}
+.rtw .eyebrow{margin:0 0 10px}
+.rtwh .eyebrow{color:var(--clay2)}
+.rtw h3{margin:0 0 8px;font-size:24px;line-height:1.2}
+.rtwh h3{color:#fff}
+.rtw>p:not(.eyebrow){margin:0 0 18px;font-size:15.5px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
+.rtwh>p:not(.eyebrow){color:rgba(244,239,232,.86)}
+.rtw ul{list-style:none;margin:0 0 22px;padding:0;border-top:1px solid var(--line)}
+.rtwh ul{border-top-color:rgba(244,239,232,.22)}
+.rtw li a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 2px;border-bottom:1px solid var(--line);
+  font-weight:600;font-size:16px;color:var(--ink);transition:color .2s}
+.rtwh li a{color:#fff;border-bottom-color:rgba(244,239,232,.22)}
+.rtw li a:hover{color:var(--clay)}
+.rtwh li a:hover{color:var(--clay2)}
+.rtw li a:focus-visible,.rtwlink:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.rtwlink{margin-top:auto;align-self:flex-start;display:inline-flex;gap:9px;align-items:center;font-weight:700;font-size:15px;
+  color:var(--forest);padding:6px 0;border-bottom:1.5px solid rgba(168,85,42,.45)}
+.rtwh .rtwlink{color:#fff;border-bottom-color:rgba(240,180,138,.55)}
+@media(max-width:800px){.rtwhere{grid-template-columns:1fr}}
+/* ===== service areas hub: 14 towns and a call cell, so every row is full at 5, 3 and 2 across ===== */
+.satowns{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.satowns a{display:flex;flex-direction:column;height:100%;padding:18px 18px 16px;background:#fff;border:1px solid var(--line);
+  border-radius:16px;color:var(--ink);transition:border-color .2s,transform .2s}
+.satowns a:hover{border-color:var(--clay);transform:translateY(-2px)}
+.satowns a:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.satpar{display:block;margin-bottom:8px;font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--clay);line-height:1.4}
+.satowns h3{margin:0 0 6px;font-size:20px;line-height:1.2}
+.satowns p{margin:0 0 14px;font-size:14px;line-height:1.55;color:var(--ink2);text-wrap:pretty}
+.satgo{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--forest)}
+.satowns .satcall{background:var(--forest);border-color:var(--forest);color:#fff}
+.satcall .satpar,.satcall .satgo{color:var(--clay2)}
+.satcall h3{color:#fff}
+.satcall p{color:rgba(244,239,232,.88);font-weight:700}
+@media(max-width:1100px){.satowns{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:620px){.satowns{grid-template-columns:repeat(2,minmax(0,1fr))}.satowns li:last-child{grid-column:span 2}}
+@media(max-width:380px){.satowns{grid-template-columns:1fr}.satowns li:last-child{grid-column:auto}}
+@media(prefers-reduced-motion:reduce){.satowns a{transition:none}.satowns a:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<div class="mock">SERVICE PAGE TEMPLATE &nbsp;·&nbsp; mockup for review. <b>Not live.</b> Scroll slowly. Every fact shown is published on turnkeyroofer.com today.</div>
+
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a class="logo" href="#" aria-label="TurnKey Roofer, home">
+      <img class="logoimg" src="https://www.turnkeyroofer.com/wp-content/uploads/2024/03/logonew.png" alt="TurnKey Roofer" width="212" height="150">
+    </a>
+    <nav class="nav">
+      <a href="/residential-roofing/">Residential</a>
+      <a href="/commercial-roofing/">Commercial</a>
+      <a href="#claims">Insurance Claims</a>
+      <a href="#areas" aria-current="page">Service Areas</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="callbtn" href="tel:5042267070">(504) 226-7070</a>
+    <button class="navtoggle" id="navtoggle" type="button" aria-expanded="false" aria-controls="mnav">
+      <span class="navbars" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="vh">Menu</span>
+    </button>
+  </div>
+</header>
+
+<section class="shero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span aria-hidden="true">&#47;</span><span aria-current="page">Service&nbsp;Areas</span>
+    </nav>
+    <p class="eyebrow">From the Northshore to Baton Rouge</p>
+    <h1 class="shtitle">Service <em>Areas</em> Around New Orleans</h1>
+    <p class="shlede">New Orleans plus 13 towns across seven parishes, for homes and commercial buildings alike.</p>
+    <div class="cta shcta">
+      <a class="btn1" href="#estimate">Get a free estimate</a>
+      <a class="btn2" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
+    </div>
+    <ul class="shfacts">
+      <li><b>14</b><span>Towns with their own page</span></li>
+      <li><b>7</b><span>Louisiana parishes</span></li>
+      <li><b>#890459</b><span>Louisiana residential license</span></li>
+      <li><b>#3667</b><span>Louisiana commercial license</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="beltsec">
+  <div class="ticker">
+    <div class="ticker-track" id="tick">
+      <span class="bdg"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/04/master-elite-logo.png" alt="GAF Master Elite contractor" loading="lazy"></span>
+      <span class="bdg"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/04/fortified-logo-roof.png" alt="FORTIFIED Roof" loading="lazy"></span>
+      <span class="bdg"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/08/Untitled-1.png" alt="GAF WindProven infinite wind speed protection" loading="lazy"></span>
+      <span class="bdg"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/04/BenjaminMoore-logo.png" alt="Benjamin Moore" loading="lazy"></span>
+      <span class="bdg"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/04/contactor-Alliance-James-Hardie.png" alt="James Hardie Contractor Alliance" loading="lazy"></span>
+      <span class="bdg"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/04/google-reviews-logo.png" alt="Google Customer Reviews" loading="lazy"></span>
+      <span class="bdg"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/04/seal-logo.png" alt="100% Satisfaction Guaranteed" loading="lazy"></span>
+      <span class="bdg"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/04/facebook-star-logo.png" alt="Facebook 5.0 rating" loading="lazy"></span>
+      <span class="bdg"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/04/guaranteed-logo.png" alt="Quality Premium Guaranteed" loading="lazy"></span>
+    </div>
+  </div>
+</section>
+<div class="spage">
+  <div class="wrap">
+    <div class="sgrid">
+      <main class="scol">
+
+        <section class="sblock" id="areas">
+          <div class="svhead">
+            <div>
+              <p class="eyebrow">Fourteen towns</p>
+              <h2>The Towns We Roof</h2>
+            </div>
+            <p class="sintro">Grouped by parish, from New Orleans out to the Northshore, the river parishes and Baton Rouge. Pick yours for the local page.</p>
+          </div>
+          <ul class="satowns">
+            <li><a href="/"><span class="satpar">Orleans&nbsp;Parish</span><h3>New Orleans</h3><p>Where TurnKey Roofer is&nbsp;based.</p><span class="satgo">Local page <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/service-areas/metairie/"><span class="satpar">Jefferson&nbsp;Parish</span><h3>Metairie</h3><p>Just west of New&nbsp;Orleans.</p><span class="satgo">Local page <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/service-areas/kenner/"><span class="satpar">Jefferson&nbsp;Parish</span><h3>Kenner</h3><p>On the Mississippi&nbsp;River.</p><span class="satgo">Local page <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/service-areas/harahan/"><span class="satpar">Jefferson&nbsp;Parish</span><h3>Harahan</h3><p>On the east bank of the&nbsp;Mississippi.</p><span class="satgo">Local page <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/service-areas/river-ridge/"><span class="satpar">Jefferson&nbsp;Parish</span><h3>River Ridge</h3><p>On the east bank of Jefferson&nbsp;Parish.</p><span class="satgo">Local page <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/service-areas/gretna/"><span class="satpar">Jefferson&nbsp;Parish</span><h3>Gretna</h3><p>On the West&nbsp;Bank.</p><span class="satgo">Local page <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/service-areas/covington/"><span class="satpar">St. Tammany&nbsp;Parish</span><h3>Covington</h3><p>Where the Bogue Falaya meets the&nbsp;Tchefuncte.</p><span class="satgo">Local page <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/service-areas/mandeville/"><span class="satpar">St. Tammany&nbsp;Parish</span><h3>Mandeville</h3><p>On the north shore of Lake&nbsp;Pontchartrain.</p><span class="satgo">Local page <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/service-areas/madisonville/"><span class="satpar">St. Tammany&nbsp;Parish</span><h3>Madisonville</h3><p>A small, quiet&nbsp;town.</p><span class="satgo">Local page <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/service-areas/slidell/"><span class="satpar">St. Tammany&nbsp;Parish</span><h3>Slidell</h3><p>On the northeast shore of Lake&nbsp;Pontchartrain.</p><span class="satgo">Local page <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/service-areas/laplace/"><span class="satpar">St. John the Baptist&nbsp;Parish</span><h3>LaPlace</h3><p>On the banks of the Mississippi&nbsp;River.</p><span class="satgo">Local page <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/service-areas/st-rose/"><span class="satpar">St. Charles&nbsp;Parish</span><h3>St. Rose</h3><p>Along the Mississippi&nbsp;River.</p><span class="satgo">Local page <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/service-areas/hammond/"><span class="satpar">Tangipahoa&nbsp;Parish</span><h3>Hammond</h3><p>With a historic&nbsp;downtown.</p><span class="satgo">Local page <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/service-areas/baton-rouge/"><span class="satpar">East Baton Rouge&nbsp;Parish</span><h3>Baton Rouge</h3><p>The state&nbsp;capital.</p><span class="satgo">Local page <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a class="satcall" href="tel:5042267070"><span class="satpar">Not sure?</span><h3>Call and Ask</h3><p>(504)&nbsp;226-7070</p><span class="satgo">Call now <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+          </ul>
+        </section>
+
+        <section class="sblock">
+          <div class="svhead">
+            <div>
+              <p class="eyebrow">What we do</p>
+              <h2>What We Do Across the Area</h2>
+            </div>
+            <p class="sintro">Homes and commercial buildings, under two Louisiana licenses. These are the jobs people call about most; each hub lists the rest.</p>
+          </div>
+          <div class="rtwhere">
+            <div class="rtw rtwh">
+              <p class="eyebrow">Homes</p>
+              <h3>Residential Roofing</h3>
+              <p>Ten residential services, from repair to full replacement. License #890459.</p>
+              <ul><li><a href="/residential-roofing/roof-replacement-services/">Roof Replacement <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li><a href="/residential-roofing/roof-repair/">Roof Repair <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li><a href="/residential-roofing/hail-damage-roof-repair/">Hail Damage Roof Repair <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li><a href="/residential-roofing/roof-inspection/">Roof Inspection <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li><a href="/soffit-services/">Soffit Services <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul>
+              <a class="rtwlink" href="/residential-roofing/">All residential services <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+            <div class="rtw rtwc">
+              <p class="eyebrow">Commercial buildings</p>
+              <h3>Commercial Roofing</h3>
+              <p>Eleven commercial services, from coatings to replacement. License #3667.</p>
+              <ul><li><a href="/commercial-roofing/roof-replacement/">Roof Replacement <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li><a href="/commercial-roofing/re-roofing/">Re-Roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li><a href="/commercial-roofing/roof-coating-services/">Roof Coating <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li><a href="/commercial-roofing/roof-leak-detection/">Roof Leak Detection <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li><li><a href="/commercial-roofing/hail-damage/">Hail Damage Roof Repair <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li></ul>
+              <a class="rtwlink" href="/commercial-roofing/">All commercial services <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+        </section>
+
+        <section class="sblock">
+          <div class="svhead">
+            <div>
+              <p class="eyebrow">How it works</p>
+              <h2>How a Job Works in Any Town</h2>
+            </div>
+            <p class="sintro">Three steps, one phone number, and a price from someone who has been up on the roof.</p>
+          </div>
+          <ol class="rsteps">
+            <li>
+              <span class="rsico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></span>
+              <h3>You Call Us</h3>
+              <p>Call <b>(504) 226-7070</b> or send the form, and we book the estimator.</p>
+            </li>
+            <li>
+              <span class="rsico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12.5 12 5l9 7.5"/><path d="M5.5 10.5V19h13v-8.5"/><circle cx="12" cy="14" r="2.4"/><path d="m13.8 15.8 1.9 1.9"/></svg></span>
+              <h3>We Survey the Roof</h3>
+              <p>The estimator comes out, goes up on the roof, and prices what is there.</p>
+            </li>
+            <li>
+              <span class="rsico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12.5" r="8"/><path d="M12 8.5v4l2.6 1.6"/><path d="M9.5 2.5h5"/></svg></span>
+              <h3>We Do the Work</h3>
+              <p>Once payment is received, the roofing project is <b>completed within 24 hours</b>.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="sblock">
+          <div class="svhead">
+            <div>
+              <p class="eyebrow">Before you call</p>
+              <h2>Service Area Questions</h2>
+            </div>
+            <p class="sintro">Short answers to what people ask first. For anything else, call <a class="rfaqtel" href="tel:5042267070">(504)&nbsp;226-7070</a>.</p>
+          </div>
+          <div class="rfaqlist">
+            <details><summary>Do You Charge to Come Out to My Town?</summary><div class="rfa">No. <b>The estimate is free</b>, with no obligation to book, in every town on this page.</div></details>
+            <details><summary>Do You Do Commercial Roofing in These Towns?</summary><div class="rfa">Yes. Homes and commercial buildings, under <b>Residential License #890459</b> and <b>Commercial License #3667</b>.</div></details>
+            <details><summary>My Town Is Not on the List. Can You Still Help?</summary><div class="rfa">The 14 towns above are the ones with their own page on this site. If yours is not there, call (504)&nbsp;226-7070 and ask.</div></details>
+            <details><summary>Are You Licensed?</summary><div class="rfa">Yes. We are a licensed roofing contractor in Louisiana. <b>Residential License #890459</b> and <b>Commercial License #3667</b>. Both numbers are printed in the footer of every page on this site so you can check them before you pay anyone.</div></details>
+          </div>
+        </section>
+
+        <section class="sblock sxband">
+          <div>
+            <h2>Storm Damage in Your Town?</h2>
+            <p class="sintro">We go up with your adjuster and document what gets missed. Then you have a record instead of an opinion.</p>
+          </div>
+          <a class="sxlink" href="/roof-insurance-claims/">How roof claims work <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </section>
+
+      </main>
+
+    </div>
+  </div>
+</div>
+
+<section class="sec formsec" id="estimate">
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fside rise" data-anim>
+        <div class="fintro">
+        <p class="eyebrow">Get the number before the next storm</p>
+        <h2 class="h2">Get a Free Roof Estimate in New Orleans</h2>
+        <p class="lede">A licensed estimator goes up, looks at your actual roof, and gives you an actual price. No charge, and no obligation to book the work.</p>
+        <ul class="checks fchecks">
+          <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="#1f4d43" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Licensed residential <b>#890459</b> &nbsp;+&nbsp; commercial <b>#3667</b></span></li>
+          <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="#1f4d43" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Roof now, pay later:</b> ask what the monthly number looks&nbsp;like</span></li>
+        </ul>
+        <p class="fcall">Rather talk to someone now? <a href="tel:5042267070">(504)&nbsp;226-7070</a></p>
+        </div>
+        <div class="afterform">
+          <h3>What happens after you send this</h3>
+          <ol>
+            <li><b>We call you back</b> to agree a time that suits you.</li>
+            <li><b>An estimator comes out</b> and goes up on the roof to see what is actually there.</li>
+            <li><b>You get a written price.</b> No obligation to book the work.</li>
+          </ol>
+        </div>
+        <div class="fpromise">
+          <h3>What we put in writing</h3>
+          <ul>
+            <li>
+              <span class="fpico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12.6" r="8.4"/><path d="M12 7.5v5.4l3.5 2"/></svg></span>
+              <span><b>Completed within 24 hours</b><span>Once payment is received, the roofing project is finished inside a day.</span></span>
+            </li>
+            <li>
+              <span class="fpico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 20.5 12 13l9.4 7.5"/><path d="M3 6h7.6a2.1 2.1 0 1 0-2.1-2.1"/><path d="M3 10h11a2.1 2.1 0 1 1-2.1 2.1"/></svg></span>
+              <span><b>15-year wind warranty</b><span>No maximum wind speed, named hurricanes included.</span></span>
+            </li>
+            <li>
+              <span class="fpico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="4" width="15" height="16.5" rx="2.2"/><path d="M9 4V2.6h6V4"/><path d="M8.4 12.4l2.2 2.2 4.6-4.8"/></svg></span>
+              <span><b>The estimate is the price</b><span>If we find rot under the old roof, we show you before we touch it.</span></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <form class="fform rise fwide" data-anim novalidate>
+        <h3 class="ftitle">Request a Free Estimate</h3>
+        <div class="frow2">
+          <div class="frow">
+            <label for="f-name">Full name <span class="req">*</span></label>
+            <input id="f-name" name="full_name" type="text" autocomplete="name" placeholder="First and last name" required>
+          </div>
+          <div class="frow">
+            <label for="f-phone">Phone <span class="req">*</span></label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="(504) 000-0000" required>
+          </div>
+        </div>
+        <div class="frow2">
+          <div class="frow">
+            <label for="f-email">Email <span class="req">*</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          </div>
+          <div class="frow">
+            <label for="f-service">Service type <span class="req">*</span></label>
+            <select id="f-service" name="service_type" required>
+              <option value="">Choose one</option>
+              <option>Residential</option>
+              <option>Commercial</option>
+            </select>
+          </div>
+        </div>
+        <div class="frow svc-resi" hidden>
+          <label for="f-resi">Residential service</label>
+          <select id="f-resi" name="residential_service">
+            <option value="">Choose one</option>
+            <option>Asbestos Roof Removal</option>
+            <option>Hail Damage Roof Repair</option>
+            <option>Metal Roofing</option>
+            <option>Metal Standing Seam Roofing</option>
+            <option>Roof Leak Detection</option>
+            <option>Roofing Insulation</option>
+            <option>Shingle Roofing</option>
+            <option>Soffit Installation</option>
+            <option>Tile Roofing</option>
+          </select>
+        </div>
+        <div class="frow svc-comm" hidden>
+          <label for="f-comm">Commercial services</label>
+          <select id="f-comm" name="commercial_services">
+            <option value="">Choose one</option>
+            <option>Hail Damage Roof</option>
+            <option>Roof Inspection</option>
+            <option>Roof Repairs</option>
+            <option>Roof Leak Detection</option>
+            <option>Roof Replacement</option>
+            <option>Roof Ventilation</option>
+            <option>Roofing Insulation</option>
+            <option>Shingle Roofing</option>
+            <option>Siding Installation</option>
+            <option>Slate Roofing</option>
+          </select>
+        </div>
+        <div class="frow">
+          <label for="f-address">Property address</label>
+          <input id="f-address" name="address" type="text" autocomplete="street-address" placeholder="Start typing the address">
+        </div>
+        <div class="frow3">
+          <div class="frow">
+            <label for="f-city">City</label>
+            <input id="f-city" name="city" type="text" autocomplete="address-level2" placeholder="Metairie">
+          </div>
+          <div class="frow">
+            <label for="f-state">State</label>
+            <input id="f-state" name="state" type="text" autocomplete="address-level1" placeholder="LA">
+          </div>
+          <div class="frow">
+            <label for="f-zip">ZIP</label>
+            <input id="f-zip" name="postal_code" type="text" autocomplete="postal-code" placeholder="70003">
+          </div>
+        </div>
+        <div class="frow">
+          <label for="f-msg">What are you seeing on the roof?</label>
+          <textarea id="f-msg" name="message" rows="3" placeholder="Stain on the ceiling, missing shingles after the storm, water in the attic..."></textarea>
+        </div>
+        <div class="frow">
+          <label for="f-file">Photos or video <span class="opt">optional</span></label>
+          <input id="f-file" name="upload" type="file" accept="image/*,video/*" multiple>
+        </div>
+        <label class="fcheck"><input type="checkbox" name="terms_and_conditions" required><span>I agree to the terms and conditions. <span class="req">*</span></span></label>
+        <label class="fcheck"><input type="checkbox" name="sms_optin"><span>Opt in to receive SMS notifications, alerts and occasional marketing communication.</span></label>
+        <p class="fconsent">By submitting this form, I consent to receive calls, including automated calls using AI-generated voice technology, from TurnKey Roofer at the phone number provided above. Consent is not required as a condition of receiving a quote or service. I can revoke consent at any time.</p>
+        <button class="fsubmit" type="submit">Request my free estimate</button>
+        <p class="fstatus" role="status" aria-live="polite"></p>
+        <p class="fsmall">Louisiana Residential License #890459 &middot; Commercial License #3667</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ftgrid">
+      <div>
+        <img class="ftlogoimg" src="https://www.turnkeyroofer.com/wp-content/uploads/2024/03/TurnkeyRooferFooterLogo.png" alt="TurnKey Roofer" width="194" height="150" decoding="async">
+        <div class="nap">
+          <b class="vh">TurnKey Roofer</b>
+          New Orleans, Louisiana<br>
+          <a href="tel:5042267070">(504) 226-7070</a>
+        </div>
+        <div class="ftlic">
+          <div>RESIDENTIAL #890459</div>
+          <div>COMMERCIAL #3667</div>
+        </div>
+        <div class="flag">HOURS PENDING. Business hours are being confirmed with the client and will be added before launch.</div>
+      </div>
+      <div>
+        <h5>Residential</h5>
+        <ul><li><a href="#">Roof Replacement</a></li><li><a href="#">Roof Repair</a></li><li><a href="#">Roof Inspection</a></li><li><a href="#">Leak Detection</a></li><li><a href="#">Hail Damage</a></li><li><a href="#">Asbestos Removal</a></li></ul>
+      </div>
+      <div>
+        <h5>Commercial</h5>
+        <ul><li><a href="#">Re-Roofing</a></li><li><a href="#">Roof Coating</a></li><li><a href="#">Elastomeric Coatings</a></li><li><a href="#">Roof Replacement</a></li><li><a href="#">Roof Repairs</a></li><li><a href="#">Roof Inspection</a></li></ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul><li><a href="#">About</a></li><li><a href="#">The Team</a></li><li><a href="#">Roof Insurance Claims</a></li><li><a href="#">Unlimited Wind Warranty</a></li><li><a href="#">Service Areas</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li></ul>
+      </div>
+    </div>
+    <div class="ftbot">
+      <div>© 2026 TurnKey Roofer. All rights reserved.</div>
+      <div>Sitemap · Privacy Policy · Terms &amp; Conditions</div>
+    </div>
+  </div>
+</footer>
+
+<button class="totop" id="totop" type="button" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<div class="callbar" id="callbar">
+  <a class="c1" href="tel:5042267070">Call (504) 226-7070</a>
+  <a class="c2" href="#estimate">Free estimate</a>
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function runCount(el){
+    if(el.dataset.done) return;
+    el.dataset.done = '1';
+    var to = parseInt(el.dataset.to,10), dur = 1150, t0 = null;
+    if(reduce){ el.textContent = to; return; }
+    function tick(t){
+      if(!t0) t0 = t;
+      var p = Math.min((t - t0)/dur, 1);
+      el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
+      if(p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  function activate(el){
+    el.classList.add('in');
+    el.querySelectorAll('.count').forEach(runCount);
+  }
+
+  var items = document.querySelectorAll('[data-anim]');
+  if(reduce || !('IntersectionObserver' in window)){
+    items.forEach(activate);
+    document.querySelectorAll('.count').forEach(runCount);
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ activate(e.target); io.unobserve(e.target); }
+      });
+    },{threshold:0.12, rootMargin:'0px 0px -6% 0px'});
+    items.forEach(function(el){ io.observe(el); });
+    /* Failsafe. IntersectionObserver can miss an element during a fast scroll,
+       which would leave real content invisible forever. No bottom check on
+       purpose, so anything already scrolled past still gets revealed. */
+    var sweep = function(){
+      items.forEach(function(el){
+        if(el.classList.contains('in')) return;
+        if(el.getBoundingClientRect().top < window.innerHeight * 0.88) activate(el);
+      });
+    };
+    window.addEventListener('scroll', sweep, {passive:true});
+    window.addEventListener('resize', sweep);
+    sweep();
+  }
+
+  /* hero photo cycle */
+  var hs = document.querySelectorAll('.heroslide img'), hdots = document.getElementById('herodots');
+  if(hs.length > 1){
+    var hi = 0, htimer = null;
+    function goto(n){
+      hs[hi].classList.remove('on');
+      hi = (n + hs.length) % hs.length;
+      hs[hi].classList.add('on');
+      if(hdots) [].forEach.call(hdots.children, function(b,i){ b.setAttribute('aria-current', i===hi ? 'true':'false'); });
+    }
+    if(hdots){
+      [].forEach.call(hdots.children, function(b,i){
+        b.addEventListener('click', function(){ goto(i); if(htimer){clearInterval(htimer); htimer=setInterval(function(){goto(hi+1);},6000);} });
+      });
+    }
+    if(!reduce) htimer = setInterval(function(){ goto(hi+1); }, 6000);
+  }
+
+  var tick = document.getElementById('tick');
+  if(tick) tick.innerHTML += tick.innerHTML;
+
+  /* FAQ uses native <details>. No JS needed. */
+
+  /* estimate form — prototype only, never silently submits */
+  document.querySelectorAll('.fform').forEach(function(ef){
+    ef.addEventListener('submit', function(e){
+      e.preventDefault();
+      var st = ef.querySelector('.fstatus');
+      st.classList.add('on');
+      st.textContent = 'This is a design mockup, so nothing was sent. On the live site this form connects to the existing GoHighLevel account and routes the lead the same way the current forms do.';
+      st.scrollIntoView({block:'center', behavior: reduce ? 'auto' : 'smooth'});
+    });
+  });
+
+  /* ---- mobile navigation ---- */
+  (function(){
+    var tog = document.getElementById('navtoggle'),
+        panel = document.getElementById('mnav'),
+        closeBtn = document.getElementById('mnavclose');
+    if(!tog || !panel) return;
+    var lastFocus = null;
+
+    function focusables(){
+      return [].slice.call(panel.querySelectorAll('a[href],button:not([disabled])'))
+              .filter(function(el){ return el.offsetParent !== null; });
+    }
+    function isOpen(){ return panel.classList.contains('open'); }
+    function open(){
+      lastFocus = document.activeElement;
+      panel.removeAttribute('inert');
+      panel.classList.add('open');
+      tog.setAttribute('aria-expanded','true');
+      document.body.classList.add('navopen');
+      var f = focusables();
+      (f.length ? f[0] : closeBtn || panel).focus();
+      /* belt and braces: never leave the panel unreadable */
+      if(parseFloat(getComputedStyle(panel).opacity) < 0.99){
+        panel.style.opacity = '1';
+        panel.style.transform = 'none';
+      }
+    }
+    function close(){
+      panel.classList.remove('open');
+      panel.style.opacity = '';
+      panel.style.transform = '';
+      tog.setAttribute('aria-expanded','false');
+      document.body.classList.remove('navopen');
+      panel.setAttribute('inert','');
+      /* always hand focus back to the button that opened it */
+      if(tog && tog.focus) tog.focus();
+      else if(lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    tog.addEventListener('click', function(){ if(isOpen()){ close(); } else { open(); } });
+    if(closeBtn){ closeBtn.addEventListener('click', close); }
+
+    panel.querySelectorAll('.mnav-links a, .mnav-foot a').forEach(function(a){
+      a.addEventListener('click', function(){ close(); });
+    });
+
+    document.addEventListener('keydown', function(e){
+      if(!isOpen()) return;
+      if(e.key === 'Escape'){ e.preventDefault(); close(); return; }
+      if(e.key === 'Tab'){
+        var f = focusables();
+        if(!f.length) return;
+        var first = f[0], last = f[f.length-1];
+        if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+        else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+      }
+    });
+
+    window.addEventListener('resize', function(){
+      if(isOpen() && window.innerWidth > 1000){ close(); }
+    });
+  })();
+
+  /* ---- service type drives which service list is shown ---- */
+  document.querySelectorAll('.fform').forEach(function(form){
+    var sel = form.querySelector('[name="service_type"]');
+    if(!sel) return;
+    var resi = form.querySelector('.svc-resi'), comm = form.querySelector('.svc-comm');
+    function sync(){
+      var v = sel.value;
+      if(resi) resi.hidden = (v !== 'Residential');
+      if(comm) comm.hidden = (v !== 'Commercial');
+    }
+    sel.addEventListener('change', sync);
+    sync();
+  });
+
+
+  /* ---- roof assembly cutaway ---- */
+  (function(){
+    var btns = [].slice.call(document.querySelectorAll('.asmbtn'));
+    var svg  = document.getElementById('asmfig');
+    var cap  = document.getElementById('asmcap');
+    if(!btns.length || !svg) return;
+    var groups = [].slice.call(svg.querySelectorAll('.lyr'));
+
+    function select(n){
+      btns.forEach(function(b){
+        b.setAttribute('aria-selected', b.getAttribute('data-layer') === String(n) ? 'true' : 'false');
+      });
+      groups.forEach(function(g){
+        var isSel = g.getAttribute('data-layer') === String(n);
+        g.classList.toggle('dim', !isSel);
+        g.classList.toggle('sel', isSel);
+      });
+      var chosen = btns.filter(function(b){ return b.getAttribute('data-layer') === String(n); })[0];
+      if(chosen && cap){ cap.textContent = chosen.querySelector('.asmttl').textContent; }
+    }
+
+    btns.forEach(function(b){
+      b.addEventListener('click', function(){ select(b.getAttribute('data-layer')); });
+      b.addEventListener('keydown', function(e){
+        var i = btns.indexOf(b), n = null;
+        if(e.key === 'ArrowDown' || e.key === 'ArrowRight') n = (i + 1) % btns.length;
+        if(e.key === 'ArrowUp'   || e.key === 'ArrowLeft')  n = (i - 1 + btns.length) % btns.length;
+        if(n !== null){ e.preventDefault(); btns[n].focus(); select(btns[n].getAttribute('data-layer')); }
+      });
+    });
+    /* start on the layer people recognise, and never leave the drawing blank */
+    select(4);
+  })();
+
+
+  /* a validation failure inside a scrolling field area must be brought into view */
+  (function(){
+    var form = document.getElementById('heroform');
+    if(!form) return;
+    form.addEventListener('submit', function(){
+      var bad = form.querySelector('[required]:invalid, .finvalid');
+      if(bad && bad.scrollIntoView) bad.scrollIntoView({block:'center'});
+    }, true);
+  })();
+
+  /* reviews: one at a time */
+  var tr = document.getElementById('tsltrack');
+  if(tr){
+    var prev = document.getElementById('tslprev'), next = document.getElementById('tslnext');
+    var now = document.getElementById('voxnow'), idx = 0, last = tr.children.length - 1;
+    function paint(){
+      idx = Math.max(0, Math.min(idx, last));
+      var step = tr.children[0].getBoundingClientRect().width + 20;
+      tr.style.transform = 'translateX(-' + (idx * step) + 'px)';
+      prev.disabled = idx <= 0;
+      next.disabled = idx >= last;
+      if(now){ now.textContent = idx + 1; }
+      /* the offscreen slides are clipped, not hidden, so say so */
+      [].forEach.call(tr.children, function(sl, i){
+        sl.setAttribute('aria-hidden', i === idx ? 'false' : 'true');
+      });
+      [].forEach.call(document.querySelectorAll('.voxpick'), function(pk, i){
+        pk.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+      });
+    }
+    [].forEach.call(document.querySelectorAll('.voxpick'), function(pk){
+      pk.addEventListener('click', function(){ idx = +pk.getAttribute('data-i'); paint(); });
+    });
+    prev.addEventListener('click', function(){ idx -= 1; paint(); });
+    next.addEventListener('click', function(){ idx += 1; paint(); });
+    window.addEventListener('resize', paint);
+    paint();
+  }
+
+  var hdr = document.getElementById('hdr'), bar = document.getElementById('callbar');
+  var toTop = document.getElementById('totop');
+  function onScroll(){
+    var y = window.scrollY;
+    hdr.classList.toggle('stuck', y > 12);
+    if(bar){
+      bar.classList.toggle('up', y > 420);
+      /* the chat widget rides up with the call bar on phones (see the CSS) */
+      document.body.classList.toggle('barup', y > 420);
+    }
+    if(toTop) toTop.classList.toggle('on', y > 700);
+  }
+  if(bar) document.documentElement.style.setProperty('--barh', bar.offsetHeight + 'px');
+  if(toTop) toTop.addEventListener('click', function(){
+    window.scrollTo({top: 0, behavior: reduce ? 'auto' : 'smooth'});
+    /* keyboard users land back at the top too, not on a button that just vanished */
+    var first = document.querySelector('.hdr a');
+    if(first) first.focus({preventScroll: true});
+  });
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="66c5e10fa0730352d522ec79"></script>
+</body>
+</html>
