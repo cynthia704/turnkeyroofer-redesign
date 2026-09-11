@@ -115,22 +115,25 @@ h1 em{font-style:italic;color:var(--clay2)}
    thins out to the right so the roof stays visible there. */
 .hero{position:relative;overflow:hidden}
 .heroslide{position:absolute;inset:0;z-index:0}
-.heroslide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;
-  transition:opacity 1.8s ease-in-out;will-change:opacity}
-.heroslide img.on{opacity:1;animation:heroDrift 9s ease-out forwards}
-@keyframes heroDrift{from{transform:scale(1.0)}to{transform:scale(1.075)}}
+/* the poster is always there first; the video fades in over it only once it is
+   actually playing, so the hero never shows an empty frame while it loads */
+.heroposter,.herovid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.herovid{opacity:0;transition:opacity 1.2s ease}
+.herovid.playing{opacity:1}
 .heroshade{position:absolute;inset:0;z-index:1;pointer-events:none}
 .hero>.wrap{position:relative;z-index:2}
-.herodots{position:absolute;left:0;right:0;bottom:22px;z-index:3;display:flex;gap:9px;justify-content:center}
-.herodots button{width:34px;height:4px;border:0;border-radius:4px;padding:0;cursor:pointer;
-  background:rgba(255,255,255,.34);transition:background .3s,width .3s}
-.herodots button[aria-current="true"]{width:52px}
-@media(max-width:980px){.herodots{bottom:14px}}
-@media(prefers-reduced-motion:reduce){
-  .heroslide img{transition:none}
-  .heroslide img.on{animation:none}
-  .herodots button{transition:none}
-}
+/* WCAG 2.2.2: anything that moves on its own for more than five seconds needs a
+   way to stop it. Only shown when the video is actually running. */
+.herovidctl{position:absolute;right:22px;bottom:20px;z-index:3;width:42px;height:42px;border-radius:50%;
+  display:grid;place-items:center;cursor:pointer;color:#f4efe8;
+  background:rgba(12,28,24,.6);border:1px solid rgba(244,239,232,.38);transition:background .25s,border-color .25s}
+.herovidctl:hover{background:rgba(12,28,24,.85);border-color:#f4efe8}
+.herovidctl:focus-visible{outline:2px solid var(--clay2);outline-offset:3px}
+.herovidctl .i-play{display:none}
+.herovidctl[aria-pressed="true"] .i-pause{display:none}
+.herovidctl[aria-pressed="true"] .i-play{display:block}
+@media(max-width:980px){.herovidctl{right:14px;bottom:14px}}
+@media(prefers-reduced-motion:reduce){.herovid,.herovidctl{transition:none}}
 
 .hero{min-height:660px;display:flex;align-items:center;padding:0}
 /* evened out. With the text centered, a left-heavy gradient makes the right side
@@ -160,7 +163,6 @@ h1 em{font-style:italic;color:var(--clay2)}
   .heroformcol{position:static}
   .heroform{position:static}
 }
-.herodots button[aria-current="true"]{background:var(--clay)}
 .beltsec{background:var(--cream)}
 
 .badges{display:flex;gap:30px;align-items:center;flex-wrap:wrap;margin-top:34px;padding-top:28px;border-top:1px solid var(--line)}
@@ -1226,10 +1228,8 @@ body.navopen{overflow:hidden}
 
 <section class="hero">
   <div class="heroslide" aria-hidden="true">
-    <img class="hs on" src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/roof-galvanized.jpg" alt="" fetchpriority="high">
-    <img class="hs" src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/shingle-roof.jpg" alt="" loading="eager" decoding="async">
-    <img class="hs" src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Roof-of-the-house-with-metal-corrugated-panels.jpg" alt="" loading="eager" decoding="async">
-    <img class="hs" src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/rooftop-made-of-tile-roofing.webp" alt="" loading="eager" decoding="async">
+    <img class="heroposter" src="media/hero-reroof-pexels-4198815-poster.jpg" alt="" fetchpriority="high">
+    <video class="herovid" muted loop playsinline preload="none" poster="media/hero-reroof-pexels-4198815-poster.jpg" data-src="media/hero-reroof-pexels-4198815-720p.mp4"></video>
   </div>
   <div class="heroshade" aria-hidden="true"></div>
   <div class="pitchgrid" aria-hidden="true"></div>
@@ -1376,7 +1376,7 @@ body.navopen{overflow:hidden}
         </div>
       </div>
   </div>
-  <div class="herodots" id="herodots" role="group" aria-label="Hero photo"><button type="button" aria-current="true" aria-label="Show roof photo 1"></button><button type="button" aria-current="false" aria-label="Show roof photo 2"></button><button type="button" aria-current="false" aria-label="Show roof photo 3"></button><button type="button" aria-current="false" aria-label="Show roof photo 4"></button></div>
+  <button class="herovidctl" id="herovidctl" type="button" aria-pressed="false" aria-label="Pause background video" hidden><svg class="i-pause" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="8.5" y="2" width="3" height="10" rx="1" fill="currentColor"/></svg><svg class="i-play" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6a.6.6 0 0 0 .9.5l7.4-4.8a.6.6 0 0 0 0-1L4.9 1.7a.6.6 0 0 0-.9.5z" fill="currentColor"/></svg></button>
 </section>
 <section class="beltsec">
   <div class="ticker">
@@ -2280,23 +2280,30 @@ body.navopen{overflow:hidden}
     sweep();
   }
 
-  /* hero photo cycle */
-  var hs = document.querySelectorAll('.heroslide img'), hdots = document.getElementById('herodots');
-  if(hs.length > 1){
-    var hi = 0, htimer = null;
-    function goto(n){
-      hs[hi].classList.remove('on');
-      hi = (n + hs.length) % hs.length;
-      hs[hi].classList.add('on');
-      if(hdots) [].forEach.call(hdots.children, function(b,i){ b.setAttribute('aria-current', i===hi ? 'true':'false'); });
-    }
-    if(hdots){
-      [].forEach.call(hdots.children, function(b,i){
-        b.addEventListener('click', function(){ goto(i); if(htimer){clearInterval(htimer); htimer=setInterval(function(){goto(hi+1);},6000);} });
+  /* hero background video. The poster is always shown first. The source is set
+     here rather than in the markup, so a browser that is never going to play it
+     never downloads it: phones, Save-Data and reduced motion all keep the poster. */
+  (function(){
+    var v = document.querySelector('.herovid'), ctl = document.getElementById('herovidctl');
+    if(!v) return;
+    var wide = window.matchMedia('(min-width: 768px)').matches;
+    var saveData = !!(navigator.connection && navigator.connection.saveData);
+    if(reduce || !wide || saveData) return;
+    v.src = v.getAttribute('data-src');
+    v.addEventListener('playing', function(){
+      v.classList.add('playing');
+      if(ctl) ctl.hidden = false;
+    });
+    var p = v.play();
+    if(p && p.catch) p.catch(function(){ /* autoplay refused: the poster stays */ });
+    if(ctl){
+      ctl.addEventListener('click', function(){
+        var paused = ctl.getAttribute('aria-pressed') === 'true';
+        if(paused){ v.play(); ctl.setAttribute('aria-pressed','false'); ctl.setAttribute('aria-label','Pause background video'); }
+        else      { v.pause(); ctl.setAttribute('aria-pressed','true');  ctl.setAttribute('aria-label','Play background video'); }
       });
     }
-    if(!reduce) htimer = setInterval(function(){ goto(hi+1); }, 6000);
-  }
+  })();
 
   var tick = document.getElementById('tick');
   if(tick) tick.innerHTML += tick.innerHTML;
