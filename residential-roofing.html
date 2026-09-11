@@ -1240,31 +1240,39 @@ body.navopen{overflow:hidden}
 .sintro{margin:0 0 26px;font-size:16.5px;line-height:1.65;color:var(--ink2);max-width:62ch;text-wrap:pretty}
 
 /* ten services: 10 divides by 2 and 5, so five rows of two fills exactly */
-/* each service is a card with its photo: the photo fills the left of the card
-   at whatever height the words come to, so no card has a hole */
-.svlist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-@media(max-width:640px){.svlist{grid-template-columns:1fr}}
-.svlist a{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);height:100%;overflow:hidden;
-  background:#fff;border:1px solid var(--line);border-radius:16px;min-height:196px;
-  transition:transform .3s,box-shadow .3s,border-color .3s}
-.svpic{position:relative;overflow:hidden;background:var(--cream2)}
-.svpic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
-  transition:transform .9s cubic-bezier(.22,.61,.36,1)}
-.svlist a:hover .svpic img{transform:scale(1.05)}
-.svtxt{display:flex;flex-direction:column;padding:20px 22px 18px}
-.svtxt .svgo{margin-top:auto}
-.svlist a:hover{transform:translateY(-3px);border-color:rgba(168,85,42,.4);
-  box-shadow:0 20px 40px -26px rgba(32,48,44,.5)}
-@media(prefers-reduced-motion:reduce){.svlist a,.svpic img{transition:none}.svlist a:hover,.svlist a:hover .svpic img{transform:none}}
-@media(max-width:900px) and (min-width:641px){.svlist a{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr)}}
-@media(max-width:420px){.svlist a{grid-template-columns:112px minmax(0,1fr);min-height:170px}.svtxt{padding:16px 16px 14px}}
-.svlist h3{font-size:18.5px;margin:0 0 6px;line-height:1.25}
-.svlist p{margin:0 0 12px;font-size:14.5px;line-height:1.58;color:var(--ink2);text-wrap:pretty}
-.svgo{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;
-  letter-spacing:.14em;text-transform:uppercase;color:var(--clay)}
+/* ===== the ten services as photo tiles =====
+   Each tile is its photo, edge to edge. The shade is the background of the text
+   block itself, so it covers exactly the words plus a fade and never more of the
+   photo. Three columns, two tiles double width: four full rows, no hole. */
+.svhead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px 56px;align-items:end;margin:0 0 30px}
+.svhead .eyebrow{margin:0 0 12px}
+.svhead h2{margin:0}
+.svhead .sintro{margin:0;max-width:none}
+@media(max-width:900px){.svhead{grid-template-columns:1fr}}
+.svlist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-auto-rows:320px;gap:14px}
+.svlist .svwide{grid-column:span 2}
+.svlist a{position:relative;display:block;height:100%;overflow:hidden;border-radius:18px;background:var(--forest2);
+  box-shadow:0 20px 40px -30px rgba(23,58,51,.6);transition:transform .35s,box-shadow .35s}
+.svlist a:hover{transform:translateY(-4px);box-shadow:0 30px 54px -30px rgba(23,58,51,.78)}
+.svlist a:focus-visible{outline:3px solid var(--clay);outline-offset:3px}
+.svpic{position:absolute;inset:0}
+.svpic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s cubic-bezier(.22,.61,.36,1)}
+.svlist a:hover .svpic img{transform:scale(1.06)}
+.svtxt{position:absolute;left:0;right:0;bottom:0;padding:40px 24px 20px;display:flex;flex-direction:column;
+  background:linear-gradient(0deg,rgba(12,28,24,.88) 0,rgba(12,28,24,.8) calc(100% - 40px),rgba(12,28,24,0) 100%)}
+.svlist h3{margin:0 0 6px;font-size:21px;line-height:1.22;color:#fff;text-wrap:balance}
+.svwide h3{font-size:27px}
+.svlist p{margin:0 0 12px;font-size:14.5px;line-height:1.55;color:rgba(244,239,232,.88);text-wrap:balance;max-width:46ch}
+.svgo{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--clay2)}
 .svgo svg{transition:transform .3s}
 .svlist a:hover .svgo svg{transform:translateX(4px)}
-@media(prefers-reduced-motion:reduce){.svgo svg{transition:none}.svlist a:hover .svgo svg{transform:none}}
+@media(prefers-reduced-motion:reduce){.svlist a,.svpic img,.svgo svg{transition:none}
+  .svlist a:hover,.svlist a:hover .svpic img,.svlist a:hover .svgo svg{transform:none}}
+@media(max-width:1000px){.svlist{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:300px}}
+@media(max-width:560px){.svlist{grid-template-columns:1fr;grid-auto-rows:300px}.svlist .svwide{grid-column:auto}
+  .svtxt{padding:36px 20px 18px}.svwide h3{font-size:23px}}
 
 /* scope list: the gable bullet from the job board, not a tick */
 /* the four promises: four cards in a row, an icon each, no numbers */
@@ -1376,16 +1384,21 @@ body.navopen{overflow:hidden}
       <main class="scol">
 
         <section class="sblock" id="services">
-          <h2>The Ten Things We Do on a House</h2>
-          <p class="sintro">Every one is handled in-house by the same crew, under the same Louisiana license. Pick the one that sounds like your roof, or call and describe it and we will tell you which it is.</p>
+          <div class="svhead">
+            <div>
+              <p class="eyebrow">Residential services</p>
+              <h2>The Ten Things We Do on a House</h2>
+            </div>
+            <p class="sintro">Every one is handled in-house by the same crew, under the same Louisiana license. Pick the one that sounds like your roof, or call and describe it and we will tell you which it is.</p>
+          </div>
           <ul class="svlist">
-            <li>
+            <li class="svwide">
               <a href="/residential-roofing/roof-replacement-services/">
                 <span class="svpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2022/12/Depositphotos_11144695_XL-1-950x450.jpg" alt="Roofer working on a house during a roof replacement" loading="lazy"></span>
                 <div class="svtxt">
-                <h3>Roof Replacement</h3>
-                <p>Full tear-off down to the decking, then dry-in and a new roof in shingle, metal, slate or tile.</p>
-                <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <h3>Roof Replacement</h3>
+                  <p>Full tear-off down to the decking, then dry-in and a new roof in shingle, metal, slate or tile.</p>
+                  <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                 </div>
               </a>
             </li>
@@ -1393,9 +1406,9 @@ body.navopen{overflow:hidden}
               <a href="/residential-roofing/roof-repair/">
                 <span class="svpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/construction-and-building-768x490.jpg" alt="Roofers repairing a pitched shingle roof" loading="lazy"></span>
                 <div class="svtxt">
-                <h3>Roof Repair</h3>
-                <p>Targeted work on the section that failed, rather than a whole roof you did not need.</p>
-                <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <h3>Roof Repair</h3>
+                  <p>Targeted work on the section that failed, rather than a whole roof you did not need.</p>
+                  <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                 </div>
               </a>
             </li>
@@ -1403,9 +1416,9 @@ body.navopen{overflow:hidden}
               <a href="/residential-roofing/hail-damage-roof-repair/">
                 <span class="svpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Damaged-roof-tiles-with-Hail-768x512.jpg" alt="Hailstones on damaged roof tiles" loading="lazy"></span>
                 <div class="svtxt">
-                <h3>Hail Damage Roof Repair</h3>
-                <p>Storm survey, a photo record of what the hail did, and a walk of the roof with your adjuster.</p>
-                <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <h3>Hail Damage Roof Repair</h3>
+                  <p>Storm survey, a photo record of what the hail did, and a walk of the roof with your adjuster.</p>
+                  <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                 </div>
               </a>
             </li>
@@ -1413,9 +1426,9 @@ body.navopen{overflow:hidden}
               <a href="/residential-roofing/roof-leak-detection/">
                 <span class="svpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/House-Thermovision-Detection-768x654.jpg" alt="Thermal camera checking a house for roof leaks" loading="lazy"></span>
                 <div class="svtxt">
-                <h3>Roof Leak Detection</h3>
-                <p>Finding where the water is actually getting in, which is rarely where the ceiling stain is.</p>
-                <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <h3>Roof Leak Detection</h3>
+                  <p>Finding where the water is actually getting in, which is rarely where the ceiling stain is.</p>
+                  <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                 </div>
               </a>
             </li>
@@ -1423,19 +1436,19 @@ body.navopen{overflow:hidden}
               <a href="/residential-roofing/roof-inspection/">
                 <span class="svpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/asphalt-roof-768x512.jpg" alt="Close view of an asphalt shingle roof and dormer" loading="lazy"></span>
                 <div class="svtxt">
-                <h3>Roof Inspection</h3>
-                <p>A written condition report on the deck, the flashing, the valleys and every penetration.</p>
-                <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <h3>Roof Inspection</h3>
+                  <p>A written condition report on the deck, the flashing, the valleys and every penetration.</p>
+                  <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                 </div>
               </a>
             </li>
-            <li>
+            <li class="svwide">
               <a href="/residential-roofing/roof-ventilation/">
                 <span class="svpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/roof-ventilation-950x450.jpg" alt="Roof vent installed on asphalt shingles" loading="lazy"></span>
                 <div class="svtxt">
-                <h3>Roof Ventilation</h3>
-                <p>Intake at the soffit and exhaust at the ridge, so the attic stops cooking the shingles.</p>
-                <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <h3>Roof Ventilation</h3>
+                  <p>Intake at the soffit and exhaust at the ridge, so the attic stops cooking the shingles.</p>
+                  <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                 </div>
               </a>
             </li>
@@ -1443,9 +1456,9 @@ body.navopen{overflow:hidden}
               <a href="/residential-roofing/roofing-insulation/">
                 <span class="svpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/insulation-house-roof-768x513.jpg" alt="Worker fitting insulation under a roof" loading="lazy"></span>
                 <div class="svtxt">
-                <h3>Roofing Insulation</h3>
-                <p>Attic insulation that stops Gulf Coast heat before it reaches the rooms underneath.</p>
-                <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <h3>Roofing Insulation</h3>
+                  <p>Attic insulation that stops Gulf Coast heat before it reaches the rooms underneath.</p>
+                  <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                 </div>
               </a>
             </li>
@@ -1453,9 +1466,9 @@ body.navopen{overflow:hidden}
               <a href="/residential-roofing/asbestos-roof-removal/">
                 <span class="svpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/03/removing-roof-950x450.jpg" alt="Old roofing being stripped from a house" loading="lazy"></span>
                 <div class="svtxt">
-                <h3>Asbestos Roof Removal</h3>
-                <p>Removal and disposal of older roofing that contains asbestos, handled to the safety rules.</p>
-                <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <h3>Asbestos Roof Removal</h3>
+                  <p>Removal and disposal of older roofing that contains asbestos, handled to the safety rules.</p>
+                  <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                 </div>
               </a>
             </li>
@@ -1463,9 +1476,9 @@ body.navopen{overflow:hidden}
               <a href="/residential-roofing/fascia-board/">
                 <span class="svpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/House-with-white-fascia-board-768x551.jpg" alt="Fascia board and open eave on a house" loading="lazy"></span>
                 <div class="svtxt">
-                <h3>Fascia Board</h3>
-                <p>The board your gutter hangs on, replaced while it is still holding rather than after.</p>
-                <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <h3>Fascia Board</h3>
+                  <p>The board your gutter hangs on, replaced while it is still holding rather than after.</p>
+                  <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                 </div>
               </a>
             </li>
@@ -1473,9 +1486,9 @@ body.navopen{overflow:hidden}
               <a href="/residential-roofing/siding-installation/">
                 <span class="svpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/west-florida-home-950x450.jpg" alt="Two-story house with new siding" loading="lazy"></span>
                 <div class="svtxt">
-                <h3>Siding Installation</h3>
-                <p>Siding replaced alongside the roof, so the two edges meet the way they are supposed to.</p>
-                <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <h3>Siding Installation</h3>
+                  <p>Siding replaced alongside the roof, so the two edges meet the way they are supposed to.</p>
+                  <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                 </div>
               </a>
             </li>
