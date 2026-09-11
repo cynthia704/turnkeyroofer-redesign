@@ -263,6 +263,12 @@ h1 em{font-style:italic;color:var(--clay2)}
 .sdmain{stroke-width:1.7}
 .sdweb{stroke-width:1.15;opacity:.42}
 .sdcap{stroke-width:3}
+/* the same truss between two forest sections: a full-width forest band so the
+   page cream never shows through, and the lines drawn light */
+.secdivband{background:var(--forest)}
+.secdiv-d{color:var(--clay2)}
+.secdiv-d .secdivrule:first-child{background:linear-gradient(90deg,transparent,rgba(244,239,232,.08) 34%,rgba(244,239,232,.32))}
+.secdiv-d .secdivrule:last-child{background:linear-gradient(270deg,transparent,rgba(244,239,232,.08) 34%,rgba(244,239,232,.32))}
 
 /* ===== the two divisions, one section each =====
    Side by side neither had room to be more than a list. Each now owns a section:
@@ -1576,17 +1582,8 @@ body.navopen{overflow:hidden}
   </div>
 </section>
 
-<div class="secdiv" aria-hidden="true">
-  <span class="secdivrule"></span>
-  <svg class="secdivmark" viewBox="0 0 132 48" width="132" height="48" fill="none"
-       stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-    <path class="sdweb" d="M66 40 40 27M66 40 92 27M66 40V14"/>
-    <path class="sdmain" d="M8 43 66 14l58 29M14 40h104"/>
-    <path class="sdcap" d="M59.5 10.5h13"/>
-  </svg>
-  <span class="secdivrule"></span>
-</div>
-<section class="sec dsec" id="services">
+<div class="roofline" aria-hidden="true"><svg viewBox="0 0 1440 52" preserveAspectRatio="none"><path d="M0,52 L720,8 L1440,52 L1440,52 L0,52 Z" fill="#1f4d43"/><path d="M0,52 L720,8 L1440,52" fill="none" stroke="rgba(240,180,138,.55)" stroke-width="2" vector-effect="non-scaling-stroke"/></svg></div>
+<section class="sec dsec dsec-dark" id="services">
   <div class="wrap">
     <div class="dgrid">
       <div class="dbody rise" data-anim>
@@ -1633,7 +1630,18 @@ body.navopen{overflow:hidden}
     </div>
   </div>
 </section>
-<div class="roofline" aria-hidden="true"><svg viewBox="0 0 1440 52" preserveAspectRatio="none"><path d="M0,52 L720,8 L1440,52 L1440,52 L0,52 Z" fill="#1f4d43"/><path d="M0,52 L720,8 L1440,52" fill="none" stroke="rgba(240,180,138,.55)" stroke-width="2" vector-effect="non-scaling-stroke"/></svg></div>
+<div class="secdivband" aria-hidden="true">
+<div class="secdiv secdiv-d">
+  <span class="secdivrule"></span>
+  <svg class="secdivmark" viewBox="0 0 132 48" width="132" height="48" fill="none"
+       stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path class="sdweb" d="M66 40 40 27M66 40 92 27M66 40V14"/>
+    <path class="sdmain" d="M8 43 66 14l58 29M14 40h104"/>
+    <path class="sdcap" d="M59.5 10.5h13"/>
+  </svg>
+  <span class="secdivrule"></span>
+</div>
+</div>
 <section class="sec dsec dsec-dark dsec-mirror">
   <div class="wrap">
     <div class="dgrid">
