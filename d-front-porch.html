@@ -796,6 +796,12 @@ h1 em{font-style:italic;color:var(--clay2)}
 @media(max-width:640px){
   .seccta{margin-top:34px;padding-top:22px;gap:16px}
   .seccta p{font-size:15.5px}
+  /* the button-and-link row would otherwise keep its full width and run off a
+     phone: it takes the whole row, the button goes full width, the link sits
+     centred under it */
+  .sectaduo{flex:1 1 100%;min-width:0;flex-direction:column;align-items:stretch;gap:14px}
+  .sectaduo .btn1{text-align:center}
+  .sectaduo .sectalink{align-self:center}
 }
 
 /* ===== reviews, one at a time =====
