@@ -1330,19 +1330,19 @@ body.navopen{overflow:hidden}
 .rtypes a:hover img{transform:scale(1.06)}
 .rttxt{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 18px;display:flex;flex-direction:column;gap:6px;
   background:linear-gradient(0deg,rgba(12,28,24,.88) 0,rgba(12,28,24,.8) calc(100% - 40px),rgba(12,28,24,0) 100%)}
-.rttxt b{font-family:var(--disp);font-size:22px;font-weight:600;line-height:1.2;color:#fff}
+.rttxt b{font-family:var(--disp);font-size:clamp(18px,1.72vw,22px);font-weight:600;line-height:1.2;color:#fff;white-space:nowrap}
 .rttxt span{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;letter-spacing:.13em;
   text-transform:uppercase;color:var(--clay2)}
-@media(max-width:1000px){.rtypes{grid-template-columns:repeat(2,minmax(0,1fr))}.rtypes li:first-child{grid-column:span 2}.rtypes a{height:260px}}
+@media(max-width:1000px){.rtypes{grid-template-columns:repeat(2,minmax(0,1fr))}.rtypes li:first-child{grid-column:span 2}.rtypes a{height:260px}.rttxt b{font-size:22px}}
 @media(max-width:560px){.rtypes{grid-template-columns:1fr}.rtypes li:first-child{grid-column:auto}}
 
 /* reviews: one quote across the full width on forest, three cards in a row beneath */
 .rrevs{display:grid;gap:16px}
 .rrfeat{position:relative;overflow:hidden;margin:0;display:flex;flex-direction:column;gap:22px;
   padding:34px 40px 30px;background:var(--forest);color:#f4efe8;border-radius:var(--r)}
-.rrfeat::before{content:"\201C";position:absolute;right:24px;top:-26px;font-family:var(--disp);font-size:190px;line-height:1;
+.rrfeat::before{content:"\201C";position:absolute;right:30px;bottom:-96px;font-family:var(--disp);font-size:190px;line-height:1;
   color:rgba(240,180,138,.2);pointer-events:none}
-.rrfeat blockquote{position:relative;margin:0;max-width:62ch;font-family:var(--disp);font-size:clamp(19px,2vw,23px);line-height:1.5;color:#fff;text-wrap:pretty}
+.rrfeat blockquote{position:relative;margin:0;font-family:var(--disp);font-size:clamp(19px,2vw,23px);line-height:1.5;color:#fff;text-wrap:pretty}
 .rrlist{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .rrcard{margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:14px;padding:20px 22px;
   background:#fff;border:1px solid var(--line);border-radius:16px}
