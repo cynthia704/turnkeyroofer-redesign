@@ -1291,6 +1291,14 @@ body.navopen{overflow:hidden}
 .squote figcaption span span{display:block;margin-top:2px;font-family:var(--mono);font-size:9.5px;
   letter-spacing:.1em;text-transform:uppercase;color:rgba(244,239,232,.86)}
 
+/* the commercial cross-link runs the full width as a banner: words left, link
+   right, so the column no longer ends in an empty right half */
+.sxband{display:flex;align-items:center;justify-content:space-between;gap:18px 40px;flex-wrap:wrap;
+  padding:30px 34px;background:var(--cream2);border:1px solid var(--line);border-radius:var(--r)}
+.sxband h2{margin-bottom:8px}
+.sxband .sintro{margin:0}
+.sxband .sxlink{flex:none}
+@media(max-width:560px){.sxband{padding:24px 22px}}
 .sxlink{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:16px;
   color:var(--forest);padding:6px 0;border-bottom:1.5px solid rgba(168,85,42,.45);
   transition:color .25s,border-color .25s}
@@ -1501,9 +1509,11 @@ body.navopen{overflow:hidden}
           <figcaption><span class="sqav" aria-hidden="true">IG</span><span><b>Irish Grand</b><span>Hail damage &middot; Residential</span></span></figcaption>
         </figure>
 
-        <section class="sblock">
-          <h2>Running a Building Instead?</h2>
-          <p class="sintro">Flat and low-slope decks are different work. Same licenses, same warranties, same phone number, different crew and different materials.</p>
+        <section class="sblock sxband">
+          <div>
+            <h2>Running a Building Instead?</h2>
+            <p class="sintro">Flat and low-slope decks are different work. Same licenses, same warranties, same phone number, different crew and different materials.</p>
+          </div>
           <a class="sxlink" href="/commercial-roofing/">Commercial roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </section>
 
