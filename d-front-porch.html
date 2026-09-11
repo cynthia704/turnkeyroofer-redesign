@@ -2296,6 +2296,13 @@ body.navopen{overflow:hidden}
     });
     var p = v.play();
     if(p && p.catch) p.catch(function(){ /* autoplay refused: the poster stays */ });
+    /* a page opened in a background tab has its autoplay deferred by the browser;
+       start it when the tab comes forward, unless the visitor paused it */
+    document.addEventListener('visibilitychange', function(){
+      if(!document.hidden && v.paused && !(ctl && ctl.getAttribute('aria-pressed') === 'true')){
+        var q = v.play(); if(q && q.catch) q.catch(function(){});
+      }
+    });
     if(ctl){
       ctl.addEventListener('click', function(){
         var paused = ctl.getAttribute('aria-pressed') === 'true';
