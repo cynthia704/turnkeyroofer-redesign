@@ -202,12 +202,11 @@ h1 em{font-style:italic;color:var(--clay2)}
 .sfside{min-width:0;display:flex;flex-direction:column;gap:22px}
 .sfside .cta{margin:0}
 .sflist{flex:1;list-style:none;margin:0;padding:0;display:grid;grid-template-rows:repeat(3,minmax(200px,1fr));gap:14px}
-/* each tile is the picture edge to edge, the words over a fixed-height shade so
-   they always sit on dark whatever the photo is doing */
+/* each tile is the picture edge to edge. The shade is the background of the words
+   themselves, so it covers exactly the text plus a 32px fade and never more of the
+   photo, whatever the text comes to at any width */
 .sflist li{position:relative;overflow:hidden;border-radius:var(--r);background:var(--forest2);
   box-shadow:0 22px 44px -30px rgba(23,58,51,.55)}
-.sflist li::after{content:"";position:absolute;left:0;right:0;bottom:0;height:176px;z-index:1;pointer-events:none;
-  background:linear-gradient(0deg,rgba(12,28,24,.9) 0,rgba(12,28,24,.82) 106px,rgba(12,28,24,0) 176px)}
 .sfpic{position:absolute;inset:0;margin:0}
 .sfpic img,.sfvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .sfvid{opacity:0;transition:opacity 1s ease}
@@ -219,9 +218,10 @@ h1 em{font-style:italic;color:var(--clay2)}
   background:linear-gradient(rgba(168,85,42,.08),rgba(168,85,42,.08)),var(--cream);
   box-shadow:0 8px 18px -10px rgba(12,28,24,.6)}
 .sfpic .sfico svg{width:23px;height:23px}
-.sflist li>div{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:0 22px 20px}
+.sflist li>div{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:32px 22px 20px;
+  background:linear-gradient(0deg,rgba(12,28,24,.86) 0,rgba(12,28,24,.78) calc(100% - 32px),rgba(12,28,24,0) 100%)}
 .sflist h4{font-size:19px;margin:0 0 4px;line-height:1.25;color:#fff}
-.sflist p{margin:0;font-size:15px;color:rgba(244,239,232,.9);line-height:1.6;text-wrap:pretty}
+.sflist p{margin:0;font-size:15px;color:rgba(244,239,232,.9);line-height:1.6;text-wrap:balance}
 /* WCAG 2.2.2: the clip loops, so it can be stopped. Only shown while it plays. */
 .sfvidctl{position:absolute;z-index:3;right:14px;top:14px;width:36px;height:36px;border-radius:50%;padding:0;
   display:grid;place-items:center;cursor:pointer;color:#f4efe8;
@@ -231,14 +231,22 @@ h1 em{font-style:italic;color:var(--clay2)}
 .sfvidctl .i-play{display:none}
 .sfvidctl[aria-pressed="true"] .i-pause{display:none}
 .sfvidctl[aria-pressed="true"] .i-play{display:block}
+/* tablet: the three sit side by side rather than stacking three screens tall */
 @media(max-width:1000px){
-  .sflist{grid-template-rows:none}
-  .sflist li{aspect-ratio:16/9;min-height:240px}
+  .sflist{grid-template-rows:none;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .sflist li{min-height:360px}
+  .sflist li>div{padding:32px 16px 16px}
+  .sflist h4{font-size:17px}
+  .sflist p{font-size:14px}
+}
+@media(max-width:699px){
+  .sflist{grid-template-columns:1fr}
+  .sflist li{min-height:0;aspect-ratio:16/10}
+  .sflist li>div{padding:32px 20px 18px}
 }
 @media(max-width:560px){
   .sflist li{aspect-ratio:auto;min-height:270px}
-  .sflist li::after{height:230px;background:linear-gradient(0deg,rgba(12,28,24,.9) 0,rgba(12,28,24,.82) 156px,rgba(12,28,24,0) 230px)}
-  .sflist li>div{padding:0 18px 18px}
+  .sflist li>div{padding:32px 18px 18px}
   .sfpic .sfico{left:12px;top:12px;width:36px;height:36px}
   .sfpic .sfico svg{width:20px;height:20px}
 }
