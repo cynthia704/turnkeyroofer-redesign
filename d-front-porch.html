@@ -198,7 +198,34 @@ h1 em{font-style:italic;color:var(--clay2)}
 .sfsec .lede{margin:20px 0 0;max-width:54ch}
 
 .sflist{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:20px}
-.sflist li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:start}
+/* the picture stretches to the height of its text, so a row has no hole beside
+   the words; the icon tile sits on its corner as a badge */
+.sflist li{display:grid;grid-template-columns:168px minmax(0,1fr);gap:22px;align-items:stretch}
+.sflist li>div{align-self:center}
+.sfpic{position:relative;margin:0;min-height:108px}
+.sfpic img,.sfvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
+  border-radius:14px;background:var(--cream2)}
+.sfvid{opacity:0;transition:opacity 1s ease}
+.sfpic.playing .sfvid{opacity:1}
+.sfpic .sfico{position:absolute;z-index:2;left:-10px;bottom:-10px;width:40px;height:40px;
+  background:linear-gradient(rgba(168,85,42,.08),rgba(168,85,42,.08)),var(--cream);
+  box-shadow:0 6px 14px -8px rgba(23,58,51,.45)}
+.sfpic .sfico svg{width:22px;height:22px}
+/* WCAG 2.2.2: the clip loops, so it can be stopped. Only shown while it plays. */
+.sfvidctl{position:absolute;z-index:2;right:8px;top:8px;width:30px;height:30px;border-radius:50%;padding:0;
+  display:grid;place-items:center;cursor:pointer;color:#f4efe8;
+  background:rgba(12,28,24,.62);border:1px solid rgba(244,239,232,.4);transition:background .25s}
+.sfvidctl:hover{background:rgba(12,28,24,.86)}
+.sfvidctl:focus-visible{outline:2px solid var(--clay);outline-offset:2px}
+.sfvidctl .i-play{display:none}
+.sfvidctl[aria-pressed="true"] .i-pause{display:none}
+.sfvidctl[aria-pressed="true"] .i-play{display:block}
+@media(max-width:560px){
+  .sflist li{grid-template-columns:112px minmax(0,1fr);gap:18px}
+  .sfpic{min-height:96px}
+  .sfpic .sfico{width:34px;height:34px;left:-8px;bottom:-8px}
+  .sfpic .sfico svg{width:19px;height:19px}
+}
 .sfico{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;color:var(--clay);
   background:rgba(168,85,42,.08);border:1px solid rgba(168,85,42,.28)}
 .sfico svg{width:24px;height:24px;display:block}
@@ -230,6 +257,11 @@ h1 em{font-style:italic;color:var(--clay2)}
 .eavedraw .bd{stroke:rgba(32,48,44,.52);stroke-width:2;fill:rgba(168,85,42,.1)}
 .eavedraw .air{stroke:var(--clay);stroke-width:1.6;opacity:.62;stroke-dasharray:5 5}
 .eavedraw .airhead{stroke:var(--clay);stroke-width:1.6;opacity:.62}
+/* the air runs into the attic three times as the drawing arrives: 4.8 s, under the
+   five seconds after which moving content needs a pause control */
+.eavecol.in .eavedraw .air{animation:sfAir 1.6s linear .7s 3}
+@keyframes sfAir{from{stroke-dashoffset:20}to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){.eavecol.in .eavedraw .air{animation:none}.sfvid,.sfvidctl{transition:none}}
 .eavedraw .sd{stroke:rgba(32,48,44,.22);stroke-width:1.4}
 .eavedraw .gt{stroke:rgba(32,48,44,.34);stroke-width:1.8}
 .eavedraw .lead{stroke:rgba(32,48,44,.32);stroke-width:1;stroke-dasharray:3 4}
@@ -1722,21 +1754,32 @@ body.navopen{overflow:hidden}
         <p class="lede">The soffit is the underside of the overhang, the fascia is the board at its edge. Together they feed the attic its air, and they rot first when water gets behind the gutter.</p>
         <ul class="sflist">
           <li>
-            <span class="sfico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M2.8 8.6h18.4v7.2H2.8z"/><path d="M7 10.6v3.2M10.6 10.6v3.2M14.2 10.6v3.2M17.8 10.6v3.2"/></svg></span>
+            <figure class="sfpic">
+              <img src="media/soffit-install-pexels-34572303-poster.jpg" alt="Worker fixing new wood soffit boards to the underside of an overhang from a scaffold" loading="lazy">
+              <video class="sfvid" muted loop playsinline preload="none" aria-hidden="true" data-src="media/soffit-install-pexels-34572303-360p.mp4"></video>
+              <button class="sfvidctl" type="button" aria-pressed="false" aria-label="Pause the soffit installation video" hidden><svg class="i-pause" width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="8.5" y="2" width="3" height="10" rx="1" fill="currentColor"/></svg><svg class="i-play" width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6a.6.6 0 0 0 .9.5l7.4-4.8a.6.6 0 0 0 0-1L4.9 1.7a.6.6 0 0 0-.9.5z" fill="currentColor"/></svg></button>
+              <span class="sfico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M2.8 8.6h18.4v7.2H2.8z"/><path d="M7 10.6v3.2M10.6 10.6v3.2M14.2 10.6v3.2M17.8 10.6v3.2"/></svg></span>
+            </figure>
             <div>
               <h4>Soffit Installation</h4>
               <p>New vented panels cut to the overhang, so the attic pulls air the way the roof was drawn to.</p>
             </div>
           </li>
           <li>
-            <span class="sfico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M2.8 8.6h18.4v7.2H2.8z"/><path d="M9.4 8.6v7.2M15 8.6v7.2"/><path d="M10.7 12.2l1.5 1.5 2.2-2.9"/></svg></span>
+            <figure class="sfpic">
+              <img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/House-with-white-fascia-board.jpg" alt="Open eave with new soffit panels going back up under the rafters" loading="lazy">
+              <span class="sfico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M2.8 8.6h18.4v7.2H2.8z"/><path d="M9.4 8.6v7.2M15 8.6v7.2"/><path d="M10.7 12.2l1.5 1.5 2.2-2.9"/></svg></span>
+            </figure>
             <div>
               <h4>Soffit Repair</h4>
               <p>Rotted sections cut back to sound wood, replaced, and refinished to match the run.</p>
             </div>
           </li>
           <li>
-            <span class="sfico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M7.4 3.9v11.3"/><path d="M7.4 12.4h8.9a2.9 2.9 0 1 1 0 5.8H7.4"/><path d="M4.6 3.9h5.6"/></svg></span>
+            <figure class="sfpic">
+              <img src="https://images.pexels.com/photos/27258292/pexels-photo-27258292.jpeg?auto=compress&cs=tinysrgb&w=560" alt="Fascia board and gutter along the edge of a roof overhang" loading="lazy">
+              <span class="sfico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M7.4 3.9v11.3"/><path d="M7.4 12.4h8.9a2.9 2.9 0 1 1 0 5.8H7.4"/><path d="M4.6 3.9h5.6"/></svg></span>
+            </figure>
             <div>
               <h4>Fascia Board</h4>
               <p>The board the gutter hangs on. Replaced while it is still holding, not after it lets go.</p>
@@ -2425,6 +2468,37 @@ body.navopen{overflow:hidden}
         col.classList.toggle('is-held', held);
         if(held) v.pause(); else go();
       });
+    });
+  })();
+
+  /* the soffit clip in the service list, on the same rules as the films */
+  (function(){
+    var v = document.querySelector('.sfvid');
+    if(!v) return;
+    var ctl = document.querySelector('.sfvidctl'), pic = v.parentNode, onScreen = false, held = false;
+    var wide = window.matchMedia('(min-width: 768px)').matches;
+    var saveData = !!(navigator.connection && navigator.connection.saveData);
+    if(reduce || !wide || saveData || !('IntersectionObserver' in window)) return;
+    function go(){
+      if(held || !onScreen) return;
+      var p = v.play(); if(p && p.catch) p.catch(function(){ /* refused: the poster stays */ });
+    }
+    v.addEventListener('playing', function(){ pic.classList.add('playing'); if(ctl) ctl.hidden = false; });
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        onScreen = e.isIntersecting;
+        if(onScreen){
+          if(!v.getAttribute('src')) v.src = v.getAttribute('data-src');
+          go();
+        } else if(!v.paused) v.pause();
+      });
+    }, {threshold:0.3}).observe(pic);
+    document.addEventListener('visibilitychange', function(){ if(!document.hidden) go(); });
+    if(ctl) ctl.addEventListener('click', function(){
+      held = !held;
+      ctl.setAttribute('aria-pressed', held ? 'true' : 'false');
+      ctl.setAttribute('aria-label', (held ? 'Play' : 'Pause') + ctl.getAttribute('aria-label').replace(/^(Play|Pause)/, ''));
+      if(held) v.pause(); else go();
     });
   })();
 
