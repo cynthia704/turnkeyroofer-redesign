@@ -591,7 +591,10 @@ h1 em{font-style:italic;color:var(--clay2)}
 .final .cta{justify-content:center}
 
 /* footer */
-.ft{background:var(--forest2);color:rgba(244,239,232,.66);padding:62px 0 26px;font-size:14.5px}
+/* the bottom padding leaves room for the back-to-top arrow (bottom left), so at
+   the very end of the page it never sits on the last line */
+.ft{background:var(--forest2);color:rgba(244,239,232,.66);padding:62px 0 80px;font-size:14.5px}
+@media(max-width:820px){.ft{padding-bottom:70px}}
 .ftgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:40px}
 @media(max-width:900px){.ftgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.ftgrid{grid-template-columns:1fr}}
