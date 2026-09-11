@@ -1244,11 +1244,11 @@ body.navopen{overflow:hidden}
    Each tile is its photo, edge to edge. The shade is the background of the text
    block itself, so it covers exactly the words plus a fade and never more of the
    photo. Three columns, two tiles double width: four full rows, no hole. */
-.svhead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px 56px;align-items:end;margin:0 0 30px}
+.svhead{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:16px 56px;align-items:end;margin:0 0 30px}
 .svhead .eyebrow{margin:0 0 12px}
 .svhead h2{margin:0}
 .svhead .sintro{margin:0;max-width:none}
-@media(max-width:900px){.svhead{grid-template-columns:1fr}}
+@media(max-width:1100px){.svhead{grid-template-columns:1fr}}
 .svlist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
   grid-auto-rows:320px;gap:14px}
 .svlist .svwide{grid-column:span 2}
@@ -1336,17 +1336,17 @@ body.navopen{overflow:hidden}
 @media(max-width:1000px){.rtypes{grid-template-columns:repeat(2,minmax(0,1fr))}.rtypes li:first-child{grid-column:span 2}.rtypes a{height:260px}}
 @media(max-width:560px){.rtypes{grid-template-columns:1fr}.rtypes li:first-child{grid-column:auto}}
 
-/* reviews: one large on forest, three beside it that share its height */
-.rrevs{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:16px}
-.rrfeat{position:relative;overflow:hidden;margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:26px;
-  padding:36px 34px 30px;background:var(--forest);color:#f4efe8;border-radius:var(--r)}
+/* reviews: one quote across the full width on forest, three cards in a row beneath */
+.rrevs{display:grid;gap:16px}
+.rrfeat{position:relative;overflow:hidden;margin:0;display:flex;flex-direction:column;gap:22px;
+  padding:34px 40px 30px;background:var(--forest);color:#f4efe8;border-radius:var(--r)}
 .rrfeat::before{content:"\201C";position:absolute;right:24px;top:-26px;font-family:var(--disp);font-size:190px;line-height:1;
   color:rgba(240,180,138,.2);pointer-events:none}
-.rrfeat blockquote{position:relative;margin:0;font-family:var(--disp);font-size:clamp(19px,2vw,23px);line-height:1.5;color:#fff}
-.rrlist{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));gap:16px}
+.rrfeat blockquote{position:relative;margin:0;max-width:62ch;font-family:var(--disp);font-size:clamp(19px,2vw,23px);line-height:1.5;color:#fff;text-wrap:pretty}
+.rrlist{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .rrcard{margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:14px;padding:20px 22px;
   background:#fff;border:1px solid var(--line);border-radius:16px}
-.rrcard blockquote{margin:0;font-size:15px;line-height:1.6;color:var(--ink2)}
+.rrcard blockquote{margin:0;font-size:15px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
 .rrwho{display:flex;align-items:center;gap:12px}
 .rrav{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-family:var(--disp);font-weight:700;
   font-size:14px;background:var(--cream2);color:var(--forest);border:1px solid var(--line)}
@@ -1355,15 +1355,15 @@ body.navopen{overflow:hidden}
 .rrfeat .rrwho b{color:#fff}
 .rrwho span span{display:block;margin-top:2px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
 .rrfeat .rrwho span span{color:rgba(244,239,232,.74)}
-@media(max-width:900px){.rrevs{grid-template-columns:1fr}.rrlist{grid-template-rows:none}}
+@media(max-width:900px){.rrlist{grid-template-columns:1fr}.rrfeat{padding:28px 24px 24px}}
 
 /* storm damage and insurance: words left on forest, photo right filling the height */
-.rclaim{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);overflow:hidden;border-radius:var(--r);
+.rclaim{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);overflow:hidden;border-radius:var(--r);
   background:var(--forest2);color:#f4efe8}
 .rcltxt{padding:40px 40px 38px}
 .rcltxt .eyebrow{color:var(--clay2);margin:0 0 12px}
 .rcltxt h2{color:#fff}
-.rcltxt p{margin:0 0 14px;font-size:16.5px;line-height:1.65;color:rgba(244,239,232,.86)}
+.rcltxt p:not(.eyebrow){margin:0 0 14px;font-size:16.5px;line-height:1.65;color:rgba(244,239,232,.86)}
 .rclcta{display:flex;align-items:center;gap:14px 24px;flex-wrap:wrap;margin-top:24px}
 .rclink{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15px;color:#fff;padding:6px 0;
   border-bottom:1.5px solid rgba(240,180,138,.55)}
@@ -1372,13 +1372,9 @@ body.navopen{overflow:hidden}
 .rclpic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 @media(max-width:900px){.rclaim{grid-template-columns:1fr}.rclpic{min-height:240px}.rcltxt{padding:30px 24px}}
 
-/* FAQ: heading and phone left, questions right */
-.rfaq{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:24px 56px;align-items:start}
-.rfaqhead .eyebrow{margin:0 0 12px}
-.rfaqhead h2{margin:0 0 14px}
-.rfaqhead p{margin:0 0 18px;font-size:16px;line-height:1.65;color:var(--ink2)}
-.rfaqtel{display:inline-block;font-weight:700;font-size:16px;color:var(--forest);padding:4px 0;border-bottom:1.5px solid rgba(168,85,42,.45)}
-.rfaqtel:hover{color:var(--clay);border-bottom-color:var(--clay)}
+/* FAQ: the page's header above, the questions full width below */
+.sintro .rfaqtel{font-weight:700;color:var(--forest);white-space:nowrap;border-bottom:1.5px solid rgba(168,85,42,.45)}
+.sintro .rfaqtel:hover{color:var(--clay);border-bottom-color:var(--clay)}
 .rfaqlist{display:grid;gap:10px}
 .rfaqlist details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:0 20px}
 .rfaqlist summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;
@@ -1388,21 +1384,22 @@ body.navopen{overflow:hidden}
   background:var(--cream2);color:var(--clay);font-family:var(--body);font-size:18px;font-weight:700}
 .rfaqlist details[open] summary::after{content:"\2212"}
 .rfaqlist summary:focus-visible{outline:2px solid var(--clay);outline-offset:3px;border-radius:6px}
-.rfa{padding:0 0 18px;font-size:15.5px;line-height:1.65;color:var(--ink2)}
-@media(max-width:900px){.rfaq{grid-template-columns:1fr}}
+.rfa{padding:0 0 18px;max-width:80ch;font-size:15.5px;line-height:1.65;color:var(--ink2);text-wrap:pretty}
 
-/* fourteen towns: heading left, town links right */
-.rareas{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:22px 56px;align-items:center;
-  padding:34px 36px;background:#fff;border:1px solid var(--line);border-radius:var(--r)}
-.rareas .eyebrow{margin:0 0 12px}
-.rareas h2{margin:0 0 10px}
-.rareas p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink2)}
-.rtowns{display:flex;flex-wrap:wrap;gap:8px}
-.rtowns a{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:100px;border:1px solid var(--line);
-  background:var(--cream);font-size:14.5px;font-weight:600;color:var(--ink);transition:border-color .2s,color .2s,background .2s}
-.rtowns a::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--clay)}
-.rtowns a:hover{border-color:var(--clay);color:var(--clay);background:#fff}
-@media(max-width:900px){.rareas{grid-template-columns:1fr;padding:26px 22px}}
+/* towns: 14 towns and the phone make 15 cells, so every row is full:
+   5 x 3, then 3 x 5, then 2 columns with the phone across the last row */
+.rtowns{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.rtowns a{display:flex;align-items:center;justify-content:center;gap:9px;padding:13px 12px;border-radius:12px;
+  border:1px solid var(--line);background:#fff;font-size:15px;font-weight:600;color:var(--ink);white-space:nowrap;
+  transition:border-color .2s,color .2s,background .2s}
+.rtowns a::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--clay)}
+.rtowns a:hover{border-color:var(--clay);color:var(--clay)}
+.rtowns a:focus-visible{outline:2px solid var(--clay);outline-offset:2px}
+.rtowns .rtcall{background:var(--forest);border-color:var(--forest);color:#fff;font-weight:700}
+.rtowns .rtcall::before{display:none}
+.rtowns .rtcall:hover{background:var(--clay);border-color:var(--clay);color:#fff}
+@media(max-width:1000px){.rtowns{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.rtowns{grid-template-columns:repeat(2,minmax(0,1fr))}.rtowns .rtcall{grid-column:span 2}}
 @media(prefers-reduced-motion:reduce){.rtypes img,.rtowns a{transition:none}.rtypes a:hover img{transform:none}}
 </style>
 </head>
@@ -1636,16 +1633,16 @@ body.navopen{overflow:hidden}
           <div class="svhead">
             <div>
               <p class="eyebrow">Materials</p>
-              <h2>Roofing Materials We Install on Houses</h2>
+              <h2>Roofing Materials We Install</h2>
             </div>
             <p class="sintro">Shingle, metal, slate and tile, put on by the same licensed crew. Not sure which one is on your roof now? The estimator will tell you.</p>
           </div>
           <ul class="rtypes">
-            <li><a href="/roofing-types/shingle/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/shingle-roof.jpg" alt="Asphalt shingle roof on a house" loading="lazy"><span class="rttxt"><b>Shingle</b><span>See shingle roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
-            <li><a href="/roofing-types/metal-roof/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/metal-roofing.jpg" alt="Metal roof on a house" loading="lazy"><span class="rttxt"><b>Metal</b><span>See metal roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
-            <li><a href="/roofing-types/metal-standing-seam-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/roof-galvanized.jpg" alt="Standing seam metal roof" loading="lazy"><span class="rttxt"><b>Standing Seam</b><span>See standing seam roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
-            <li><a href="/roofing-types/slate-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/Slate-roof-against-the-sky.webp" alt="Slate roof against the sky" loading="lazy"><span class="rttxt"><b>Slate</b><span>See slate roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
-            <li><a href="/roofing-types/tile-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/rooftop-made-of-tile-roofing.webp" alt="Tile roof on a house" loading="lazy"><span class="rttxt"><b>Tile</b><span>See tile roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li><a href="/roofing-types/shingle/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/shingle-roof.jpg" alt="Asphalt shingle roof on a house" loading="lazy"><span class="rttxt"><b>Shingle</b><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li><a href="/roofing-types/metal-roof/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/metal-roofing.jpg" alt="Metal roof on a house" loading="lazy"><span class="rttxt"><b>Metal</b><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li><a href="/roofing-types/metal-standing-seam-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/roof-galvanized.jpg" alt="Standing seam metal roof" loading="lazy"><span class="rttxt"><b>Standing Seam</b><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li><a href="/roofing-types/slate-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/Slate-roof-against-the-sky.webp" alt="Slate roof against the sky" loading="lazy"><span class="rttxt"><b>Slate</b><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li><a href="/roofing-types/tile-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/rooftop-made-of-tile-roofing.webp" alt="Tile roof on a house" loading="lazy"><span class="rttxt"><b>Tile</b><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
           </ul>
         </section>
 
@@ -1668,7 +1665,7 @@ body.navopen{overflow:hidden}
               <figcaption class="rrwho"><span class="rrav" aria-hidden="true">LS</span><span><b>Laurie Stanley</b><span>Asbestos roof removal</span></span></figcaption>
               </figure>
               <figure class="rrcard">
-              <blockquote>&ldquo;When purchasing our new home, one of our top priorities was to have a comprehensive roof inspection. Their inspectors meticulously examined every inch of our roof, identifying potential issues and providing detailed recommendations.&rdquo;</blockquote>
+              <blockquote>&ldquo;When purchasing our new home, one of our top priorities was to have a comprehensive roof inspection. Their inspectors meticulously examined every inch of our roof, identifying potential issues and providing detailed&nbsp;recommendations.&rdquo;</blockquote>
               <figcaption class="rrwho"><span class="rrav" aria-hidden="true">CB</span><span><b>Charmaine Brown</b><span>Roof inspection &middot; Home purchase</span></span></figcaption>
               </figure>
               <figure class="rrcard">
@@ -1683,7 +1680,7 @@ body.navopen{overflow:hidden}
           <div class="rclaim">
             <div class="rcltxt">
               <p class="eyebrow">We meet your adjuster on the roof</p>
-              <h2>Storm Damage and Roof Insurance Claims</h2>
+              <h2>Storm Damage and Roof Claims</h2>
               <p>Most roof replacements in this city start with a storm and an insurance company. The adjuster decides what gets paid for, and they decide it from up there.</p>
               <p>We go up with them and document what gets missed. Then you have a record instead of an opinion.</p>
               <div class="cta rclcta"><a class="btn1" href="tel:5042267070">File your claim with us</a><a class="rclink" href="/roof-insurance-claims/">How roof claims work <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
@@ -1693,32 +1690,31 @@ body.navopen{overflow:hidden}
         </section>
 
         <section class="sblock">
-          <div class="rfaq">
-            <div class="rfaqhead">
+          <div class="svhead">
+            <div>
               <p class="eyebrow">Before you call</p>
-              <h2>Questions Homeowners Ask Before They Call</h2>
-              <p>Short answers to what people ask first. Anything else, the phone is quicker.</p>
-              <a class="rfaqtel" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
+              <h2>Questions Homeowners Ask</h2>
             </div>
-            <div class="rfaqlist">
+            <p class="sintro">Short answers to what people ask first. For anything else, call <a class="rfaqtel" href="tel:5042267070">(504)&nbsp;226-7070</a>.</p>
+          </div>
+          <div class="rfaqlist">
             <details><summary>Does the 24-Hour Guarantee Mean the Whole Roof?</summary><div class="rfa">The site states the roofing project is completed within 24 hours <b>once payment is received</b>. The estimate and the survey happen before that clock starts. Call and we will walk you through what your specific roof needs.</div></details>
-            <details><summary>What Does “No Maximum Wind Speed” Actually Mean?</summary><div class="rfa">Most roofing wind warranties stop covering you above a stated wind speed. Ours does not carry that ceiling. The <b>15-Year Unlimited Wind Warranty covers named storms</b> with no maximum wind speed.</div></details>
+            <details><summary>What Does “No Maximum Wind Speed” Actually Mean?</summary><div class="rfa">Most roofing wind warranties stop covering you above a stated wind speed. Ours does not carry that ceiling. The <b>15-Year Unlimited Wind Warranty covers named storms</b> with no maximum wind&nbsp;speed.</div></details>
             <details><summary>Are You Licensed?</summary><div class="rfa">Yes. We are a licensed roofing contractor in Louisiana. <b>Residential License #890459</b> and <b>Commercial License #3667</b>. Both numbers are printed in the footer of every page on this site so you can check them before you pay anyone.</div></details>
             <details><summary>Do You Work With My Insurance Company?</summary><div class="rfa">We go up on the roof with your adjuster and document the damage they might otherwise miss. <b>We cannot promise what an insurer will decide.</b> Nobody honestly can. What we can do is make sure the evidence is on the record.</div></details>
             <details><summary>Can I Finance a Roof Replacement?</summary><div class="rfa">Yes. <b>Roof now, pay later.</b> Call (504)&nbsp;226-7070 and ask what the monthly number looks like for the size of roof you have.</div></details>
-            </div>
           </div>
         </section>
 
         <section class="sblock">
-          <div class="rareas">
+          <div class="svhead">
             <div>
               <p class="eyebrow">Service areas</p>
-              <h2>Residential Roofing Across 14 Towns</h2>
-              <p>New Orleans plus 13 towns from Gretna to Baton Rouge. Pick yours for the local page.</p>
+              <h2>Residential Roofing in 14 Towns</h2>
             </div>
-            <div class="rtowns"><a href="/service-areas/">New Orleans</a><a href="/service-areas/metairie/">Metairie</a><a href="/service-areas/kenner/">Kenner</a><a href="/service-areas/gretna/">Gretna</a><a href="/service-areas/harahan/">Harahan</a><a href="/service-areas/river-ridge/">River Ridge</a><a href="/service-areas/slidell/">Slidell</a><a href="/service-areas/mandeville/">Mandeville</a><a href="/service-areas/covington/">Covington</a><a href="/service-areas/madisonville/">Madisonville</a><a href="/service-areas/laplace/">Laplace</a><a href="/service-areas/st-rose/">St. Rose</a><a href="/service-areas/hammond/">Hammond</a><a href="/service-areas/baton-rouge/">Baton Rouge</a></div>
+            <p class="sintro">New Orleans plus 13 towns from Gretna to Baton Rouge. Pick yours for the local page.</p>
           </div>
+          <div class="rtowns"><a href="/service-areas/">New Orleans</a><a href="/service-areas/metairie/">Metairie</a><a href="/service-areas/kenner/">Kenner</a><a href="/service-areas/gretna/">Gretna</a><a href="/service-areas/harahan/">Harahan</a><a href="/service-areas/river-ridge/">River Ridge</a><a href="/service-areas/slidell/">Slidell</a><a href="/service-areas/mandeville/">Mandeville</a><a href="/service-areas/covington/">Covington</a><a href="/service-areas/madisonville/">Madisonville</a><a href="/service-areas/laplace/">Laplace</a><a href="/service-areas/st-rose/">St. Rose</a><a href="/service-areas/hammond/">Hammond</a><a href="/service-areas/baton-rouge/">Baton Rouge</a><a class="rtcall" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
         </section>
 
         <section class="sblock sxband">
