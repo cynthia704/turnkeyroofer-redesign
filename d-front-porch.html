@@ -185,66 +185,72 @@ h1 em{font-style:italic;color:var(--clay2)}
 /* services */
 .svc{background:var(--cream2)}
 /* ===== soffit and fascia =====
-   Most homeowners cannot say what a soffit is, so the right half is an eave
-   detail on a gridded sheet: deck and rafter down to the drip edge, the fascia
-   the gutter hangs on, the soffit under it, the vent slots, and dashed arrows for
-   the air those slots feed into the attic. Four markers key to the legend.
+   Left: heading and lede, then an eave detail on a gridded sheet -- deck and rafter
+   down to the drip edge, the fascia the gutter hangs on, the soffit under it, the
+   vent slots, and dashed arrows for the air those slots feed into the attic. Four
+   markers key to the legend.
+   Right: the three services as tall picture tiles, then the button.
 
-   No dead space: the sheet is absolutely positioned inside a stretched column, so
-   the drawing can never set the row height. It scales to fit and centres, and the
-   sheet grid is what any spare room reads as. */
-.sfgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:52px;align-items:start}
+   No dead space: the right column is stretched to the height of the left one, and
+   its list is three 1fr rows, so the tiles grow or shrink to fill it exactly. */
+.sfgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:52px;align-items:stretch}
 @media(max-width:1000px){.sfgrid{grid-template-columns:1fr;gap:32px}}
 .sfbody{min-width:0}
 .sfsec .h2 em{font-style:italic;color:var(--clay)}
 .sfsec .lede{margin:20px 0 0;max-width:54ch}
 
-.sflist{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:20px}
-/* the picture stretches to the height of its text, so a row has no hole beside
-   the words; the icon tile sits on its corner as a badge */
-.sflist li{display:grid;grid-template-columns:168px minmax(0,1fr);gap:22px;align-items:stretch}
-.sflist li>div{align-self:center}
-.sfpic{position:relative;margin:0;min-height:108px}
-.sfpic img,.sfvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
-  border-radius:14px;background:var(--cream2)}
+.sfside{min-width:0;display:flex;flex-direction:column;gap:22px}
+.sfside .cta{margin:0}
+.sflist{flex:1;list-style:none;margin:0;padding:0;display:grid;grid-template-rows:repeat(3,minmax(200px,1fr));gap:14px}
+/* each tile is the picture edge to edge, the words over a fixed-height shade so
+   they always sit on dark whatever the photo is doing */
+.sflist li{position:relative;overflow:hidden;border-radius:var(--r);background:var(--forest2);
+  box-shadow:0 22px 44px -30px rgba(23,58,51,.55)}
+.sflist li::after{content:"";position:absolute;left:0;right:0;bottom:0;height:176px;z-index:1;pointer-events:none;
+  background:linear-gradient(0deg,rgba(12,28,24,.9) 0,rgba(12,28,24,.82) 106px,rgba(12,28,24,0) 176px)}
+.sfpic{position:absolute;inset:0;margin:0}
+.sfpic img,.sfvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .sfvid{opacity:0;transition:opacity 1s ease}
 .sfpic.playing .sfvid{opacity:1}
-.sfpic .sfico{position:absolute;z-index:2;left:-10px;bottom:-10px;width:40px;height:40px;
-  background:linear-gradient(rgba(168,85,42,.08),rgba(168,85,42,.08)),var(--cream);
-  box-shadow:0 6px 14px -8px rgba(23,58,51,.45)}
-.sfpic .sfico svg{width:22px;height:22px}
-/* WCAG 2.2.2: the clip loops, so it can be stopped. Only shown while it plays. */
-.sfvidctl{position:absolute;z-index:2;right:8px;top:8px;width:30px;height:30px;border-radius:50%;padding:0;
-  display:grid;place-items:center;cursor:pointer;color:#f4efe8;
-  background:rgba(12,28,24,.62);border:1px solid rgba(244,239,232,.4);transition:background .25s}
-.sfvidctl:hover{background:rgba(12,28,24,.86)}
-.sfvidctl:focus-visible{outline:2px solid var(--clay);outline-offset:2px}
-.sfvidctl .i-play{display:none}
-.sfvidctl[aria-pressed="true"] .i-pause{display:none}
-.sfvidctl[aria-pressed="true"] .i-play{display:block}
-@media(max-width:560px){
-  .sflist li{grid-template-columns:112px minmax(0,1fr);gap:18px}
-  .sfpic{min-height:96px}
-  .sfpic .sfico{width:34px;height:34px;left:-8px;bottom:-8px}
-  .sfpic .sfico svg{width:19px;height:19px}
-}
 .sfico{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;color:var(--clay);
   background:rgba(168,85,42,.08);border:1px solid rgba(168,85,42,.28)}
 .sfico svg{width:24px;height:24px;display:block}
-.sflist h4{font-size:18px;margin:0 0 4px;line-height:1.25}
-.sflist p{margin:0;font-size:15px;color:var(--ink2);line-height:1.6;text-wrap:pretty}
+.sfpic .sfico{position:absolute;z-index:3;left:16px;top:16px;width:42px;height:42px;
+  background:linear-gradient(rgba(168,85,42,.08),rgba(168,85,42,.08)),var(--cream);
+  box-shadow:0 8px 18px -10px rgba(12,28,24,.6)}
+.sfpic .sfico svg{width:23px;height:23px}
+.sflist li>div{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:0 22px 20px}
+.sflist h4{font-size:19px;margin:0 0 4px;line-height:1.25;color:#fff}
+.sflist p{margin:0;font-size:15px;color:rgba(244,239,232,.9);line-height:1.6;text-wrap:pretty}
+/* WCAG 2.2.2: the clip loops, so it can be stopped. Only shown while it plays. */
+.sfvidctl{position:absolute;z-index:3;right:14px;top:14px;width:36px;height:36px;border-radius:50%;padding:0;
+  display:grid;place-items:center;cursor:pointer;color:#f4efe8;
+  background:rgba(12,28,24,.62);border:1px solid rgba(244,239,232,.4);transition:background .25s}
+.sfvidctl:hover{background:rgba(12,28,24,.86)}
+.sfvidctl:focus-visible{outline:2px solid var(--clay2);outline-offset:2px}
+.sfvidctl .i-play{display:none}
+.sfvidctl[aria-pressed="true"] .i-pause{display:none}
+.sfvidctl[aria-pressed="true"] .i-play{display:block}
+@media(max-width:1000px){
+  .sflist{grid-template-rows:none}
+  .sflist li{aspect-ratio:16/9;min-height:240px}
+}
+@media(max-width:560px){
+  .sflist li{aspect-ratio:auto;min-height:270px}
+  .sflist li::after{height:230px;background:linear-gradient(0deg,rgba(12,28,24,.9) 0,rgba(12,28,24,.82) 156px,rgba(12,28,24,0) 230px)}
+  .sflist li>div{padding:0 18px 18px}
+  .sfpic .sfico{left:12px;top:12px;width:36px;height:36px}
+  .sfpic .sfico svg{width:20px;height:20px}
+}
 
-.eavecol{align-self:stretch;position:relative;min-height:330px}
-.eave{position:absolute;inset:0;margin:0;display:flex;flex-direction:column;gap:12px;
+/* the drawing sits in the flow of the left column, capped so it cannot tower */
+.eavecol{margin-top:30px}
+.eave{margin:0;display:flex;flex-direction:column;gap:12px;
   padding:22px 22px 18px;background:#fff;border:1px solid var(--line);border-radius:var(--r);
   background-image:
     linear-gradient(rgba(32,48,44,.05) 1px,transparent 1px),
     linear-gradient(90deg,rgba(32,48,44,.05) 1px,transparent 1px);
   background-size:26px 26px}
-@media(max-width:1000px){
-  .eavecol{position:static;min-height:0}
-  .eave{position:static;height:auto}
-}
 @media(max-width:560px){.eave{padding:16px 16px 14px}}
 
 .eavetitle{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
@@ -253,7 +259,7 @@ h1 em{font-style:italic;color:var(--clay2)}
 .eavetitle b{color:var(--ink);font-weight:500}
 .eavetitle span{color:var(--ink3);text-align:right}
 @media(max-width:420px){.eavetitle span{display:none}}
-.eavedraw{flex:1;min-width:0;min-height:0;width:100%;display:block}
+.eavedraw{width:100%;height:auto;max-height:400px;display:block}
 .eavedraw .ln{stroke:rgba(32,48,44,.34);stroke-width:2}
 .eavedraw .hv{stroke:var(--clay);stroke-width:2.6}
 .eavedraw .bd{stroke:rgba(32,48,44,.52);stroke-width:2;fill:rgba(168,85,42,.1)}
@@ -1754,79 +1760,81 @@ body.navopen{overflow:hidden}
         <p class="eyebrow">The edge of the roof</p>
         <h2 class="h2">Soffit and <em>Fascia</em> in New Orleans</h2>
         <p class="lede">The soffit is the underside of the overhang, the fascia is the board at its edge. Together they feed the attic its air, and they rot first when water gets behind the gutter.</p>
-        <ul class="sflist">
-          <li>
-            <figure class="sfpic">
-              <img src="media/soffit-install-pexels-34572303-poster.jpg" alt="Worker fixing new wood soffit boards to the underside of an overhang from a scaffold" loading="lazy">
-              <video class="sfvid" muted loop playsinline preload="none" aria-hidden="true" data-src="media/soffit-install-pexels-34572303-360p.mp4"></video>
-              <button class="sfvidctl" type="button" aria-pressed="false" aria-label="Pause the soffit installation video" hidden><svg class="i-pause" width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="8.5" y="2" width="3" height="10" rx="1" fill="currentColor"/></svg><svg class="i-play" width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6a.6.6 0 0 0 .9.5l7.4-4.8a.6.6 0 0 0 0-1L4.9 1.7a.6.6 0 0 0-.9.5z" fill="currentColor"/></svg></button>
-              <span class="sfico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M2.8 8.6h18.4v7.2H2.8z"/><path d="M7 10.6v3.2M10.6 10.6v3.2M14.2 10.6v3.2M17.8 10.6v3.2"/></svg></span>
-            </figure>
-            <div>
-              <h4>Soffit Installation</h4>
-              <p>New vented panels cut to the overhang, so the attic pulls air the way the roof was drawn to.</p>
-            </div>
-          </li>
-          <li>
-            <figure class="sfpic">
-              <img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/House-with-white-fascia-board.jpg" alt="Open eave with new soffit panels going back up under the rafters" loading="lazy">
-              <span class="sfico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M2.8 8.6h18.4v7.2H2.8z"/><path d="M9.4 8.6v7.2M15 8.6v7.2"/><path d="M10.7 12.2l1.5 1.5 2.2-2.9"/></svg></span>
-            </figure>
-            <div>
-              <h4>Soffit Repair</h4>
-              <p>Rotted sections cut back to sound wood, replaced, and refinished to match the run.</p>
-            </div>
-          </li>
-          <li>
-            <figure class="sfpic">
-              <img src="https://images.pexels.com/photos/27258292/pexels-photo-27258292.jpeg?auto=compress&cs=tinysrgb&w=560" alt="Fascia board and gutter along the edge of a roof overhang" loading="lazy">
-              <span class="sfico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M7.4 3.9v11.3"/><path d="M7.4 12.4h8.9a2.9 2.9 0 1 1 0 5.8H7.4"/><path d="M4.6 3.9h5.6"/></svg></span>
-            </figure>
-            <div>
-              <h4>Fascia Board</h4>
-              <p>The board the gutter hangs on. Replaced while it is still holding, not after it lets go.</p>
-            </div>
-          </li>
-        </ul>
-        <div class="cta" style="margin-top:30px"><a class="btn1d" href="#estimate">Get a free estimate</a></div>
+        <div class="eavecol reveal" data-anim>
+          <figure class="eave">
+            <div class="eavetitle"><b>Eave detail</b><span>Pitch 6:12 &middot; not to scale</span></div>
+          <svg class="eavedraw" viewBox="12 54 446 436" fill="none" stroke-linecap="round"
+               stroke-linejoin="round" role="img"
+               aria-label="Cross-section of a roof eave: the deck and rafter running down to the drip edge, the fascia board at the end, the soffit beneath it, and the vent slots feeding air into the attic.">
+            <path class="ln" d="M172 298v182M190 298v182"/>
+            <path class="sd" d="M190 332h15M190 350h15M190 368h15M190 386h15M190 404h15M190 422h15M190 440h15M190 458h15"/>
+            <path class="ln" d="M26 120 362 288"/>
+            <path class="ln" d="M26 86 362 254"/>
+            <path class="hv" d="M26 72 362 240"/>
+            <path class="hv" d="M348 233 378 248v11"/>
+            <path class="bd" d="M362 244h13v62h-13z"/>
+            <path class="gt" d="M377 288h23v6a13 13 0 0 1-13 13h-10"/>
+            <path class="gt" d="M383 307v173M397 307v173"/>
+            <path class="ln" d="M136 480h306"/>
+            <path class="sd" d="M146 480l-9 9M172 480l-9 9M198 480l-9 9M224 480l-9 9M250 480l-9 9M276 480l-9 9M302 480l-9 9M328 480l-9 9M354 480l-9 9M410 480l-9 9M436 480l-9 9"/>
+            <path class="bd" d="M190 298h172v10H190z"/>
+            <path class="hv" d="M248 300v6M258 300v6M268 300v6M278 300v6M288 300v6M298 300v6M308 300v6"/>
+            <path class="air" d="M298 290C290 268 274 252 250 243"/>
+            <path class="air" d="M266 290c-6-18-16-30-32-38"/>
+            <path class="airhead" d="M250 243l10 2M250 243l3 9M234 252l10 2M234 252l3 9"/>
+            <path class="lead" d="M368 240 409 214M378 275h41M206 312v14M290 312 297 326"/>
+            <g class="mk"><circle cx="420" cy="206" r="12"/><text x="420" y="211">1</text></g>
+            <g class="mk"><circle cx="432" cy="275" r="12"/><text x="432" y="280">2</text></g>
+            <g class="mk"><circle cx="206" cy="338" r="12"/><text x="206" y="343">3</text></g>
+            <g class="mk"><circle cx="300" cy="338" r="12"/><text x="300" y="343">4</text></g>
+          </svg>
+            <figcaption>
+              <ol class="eavekey">
+                <li><b>1</b>Drip edge</li>
+                <li><b>2</b>Fascia board</li>
+                <li><b>3</b>Soffit</li>
+                <li><b>4</b>Soffit vent</li>
+              </ol>
+            </figcaption>
+          </figure>
+        </div>
       </div>
-      <div class="eavecol reveal" data-anim>
-        <figure class="eave">
-          <div class="eavetitle"><b>Eave detail</b><span>Pitch 6:12 &middot; not to scale</span></div>
-        <svg class="eavedraw" viewBox="12 54 446 436" fill="none" stroke-linecap="round"
-             stroke-linejoin="round" role="img"
-             aria-label="Cross-section of a roof eave: the deck and rafter running down to the drip edge, the fascia board at the end, the soffit beneath it, and the vent slots feeding air into the attic.">
-          <path class="ln" d="M172 298v182M190 298v182"/>
-          <path class="sd" d="M190 332h15M190 350h15M190 368h15M190 386h15M190 404h15M190 422h15M190 440h15M190 458h15"/>
-          <path class="ln" d="M26 120 362 288"/>
-          <path class="ln" d="M26 86 362 254"/>
-          <path class="hv" d="M26 72 362 240"/>
-          <path class="hv" d="M348 233 378 248v11"/>
-          <path class="bd" d="M362 244h13v62h-13z"/>
-          <path class="gt" d="M377 288h23v6a13 13 0 0 1-13 13h-10"/>
-          <path class="gt" d="M383 307v173M397 307v173"/>
-          <path class="ln" d="M136 480h306"/>
-          <path class="sd" d="M146 480l-9 9M172 480l-9 9M198 480l-9 9M224 480l-9 9M250 480l-9 9M276 480l-9 9M302 480l-9 9M328 480l-9 9M354 480l-9 9M410 480l-9 9M436 480l-9 9"/>
-          <path class="bd" d="M190 298h172v10H190z"/>
-          <path class="hv" d="M248 300v6M258 300v6M268 300v6M278 300v6M288 300v6M298 300v6M308 300v6"/>
-          <path class="air" d="M298 290C290 268 274 252 250 243"/>
-          <path class="air" d="M266 290c-6-18-16-30-32-38"/>
-          <path class="airhead" d="M250 243l10 2M250 243l3 9M234 252l10 2M234 252l3 9"/>
-          <path class="lead" d="M368 240 409 214M378 275h41M206 312v14M290 312 297 326"/>
-          <g class="mk"><circle cx="420" cy="206" r="12"/><text x="420" y="211">1</text></g>
-          <g class="mk"><circle cx="432" cy="275" r="12"/><text x="432" y="280">2</text></g>
-          <g class="mk"><circle cx="206" cy="338" r="12"/><text x="206" y="343">3</text></g>
-          <g class="mk"><circle cx="300" cy="338" r="12"/><text x="300" y="343">4</text></g>
-        </svg>
-          <figcaption>
-            <ol class="eavekey">
-              <li><b>1</b>Drip edge</li>
-              <li><b>2</b>Fascia board</li>
-              <li><b>3</b>Soffit</li>
-              <li><b>4</b>Soffit vent</li>
-            </ol>
-          </figcaption>
-        </figure>
+      <div class="sfside rise" data-anim>
+          <ul class="sflist">
+            <li>
+              <figure class="sfpic">
+                <img src="media/soffit-install-pexels-34572303-poster.jpg" alt="Worker fixing new wood soffit boards to the underside of an overhang from a scaffold" loading="lazy">
+                <video class="sfvid" muted loop playsinline preload="none" aria-hidden="true" data-src="media/soffit-install-pexels-34572303-540p.mp4"></video>
+                <button class="sfvidctl" type="button" aria-pressed="false" aria-label="Pause the soffit installation video" hidden><svg class="i-pause" width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="8.5" y="2" width="3" height="10" rx="1" fill="currentColor"/></svg><svg class="i-play" width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6a.6.6 0 0 0 .9.5l7.4-4.8a.6.6 0 0 0 0-1L4.9 1.7a.6.6 0 0 0-.9.5z" fill="currentColor"/></svg></button>
+                <span class="sfico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M2.8 8.6h18.4v7.2H2.8z"/><path d="M7 10.6v3.2M10.6 10.6v3.2M14.2 10.6v3.2M17.8 10.6v3.2"/></svg></span>
+              </figure>
+              <div>
+                <h4>Soffit Installation</h4>
+                <p>New vented panels cut to the overhang, so the attic pulls air the way the roof was drawn to.</p>
+              </div>
+            </li>
+            <li>
+              <figure class="sfpic">
+                <img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/House-with-white-fascia-board.jpg" alt="Open eave with new soffit panels going back up under the rafters" loading="lazy">
+                <span class="sfico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M2.8 8.6h18.4v7.2H2.8z"/><path d="M9.4 8.6v7.2M15 8.6v7.2"/><path d="M10.7 12.2l1.5 1.5 2.2-2.9"/></svg></span>
+              </figure>
+              <div>
+                <h4>Soffit Repair</h4>
+                <p>Rotted sections cut back to sound wood, replaced, and refinished to match the run.</p>
+              </div>
+            </li>
+            <li>
+              <figure class="sfpic">
+                <img src="https://images.pexels.com/photos/27258292/pexels-photo-27258292.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Fascia board and gutter along the edge of a roof overhang" loading="lazy">
+                <span class="sfico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M7.4 3.9v11.3"/><path d="M7.4 12.4h8.9a2.9 2.9 0 1 1 0 5.8H7.4"/><path d="M4.6 3.9h5.6"/></svg></span>
+              </figure>
+              <div>
+                <h4>Fascia Board</h4>
+                <p>The board the gutter hangs on. Replaced while it is still holding, not after it lets go.</p>
+              </div>
+            </li>
+          </ul>
+        <div class="cta"><a class="btn1d" href="#estimate">Get a free estimate</a></div>
       </div>
     </div>
   </div>
