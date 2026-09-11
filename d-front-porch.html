@@ -269,16 +269,16 @@ h1 em{font-style:italic;color:var(--clay2)}
    copy on one side, a two-photo composition on the other, mirrored and on forest
    for commercial.
 
-   No dead space, the same way the hero does it: the picture column is stretched
-   by the grid and its photographs are absolutely positioned inside, so a photo
-   can never set the row height. Whatever the copy comes to, the pictures match. */
+   No dead space, the same way the hero does it: the film column is stretched by
+   the grid and everything in it is absolutely positioned, so the footage can
+   never set the row height. Whatever the copy comes to, the film matches it. */
 .dsec{overflow:hidden}
-.dgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);gap:56px;align-items:start}
+.dgrid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1fr);gap:56px;align-items:start}
 @media(max-width:1000px){.dgrid{grid-template-columns:1fr;gap:34px}}
 
 /* commercial runs the other way round: the track sizes reverse too, or the copy
    would land in the column meant for the photographs */
-.dsec-mirror .dgrid{grid-template-columns:minmax(0,.82fr) minmax(0,1fr)}
+.dsec-mirror .dgrid{grid-template-columns:minmax(0,1fr) minmax(0,.92fr)}
 .dsec-mirror .dbody{grid-column:2;grid-row:1}
 .dsec-mirror .dpiccol{grid-column:1;grid-row:1}
 @media(max-width:1000px){
@@ -318,23 +318,75 @@ h1 em{font-style:italic;color:var(--clay2)}
   color:var(--ink3)}
 .dlic b{color:var(--clay);font-weight:500}
 
-/* the picture column */
-.dpiccol{align-self:stretch;position:relative;min-height:360px}
-.dpic{position:absolute;inset:0;display:grid;grid-template-rows:1.52fr 1fr;gap:14px}
-.dshot{position:relative;margin:0;overflow:hidden;border-radius:16px;background:var(--forest2)}
-.dshot img{width:100%;height:100%;object-fit:cover;display:block;
-  transition:transform 1s cubic-bezier(.22,.61,.36,1)}
-.dsec:hover .dshot img{transform:scale(1.04)}
-@media(prefers-reduced-motion:reduce){.dshot img{transition:none}.dsec:hover .dshot img{transform:none}}
-.dshot figcaption{position:absolute;left:14px;bottom:14px;right:14px;
-  font-family:var(--mono);font-size:10px;letter-spacing:.11em;text-transform:uppercase;
-  color:rgba(244,239,232,.9);background:rgba(23,58,51,.9);border:1px solid rgba(240,180,138,.4);
-  border-radius:8px;padding:8px 11px;line-height:1.5}
-.dshot figcaption b{color:#f0b48a;font-weight:500}
+/* the film column. The poster is always there first; the video fades in over it
+   only once it is actually playing, so the panel never shows an empty frame. */
+.dpiccol{align-self:stretch;position:relative;min-height:420px}
+.dreel{position:absolute;inset:0;margin:0;border-radius:var(--r);overflow:hidden;background:var(--forest2);
+  box-shadow:0 30px 60px -34px rgba(23,58,51,.55)}
+.dreelimg,.dreelvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.dreelvid{opacity:0;transition:opacity 1.2s ease}
+.dreel.playing .dreelvid{opacity:1}
+/* a fixed-height shade, not a percentage, so the facts sit on the same dark
+   whatever height the copy stretches the panel to */
+.dreel::after{content:"";position:absolute;left:0;right:0;bottom:0;height:170px;z-index:1;pointer-events:none;
+  background:linear-gradient(0deg,rgba(12,28,24,.9) 0,rgba(12,28,24,.82) 92px,rgba(12,28,24,0) 170px)}
+
+.dreeltag{position:absolute;z-index:2;left:16px;top:16px;max-width:calc(100% - 84px);
+  display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border-radius:8px;
+  background:rgba(23,58,51,.9);border:1px solid rgba(240,180,138,.4);
+  font-family:var(--mono);font-size:10px;letter-spacing:.11em;text-transform:uppercase;line-height:1.5;
+  color:rgba(244,239,232,.92)}
+.dreeltag i{flex:none;width:7px;height:7px;border-radius:50%;background:var(--clay2)}
+.dreel.playing .dreeltag i{animation:dreelPulse 2.4s ease-out infinite}
+@keyframes dreelPulse{0%{box-shadow:0 0 0 0 rgba(240,180,138,.6)}70%,100%{box-shadow:0 0 0 8px rgba(240,180,138,0)}}
+
+/* WCAG 2.2.2: anything that moves on its own for more than five seconds needs a
+   way to stop it. Only shown when the video is actually running. */
+.dreelctl{position:absolute;z-index:3;right:16px;top:14px;width:40px;height:40px;border-radius:50%;padding:0;
+  display:grid;place-items:center;cursor:pointer;color:#f4efe8;
+  background:rgba(12,28,24,.6);border:1px solid rgba(244,239,232,.38);transition:background .25s,border-color .25s}
+.dreelctl:hover{background:rgba(12,28,24,.85);border-color:#f4efe8}
+.dreelctl:focus-visible{outline:2px solid var(--clay2);outline-offset:3px}
+.dreelctl .i-play{display:none}
+.dreelctl[aria-pressed="true"] .i-pause{display:none}
+.dreelctl[aria-pressed="true"] .i-play{display:block}
+
+.dreelfacts{position:absolute;z-index:2;left:0;right:0;bottom:0;margin:0;padding:0 18px 20px;list-style:none;
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.dreelfacts li{padding-top:10px;border-top:1px solid rgba(240,180,138,.5);
+  font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;line-height:1.45;
+  color:rgba(244,239,232,.86)}
+.dreelfacts b{display:block;margin-bottom:4px;font-family:var(--disp);font-size:24px;font-weight:600;
+  line-height:1.1;letter-spacing:-.01em;text-transform:none;color:#fff;white-space:nowrap}
+.dreelbar{position:absolute;z-index:2;left:0;right:0;bottom:0;height:3px;background:rgba(244,239,232,.16)}
+.dreelbar i{display:block;height:100%;background:var(--clay2);transform-origin:0 50%;transform:scaleX(0)}
+
+/* the framed still that overlaps the panel edge toward the copy. It drifts only
+   while the film is running, and stops with it. */
+.dinset{position:absolute;z-index:4;left:-40px;top:24%;width:36%;max-width:230px;aspect-ratio:4/5;margin:0;
+  overflow:hidden;border-radius:16px;border:6px solid var(--cream);background:var(--cream2);
+  box-shadow:0 22px 44px -22px rgba(23,58,51,.5)}
+.dinset img{width:100%;height:100%;object-fit:cover;transform:scale(1.14)}
+.dpiccol.is-live .dinset img{animation:dinsetDrift 16s ease-in-out infinite alternate}
+.dpiccol.is-held .dinset img{animation-play-state:paused}
+@keyframes dinsetDrift{from{transform:scale(1.14) translate(-4%,-3%)}to{transform:scale(1.14) translate(4%,3%)}}
+.dsec-mirror .dinset{left:auto;right:-40px}
+
+@media(prefers-reduced-motion:reduce){
+  .dreelvid,.dreelctl{transition:none}
+  .dreel.playing .dreeltag i,.dpiccol.is-live .dinset img{animation:none}
+}
 @media(max-width:1000px){
-  .dpiccol{position:static;min-height:0}
-  .dpic{position:static;grid-template-rows:auto auto}
-  .dshot img{aspect-ratio:16/9;height:auto}
+  .dpiccol{min-height:0}
+  .dreel{position:relative;inset:auto;aspect-ratio:16/10}
+  .dinset{display:none}
+}
+@media(max-width:560px){
+  .dreel{aspect-ratio:4/5}
+  .dreeltag{left:12px;top:12px}
+  .dreelfacts{gap:10px;padding:0 14px 16px}
+  .dreelfacts li{font-size:9px;letter-spacing:.06em}
+  .dreelfacts b{font-size:19px}
 }
 
 /* commercial sits on forest */
@@ -349,7 +401,8 @@ h1 em{font-style:italic;color:var(--clay2)}
 .dsec-dark .dlist a:hover{color:#fff}
 .dsec-dark .dlic{color:rgba(244,239,232,.74)}
 .dsec-dark .dlic b{color:var(--clay2)}
-.dsec-dark .dshot{background:var(--forest3)}
+.dsec-dark .dreel{background:var(--forest3);box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
+.dsec-dark .dinset{border-color:var(--forest);background:var(--forest3)}
 
 
 /* ===== image-led sections ===== */
@@ -1563,15 +1616,19 @@ body.navopen{overflow:hidden}
         </div>
       </div>
       <div class="dpiccol reveal" data-anim>
-        <div class="dpic">
-          <figure class="dshot">
-            <img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/House-with-white-fascia-board.jpg" alt="Fascia board and roof edge on a house" loading="lazy">
-            <figcaption><b>14 towns</b> across three parishes</figcaption>
-          </figure>
-          <figure class="dshot">
-            <img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Close-up-photo-of-Professional-and-qualified-roofer-in-protective.jpg" alt="Roofer in protective gear working on a roof" loading="lazy">
-          </figure>
-        </div>
+        <figure class="dreel">
+          <img class="dreelimg" src="media/resi-reroof-pexels-4198818-poster.jpg" alt="Overhead view of a house mid re-roof, new underlayment going down over bare decking" loading="lazy">
+          <video class="dreelvid" muted loop playsinline preload="none" aria-hidden="true" data-src="media/resi-reroof-pexels-4198818-720p.mp4"></video>
+          <figcaption class="dreeltag"><i aria-hidden="true"></i>Underlayment going down over new decking</figcaption>
+          <button class="dreelctl" type="button" aria-pressed="false" aria-label="Pause the residential roofing video" hidden><svg class="i-pause" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="8.5" y="2" width="3" height="10" rx="1" fill="currentColor"/></svg><svg class="i-play" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6a.6.6 0 0 0 .9.5l7.4-4.8a.6.6 0 0 0 0-1L4.9 1.7a.6.6 0 0 0-.9.5z" fill="currentColor"/></svg></button>
+          <ul class="dreelfacts">
+            <li><b>24 hrs</b>Roof replaced</li>
+            <li><b>15 yrs</b>Wind warranty</li>
+            <li><b>14 towns</b>Three parishes</li>
+          </ul>
+          <span class="dreelbar" aria-hidden="true"><i></i></span>
+        </figure>
+        <figure class="dinset" aria-hidden="true"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Close-up-photo-of-Professional-and-qualified-roofer-in-protective.jpg" alt="" loading="lazy"></figure>
       </div>
     </div>
   </div>
@@ -1607,15 +1664,19 @@ body.navopen{overflow:hidden}
         </div>
       </div>
       <div class="dpiccol reveal" data-anim>
-        <div class="dpic">
-          <figure class="dshot">
-            <img src="https://images.pexels.com/photos/12005129/pexels-photo-12005129.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Coated low-slope commercial roof deck seen from above" loading="lazy">
-            <figcaption><b>Low-slope</b> decks and flat roofs</figcaption>
-          </figure>
-          <figure class="dshot">
-            <img src="https://images.pexels.com/photos/27793722/pexels-photo-27793722.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Large warehouse roof seen from the air" loading="lazy">
-          </figure>
-        </div>
+        <figure class="dreel">
+          <img class="dreelimg" src="media/comm-crew-pexels-6684690-poster.jpg" alt="Roofing crew in hard hats and hi-vis working a metal commercial roof on a safety line" loading="lazy">
+          <video class="dreelvid" muted loop playsinline preload="none" aria-hidden="true" data-src="media/comm-crew-pexels-6684690-720p.mp4"></video>
+          <figcaption class="dreeltag"><i aria-hidden="true"></i>Crew working a commercial roof on a safety line</figcaption>
+          <button class="dreelctl" type="button" aria-pressed="false" aria-label="Pause the commercial roofing video" hidden><svg class="i-pause" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="8.5" y="2" width="3" height="10" rx="1" fill="currentColor"/></svg><svg class="i-play" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6a.6.6 0 0 0 .9.5l7.4-4.8a.6.6 0 0 0 0-1L4.9 1.7a.6.6 0 0 0-.9.5z" fill="currentColor"/></svg></button>
+          <ul class="dreelfacts">
+            <li><b>Low-slope</b>Decks and flat roofs</li>
+            <li><b>Your hours</b>Work set around tenants</li>
+            <li><b>Multi-site</b>Priced together</li>
+          </ul>
+          <span class="dreelbar" aria-hidden="true"><i></i></span>
+        </figure>
+        <figure class="dinset" aria-hidden="true"><img src="https://images.pexels.com/photos/12005129/pexels-photo-12005129.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="" loading="lazy"></figure>
       </div>
     </div>
   </div>
@@ -2310,6 +2371,53 @@ body.navopen{overflow:hidden}
         else      { v.pause(); ctl.setAttribute('aria-pressed','true');  ctl.setAttribute('aria-label','Play background video'); }
       });
     }
+  })();
+
+  /* the division films. The hero's rules -- poster first, nothing downloaded on
+     phones, under Save-Data or with reduced motion -- and on top of that each clip
+     downloads only when it first comes on screen, and plays only while it is on
+     screen. The pause button also stops the drifting still beside it. */
+  (function(){
+    var reels = document.querySelectorAll('.dreel');
+    if(!reels.length) return;
+    var wide = window.matchMedia('(min-width: 768px)').matches;
+    var saveData = !!(navigator.connection && navigator.connection.saveData);
+    if(reduce || !wide || saveData || !('IntersectionObserver' in window)) return;
+    reels.forEach(function(fig){
+      var v = fig.querySelector('.dreelvid'), ctl = fig.querySelector('.dreelctl'),
+          bar = fig.querySelector('.dreelbar i'), col = fig.parentNode,
+          onScreen = false, held = false;
+      if(!v) return;
+      function go(){
+        if(held || !onScreen) return;
+        var p = v.play(); if(p && p.catch) p.catch(function(){ /* refused: the poster stays */ });
+      }
+      v.addEventListener('playing', function(){
+        fig.classList.add('playing'); col.classList.add('is-live');
+        if(ctl) ctl.hidden = false;
+      });
+      if(bar) v.addEventListener('timeupdate', function(){
+        if(v.duration) bar.style.transform = 'scaleX(' + (v.currentTime / v.duration).toFixed(4) + ')';
+      });
+      new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          onScreen = e.isIntersecting;
+          if(onScreen){
+            if(!v.getAttribute('src')) v.src = v.getAttribute('data-src');
+            go();
+          } else if(!v.paused) v.pause();
+        });
+      }, {threshold:0.2}).observe(fig);
+      /* a background tab defers autoplay; pick it up when the tab comes forward */
+      document.addEventListener('visibilitychange', function(){ if(!document.hidden) go(); });
+      if(ctl) ctl.addEventListener('click', function(){
+        held = !held;
+        ctl.setAttribute('aria-pressed', held ? 'true' : 'false');
+        ctl.setAttribute('aria-label', (held ? 'Play' : 'Pause') + ctl.getAttribute('aria-label').replace(/^(Play|Pause)/, ''));
+        col.classList.toggle('is-held', held);
+        if(held) v.pause(); else go();
+      });
+    });
   })();
 
   var tick = document.getElementById('tick');
