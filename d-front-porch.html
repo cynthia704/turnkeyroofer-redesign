@@ -208,9 +208,7 @@ h1 em{font-style:italic;color:var(--clay2)}
 .sflist li{position:relative;overflow:hidden;border-radius:var(--r);background:var(--forest2);
   box-shadow:0 22px 44px -30px rgba(23,58,51,.55)}
 .sfpic{position:absolute;inset:0;margin:0}
-.sfpic img,.sfvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.sfvid{opacity:0;transition:opacity 1s ease}
-.sfpic.playing .sfvid{opacity:1}
+.sfpic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .sfico{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;color:var(--clay);
   background:rgba(168,85,42,.08);border:1px solid rgba(168,85,42,.28)}
 .sfico svg{width:24px;height:24px;display:block}
@@ -222,15 +220,6 @@ h1 em{font-style:italic;color:var(--clay2)}
   background:linear-gradient(0deg,rgba(12,28,24,.86) 0,rgba(12,28,24,.78) calc(100% - 32px),rgba(12,28,24,0) 100%)}
 .sflist h4{font-size:19px;margin:0 0 4px;line-height:1.25;color:#fff}
 .sflist p{margin:0;font-size:15px;color:rgba(244,239,232,.9);line-height:1.6;text-wrap:balance}
-/* WCAG 2.2.2: the clip loops, so it can be stopped. Only shown while it plays. */
-.sfvidctl{position:absolute;z-index:3;right:14px;top:14px;width:36px;height:36px;border-radius:50%;padding:0;
-  display:grid;place-items:center;cursor:pointer;color:#f4efe8;
-  background:rgba(12,28,24,.62);border:1px solid rgba(244,239,232,.4);transition:background .25s}
-.sfvidctl:hover{background:rgba(12,28,24,.86)}
-.sfvidctl:focus-visible{outline:2px solid var(--clay2);outline-offset:2px}
-.sfvidctl .i-play{display:none}
-.sfvidctl[aria-pressed="true"] .i-pause{display:none}
-.sfvidctl[aria-pressed="true"] .i-play{display:block}
 /* tablet: the three sit side by side rather than stacking three screens tall */
 @media(max-width:1000px){
   .sflist{grid-template-rows:none;grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -277,7 +266,7 @@ h1 em{font-style:italic;color:var(--clay2)}
    five seconds after which moving content needs a pause control */
 .eavecol.in .eavedraw .air{animation:sfAir 1.6s linear .7s 3}
 @keyframes sfAir{from{stroke-dashoffset:20}to{stroke-dashoffset:0}}
-@media(prefers-reduced-motion:reduce){.eavecol.in .eavedraw .air{animation:none}.sfvid,.sfvidctl{transition:none}}
+@media(prefers-reduced-motion:reduce){.eavecol.in .eavedraw .air{animation:none}}
 .eavedraw .sd{stroke:rgba(32,48,44,.22);stroke-width:1.4}
 .eavedraw .gt{stroke:rgba(32,48,44,.34);stroke-width:1.8}
 .eavedraw .lead{stroke:rgba(32,48,44,.32);stroke-width:1;stroke-dasharray:3 4}
@@ -1811,9 +1800,7 @@ body.navopen{overflow:hidden}
           <ul class="sflist">
             <li>
               <figure class="sfpic">
-                <img src="media/soffit-install-pexels-34572303-poster.jpg" alt="Worker fixing new wood soffit boards to the underside of an overhang from a scaffold" loading="lazy">
-                <video class="sfvid" muted loop playsinline preload="none" aria-hidden="true" data-src="media/soffit-install-pexels-34572303-540p.mp4"></video>
-                <button class="sfvidctl" type="button" aria-pressed="false" aria-label="Pause the soffit installation video" hidden><svg class="i-pause" width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="8.5" y="2" width="3" height="10" rx="1" fill="currentColor"/></svg><svg class="i-play" width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6a.6.6 0 0 0 .9.5l7.4-4.8a.6.6 0 0 0 0-1L4.9 1.7a.6.6 0 0 0-.9.5z" fill="currentColor"/></svg></button>
+                <img src="media/soffit-install-pexels-34572303.jpg" alt="Worker fixing new wood soffit boards to the underside of an overhang from a scaffold" loading="lazy">
                 <span class="sfico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M2.8 8.6h18.4v7.2H2.8z"/><path d="M7 10.6v3.2M10.6 10.6v3.2M14.2 10.6v3.2M17.8 10.6v3.2"/></svg></span>
               </figure>
               <div>
@@ -2489,36 +2476,6 @@ body.navopen{overflow:hidden}
     });
   })();
 
-  /* the soffit clip in the service list, on the same rules as the films */
-  (function(){
-    var v = document.querySelector('.sfvid');
-    if(!v) return;
-    var ctl = document.querySelector('.sfvidctl'), pic = v.parentNode, onScreen = false, held = false;
-    var wide = window.matchMedia('(min-width: 768px)').matches;
-    var saveData = !!(navigator.connection && navigator.connection.saveData);
-    if(reduce || !wide || saveData || !('IntersectionObserver' in window)) return;
-    function go(){
-      if(held || !onScreen) return;
-      var p = v.play(); if(p && p.catch) p.catch(function(){ /* refused: the poster stays */ });
-    }
-    v.addEventListener('playing', function(){ pic.classList.add('playing'); if(ctl) ctl.hidden = false; });
-    new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        onScreen = e.isIntersecting;
-        if(onScreen){
-          if(!v.getAttribute('src')) v.src = v.getAttribute('data-src');
-          go();
-        } else if(!v.paused) v.pause();
-      });
-    }, {threshold:0.3}).observe(pic);
-    document.addEventListener('visibilitychange', function(){ if(!document.hidden) go(); });
-    if(ctl) ctl.addEventListener('click', function(){
-      held = !held;
-      ctl.setAttribute('aria-pressed', held ? 'true' : 'false');
-      ctl.setAttribute('aria-label', (held ? 'Play' : 'Pause') + ctl.getAttribute('aria-label').replace(/^(Play|Pause)/, ''));
-      if(held) v.pause(); else go();
-    });
-  })();
 
   var tick = document.getElementById('tick');
   if(tick) tick.innerHTML += tick.innerHTML;
