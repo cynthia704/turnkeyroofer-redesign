@@ -1287,17 +1287,6 @@ body.navopen{overflow:hidden}
 .scope b{display:block;font-family:var(--disp);font-size:18.5px;font-weight:700;line-height:1.28;text-wrap:balance}
 .scope span{display:block;margin-top:5px;font-size:15px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
 
-/* one review, as a card in the column -- not the homepage's full-width band */
-.squote{margin:0 0 58px;padding:26px 28px;background:var(--forest);color:#f4efe8;border-radius:var(--r);
-  background-image:repeating-linear-gradient(26.57deg,rgba(244,239,232,.06) 0 1px,transparent 1px 62px)}
-.squote blockquote{margin:0;font-family:var(--disp);font-size:clamp(17px,1.8vw,21px);line-height:1.55;color:#fff}
-.squote figcaption{margin-top:20px;display:flex;align-items:center;gap:13px}
-.sqav{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
-  font-family:var(--disp);font-weight:700;font-size:14px;color:#f4efe8;
-  background:rgba(240,180,138,.12);border:1px solid rgba(240,180,138,.42)}
-.squote figcaption b{display:block;font-family:var(--body);font-size:15px;font-weight:700;color:#fff}
-.squote figcaption span span{display:block;margin-top:2px;font-family:var(--mono);font-size:9.5px;
-  letter-spacing:.1em;text-transform:uppercase;color:rgba(244,239,232,.86)}
 
 /* the commercial cross-link runs the full width as a banner: words left, link
    right, so the column no longer ends in an empty right half */
@@ -1316,6 +1305,105 @@ body.navopen{overflow:hidden}
 @media(prefers-reduced-motion:reduce){.sxlink,.sxlink svg{transition:none}.sxlink:hover svg{transform:none}}
 
 /* --- the rail --- */
+/* ===== residential: the sections added on September 11, 2026 =====
+   Each one shares facts with a homepage section but is built in this page's own
+   template. Every header reuses .svhead (eyebrow and H2 left, intro right). */
+/* how a job works: three cards joined by a short clay rule */
+.rsteps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.rsteps li{position:relative;padding:26px 24px 24px;background:#fff;border:1px solid var(--line);border-radius:16px}
+.rsteps li:not(:last-child)::after{content:"";position:absolute;top:50px;right:-18px;width:18px;height:2px;background:var(--clay)}
+.rsico{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;margin-bottom:18px;
+  background:var(--forest);color:#fff;box-shadow:0 0 0 6px var(--cream2)}
+.rsico svg{width:24px;height:24px}
+.rsteps h3{margin:0 0 8px;font-size:20px;line-height:1.25}
+.rsteps p{margin:0;font-size:15px;line-height:1.6;color:var(--ink2)}
+.rsteps b{color:var(--ink)}
+@media(max-width:800px){.rsteps{grid-template-columns:1fr}
+  .rsteps li:not(:last-child)::after{top:auto;bottom:-18px;right:auto;left:48px;width:2px;height:18px}}
+
+/* materials: five tall photo tiles, the words on their own shade */
+.rtypes{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.rtypes a{position:relative;display:block;height:320px;overflow:hidden;border-radius:18px;background:var(--forest2);
+  box-shadow:0 20px 40px -30px rgba(23,58,51,.6)}
+.rtypes a:focus-visible{outline:3px solid var(--clay);outline-offset:3px}
+.rtypes img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s cubic-bezier(.22,.61,.36,1)}
+.rtypes a:hover img{transform:scale(1.06)}
+.rttxt{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 18px;display:flex;flex-direction:column;gap:6px;
+  background:linear-gradient(0deg,rgba(12,28,24,.88) 0,rgba(12,28,24,.8) calc(100% - 40px),rgba(12,28,24,0) 100%)}
+.rttxt b{font-family:var(--disp);font-size:22px;font-weight:600;line-height:1.2;color:#fff}
+.rttxt span{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--clay2)}
+@media(max-width:1000px){.rtypes{grid-template-columns:repeat(2,minmax(0,1fr))}.rtypes li:first-child{grid-column:span 2}.rtypes a{height:260px}}
+@media(max-width:560px){.rtypes{grid-template-columns:1fr}.rtypes li:first-child{grid-column:auto}}
+
+/* reviews: one large on forest, three beside it that share its height */
+.rrevs{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:16px}
+.rrfeat{position:relative;overflow:hidden;margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:26px;
+  padding:36px 34px 30px;background:var(--forest);color:#f4efe8;border-radius:var(--r)}
+.rrfeat::before{content:"\201C";position:absolute;right:24px;top:-26px;font-family:var(--disp);font-size:190px;line-height:1;
+  color:rgba(240,180,138,.2);pointer-events:none}
+.rrfeat blockquote{position:relative;margin:0;font-family:var(--disp);font-size:clamp(19px,2vw,23px);line-height:1.5;color:#fff}
+.rrlist{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));gap:16px}
+.rrcard{margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:14px;padding:20px 22px;
+  background:#fff;border:1px solid var(--line);border-radius:16px}
+.rrcard blockquote{margin:0;font-size:15px;line-height:1.6;color:var(--ink2)}
+.rrwho{display:flex;align-items:center;gap:12px}
+.rrav{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-family:var(--disp);font-weight:700;
+  font-size:14px;background:var(--cream2);color:var(--forest);border:1px solid var(--line)}
+.rrfeat .rrav{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.28)}
+.rrwho b{display:block;font-size:15px;color:var(--ink)}
+.rrfeat .rrwho b{color:#fff}
+.rrwho span span{display:block;margin-top:2px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+.rrfeat .rrwho span span{color:rgba(244,239,232,.74)}
+@media(max-width:900px){.rrevs{grid-template-columns:1fr}.rrlist{grid-template-rows:none}}
+
+/* storm damage and insurance: words left on forest, photo right filling the height */
+.rclaim{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);overflow:hidden;border-radius:var(--r);
+  background:var(--forest2);color:#f4efe8}
+.rcltxt{padding:40px 40px 38px}
+.rcltxt .eyebrow{color:var(--clay2);margin:0 0 12px}
+.rcltxt h2{color:#fff}
+.rcltxt p{margin:0 0 14px;font-size:16.5px;line-height:1.65;color:rgba(244,239,232,.86)}
+.rclcta{display:flex;align-items:center;gap:14px 24px;flex-wrap:wrap;margin-top:24px}
+.rclink{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15px;color:#fff;padding:6px 0;
+  border-bottom:1.5px solid rgba(240,180,138,.55)}
+.rclink:hover{color:var(--clay2);border-bottom-color:var(--clay2)}
+.rclpic{position:relative;min-height:300px}
+.rclpic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:900px){.rclaim{grid-template-columns:1fr}.rclpic{min-height:240px}.rcltxt{padding:30px 24px}}
+
+/* FAQ: heading and phone left, questions right */
+.rfaq{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:24px 56px;align-items:start}
+.rfaqhead .eyebrow{margin:0 0 12px}
+.rfaqhead h2{margin:0 0 14px}
+.rfaqhead p{margin:0 0 18px;font-size:16px;line-height:1.65;color:var(--ink2)}
+.rfaqtel{display:inline-block;font-weight:700;font-size:16px;color:var(--forest);padding:4px 0;border-bottom:1.5px solid rgba(168,85,42,.45)}
+.rfaqtel:hover{color:var(--clay);border-bottom-color:var(--clay)}
+.rfaqlist{display:grid;gap:10px}
+.rfaqlist details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:0 20px}
+.rfaqlist summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:18px 0;font-family:var(--disp);font-weight:600;font-size:17.5px;line-height:1.35;color:var(--ink)}
+.rfaqlist summary::-webkit-details-marker{display:none}
+.rfaqlist summary::after{content:"+";flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+  background:var(--cream2);color:var(--clay);font-family:var(--body);font-size:18px;font-weight:700}
+.rfaqlist details[open] summary::after{content:"\2212"}
+.rfaqlist summary:focus-visible{outline:2px solid var(--clay);outline-offset:3px;border-radius:6px}
+.rfa{padding:0 0 18px;font-size:15.5px;line-height:1.65;color:var(--ink2)}
+@media(max-width:900px){.rfaq{grid-template-columns:1fr}}
+
+/* fourteen towns: heading left, town links right */
+.rareas{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:22px 56px;align-items:center;
+  padding:34px 36px;background:#fff;border:1px solid var(--line);border-radius:var(--r)}
+.rareas .eyebrow{margin:0 0 12px}
+.rareas h2{margin:0 0 10px}
+.rareas p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink2)}
+.rtowns{display:flex;flex-wrap:wrap;gap:8px}
+.rtowns a{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:100px;border:1px solid var(--line);
+  background:var(--cream);font-size:14.5px;font-weight:600;color:var(--ink);transition:border-color .2s,color .2s,background .2s}
+.rtowns a::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--clay)}
+.rtowns a:hover{border-color:var(--clay);color:var(--clay);background:#fff}
+@media(max-width:900px){.rareas{grid-template-columns:1fr;padding:26px 22px}}
+@media(prefers-reduced-motion:reduce){.rtypes img,.rtowns a{transition:none}.rtypes a:hover img{transform:none}}
 </style>
 </head>
 <body>
@@ -1496,6 +1584,33 @@ body.navopen{overflow:hidden}
         </section>
 
         <section class="sblock">
+          <div class="svhead">
+            <div>
+              <p class="eyebrow">How it works</p>
+              <h2>How a Residential Roof Job Works</h2>
+            </div>
+            <p class="sintro">Three steps, one phone number, and a price from someone who has been up on the roof.</p>
+          </div>
+          <ol class="rsteps">
+            <li>
+              <span class="rsico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></span>
+              <h3>You Call Us</h3>
+              <p>Call <b>(504) 226-7070</b> or send the form, and we book the estimator.</p>
+            </li>
+            <li>
+              <span class="rsico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12.5 12 5l9 7.5"/><path d="M5.5 10.5V19h13v-8.5"/><circle cx="12" cy="14" r="2.4"/><path d="m13.8 15.8 1.9 1.9"/></svg></span>
+              <h3>We Survey the Roof</h3>
+              <p>The estimator comes out, goes up on the roof, and prices what is there.</p>
+            </li>
+            <li>
+              <span class="rsico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12.5" r="8"/><path d="M12 8.5v4l2.6 1.6"/><path d="M9.5 2.5h5"/></svg></span>
+              <h3>We Do the Work</h3>
+              <p>Once payment is received, the roofing project is <b>completed within 24 hours</b>.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="sblock">
           <h2>What Every Residential Job Includes</h2>
           <ul class="scope">
             <li>
@@ -1517,10 +1632,94 @@ body.navopen{overflow:hidden}
           </ul>
         </section>
 
-        <figure class="squote">
-          <blockquote>&ldquo;After a recent storm, my home&rsquo;s roof suffered extensive hail damage, leaving me worried about the structural integrity of my property. I contacted this company based on a friend&rsquo;s recommendation, and I couldn&rsquo;t be happier with the results.&rdquo;</blockquote>
-          <figcaption><span class="sqav" aria-hidden="true">IG</span><span><b>Irish Grand</b><span>Hail damage &middot; Residential</span></span></figcaption>
-        </figure>
+        <section class="sblock">
+          <div class="svhead">
+            <div>
+              <p class="eyebrow">Materials</p>
+              <h2>Roofing Materials We Install on Houses</h2>
+            </div>
+            <p class="sintro">Shingle, metal, slate and tile, put on by the same licensed crew. Not sure which one is on your roof now? The estimator will tell you.</p>
+          </div>
+          <ul class="rtypes">
+            <li><a href="/roofing-types/shingle/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/shingle-roof.jpg" alt="Asphalt shingle roof on a house" loading="lazy"><span class="rttxt"><b>Shingle</b><span>See shingle roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li><a href="/roofing-types/metal-roof/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/metal-roofing.jpg" alt="Metal roof on a house" loading="lazy"><span class="rttxt"><b>Metal</b><span>See metal roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li><a href="/roofing-types/metal-standing-seam-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/roof-galvanized.jpg" alt="Standing seam metal roof" loading="lazy"><span class="rttxt"><b>Standing Seam</b><span>See standing seam roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li><a href="/roofing-types/slate-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/Slate-roof-against-the-sky.webp" alt="Slate roof against the sky" loading="lazy"><span class="rttxt"><b>Slate</b><span>See slate roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li><a href="/roofing-types/tile-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/rooftop-made-of-tile-roofing.webp" alt="Tile roof on a house" loading="lazy"><span class="rttxt"><b>Tile</b><span>See tile roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+          </ul>
+        </section>
+
+        <section class="sblock">
+          <div class="svhead">
+            <div>
+              <p class="eyebrow">Published on turnkeyroofer.com</p>
+              <h2>What New Orleans Homeowners Say</h2>
+            </div>
+            <p class="sintro">Hail damage, asbestos, an inspection before buying, attic insulation. In the words of the people who paid for the work.</p>
+          </div>
+          <div class="rrevs">
+            <figure class="rrfeat">
+              <blockquote>&ldquo;After a recent storm, my home&rsquo;s roof suffered extensive hail damage, leaving me worried about the structural integrity of my property. I contacted this company based on a friend&rsquo;s recommendation, and I couldn&rsquo;t be happier with the results.&rdquo;</blockquote>
+              <figcaption class="rrwho"><span class="rrav" aria-hidden="true">IG</span><span><b>Irish Grand</b><span>Hail damage &middot; Residential</span></span></figcaption>
+            </figure>
+            <div class="rrlist">
+              <figure class="rrcard">
+              <blockquote>&ldquo;When I discovered our aging roof contained asbestos, I was immediately concerned about the health risks it posed. Their team meticulously planned and executed the removal process, adhering to strict safety protocols. My family can breathe easier.&rdquo;</blockquote>
+              <figcaption class="rrwho"><span class="rrav" aria-hidden="true">LS</span><span><b>Laurie Stanley</b><span>Asbestos roof removal</span></span></figcaption>
+              </figure>
+              <figure class="rrcard">
+              <blockquote>&ldquo;When purchasing our new home, one of our top priorities was to have a comprehensive roof inspection. Their inspectors meticulously examined every inch of our roof, identifying potential issues and providing detailed recommendations.&rdquo;</blockquote>
+              <figcaption class="rrwho"><span class="rrav" aria-hidden="true">CB</span><span><b>Charmaine Brown</b><span>Roof inspection &middot; Home purchase</span></span></figcaption>
+              </figure>
+              <figure class="rrcard">
+              <blockquote>&ldquo;I recently hired their crew to install roof insulation in my home. The installation process was quick and efficient, and I noticed a significant difference in my home&rsquo;s energy efficiency almost immediately. I am saving money on my energy bills.&rdquo;</blockquote>
+              <figcaption class="rrwho"><span class="rrav" aria-hidden="true">TW</span><span><b>Tom Woodward</b><span>Roof insulation</span></span></figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="sblock">
+          <div class="rclaim">
+            <div class="rcltxt">
+              <p class="eyebrow">We meet your adjuster on the roof</p>
+              <h2>Storm Damage and Roof Insurance Claims</h2>
+              <p>Most roof replacements in this city start with a storm and an insurance company. The adjuster decides what gets paid for, and they decide it from up there.</p>
+              <p>We go up with them and document what gets missed. Then you have a record instead of an opinion.</p>
+              <div class="cta rclcta"><a class="btn1" href="tel:5042267070">File your claim with us</a><a class="rclink" href="/roof-insurance-claims/">How roof claims work <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+            </div>
+            <div class="rclpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Roof-ready-for-reroofing.jpg" alt="Crew preparing a roof for reroofing" loading="lazy"></div>
+          </div>
+        </section>
+
+        <section class="sblock">
+          <div class="rfaq">
+            <div class="rfaqhead">
+              <p class="eyebrow">Before you call</p>
+              <h2>Questions Homeowners Ask Before They Call</h2>
+              <p>Short answers to what people ask first. Anything else, the phone is quicker.</p>
+              <a class="rfaqtel" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
+            </div>
+            <div class="rfaqlist">
+            <details><summary>Does the 24-Hour Guarantee Mean the Whole Roof?</summary><div class="rfa">The site states the roofing project is completed within 24 hours <b>once payment is received</b>. The estimate and the survey happen before that clock starts. Call and we will walk you through what your specific roof needs.</div></details>
+            <details><summary>What Does “No Maximum Wind Speed” Actually Mean?</summary><div class="rfa">Most roofing wind warranties stop covering you above a stated wind speed. Ours does not carry that ceiling. The <b>15-Year Unlimited Wind Warranty covers named storms</b> with no maximum wind speed.</div></details>
+            <details><summary>Are You Licensed?</summary><div class="rfa">Yes. We are a licensed roofing contractor in Louisiana. <b>Residential License #890459</b> and <b>Commercial License #3667</b>. Both numbers are printed in the footer of every page on this site so you can check them before you pay anyone.</div></details>
+            <details><summary>Do You Work With My Insurance Company?</summary><div class="rfa">We go up on the roof with your adjuster and document the damage they might otherwise miss. <b>We cannot promise what an insurer will decide.</b> Nobody honestly can. What we can do is make sure the evidence is on the record.</div></details>
+            <details><summary>Can I Finance a Roof Replacement?</summary><div class="rfa">Yes. <b>Roof now, pay later.</b> Call (504)&nbsp;226-7070 and ask what the monthly number looks like for the size of roof you have.</div></details>
+            </div>
+          </div>
+        </section>
+
+        <section class="sblock">
+          <div class="rareas">
+            <div>
+              <p class="eyebrow">Service areas</p>
+              <h2>Residential Roofing Across 14 Towns</h2>
+              <p>New Orleans plus 13 towns from Gretna to Baton Rouge. Pick yours for the local page.</p>
+            </div>
+            <div class="rtowns"><a href="/service-areas/">New Orleans</a><a href="/service-areas/metairie/">Metairie</a><a href="/service-areas/kenner/">Kenner</a><a href="/service-areas/gretna/">Gretna</a><a href="/service-areas/harahan/">Harahan</a><a href="/service-areas/river-ridge/">River Ridge</a><a href="/service-areas/slidell/">Slidell</a><a href="/service-areas/mandeville/">Mandeville</a><a href="/service-areas/covington/">Covington</a><a href="/service-areas/madisonville/">Madisonville</a><a href="/service-areas/laplace/">Laplace</a><a href="/service-areas/st-rose/">St. Rose</a><a href="/service-areas/hammond/">Hammond</a><a href="/service-areas/baton-rouge/">Baton Rouge</a></div>
+          </div>
+        </section>
 
         <section class="sblock sxband">
           <div>
