@@ -1529,6 +1529,23 @@ body.navopen{overflow:hidden}
 .mnav-links .msub a:first-child{font-weight:700;color:var(--forest)}
 .mnav-links a[aria-current="page"]{color:var(--clay)}
 @media(max-width:420px){.mnav-links summary{font-size:20px;min-height:56px}}
+/* ===== insurance: live content pass. Long live H1 balances over two lines; intro beside what we handle ===== */
+.shtitle{text-wrap:balance}
+.icin{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px 52px;align-items:stretch}
+.icintxt{min-width:0}
+.icintxt .eyebrow{margin:0 0 12px}
+.icintxt h2{margin:0 0 14px}
+.icintxt p:not(.eyebrow){margin:0 0 14px;font-size:16.5px;line-height:1.7;color:var(--ink2);text-wrap:pretty}
+.icintxt p:last-child{margin-bottom:0}
+.icwho{list-style:none;margin:0;padding:0;display:grid;grid-auto-rows:1fr;gap:12px}
+.icwho li{display:flex;gap:18px;align-items:center;padding:18px 22px;background:#fff;border:1px solid var(--line);border-radius:16px}
+.icwho .icn{flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--forest);color:#fff}
+.icwho .icn svg{width:22px;height:22px}
+.icwho b{display:block;margin-bottom:4px;font-family:var(--disp);font-size:19px;font-weight:600;line-height:1.25;color:var(--ink)}
+.icwho li div>span{display:block;font-size:15px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
+@media(max-width:900px){.icin{grid-template-columns:1fr}}
+.icc>p.icp{margin:-4px 0 16px;font-size:15px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
+.iccy>p.icp{color:rgba(244,239,232,.86)}
 </style>
 </head>
 <body>
@@ -1607,8 +1624,8 @@ body.navopen{overflow:hidden}
       <a href="/">Home</a><span aria-hidden="true">&#47;</span><span aria-current="page">Roof Insurance&nbsp;Claims</span>
     </nav>
     <p class="eyebrow">For homes and businesses</p>
-    <h1 class="shtitle">Roof <em>Insurance</em> Claims in New Orleans</h1>
-    <p class="shlede">We go up with your adjuster and document what gets missed, so you have a record instead of an opinion.</p>
+    <h1 class="shtitle">Stress-Free Roof <em>Insurance Claims</em> for Your Home &amp; Business in New&nbsp;Orleans</h1>
+    <p class="shlede">We help manage everything from inspections to paperwork, so you don&rsquo;t have to worry about a thing throughout the claim.</p>
     <div class="cta shcta">
       <a class="btn1" href="tel:5042267070">File your claim with us</a>
       <a class="btn2" href="#estimate">Get a free estimate</a>
@@ -1643,32 +1660,52 @@ body.navopen{overflow:hidden}
       <main class="scol">
 
         <section class="sblock">
+          <div class="icin">
+            <div class="icintxt">
+              <p class="eyebrow">Stress-free claims</p>
+              <h2>From Inspection to Paperwork</h2>
+              <p>At TurnKey Roofer, we understand that roof insurance claims can be a stressful process. We handle roof insurance claims for homeowners and business owners in New Orleans, and keep the process as hassle-free as we can.</p>
+              <p>We also provide unbiased roof inspections and detailed roof condition reports to support your claim. Let us take the hassle out of filing a roof insurance claim in New&nbsp;Orleans.</p>
+            </div>
+            <ul class="icwho">
+              <li><span class="icn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg></span><div><b>Unbiased Roof&nbsp;Inspections</b><span>We go up with your adjuster and document what gets missed.</span></div></li>
+              <li><span class="icn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3.5h7.5L18 7v13.5H7z"/><path d="M14.5 3.5V7H18"/><path d="M10 11h5M10 14.5h5M10 18h3"/></svg></span><div><b>Detailed Roof Condition&nbsp;Reports</b><span>A written record of the damage, so you have a record instead of an opinion.</span></div></li>
+              <li><span class="icn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12.5 12 5l9 7.5"/><path d="M5.5 10.5V19h13v-8.5"/><path d="M10 19v-5h4v5"/></svg></span><div><b>Repairs to Total&nbsp;Replacements</b><span>All roofing work completed to the highest standards, from repairs and maintenance to a new roof.</span></div></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="sblock">
           <div class="svhead">
             <div>
               <p class="eyebrow">What insurance pays for</p>
-              <h2>What Insurance Usually Covers</h2>
+              <h2>What Roof Damage Insurance Covers</h2>
             </div>
-            <p class="sintro">Every policy is different, so read yours. As a rule, sudden damage from an event is covered and slow wear is not.</p>
+            <p class="sintro">The roof damage your insurance covers depends on the terms of your policy and why the roof needs to be repaired or replaced.</p>
           </div>
           <div class="iccomp">
             <div class="icc iccy">
               <p class="eyebrow">Usually covered</p>
-              <h3>Sudden Damage From an Event</h3>
+              <h3>Types of Roof Damage Covered by Insurance</h3>
+              <p class="icp">A policy typically covers problems that happen suddenly or accidentally, caused by certain events.</p>
               <ul>
-                <li><span class="icm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><div><b>Hail damage</b><span>Hail breaks or cracks roofing and causes leaks. One of the most common roof claims.</span></div></li>
-                <li><span class="icm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><div><b>Wind damage</b><span>High winds tear off shingles and puncture the roof.</span></div></li>
-                <li><span class="icm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><div><b>Fire damage</b><span>Fire can mean a full roof&nbsp;replacement.</span></div></li>
-                <li><span class="icm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><div><b>Falling trees</b><span>A tree on the roof usually means repair or replacement.</span></div></li>
+                <li><span class="icm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><div><b>Hail Damage</b><span>One of the most common roof insurance claims. Hail can break or crack roofing materials and cause roof leaks.</span></div></li>
+                <li><span class="icm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><div><b>Wind Damage</b><span>High-speed winds can lead to missing shingles, roof punctures and roof collapses.</span></div></li>
+                <li><span class="icm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><div><b>Snow Weight</b><span>Snow that builds up adds extra pressure to the roof system and can cause major damage over time.</span></div></li>
+                <li><span class="icm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><div><b>Fire Damage</b><span>Fire can be devastating for a roof system and require a full roof&nbsp;replacement.</span></div></li>
+                <li><span class="icm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><div><b>Falling Trees</b><span>A tree that falls on the roof can cause major damage that needs repair or replacement.</span></div></li>
               </ul>
             </div>
             <div class="icc iccn">
               <p class="eyebrow">Usually not covered</p>
-              <h3>Wear and Neglect Over Time</h3>
+              <h3>Roof Damage Not Covered by Insurance</h3>
+              <p class="icp">Read your policy carefully, so you can make an informed decision before you file a claim.</p>
               <ul>
-                <li><span class="icm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg></span><div><b>Normal wear and tear</b><span>A roof getting old over time is paid out of pocket.</span></div></li>
-                <li><span class="icm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg></span><div><b>Poor maintenance</b><span>Damage from a roof that was not kept up.</span></div></li>
-                <li><span class="icm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg></span><div><b>Aging materials</b><span>Older materials are more prone to damage policies leave out.</span></div></li>
-                <li><span class="icm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg></span><div><b>Animals and pests</b><span>Chewing animals, termites, rodents and insects.</span></div></li>
+                <li><span class="icm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg></span><div><b>Normal Wear &amp; Tear</b><span>Wear over time is not covered and is repaired or replaced out of pocket.</span></div></li>
+                <li><span class="icm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg></span><div><b>Poor Maintenance</b><span>A roof that is not properly maintained can suffer damage the policy will not cover.</span></div></li>
+                <li><span class="icm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg></span><div><b>Aging Damage</b><span>As roofing materials age, they become more prone to damage that policies typically leave out.</span></div></li>
+                <li><span class="icm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg></span><div><b>Damage Caused by&nbsp;Animals</b><span>Animals chewing on roofing materials is not typically covered.</span></div></li>
+                <li><span class="icm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg></span><div><b>Pest Damage</b><span>Termites, rodents and other insects can damage a roof, and that is not covered.</span></div></li>
               </ul>
             </div>
           </div>
@@ -1678,16 +1715,16 @@ body.navopen{overflow:hidden}
           <div class="rpflow">
             <div class="rpflowl">
               <p class="eyebrow">Filing a claim</p>
-              <h2>Filing a Claim in Five Steps</h2>
-              <p class="sintro">The order that keeps the record on your side, from reading the policy to hiring the roofer.</p>
+              <h2>Filing a Roof Insurance Claim in New&nbsp;Orleans</h2>
+              <p class="sintro">At TurnKey Roofer, we make roof insurance claims simple and stress-free. Our roofing professionals work with you to make sure your roof is repaired or replaced correctly. Here are some tips on filing a roof insurance claim.</p>
               <div class="rpflowpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Damaged-roof-tiles-with-Hail.jpg" alt="Clay roof tiles cracked by hail" loading="lazy"></div>
             </div>
             <ol class="rptl">
-              <li><div><h3>Read Your Policy</h3><p>Know what you are covered for first. Did you exclude wind and hail? Is it <b>replacement cost or actual cash value</b>?</p></div></li>
-              <li><div><h3>Examine the Damage</h3><p>After a storm, check the whole house, not just the roof, before you call the insurer.</p></div></li>
-              <li><div><h3>Request an Estimate</h3><p>Get a written estimate on a roofing company&rsquo;s letterhead. <b>Do not rely on the adjuster</b> to set the cost of the repair.</p></div></li>
-              <li><div><h3>Document the Damage</h3><p>Take photos and video before anything is repaired or replaced, so you have evidence if the claim is&nbsp;questioned.</p></div></li>
-              <li><div><h3>Hire a Professional</h3><p>A roofer who will work closely with your insurance company and do the repair correctly.</p></div></li>
+              <li><div><h3>Read Your Insurance Policy</h3><p>The first step is to learn about your policy. It&rsquo;s pointless to fight for coverage you never had. Did you exclude wind and hail damage? Is your coverage based on <b>replacement cost or actual cash value</b>?</p></div></li>
+              <li><div><h3>Examine the Damages</h3><p>If you suspect storm damage, inspect your entire home and not just the roof, so you know what damage occurred before you contact your insurer.</p></div></li>
+              <li><div><h3>Request an Estimate</h3><p>Get a repair estimate based on what you have, not how you want to change things. <b>Do not rely on the adjuster</b> to set the cost of the repair. Get a written estimate on a roofing company&rsquo;s letterhead with its contact information.</p></div></li>
+              <li><div><h3>Document Damages</h3><p>Take photos and videos of the damage before the roof is repaired or replaced, so you can produce evidence if there is any problem with the&nbsp;claim.</p></div></li>
+              <li><div><h3>Hire a Professional</h3><p>Hire an experienced roofing professional who can repair or replace your roof correctly and efficiently. TurnKey Roofer works closely with your insurance company throughout the&nbsp;claim.</p></div></li>
             </ol>
           </div>
         </section>
@@ -1696,9 +1733,9 @@ body.navopen{overflow:hidden}
           <div class="rclaim">
             <div class="rcltxt">
               <p class="eyebrow">We meet your adjuster on the roof</p>
-              <h2>A Record Instead of an Opinion</h2>
-              <p>Most roof replacements in this city start with a storm and an insurance company. The adjuster decides what gets paid for, and they decide it from up there.</p>
-              <p>We go up with them and document what gets missed. Then you have a record instead of an opinion.</p>
+              <h2>Work With Experienced &amp; Professional Roofers in New&nbsp;Orleans</h2>
+              <p>After you&rsquo;ve discovered and documented any damage, the final step is to contact a reputable roofer for roof damage repair. Once your claim is filed, the TurnKey Roofer team can begin working on your project.</p>
+              <p>We go up with your adjuster and document what gets missed. Then you have a record instead of an opinion.</p>
               <div class="cta rclcta"><a class="btn1" href="tel:5042267070">File your claim with us</a><a class="rclink" href="#estimate">Get a free estimate <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
             </div>
             <div class="rclpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Roof-ready-for-reroofing.jpg" alt="Crew preparing a roof for reroofing" loading="lazy"></div>
