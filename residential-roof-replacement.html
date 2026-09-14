@@ -1507,6 +1507,35 @@ body.navopen{overflow:hidden}
 .mnav-links .msub a:first-child{font-weight:700;color:var(--forest)}
 .mnav-links a[aria-current="page"]{color:var(--clay)}
 @media(max-width:420px){.mnav-links summary{font-size:20px;min-height:56px}}
+/* ===== full-width bands (Sept 14): panels run edge to edge, text stays on the 1200px grid ===== */
+.sblock.fbband{margin:0}
+.fbclaim{position:relative;overflow:hidden;display:flex;align-items:center;min-height:460px;background:var(--forest);color:#f4efe8}
+.fbclaim>.wrap{position:relative;z-index:1;width:100%}
+.fbclaim .rcltxt{width:52%;padding:76px 0}
+.fbclaim .rclpic{position:absolute;top:0;right:0;bottom:0;width:calc(50% - 60px);min-height:0}
+.fbclaim .rclpic::after{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--clay)}
+@media(max-width:900px){.fbclaim{display:block;min-height:0}
+  .fbclaim .rclpic{position:relative;width:auto;height:300px}
+  .fbclaim .rclpic::after{top:auto;right:0;width:auto;height:6px}
+  .fbclaim .rcltxt{width:auto;padding:48px 0 52px}}
+@media(max-width:560px){.fbclaim .rclpic{height:230px}}
+.fbdark{padding:60px 0;background:var(--forest);color:#f4efe8;
+  background-image:repeating-linear-gradient(26.57deg,rgba(244,239,232,.055) 0 1px,transparent 1px 84px)}
+.fbdark .rpwarr,.fbdark .ablic{padding:0;background:none;border-radius:0}
+@media(max-width:700px){.fbdark{padding:48px 0}}
+.fbquote{position:relative;overflow:hidden;padding:70px 0 74px;background:var(--cream2)}
+.fbquote .rrfeat{overflow:visible;padding:0 150px 0 0;background:none;border-radius:0;color:var(--ink)}
+.fbquote .rrfeat::before{top:-58px;right:0;bottom:auto;font-size:230px;color:rgba(168,85,42,.13)}
+.fbquote .rrfeat blockquote{color:var(--ink);font-size:clamp(20px,2.2vw,26px)}
+.fbquote .rrfeat .rrav{background:#fff;color:var(--forest);border-color:var(--line)}
+.fbquote .rrfeat .rrwho b{color:var(--ink)}
+.fbquote .rrfeat .rrwho span span{color:var(--ink2)}
+.fbquote .svhead+.rrevs .rrfeat{padding-top:8px}
+.fbquote .svhead+.rrevs .rrfeat::before{top:-8px}
+@media(max-width:900px){.fbquote{padding:56px 0 60px}.fbquote .rrfeat{padding:0}.fbquote .rrfeat::before{display:none}}
+.fbsx{background:#fff;border-top:1px solid var(--line)}
+.fbsx .sxband{margin:0 auto;padding:36px 32px;background:none;border:0;border-radius:0}
+@media(max-width:760px){.fbsx .sxband{padding:30px 20px}}
 </style>
 </head>
 <body>
@@ -1620,10 +1649,10 @@ body.navopen{overflow:hidden}
     </div>
   </div>
 </section>
-<div class="spage">
+<main class="fbmain">
+
+<div class="spage fbcream">
   <div class="wrap">
-    <div class="sgrid">
-      <main class="scol">
 
         <section class="sblock">
           <div class="rpflow">
@@ -1678,7 +1707,11 @@ body.navopen{overflow:hidden}
           </ul>
         </section>
 
-        <section class="sblock">
+  </div>
+</div>
+
+<section class="sblock fbband fbdark">
+  <div class="wrap">
           <div class="rpwarr">
             <p class="rpnum" aria-hidden="true">15<small>Years</small></p>
             <div>
@@ -1687,14 +1720,20 @@ body.navopen{overflow:hidden}
               <p>Most roofing wind warranties stop covering you above a stated wind speed. Ours does not carry that ceiling. The <b>15-Year Unlimited Wind Warranty</b> covers named storms, with no maximum wind&nbsp;speed.</p>
             </div>
           </div>
-        </section>
+  </div>
+</section>
 
-        <section class="sblock">
+<section class="sblock fbband fbquote">
+  <div class="wrap">
           <figure class="rrfeat">
             <blockquote>&ldquo;As a property manager responsible for multiple residential buildings, I often encounter various roofing issues that require immediate attention. This company has been my go-to roofing company for years, and they have never disappointed. Whether it’s repairing hail damage, replacing an aging roof, or conducting routine inspections, their team consistently delivers top-notch service. If you’re in need of reliable roofing solutions for residential properties, look no further than TurnKey Roofer.&rdquo;</blockquote>
             <figcaption class="rrwho"><span class="rrav" aria-hidden="true">MD</span><span><b>Michael Davis</b><span>Property manager &middot; Multiple buildings</span></span></figcaption>
           </figure>
-        </section>
+  </div>
+</section>
+
+<div class="spage fbcream">
+  <div class="wrap">
 
         <section class="sblock">
           <div class="svhead">
@@ -1777,19 +1816,20 @@ body.navopen{overflow:hidden}
           <div class="rtowns"><a href="/service-areas/">New Orleans</a><a href="/service-areas/metairie/">Metairie</a><a href="/service-areas/kenner/">Kenner</a><a href="/service-areas/gretna/">Gretna</a><a href="/service-areas/harahan/">Harahan</a><a href="/service-areas/river-ridge/">River Ridge</a><a href="/service-areas/slidell/">Slidell</a><a href="/service-areas/mandeville/">Mandeville</a><a href="/service-areas/covington/">Covington</a><a href="/service-areas/madisonville/">Madisonville</a><a href="/service-areas/laplace/">Laplace</a><a href="/service-areas/st-rose/">St. Rose</a><a href="/service-areas/hammond/">Hammond</a><a href="/service-areas/baton-rouge/">Baton Rouge</a><a class="rtcall" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
         </section>
 
-        <section class="sblock sxband">
+  </div>
+</div>
+
+<section class="fbband fbsx">
+  <div class="wrap sblock sxband">
           <div>
             <h2>Replacing a Commercial Roof?</h2>
             <p class="sintro">Flat and low-slope decks take TPO and EPDM membranes and a different crew. Same licenses, same phone number.</p>
           </div>
           <a class="sxlink" href="/commercial-roofing/roof-replacement/">Commercial roof replacement <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </section>
-
-      </main>
-
-    </div>
   </div>
-</div>
+</section>
+
+</main>
 
 <section class="sec formsec" id="estimate">
   <div class="wrap">
