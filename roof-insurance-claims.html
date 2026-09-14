@@ -1478,8 +1478,6 @@ body.navopen{overflow:hidden}
 .icc li span:not(.icm){display:block;margin-top:3px;font-size:14.5px;line-height:1.55;color:var(--ink2);text-wrap:pretty}
 .iccy li span:not(.icm){color:rgba(244,239,232,.84)}
 @media(max-width:800px){.iccomp{grid-template-columns:1fr}}
-.icrevs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-@media(max-width:800px){.icrevs{grid-template-columns:1fr}}
 /* ===== header: the live site's menu, a top bar on desktop, the phone in the header on phones =====
    Ten items plus the phone button do not fit one row at 1280, so on desktop the phone sits in the
    top bar. Below 1240 the menu collapses to the panel and the phone returns to the header row. */
@@ -1546,6 +1544,31 @@ body.navopen{overflow:hidden}
 @media(max-width:900px){.icin{grid-template-columns:1fr}}
 .icc>p.icp{margin:-4px 0 16px;font-size:15px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
 .iccy>p.icp{color:rgba(244,239,232,.86)}
+/* ===== insurance, Sept 14: split hero with the hail photo; filing steps as six cells ===== */
+.icshero .shtitle{font-size:clamp(30px,3.15vw,42px)}
+.icfhead{margin:0 0 26px}
+.icfhead .eyebrow{margin:0 0 12px}
+.icfhead h2{margin:0 0 12px}
+.icfhead .sintro{margin:0;max-width:78ch}
+.icsteps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;counter-reset:none}
+.icsteps li{position:relative;display:flex;flex-direction:column;padding:24px 24px 22px;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.icsteps li::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--clay)}
+.icsn{display:block;margin:0 0 12px;font-family:var(--disp);font-size:40px;font-weight:700;line-height:1;color:var(--clay);letter-spacing:-.02em}
+.icsteps h3{margin:0 0 8px;font-size:20px;line-height:1.25}
+.icsteps p{margin:0;font-size:15px;line-height:1.65;color:var(--ink2);text-wrap:pretty}
+.icsteps b{color:var(--ink)}
+.icsteps .icscta{background:var(--forest);border-color:var(--forest);color:#f4efe8;
+  background-image:repeating-linear-gradient(26.57deg,rgba(244,239,232,.055) 0 1px,transparent 1px 84px)}
+.icsteps .icscta::before{background:var(--clay2)}
+.icscta .icsn{color:var(--clay2);font-size:13px;font-family:var(--mono);font-weight:500;letter-spacing:.14em;text-transform:uppercase;margin-top:6px;margin-bottom:16px}
+.icscta h3{color:#fff}
+.icscta p{color:rgba(244,239,232,.86)}
+.icsctab{margin-top:auto;padding-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
+.icslink{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;color:#fff;padding:4px 0;border-bottom:1.5px solid rgba(240,180,138,.55)}
+.icslink:hover{color:var(--clay2);border-bottom-color:var(--clay2)}
+.icslink:focus-visible{outline:2px solid var(--clay2);outline-offset:3px}
+@media(max-width:1000px){.icsteps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.icsteps{grid-template-columns:1fr}.icsn{font-size:34px}}
 </style>
 </head>
 <body>
@@ -1618,17 +1641,22 @@ body.navopen{overflow:hidden}
   </div>
 </div>
 
-<section class="shero">
+<section class="shero rphero icshero">
   <div class="wrap">
-    <nav class="crumbs" aria-label="Breadcrumb">
-      <a href="/">Home</a><span aria-hidden="true">&#47;</span><span aria-current="page">Roof Insurance&nbsp;Claims</span>
-    </nav>
-    <p class="eyebrow">For homes and businesses</p>
-    <h1 class="shtitle">Stress-Free Roof <em>Insurance Claims</em> for Your Home &amp; Business in New&nbsp;Orleans</h1>
-    <p class="shlede">We help manage everything from inspections to paperwork, so you don&rsquo;t have to worry about a thing throughout the claim.</p>
-    <div class="cta shcta">
-      <a class="btn1" href="tel:5042267070">File your claim with us</a>
-      <a class="btn2" href="#estimate">Get a free estimate</a>
+    <div class="rpgrid">
+      <div class="rptxt">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a><span aria-hidden="true">&#47;</span><span aria-current="page">Roof Insurance&nbsp;Claims</span>
+        </nav>
+        <p class="eyebrow">For homes and businesses</p>
+        <h1 class="shtitle">Stress-Free Roof <em>Insurance Claims</em> for Your Home &amp; Business in New&nbsp;Orleans</h1>
+        <p class="shlede">We help manage everything from inspections to paperwork, so you don&rsquo;t have to worry about a thing throughout the claim.</p>
+        <div class="cta shcta">
+          <a class="btn1" href="tel:5042267070">File your claim with us</a>
+          <a class="btn2" href="#estimate">Get a free estimate</a>
+        </div>
+      </div>
+      <figure class="rpfig"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Damaged-roof-tiles-with-Hail.jpg" alt="Clay roof tiles cracked by hail"><figcaption>Hail damage on a clay tile roof</figcaption></figure>
     </div>
     <ul class="shfacts">
       <li><b>5</b><span>Steps to file a claim</span></li>
@@ -1711,22 +1739,20 @@ body.navopen{overflow:hidden}
           </div>
         </section>
 
-        <section class="sblock">
-          <div class="rpflow">
-            <div class="rpflowl">
-              <p class="eyebrow">Filing a claim</p>
-              <h2>Filing a Roof Insurance Claim in New&nbsp;Orleans</h2>
-              <p class="sintro">At TurnKey Roofer, we make roof insurance claims simple and stress-free. Our roofing professionals work with you to make sure your roof is repaired or replaced correctly. Here are some tips on filing a roof insurance claim.</p>
-              <div class="rpflowpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Damaged-roof-tiles-with-Hail.jpg" alt="Clay roof tiles cracked by hail" loading="lazy"></div>
-            </div>
-            <ol class="rptl">
-              <li><div><h3>Read Your Insurance Policy</h3><p>The first step is to learn about your policy. It&rsquo;s pointless to fight for coverage you never had. Did you exclude wind and hail damage? Is your coverage based on <b>replacement cost or actual cash value</b>?</p></div></li>
-              <li><div><h3>Examine the Damages</h3><p>If you suspect storm damage, inspect your entire home and not just the roof, so you know what damage occurred before you contact your insurer.</p></div></li>
-              <li><div><h3>Request an Estimate</h3><p>Get a repair estimate based on what you have, not how you want to change things. <b>Do not rely on the adjuster</b> to set the cost of the repair. Get a written estimate on a roofing company&rsquo;s letterhead with its contact information.</p></div></li>
-              <li><div><h3>Document Damages</h3><p>Take photos and videos of the damage before the roof is repaired or replaced, so you can produce evidence if there is any problem with the&nbsp;claim.</p></div></li>
-              <li><div><h3>Hire a Professional</h3><p>Hire an experienced roofing professional who can repair or replace your roof correctly and efficiently. TurnKey Roofer works closely with your insurance company throughout the&nbsp;claim.</p></div></li>
-            </ol>
+        <section class="sblock icfile">
+          <div class="icfhead">
+            <p class="eyebrow">Filing a claim</p>
+            <h2>Filing a Roof Insurance Claim in New&nbsp;Orleans</h2>
+            <p class="sintro">At TurnKey Roofer, we make roof insurance claims simple and stress-free. Our roofing professionals work with you to make sure your roof is repaired or replaced correctly. Here are some tips on filing a roof insurance claim.</p>
           </div>
+          <ol class="icsteps">
+            <li><span class="icsn" aria-hidden="true">01</span><h3>Read Your Insurance Policy</h3><p>The first step is to learn about your policy. It&rsquo;s pointless to fight for coverage you never had. Did you exclude wind and hail damage? Is your coverage based on <b>replacement cost or actual cash value</b>?</p></li>
+            <li><span class="icsn" aria-hidden="true">02</span><h3>Examine the Damages</h3><p>If you suspect storm damage, inspect your entire home and not just the roof, so you know what damage occurred before you contact your insurer.</p></li>
+            <li><span class="icsn" aria-hidden="true">03</span><h3>Request an Estimate</h3><p>Get a repair estimate based on what you have, not how you want to change things. <b>Do not rely on the adjuster</b> to set the cost of the repair. Get a written estimate on a roofing company&rsquo;s letterhead with its contact information.</p></li>
+            <li><span class="icsn" aria-hidden="true">04</span><h3>Document Damages</h3><p>Take photos and videos of the damage before the roof is repaired or replaced, so you can produce evidence if there is any problem with the&nbsp;claim.</p></li>
+            <li><span class="icsn" aria-hidden="true">05</span><h3>Hire a Professional</h3><p>Hire an experienced roofing professional who can repair or replace your roof correctly and efficiently. TurnKey Roofer works closely with your insurance company throughout the&nbsp;claim.</p></li>
+            <li class="icscta"><span class="icsn" aria-hidden="true">Next</span><h3>Get Your Estimate on Our Letterhead</h3><p>A written estimate for the repair, free and with no obligation to book.</p><div class="icsctab"><a class="btn1" href="tel:5042267070">Call (504)&nbsp;226-7070</a><a class="icslink" href="#estimate">Request it online <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></li>
+          </ol>
         </section>
 
         <section class="sblock" id="claims">
@@ -1739,26 +1765,6 @@ body.navopen{overflow:hidden}
               <div class="cta rclcta"><a class="btn1" href="tel:5042267070">File your claim with us</a><a class="rclink" href="#estimate">Get a free estimate <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
             </div>
             <div class="rclpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Roof-ready-for-reroofing.jpg" alt="Crew preparing a roof for reroofing" loading="lazy"></div>
-          </div>
-        </section>
-
-        <section class="sblock">
-          <div class="svhead">
-            <div>
-              <p class="eyebrow">After the storm</p>
-              <h2>Homeowners Who Filed After Hail</h2>
-            </div>
-            <p class="sintro">Two hail claims, in the words of the people whose roofs took the storm.</p>
-          </div>
-          <div class="icrevs">
-            <figure class="rrcard">
-              <blockquote>&ldquo;After a recent storm, my home&rsquo;s roof suffered extensive hail damage, leaving me worried about the structural integrity of my property. I contacted this company based on a friend&rsquo;s recommendation, and I couldn&rsquo;t be happier with the results.&rdquo;</blockquote>
-              <figcaption class="rrwho"><span class="rrav" aria-hidden="true">IG</span><span><b>Irish Grand</b><span>Hail damage &middot; Residential</span></span></figcaption>
-            </figure>
-            <figure class="rrcard">
-              <blockquote>&ldquo;Living in an area prone to severe weather, our roof endured its fair share of hail damage over the years. Their prompt response and thorough inspection put my mind at ease. Thank you guys for your service!&rdquo;</blockquote>
-              <figcaption class="rrwho"><span class="rrav" aria-hidden="true">AS</span><span><b>Adam Stokes</b><span>Hail damage &middot; Residential</span></span></figcaption>
-            </figure>
           </div>
         </section>
 
