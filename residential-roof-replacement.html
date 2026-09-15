@@ -1725,6 +1725,50 @@ body.navopen{overflow:hidden}
 .fpbody::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:56px;pointer-events:none;
   background:linear-gradient(0deg,var(--forest) 0%,rgba(31,77,67,0) 100%)}
 @media(max-width:560px){.fpbody{padding:20px 20px 18px}}
+/* Roof Replacement, Sept 15: same template as Roof Repair (block copied from residential-roof-repair.html) */
+/* ===== Roof Repair, Sept 15: four sign cards, a benefits split band, a line under each type panel ===== */
+.rpsgs.rp4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:1100px){.rpsgs.rp4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.rpsgs.rp4{grid-template-columns:1fr}}
+.rpben{position:relative;overflow:hidden;padding:96px 0;background:var(--forest);color:#f4efe8;
+  background-image:repeating-linear-gradient(26.57deg,rgba(244,239,232,.045) 0 1px,transparent 1px 84px)}
+.rpben::before{content:"";position:absolute;left:-14%;top:-40%;width:60%;height:160%;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(240,180,138,.13),rgba(240,180,138,0))}
+.rpbgrid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:40px 76px;align-items:stretch}
+.rpben .eyebrow{margin:0 0 12px;color:var(--clay2)}
+.rpben h2{margin:0 0 16px;color:#fff;font-size:clamp(30px,3.4vw,46px);line-height:1.1}
+.rpben .sintro{margin:0 0 28px;max-width:52ch;color:rgba(244,239,232,.88)}
+.rpbl{list-style:none;margin:0 0 34px;padding:0}
+.rpbl li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:18px;align-items:center;padding:16px 0;border-top:1px solid rgba(244,239,232,.16);
+  font-size:18px;line-height:1.45;color:#fff;opacity:0;transform:translateX(-14px);
+  transition:opacity .6s cubic-bezier(.22,.61,.36,1),transform .6s cubic-bezier(.22,.61,.36,1);transition-delay:calc(var(--i) * .12s)}
+.rpbl li:last-child{border-bottom:1px solid rgba(244,239,232,.16)}
+.rpbl.in li{opacity:1;transform:none}
+.rpbl svg{width:44px;height:44px;display:block}
+.rpbl circle{fill:rgba(240,180,138,.1);stroke:rgba(240,180,138,.45);stroke-width:1.5}
+.rpbl path{fill:none;stroke:var(--clay2);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:26;stroke-dashoffset:26;
+  transition:stroke-dashoffset .55s ease-out;transition-delay:calc(var(--i) * .12s + .35s)}
+.rpbl.in path{stroke-dashoffset:0}
+/* the live H1 is long: a step smaller on phones so it stays at four lines or fewer */
+@media(max-width:620px){.shtitle.shlong{font-size:28px;line-height:1.14}}
+/* the type panels carry a line of text, so the shade reaches higher up the photo than on the model page.
+   On wide screens the text sits low in a tall panel, so the upper photo can stay brighter. */
+.rp3 a::after{background:linear-gradient(0deg,rgba(12,28,24,.94) 0%,rgba(12,28,24,.84) 55%,rgba(12,28,24,.36) 100%)}
+@media(min-width:1001px){.rp3 a::after{background:linear-gradient(0deg,rgba(12,28,24,.94) 0%,rgba(12,28,24,.78) 30%,rgba(12,28,24,.3) 62%,rgba(12,28,24,.08) 100%)}}
+/* phones: this breadcrumb is short enough to sit on one line, so keep it clear of the photo pause button */
+@media(max-width:620px){.mhero .crumbs{padding-right:52px}}
+.rpbpic{position:relative;margin:0 22px 22px 0;min-height:440px}
+.rpbpic::before{content:"";position:absolute;top:22px;left:22px;right:-22px;bottom:-22px;border:2px solid rgba(240,180,138,.45);border-radius:var(--r)}
+.rpbpic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;border-radius:var(--r);
+  box-shadow:0 34px 60px -34px rgba(0,0,0,.65)}
+@media(max-width:900px){.rpbgrid{grid-template-columns:1fr}.rpbpic{min-height:0;aspect-ratio:16/10}}
+@media(max-width:760px){.rpben{padding:68px 0}.rpbl li{font-size:16.5px;gap:14px;grid-template-columns:38px minmax(0,1fr)}.rpbl svg{width:38px;height:38px}}
+.rxptxt .rxpline{display:block;max-width:34ch;margin-top:8px;font-size:15px;line-height:1.5;color:rgba(244,239,232,.9);
+  opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s}
+.rxpanels li.on .rxpline,.rxpanels li:hover .rxpline,.rxpanels li:focus-within .rxpline{opacity:1;transform:none}
+.rxpanels:hover li.on:not(:hover) .rxpline{opacity:0}
+@media(max-width:1000px){.rp3 a{height:196px}.rxpanels .rxpline,.rxpanels:hover li.on:not(:hover) .rxpline{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.rpbl li{opacity:1;transform:none;transition:none}.rpbl path{stroke-dashoffset:0;transition:none}.rxptxt .rxpline{transition:none}}
 /* FAQ, Sept 15: a photo fills the heading column down to the last question, so there is no empty block under the
    call button. It stops growing at 440px when answers are opened, and is hidden once the columns stack. */
 @media(min-width:901px){
@@ -1841,10 +1885,10 @@ body.navopen{overflow:hidden}
     <a class="btn2" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
     </div>
     <ul class="shfacts">
-    <li><b>24 hr</b><span>From payment to finished roof</span></li>
-    <li><b>15 yr</b><span>Wind warranty, no speed cap</span></li>
-    <li><b>#890459</b><span>Louisiana residential license</span></li>
-    <li><b>Free</b><span>Estimate, no obligation to book</span></li>
+    <li><b>24 hr</b><span>From payment to finished&nbsp;roof</span></li>
+    <li><b>15 yr</b><span>Wind warranty, no speed&nbsp;cap</span></li>
+    <li><b>#890459</b><span>Louisiana residential&nbsp;license</span></li>
+    <li><b>Free</b><span>Estimate, no obligation to&nbsp;book</span></li>
     </ul>
   </div>
 </section>
@@ -1922,6 +1966,24 @@ body.navopen{overflow:hidden}
   </div>
 </section>
 
+<section class="sblock rxband rpben">
+  <div class="wrap rpbgrid">
+    <div class="rpbtext">
+      <p class="eyebrow">Why TurnKey Roofer</p>
+      <h2>Why Replace Your Roof With TurnKey&nbsp;Roofer</h2>
+      <p class="sintro">Our team at TurnKey Roofer is ready to assist you and provide a free estimate for your roof&nbsp;replacement.</p>
+      <ul class="rpbl" data-anim>
+        <li style="--i:0"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20.5"/><path d="M14 22.5l5.5 5.5L30.5 16.5"/></svg><span>Completed within 24 hours once payment is&nbsp;received</span></li>
+        <li style="--i:1"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20.5"/><path d="M14 22.5l5.5 5.5L30.5 16.5"/></svg><span>15-Year Unlimited Wind Warranty, even during named&nbsp;storms</span></li>
+        <li style="--i:2"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20.5"/><path d="M14 22.5l5.5 5.5L30.5 16.5"/></svg><span>Free estimates and no-obligation&nbsp;quotes</span></li>
+        <li style="--i:3"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20.5"/><path d="M14 22.5l5.5 5.5L30.5 16.5"/></svg><span>Roof now, pay&nbsp;later</span></li>
+      </ul>
+      <a class="btn1" href="#estimate">Get a free estimate</a>
+    </div>
+    <figure class="rpbpic rise" data-anim><img src="https://images.pexels.com/photos/38028508/pexels-photo-38028508.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Roofer in a safety harness laying shingles on a house roof" loading="lazy"></figure>
+  </div>
+</section>
+
 <section class="sblock rxband rxmat">
   <div class="wrap">
           <div class="svhead">
@@ -1931,25 +1993,13 @@ body.navopen{overflow:hidden}
             </div>
             <p class="sintro">Shingle, metal, standing seam, slate or tile. Ask the estimator when they survey your&nbsp;roof.</p>
           </div>
-          <ul class="rxpanels rise" data-anim>
-            <li class="on"><a href="/roofing-types/shingle/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/shingle-roof.jpg" alt="Asphalt shingle roof on a house" loading="lazy"><span class="rxpno" aria-hidden="true">01</span><span class="rxptxt"><b>Shingle</b><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
-            <li><a href="/roofing-types/metal-roof/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/metal-roofing.jpg" alt="Metal roof on a house" loading="lazy"><span class="rxpno" aria-hidden="true">02</span><span class="rxptxt"><b>Metal</b><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
-            <li><a href="/roofing-types/metal-standing-seam-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/roof-galvanized.jpg" alt="Standing seam metal roof" loading="lazy"><span class="rxpno" aria-hidden="true">03</span><span class="rxptxt"><b>Standing Seam</b><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
-            <li><a href="/roofing-types/slate-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/Slate-roof-against-the-sky.webp" alt="Slate roof against the sky" loading="lazy"><span class="rxpno" aria-hidden="true">04</span><span class="rxptxt"><b>Slate</b><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
-            <li><a href="/roofing-types/tile-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/rooftop-made-of-tile-roofing.webp" alt="Tile roof on a house" loading="lazy"><span class="rxpno" aria-hidden="true">05</span><span class="rxptxt"><b>Tile</b><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+          <ul class="rxpanels rp3 rise" data-anim>
+            <li class="on"><a href="/roofing-types/shingle/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/shingle-roof.jpg" alt="Asphalt shingle roof on a house" loading="lazy"><span class="rxpno" aria-hidden="true">01</span><span class="rxptxt"><b>Shingle</b><small class="rxpline">Asphalt shingle roofing built for Gulf&nbsp;storms.</small><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li><a href="/roofing-types/metal-roof/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/metal-roofing.jpg" alt="Metal roof on a house" loading="lazy"><span class="rxpno" aria-hidden="true">02</span><span class="rxptxt"><b>Metal</b><small class="rxpline">All types of metal roofs, from a new roof to repairs on an old&nbsp;one.</small><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li><a href="/roofing-types/metal-standing-seam-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/roof-galvanized.jpg" alt="Standing seam metal roof" loading="lazy"><span class="rxpno" aria-hidden="true">03</span><span class="rxptxt"><b>Standing Seam</b><small class="rxpline">Metal panels joined at raised seams, durable and built for harsh&nbsp;weather.</small><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li><a href="/roofing-types/slate-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/Slate-roof-against-the-sky.webp" alt="Slate roof against the sky" loading="lazy"><span class="rxpno" aria-hidden="true">04</span><span class="rxptxt"><b>Slate</b><small class="rxpline">Natural stone, used for centuries for its durability and long&nbsp;lifespan.</small><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li><a href="/roofing-types/tile-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/rooftop-made-of-tile-roofing.webp" alt="Tile roof on a house" loading="lazy"><span class="rxpno" aria-hidden="true">05</span><span class="rxptxt"><b>Tile</b><small class="rxpline">Clay and concrete tile, put on by a team that specializes in tile&nbsp;roofs.</small><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
           </ul>
-  </div>
-</section>
-
-<section class="sblock rxband rxwind" data-anim>
-  <div class="rxstreaks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-  <div class="wrap rxwgrid">
-    <p class="rxwnum" aria-hidden="true"><span class="count" data-to="15">15</span><small>Years</small></p>
-    <div>
-      <p class="eyebrow">15-year wind warranty</p>
-      <h2>No Cap on Wind Speed</h2>
-      <p>The <b>15-Year Unlimited Wind Warranty</b> covers named storms, with no maximum wind&nbsp;speed.</p>
-    </div>
   </div>
 </section>
 
@@ -1989,13 +2039,13 @@ body.navopen{overflow:hidden}
               <p class="eyebrow">Related services</p>
               <h2>Other Work on the Same House</h2>
             </div>
-            <p class="sintro">Not sure it needs a whole new roof? These are the jobs that often come first.</p>
+            <p class="sintro">Each of these has its own page, and the same free&nbsp;estimate.</p>
           </div>
           <ol class="rxrows rise" data-anim>
-            <li><a href="/residential-roofing/roof-repair/"><span class="rxrno" aria-hidden="true">01</span><span class="rxrpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/construction-and-building-768x490.jpg" alt="Roofers repairing a pitched shingle roof" loading="lazy"></span><h3>Roof Repair</h3><p>Targeted work on the section that failed, rather than a whole roof you did not need.</p><span class="rxrgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-            <li><a href="/residential-roofing/roof-inspection/"><span class="rxrno" aria-hidden="true">02</span><span class="rxrpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/asphalt-roof-768x512.jpg" alt="Close view of an asphalt shingle roof and dormer" loading="lazy"></span><h3>Roof Inspection</h3><p>A written condition report on the deck, the flashing, the valleys and every&nbsp;penetration.</p><span class="rxrgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/residential-roofing/roof-repair/"><span class="rxrno" aria-hidden="true">01</span><span class="rxrpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/construction-and-building-768x490.jpg" alt="Roofers repairing a pitched shingle roof" loading="lazy"></span><h3>Roof Repair</h3><p>A diagnosis, an accurate estimate before any work is done, the repair and a final&nbsp;inspection.</p><span class="rxrgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/residential-roofing/roof-inspection/"><span class="rxrno" aria-hidden="true">02</span><span class="rxrpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/asphalt-roof-768x512.jpg" alt="Close view of an asphalt shingle roof and dormer" loading="lazy"></span><h3>Roof Inspection</h3><p>Unbiased roof inspections and detailed roof condition&nbsp;reports.</p><span class="rxrgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
             <li><a href="/residential-roofing/hail-damage-roof-repair/"><span class="rxrno" aria-hidden="true">03</span><span class="rxrpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Damaged-roof-tiles-with-Hail-768x512.jpg" alt="Hailstones on damaged roof tiles" loading="lazy"></span><h3>Hail Damage Roof Repair</h3><p>We inspect your roof and give you an estimate for the cost of the hail damage&nbsp;repairs.</p><span class="rxrgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-            <li><a href="/residential-roofing/roof-leak-detection/"><span class="rxrno" aria-hidden="true">04</span><span class="rxrpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/House-Thermovision-Detection-768x654.jpg" alt="Thermal camera checking a house for roof leaks" loading="lazy"></span><h3>Roof Leak&nbsp;Detection</h3><p>Finding where the water is actually getting in, which is rarely where the ceiling stain is.</p><span class="rxrgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/residential-roofing/roof-leak-detection/"><span class="rxrno" aria-hidden="true">04</span><span class="rxrpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/House-Thermovision-Detection-768x654.jpg" alt="Thermal camera checking a house for roof leaks" loading="lazy"></span><h3>Roof Leak&nbsp;Detection</h3><p>Pinpointing the source of a roof leak with a thorough inspection of your&nbsp;roof.</p><span class="rxrgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
           </ol>
   </div>
 </section>
