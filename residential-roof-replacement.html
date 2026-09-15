@@ -1847,6 +1847,19 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
 @media(max-width:900px){.rpophead{grid-template-columns:1fr}.rpoppic{aspect-ratio:21/9}.rpop .rxtl{margin-top:44px}}
 @media(max-width:620px){.rxflow.rpop{padding:64px 0}.rpoppic{aspect-ratio:16/9}}
 @media(prefers-reduced-motion:reduce){.rpoppic img{transition:none}.rpoppic:hover img{transform:none}}
+/* ===== Intro, Sept 15: short opening text right after the hero, before the process section ===== */
+.rpin{padding:76px 0;background:var(--cream2);background-image:repeating-linear-gradient(26.57deg,rgba(23,58,51,.03) 0 1px,transparent 1px 84px)}
+.rpingrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px 72px;align-items:center}
+.rpinlead .eyebrow{margin:0 0 14px}
+.rpinbig{margin:0;font-family:var(--disp);font-size:clamp(26px,2.5vw,36px);font-weight:600;line-height:1.25;letter-spacing:-.015em;color:var(--ink);text-wrap:balance}
+.rpinbig em{font-style:italic;color:var(--clay)}
+.rpinbody{padding-left:30px;border-left:3px solid var(--clay)}
+.rpinbody p{margin:0 0 14px;font-size:17px;line-height:1.7;color:var(--ink2);text-wrap:pretty}
+.rpinbody p:last-child{margin-bottom:0}
+@media(min-width:901px) and (max-width:1280px){.rpingrid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:26px 56px}}
+@media(min-width:901px) and (max-width:1100px){.rpingrid{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr)}.rpinbody p{font-size:16px}}
+@media(max-width:900px){.rpingrid{grid-template-columns:1fr}.rpinbody{padding-left:22px}}
+@media(max-width:620px){.rpin{padding:54px 0}.rpinbody{padding-left:18px}.rpinbody p{font-size:16px}}
 </style>
 </head>
 <body>
@@ -1962,6 +1975,19 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
   </div>
 </section>
 <main class="rxmain">
+<section class="sblock rxband rpin">
+  <div class="wrap rpingrid">
+    <div class="rpinlead">
+      <p class="eyebrow">Roof replacement in New Orleans</p>
+      <p class="rpinbig">Thinking about a <em>roof replacement</em> for your New Orleans&nbsp;home?</p>
+    </div>
+    <div class="rpinbody">
+      <p>If your roof is old and worn out, it&rsquo;s time to replace it. The next question is which material goes on: shingle, metal, standing seam, slate or&nbsp;tile.</p>
+      <p>An estimator surveys your roof and gives you a free cost estimate. Once payment is received, the roofing project is completed within 24 hours, backed by a 15-Year Unlimited Wind&nbsp;Warranty.</p>
+    </div>
+  </div>
+</section>
+
 <section class="sblock rxband rxflow rpop">
   <div class="wrap">
     <div class="rpophead">
