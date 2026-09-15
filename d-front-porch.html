@@ -1421,6 +1421,17 @@ body.navopen{overflow:hidden}
 @media(max-width:760px){.fbhmoney .money{padding:40px 0}}
 .igsec.fbig{background:#fff}
 .fbig .igfeed{padding:0;background:none;border:0;border-radius:0;box-shadow:none}
+/* form column, Sept 15: the "What to expect" panel stretches to the foot of the column. A finished-roof photo is the
+   panel background, showing above its text block only where the column has spare height, so there is never a gap. */
+.fside{justify-content:flex-start}
+.fside .afterform{margin-top:0}
+.fside .fpromise.fpphoto{flex:1 1 auto;display:flex;flex-direction:column;justify-content:flex-end;min-height:0;padding:0;overflow:hidden;
+  background:var(--forest2) url(https://www.turnkeyroofer.com/wp-content/uploads/2023/06/newly-installed-roof.jpg) center 35%/cover no-repeat}
+.fpbody{position:relative;padding:26px 26px 24px;background-color:var(--forest);
+  background-image:repeating-linear-gradient(26.57deg,rgba(244,239,232,.06) 0 1px,transparent 1px 62px)}
+.fpbody::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:56px;pointer-events:none;
+  background:linear-gradient(0deg,var(--forest) 0%,rgba(31,77,67,0) 100%)}
+@media(max-width:560px){.fpbody{padding:20px 20px 18px}}
 </style>
 </head>
 <body>
@@ -1513,7 +1524,7 @@ body.navopen{overflow:hidden}
         </div>
 
         <div class="hlede reveal" data-anim style="transition-delay:.06s">
-          <p class="hsub">TurnKey Roofer is a licensed, family-owned roofing company in New Orleans, Louisiana. We replace and repair residential and commercial roofs across Orleans, Jefferson and St. Tammany parishes. Replacements are completed within 24 hours of payment and carry a 15-year wind warranty with no maximum wind speed, including named hurricanes.</p>
+          <p class="hsub">TurnKey Roofer is a licensed, family-owned roofing company in New Orleans, Louisiana. We replace and repair residential and commercial roofs across Orleans, Jefferson and St. Tammany parishes. Replacements are completed within 24 hours of payment and carry a 15-year wind warranty with no maximum wind speed, including named storms.</p>
         </div>
 
         <div class="hbot reveal" data-anim style="transition-delay:.18s">
@@ -1691,7 +1702,7 @@ body.navopen{overflow:hidden}
         <div class="hbody">
           <span class="hplate" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 20.5L12 13l9.4 7.5"/><path d="M3 6h7.6a2.1 2.1 0 1 0-2.1-2.1"/><path d="M3 10h11a2.1 2.1 0 1 1-2.1 2.1"/></svg></span>
           <h4>&ldquo;It Fails in the Next Storm Anyway&rdquo;</h4>
-          <p><b>15-year wind warranty, no maximum wind speed</b>, named hurricanes included. Ask any other estimate to match it.</p>
+          <p><b>15-year wind warranty, no maximum wind speed</b>, named storms included. Ask any other estimate to match it.</p>
         </div>
       </article>
       <article class="house">
@@ -2014,7 +2025,7 @@ body.navopen{overflow:hidden}
         <p class="eyebrow">The one nobody else advertises</p>
         <h2>A 15-Year Wind Warranty With <em>No&nbsp;Maximum Wind Speed</em></h2>
         <p>Most roofing warranties stop covering you at a stated wind speed. That number is the one that matters in a city where a named storm arrives most years.</p>
-        <p>Ours does not have that number in it. 15 years, named hurricanes included.</p>
+        <p>Ours does not have that number in it. 15 years, named storms included.</p>
         <div class="cta" style="margin-top:22px"><a class="btn1" href="/unlimited-wind-warranty/">Read the warranty in full</a></div>
       </div>
       <div class="wdial">
@@ -2371,22 +2382,24 @@ body.navopen{overflow:hidden}
             <li><b>You get a written price.</b> No obligation to book the work.</li>
           </ol>
         </div>
-        <div class="fpromise">
-          <h3>What we put in writing</h3>
-          <ul>
-            <li>
-              <span class="fpico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12.6" r="8.4"/><path d="M12 7.5v5.4l3.5 2"/></svg></span>
-              <span><b>Completed within 24 hours</b><span>Once payment is received, the roofing project is finished inside a day.</span></span>
-            </li>
-            <li>
-              <span class="fpico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 20.5 12 13l9.4 7.5"/><path d="M3 6h7.6a2.1 2.1 0 1 0-2.1-2.1"/><path d="M3 10h11a2.1 2.1 0 1 1-2.1 2.1"/></svg></span>
-              <span><b>15-year wind warranty</b><span>No maximum wind speed, named hurricanes included.</span></span>
-            </li>
-            <li>
-              <span class="fpico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="4" width="15" height="16.5" rx="2.2"/><path d="M9 4V2.6h6V4"/><path d="M8.4 12.4l2.2 2.2 4.6-4.8"/></svg></span>
-              <span><b>The estimate is the price</b><span>If we find rot under the old roof, we show you before we touch it.</span></span>
-            </li>
-          </ul>
+        <div class="fpromise fpphoto">
+          <div class="fpbody">
+            <h3>What to expect</h3>
+            <ul>
+              <li>
+                <span class="fpico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12.6" r="8.4"/><path d="M12 7.5v5.4l3.5 2"/></svg></span>
+                <span><b>Completed within 24 hours</b><span>Once payment is received, the roofing project is finished inside a day.</span></span>
+              </li>
+              <li>
+                <span class="fpico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 20.5 12 13l9.4 7.5"/><path d="M3 6h7.6a2.1 2.1 0 1 0-2.1-2.1"/><path d="M3 10h11a2.1 2.1 0 1 1-2.1 2.1"/></svg></span>
+                <span><b>15-year wind warranty</b><span>No maximum wind speed, even during named storms.</span></span>
+              </li>
+              <li>
+                <span class="fpico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="4" width="15" height="16.5" rx="2.2"/><path d="M9 4V2.6h6V4"/><path d="M8.4 12.4l2.2 2.2 4.6-4.8"/></svg></span>
+                <span><b>Free estimates</b><span>An estimator surveys your roof and gives you a cost estimate.</span></span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <form class="fform rise fwide" data-anim novalidate>
