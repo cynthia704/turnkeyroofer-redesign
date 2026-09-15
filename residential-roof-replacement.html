@@ -1570,6 +1570,150 @@ body.navopen{overflow:hidden}
 .mhero.paused .mhpause .i-play{display:block}
 @media(max-width:620px){.mhpause{top:16px;right:16px}}
 @media(prefers-reduced-motion:reduce){.mhs{transition:none}.mhs.on,.mhs.out{animation:none;transform:none}.mhpause{display:none}}
+/* ===== Roof Replacement, Sept 15: every section its own layout, not rows of boxes ===== */
+.sblock.rxband{margin:0}
+/* 1 how it runs: photo opener, then a timeline whose line fills in */
+.rxflow{background:var(--cream);padding:0 0 88px}
+.rxflowtop{position:relative;overflow:hidden;min-height:400px;display:flex;align-items:flex-end;background:var(--forest2)}
+.rxflowtop>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.rxflowtop::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(14,36,31,.94) 0%,rgba(14,36,31,.8) 42%,rgba(14,36,31,.2) 100%),linear-gradient(0deg,rgba(14,36,31,.55) 0%,rgba(14,36,31,0) 60%)}
+.rxflowtop>.wrap{position:relative;z-index:1;width:100%;padding-top:72px;padding-bottom:60px}
+.rxflowtop .eyebrow{margin:0 0 12px;color:var(--clay2)}
+.rxflowtop h2{margin:0 0 14px;color:#fff;font-size:clamp(32px,4.2vw,52px);line-height:1.1}
+.rxflowtop .sintro{margin:0;max-width:46ch;color:rgba(244,239,232,.9)}
+.rxtl{position:relative;list-style:none;margin:64px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0 28px}
+.rxtl::before,.rxtl::after{content:"";position:absolute;left:34px;right:calc((100% - 112px) / 5 - 34px);top:33px;height:3px;border-radius:3px;background:rgba(168,85,42,.2)}
+.rxtl::after{background:var(--clay);transform-origin:left center;transform:scaleX(0);transition:transform 1.8s cubic-bezier(.22,.61,.36,1) .15s}
+.rxtl.in::after{transform:scaleX(1)}
+.rxtl li{position:relative;z-index:1}
+.rxdot{display:grid;place-items:center;width:68px;height:68px;margin:0 0 22px;border-radius:50%;background:var(--forest);color:#fff;
+  font-family:var(--disp);font-size:22px;font-weight:700;box-shadow:0 0 0 8px var(--cream);transform:scale(.7);opacity:.35;
+  transition:transform .6s cubic-bezier(.22,.61,.36,1),opacity .6s;transition-delay:calc(var(--i) * .3s + .2s)}
+.rxtl.in .rxdot{transform:none;opacity:1}
+.rxtl h3{margin:0 0 6px;font-size:19px;line-height:1.25}
+.rxtl p{margin:0;font-size:15px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
+@media(max-width:1000px){
+  .rxtl{grid-template-columns:1fr;gap:26px;margin-top:48px}
+  .rxtl::before,.rxtl::after{display:none}
+  .rxtl li:not(:last-child)::before{content:"";position:absolute;left:33px;top:68px;bottom:-26px;width:3px;border-radius:3px;background:var(--clay)}
+  .rxtl li{display:grid;grid-template-columns:68px minmax(0,1fr);gap:0 20px;align-items:start}
+  .rxdot{margin:0}
+  .rxtl h3{margin-top:10px}}
+@media(max-width:760px){.rxflowtop{min-height:340px}
+  .rxflowtop::after{background:linear-gradient(0deg,rgba(14,36,31,.92) 0%,rgba(14,36,31,.84) 100%)}
+  .rxflowtop>.wrap{padding-top:56px;padding-bottom:44px}}
+/* 2 signs: the photo cards on a tinted band */
+.rxsigns{padding:88px 0;background:var(--cream2);background-image:repeating-linear-gradient(26.57deg,rgba(23,58,51,.035) 0 1px,transparent 1px 84px)}
+/* 3 materials: expanding photo panels */
+.rxmat{padding:88px 0;background:var(--cream)}
+.rxpanels{list-style:none;margin:0;padding:0;display:flex;gap:12px;height:470px}
+.rxpanels li{flex:1 1 0;min-width:0;transition:flex-grow .7s cubic-bezier(.22,.61,.36,1)}
+.rxpanels li.on{flex-grow:3.4}
+.rxpanels:hover li.on,.rxpanels:focus-within li.on{flex-grow:1}
+.rxpanels li:hover,.rxpanels li:focus-within{flex-grow:3.4!important}
+.rxpanels a{position:relative;display:block;height:100%;overflow:hidden;border-radius:20px;background:var(--forest2);color:#fff;
+  box-shadow:0 26px 50px -38px rgba(23,58,51,.7)}
+.rxpanels a:focus-visible{outline:3px solid var(--clay);outline-offset:3px}
+.rxpanels img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.22,.61,.36,1)}
+.rxpanels li:hover img{transform:scale(1.05)}
+.rxpanels a::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(12,28,24,.92) 0%,rgba(12,28,24,.35) 50%,rgba(12,28,24,.12) 100%)}
+.rxpno{position:absolute;z-index:1;top:18px;left:18px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:#f4efe8}
+.rxptxt{position:absolute;z-index:1;left:20px;right:18px;bottom:20px}
+.rxptxt b{display:block;font-family:var(--disp);font-size:clamp(19px,1.9vw,26px);line-height:1.15;color:#fff}
+.rxptxt>span{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--clay2);opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s}
+.rxpanels li.on .rxptxt>span,.rxpanels li:hover .rxptxt>span,.rxpanels li:focus-within .rxptxt>span{opacity:1;transform:none}
+.rxpanels:hover li.on:not(:hover) .rxptxt>span{opacity:0}
+@media(max-width:1000px){.rxpanels{flex-direction:column;height:auto;gap:10px}
+  .rxpanels li,.rxpanels li.on,.rxpanels li:hover,.rxpanels li:focus-within{flex:none!important}
+  .rxpanels a{height:150px}
+  .rxptxt>span,.rxpanels:hover li.on:not(:hover) .rxptxt>span{opacity:1;transform:none}}
+/* 4 wind warranty: giant number, wind gusts past */
+.rxwind{position:relative;overflow:hidden;padding:100px 0;background:var(--forest);color:#f4efe8}
+.rxwind::before{content:"";position:absolute;right:-12%;top:-45%;width:62%;height:190%;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(240,180,138,.17),rgba(240,180,138,0))}
+.rxstreaks{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.rxstreaks i{position:absolute;left:-45%;width:40%;height:2px;border-radius:2px;opacity:0;
+  background:linear-gradient(90deg,rgba(240,180,138,0),rgba(240,180,138,.55),rgba(244,239,232,0))}
+.rxstreaks i:nth-child(1){top:16%;animation-delay:0s}
+.rxstreaks i:nth-child(2){top:28%;width:55%;animation-delay:.35s}
+.rxstreaks i:nth-child(3){top:41%;width:30%;animation-delay:.8s}
+.rxstreaks i:nth-child(4){top:52%;animation-delay:.15s}
+.rxstreaks i:nth-child(5){top:63%;width:50%;animation-delay:.55s}
+.rxstreaks i:nth-child(6){top:74%;width:34%;animation-delay:1s}
+.rxstreaks i:nth-child(7){top:85%;animation-delay:.25s}
+.rxstreaks i:nth-child(8){top:35%;width:26%;animation-delay:1.2s}
+.rxwind.in .rxstreaks i{animation-name:rxgust;animation-duration:2.2s;animation-timing-function:cubic-bezier(.45,.05,.3,1);animation-iteration-count:2;animation-fill-mode:both}
+@keyframes rxgust{0%{transform:translateX(0);opacity:0}18%{opacity:1}100%{transform:translateX(390%);opacity:0}}
+.rxwgrid{position:relative;z-index:1;display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px 72px;align-items:center}
+.rxwnum{margin:0;font-family:var(--disp);font-size:clamp(130px,16vw,236px);font-weight:700;line-height:.86;letter-spacing:-.05em;color:var(--clay2);text-align:center}
+.rxwnum small{display:block;margin-top:16px;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:rgba(244,239,232,.82)}
+.rxwind .eyebrow{margin:0 0 12px;color:var(--clay2)}
+.rxwind h2{margin:0 0 16px;color:#fff;font-size:clamp(32px,4.2vw,54px);line-height:1.08}
+.rxwind p:not(.eyebrow):not(.rxwnum){margin:0;font-size:18px;line-height:1.7;color:rgba(244,239,232,.88);text-wrap:pretty}
+@media(max-width:760px){.rxwind{padding:68px 0}.rxwgrid{grid-template-columns:1fr}.rxwnum{text-align:left}}
+/* 6 FAQ: sticky heading left, divider-line questions right */
+.rxfaq{padding:92px 0;background:var(--cream)}
+.rxfgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:40px 76px;align-items:start}
+.rxfhead{position:sticky;top:124px}
+.rxfhead .eyebrow{margin:0 0 12px}
+.rxfhead h2{margin:0 0 14px;font-size:clamp(28px,2.6vw,38px);line-height:1.12}
+.rxfhead .sintro{margin:0 0 26px}
+.rxflist details{border-bottom:1px solid var(--line)}
+.rxflist details:first-child{border-top:1px solid var(--line)}
+.rxflist summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) 36px;gap:20px;align-items:center;padding:24px 0;
+  font-family:var(--disp);font-size:clamp(18px,1.7vw,22px);font-weight:600;line-height:1.3;color:var(--ink);transition:color .25s}
+.rxflist summary::-webkit-details-marker{display:none}
+.rxflist summary::after{content:"";width:36px;height:36px;border-radius:50%;border:1px solid rgba(168,85,42,.35);
+  background:linear-gradient(var(--clay),var(--clay)) center/13px 2px no-repeat,linear-gradient(var(--clay),var(--clay)) center/2px 13px no-repeat;
+  transition:transform .35s cubic-bezier(.22,.61,.36,1),background-color .25s}
+.rxflist details[open] summary::after{transform:rotate(45deg);background-color:var(--cream2)}
+.rxflist summary:hover{color:var(--clay)}
+.rxflist summary:focus-visible{outline:2px solid var(--clay);outline-offset:4px;border-radius:4px}
+.rxflist .rfa{max-width:none;padding:0 56px 26px 0;font-size:16px;line-height:1.7;color:var(--ink2)}
+@media(max-width:900px){.rxfgrid{grid-template-columns:1fr}.rxfhead{position:static}.rxflist .rfa{padding-right:0}}
+/* 7 related services: numbered editorial rows */
+.rxrel{padding:92px 0;background:#fff}
+.rxrows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.rxrows li{border-bottom:1px solid var(--line)}
+.rxrows a{display:grid;grid-template-columns:44px 200px minmax(0,.9fr) minmax(0,1.3fr) auto;gap:30px;align-items:center;padding:22px 14px;color:inherit;
+  transition:background-color .35s}
+.rxrows a:hover{background:var(--cream)}
+.rxrows a:focus-visible{outline:2px solid var(--clay);outline-offset:-2px}
+.rxrno{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--clay)}
+.rxrpic{position:relative;display:block;height:112px;overflow:hidden;border-radius:14px;background:var(--forest2)}
+.rxrpic img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.8);transition:transform .9s cubic-bezier(.22,.61,.36,1),filter .5s}
+.rxrows a:hover .rxrpic img{transform:scale(1.08);filter:none}
+.rxrows h3{margin:0;font-size:clamp(20px,2vw,27px);line-height:1.2}
+.rxrows p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
+.rxrgo{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);white-space:nowrap}
+.rxrgo svg{transition:transform .3s}
+.rxrows a:hover .rxrgo svg{transform:translateX(5px)}
+@media(max-width:1000px){.rxrows a{grid-template-columns:132px minmax(0,1fr);gap:6px 22px;padding:20px 0}
+  .rxrno{display:none}.rxrpic{grid-row:span 3;height:100%;min-height:118px}.rxrows h3{align-self:end}.rxrgo{margin-top:6px}}
+@media(max-width:560px){.rxrows a{grid-template-columns:96px minmax(0,1fr);gap:4px 16px}.rxrpic{min-height:104px}}
+/* 8 towns: counting 14, names as large inline links */
+.rxtowns{position:relative;overflow:hidden;padding:96px 0;background:var(--forest2);color:#f4efe8}
+.rxtowns::before{content:"";position:absolute;left:-14%;bottom:-60%;width:64%;height:170%;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(240,180,138,.14),rgba(240,180,138,0))}
+.rxtgrid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.3fr);gap:40px 76px;align-items:center}
+.rxtnum{display:block;margin:0 0 14px;font-family:var(--disp);font-size:clamp(100px,11vw,164px);font-weight:700;line-height:.85;letter-spacing:-.04em;color:var(--clay2)}
+.rxtowns .eyebrow{margin:0 0 12px;color:var(--clay2)}
+.rxtowns h2{margin:0 0 14px;color:#fff}
+.rxtowns .sintro{margin:0 0 26px;color:rgba(244,239,232,.86)}
+.rxtlist{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;row-gap:8px}
+.rxtlist li{display:flex;align-items:center}
+.rxtlist li:not(:last-child)::after{content:"";flex:none;width:7px;height:7px;margin:0 18px;border-radius:50%;background:var(--clay)}
+.rxtlist a{padding:2px 0;font-family:var(--disp);font-size:clamp(22px,2.4vw,33px);line-height:1.3;color:#f4efe8;
+  background:linear-gradient(var(--clay2),var(--clay2)) 0 100%/0 2px no-repeat;transition:background-size .35s,color .25s}
+.rxtlist a:hover{color:var(--clay2);background-size:100% 2px}
+.rxtlist a:focus-visible{outline:2px solid var(--clay2);outline-offset:3px}
+@media(max-width:900px){.rxtgrid{grid-template-columns:1fr}.rxtlist li:not(:last-child)::after{margin:0 13px}}
+@media(prefers-reduced-motion:reduce){
+  .rxtl::after,.rxdot,.rxpanels li,.rxpanels img,.rxptxt>span,.rxrows a,.rxrpic img,.rxrgo svg,.rxflist summary::after,.rxtlist a{transition:none}
+  .rxwind.in .rxstreaks i{animation:none}
+  .rxpanels li:hover img,.rxrows a:hover .rxrpic img{transform:none}}
 </style>
 </head>
 <body>
@@ -1684,30 +1828,29 @@ body.navopen{overflow:hidden}
     </div>
   </div>
 </section>
-<main class="fbmain">
-
-<div class="spage fbcream">
+<main class="rxmain">
+<section class="sblock rxband rxflow">
+  <div class="rxflowtop">
+    <img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Roof-ready-for-reroofing.jpg" alt="Two roofers at work on a house roof" loading="lazy">
+    <div class="wrap">
+      <p class="eyebrow">How it runs</p>
+      <h2>From Estimate to New Roof</h2>
+      <p class="sintro">Five stages, one crew, and one phone number from the first call to the last shingle.</p>
+    </div>
+  </div>
   <div class="wrap">
+    <ol class="rxtl" data-anim>
+      <li style="--i:0"><span class="rxdot" aria-hidden="true">01</span><div><h3>The Estimate</h3><p>An estimator goes up on the roof and prices what is actually there. Free, with no obligation to book.</p></div></li>
+      <li style="--i:1"><span class="rxdot" aria-hidden="true">02</span><div><h3>Payment Starts the Clock</h3><p>Once payment is received, the roofing project is <b>completed within 24 hours</b>.</p></div></li>
+      <li style="--i:2"><span class="rxdot" aria-hidden="true">03</span><div><h3>Tear-Off to the Decking</h3><p>The old roof comes off, all the way down to the deck.</p></div></li>
+      <li style="--i:3"><span class="rxdot" aria-hidden="true">04</span><div><h3>The Decking&nbsp;Checked</h3><p>Nobody knows what is under a roof until it comes off. If we find rot, we show you before we touch it.</p></div></li>
+      <li style="--i:4"><span class="rxdot" aria-hidden="true">05</span><div><h3>Dry-In and the New Roof</h3><p>The deck is dried in, then the new roof goes on in shingle, metal, slate or tile.</p></div></li>
+    </ol>
+  </div>
+</section>
 
-        <section class="sblock">
-          <div class="rpflow">
-            <div class="rpflowl">
-              <p class="eyebrow">How it runs</p>
-              <h2>From Estimate to New Roof</h2>
-              <p class="sintro">Five stages, one crew, and one phone number from the first call to the last shingle.</p>
-              <div class="rpflowpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Roof-ready-for-reroofing.jpg" alt="Two roofers at work on a house roof" loading="lazy"></div>
-            </div>
-            <ol class="rptl">
-              <li><div><h3>The Estimate</h3><p>An estimator goes up on the roof and prices what is actually there. Free, with no obligation to book.</p></div></li>
-              <li><div><h3>Payment Starts the Clock</h3><p>Once payment is received, the roofing project is <b>completed within 24 hours</b>.</p></div></li>
-              <li><div><h3>Tear-Off to the Decking</h3><p>The old roof comes off, all the way down to the deck.</p></div></li>
-              <li><div><h3>The Decking Checked</h3><p>Nobody knows what is under a roof until it comes off. If we find rot, we show you before we touch it.</p></div></li>
-              <li><div><h3>Dry-In and the New Roof</h3><p>The deck is dried in, then the new roof goes on in shingle, metal, slate or tile.</p></div></li>
-            </ol>
-          </div>
-        </section>
-
-        <section class="sblock">
+<section class="sblock rxband rxsigns">
+  <div class="wrap">
           <div class="svhead">
             <div>
               <p class="eyebrow">Warning signs</p>
@@ -1741,9 +1884,11 @@ body.navopen{overflow:hidden}
               <div class="rpsgtxt"><h3>Black Smudges</h3><p>Dark streaks, especially near windows or vents, can be the start of rot.</p></div>
             </li>
           </ul>
-        </section>
+  </div>
+</section>
 
-        <section class="sblock">
+<section class="sblock rxband rxmat">
+  <div class="wrap">
           <div class="svhead">
             <div>
               <p class="eyebrow">Materials</p>
@@ -1751,28 +1896,25 @@ body.navopen{overflow:hidden}
             </div>
             <p class="sintro">Shingle, metal, standing seam, slate or tile. The estimator will tell you what the house has now.</p>
           </div>
-          <ul class="rtypes">
-            <li><a href="/roofing-types/shingle/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/shingle-roof.jpg" alt="Asphalt shingle roof on a house" loading="lazy"><span class="rttxt"><b>Shingle</b><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
-            <li><a href="/roofing-types/metal-roof/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/metal-roofing.jpg" alt="Metal roof on a house" loading="lazy"><span class="rttxt"><b>Metal</b><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
-            <li><a href="/roofing-types/metal-standing-seam-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/roof-galvanized.jpg" alt="Standing seam metal roof" loading="lazy"><span class="rttxt"><b>Standing Seam</b><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
-            <li><a href="/roofing-types/slate-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/Slate-roof-against-the-sky.webp" alt="Slate roof against the sky" loading="lazy"><span class="rttxt"><b>Slate</b><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
-            <li><a href="/roofing-types/tile-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/rooftop-made-of-tile-roofing.webp" alt="Tile roof on a house" loading="lazy"><span class="rttxt"><b>Tile</b><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+          <ul class="rxpanels rise" data-anim>
+            <li class="on"><a href="/roofing-types/shingle/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/shingle-roof.jpg" alt="Asphalt shingle roof on a house" loading="lazy"><span class="rxpno" aria-hidden="true">01</span><span class="rxptxt"><b>Shingle</b><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li><a href="/roofing-types/metal-roof/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/metal-roofing.jpg" alt="Metal roof on a house" loading="lazy"><span class="rxpno" aria-hidden="true">02</span><span class="rxptxt"><b>Metal</b><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li><a href="/roofing-types/metal-standing-seam-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/roof-galvanized.jpg" alt="Standing seam metal roof" loading="lazy"><span class="rxpno" aria-hidden="true">03</span><span class="rxptxt"><b>Standing Seam</b><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li><a href="/roofing-types/slate-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/Slate-roof-against-the-sky.webp" alt="Slate roof against the sky" loading="lazy"><span class="rxpno" aria-hidden="true">04</span><span class="rxptxt"><b>Slate</b><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li><a href="/roofing-types/tile-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/rooftop-made-of-tile-roofing.webp" alt="Tile roof on a house" loading="lazy"><span class="rxpno" aria-hidden="true">05</span><span class="rxptxt"><b>Tile</b><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
           </ul>
-        </section>
-
   </div>
-</div>
+</section>
 
-<section class="sblock fbband fbdark">
-  <div class="wrap">
-          <div class="rpwarr">
-            <p class="rpnum" aria-hidden="true">15<small>Years</small></p>
-            <div>
-              <p class="eyebrow">15-year wind warranty</p>
-              <h2>No Cap on Wind Speed</h2>
-              <p>Most roofing wind warranties stop covering you above a stated wind speed. Ours does not carry that ceiling. The <b>15-Year Unlimited Wind Warranty</b> covers named storms, with no maximum wind&nbsp;speed.</p>
-            </div>
-          </div>
+<section class="sblock rxband rxwind" data-anim>
+  <div class="rxstreaks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap rxwgrid">
+    <p class="rxwnum" aria-hidden="true"><span class="count" data-to="15">15</span><small>Years</small></p>
+    <div>
+      <p class="eyebrow">15-year wind warranty</p>
+      <h2>No Cap on Wind Speed</h2>
+      <p>Most roofing wind warranties stop covering you above a stated wind speed. Ours does not carry that ceiling. The <b>15-Year Unlimited Wind Warranty</b> covers named storms, with no maximum wind&nbsp;speed.</p>
+    </div>
   </div>
 </section>
 
@@ -1785,28 +1927,27 @@ body.navopen{overflow:hidden}
   </div>
 </section>
 
-<div class="spage fbcream">
+<section class="sblock rxband rxfaq">
+  <div class="wrap rxfgrid">
+    <div class="rxfhead">
+      <p class="eyebrow">Before you call</p>
+      <h2>Roof Replacement&nbsp;Questions</h2>
+      <p class="sintro">Short answers to what people ask first. For anything else, call <a class="rfaqtel" href="tel:5042267070">(504)&nbsp;226-7070</a>.</p>
+      <a class="btn1" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
+    </div>
+    <div class="rxflist rise" data-anim>
+      <details><summary>Does the 24-Hour Guarantee Mean the Whole Roof?</summary><div class="rfa">The site states the roofing project is completed within 24 hours <b>once payment is received</b>. The estimate and the survey happen before that clock starts. Call and we will walk you through what your specific roof needs.</div></details>
+      <details><summary>How Much Does a Roof Replacement Cost?</summary><div class="rfa">It depends on the <b>roofing material and the size of the roof</b>. The estimator goes up on the roof and prices what is actually there, free and with no obligation to book.</div></details>
+      <details><summary>What Does “No Maximum Wind Speed” Actually Mean?</summary><div class="rfa">Most roofing wind warranties stop covering you above a stated wind speed. Ours does not carry that ceiling. The <b>15-Year Unlimited Wind Warranty covers named storms</b> with no maximum wind&nbsp;speed.</div></details>
+      <details><summary>What If the Decking Is Rotten?</summary><div class="rfa">Nobody knows what is under a roof until it comes off. <b>If we find rot, we show you before we touch it.</b></div></details>
+      <details><summary>Do You Work With My Insurance Company?</summary><div class="rfa">We go up on the roof with your adjuster and document the damage they might otherwise miss. <b>We cannot promise what an insurer will decide.</b> Nobody honestly can. What we can do is make sure the evidence is on the record.</div></details>
+      <details><summary>Can I Finance a Roof Replacement?</summary><div class="rfa">Yes. <b>Roof now, pay later.</b> Call (504)&nbsp;226-7070 and ask what the monthly number looks like for the size of roof you have.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="sblock rxband rxrel">
   <div class="wrap">
-
-        <section class="sblock">
-          <div class="svhead">
-            <div>
-              <p class="eyebrow">Before you call</p>
-              <h2>Roof Replacement&nbsp;Questions</h2>
-            </div>
-            <p class="sintro">Short answers to what people ask first. For anything else, call <a class="rfaqtel" href="tel:5042267070">(504)&nbsp;226-7070</a>.</p>
-          </div>
-          <div class="rfaqlist">
-            <details><summary>Does the 24-Hour Guarantee Mean the Whole Roof?</summary><div class="rfa">The site states the roofing project is completed within 24 hours <b>once payment is received</b>. The estimate and the survey happen before that clock starts. Call and we will walk you through what your specific roof needs.</div></details>
-            <details><summary>How Much Does a Roof Replacement Cost?</summary><div class="rfa">It depends on the <b>roofing material and the size of the roof</b>. The estimator goes up on the roof and prices what is actually there, free and with no obligation to book.</div></details>
-            <details><summary>What Does “No Maximum Wind Speed” Actually Mean?</summary><div class="rfa">Most roofing wind warranties stop covering you above a stated wind speed. Ours does not carry that ceiling. The <b>15-Year Unlimited Wind Warranty covers named storms</b> with no maximum wind&nbsp;speed.</div></details>
-            <details><summary>What If the Decking Is Rotten?</summary><div class="rfa">Nobody knows what is under a roof until it comes off. <b>If we find rot, we show you before we touch it.</b></div></details>
-            <details><summary>Do You Work With My Insurance Company?</summary><div class="rfa">We go up on the roof with your adjuster and document the damage they might otherwise miss. <b>We cannot promise what an insurer will decide.</b> Nobody honestly can. What we can do is make sure the evidence is on the record.</div></details>
-            <details><summary>Can I Finance a Roof Replacement?</summary><div class="rfa">Yes. <b>Roof now, pay later.</b> Call (504)&nbsp;226-7070 and ask what the monthly number looks like for the size of roof you have.</div></details>
-          </div>
-        </section>
-
-        <section class="sblock">
           <div class="svhead">
             <div>
               <p class="eyebrow">Related services</p>
@@ -1814,63 +1955,42 @@ body.navopen{overflow:hidden}
             </div>
             <p class="sintro">Not sure it needs a whole new roof? These are the jobs that often come first.</p>
           </div>
-          <ul class="svlist rprel">
-            <li>
-              <a href="/residential-roofing/roof-repair/">
-                <span class="svpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/construction-and-building-768x490.jpg" alt="Roofers repairing a pitched shingle roof" loading="lazy"></span>
-                <div class="svtxt">
-                  <h3>Roof Repair</h3>
-                  <p>Targeted work on the section that failed, rather than a whole roof you did not need.</p>
-                  <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="/residential-roofing/roof-inspection/">
-                <span class="svpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/asphalt-roof-768x512.jpg" alt="Close view of an asphalt shingle roof and dormer" loading="lazy"></span>
-                <div class="svtxt">
-                  <h3>Roof Inspection</h3>
-                  <p>A written condition report on the deck, the flashing, the valleys and every penetration.</p>
-                  <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="/residential-roofing/hail-damage-roof-repair/">
-                <span class="svpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Damaged-roof-tiles-with-Hail-768x512.jpg" alt="Hailstones on damaged roof tiles" loading="lazy"></span>
-                <div class="svtxt">
-                  <h3>Hail Damage Roof Repair</h3>
-                  <p>Storm survey, a photo record of what the hail did, and a walk of the roof with your adjuster.</p>
-                  <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="/residential-roofing/roof-leak-detection/">
-                <span class="svpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/House-Thermovision-Detection-768x654.jpg" alt="Thermal camera checking a house for roof leaks" loading="lazy"></span>
-                <div class="svtxt">
-                  <h3>Roof Leak Detection</h3>
-                  <p>Finding where the water is actually getting in, which is rarely where the ceiling stain is.</p>
-                  <span class="svgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </section>
-
-        <section class="sblock">
-          <div class="svhead">
-            <div>
-              <p class="eyebrow">Service areas</p>
-              <h2>Roof Replacement Across 14 Towns</h2>
-            </div>
-            <p class="sintro">New Orleans plus 13 towns from Gretna to Baton Rouge. Pick yours for the local page.</p>
-          </div>
-          <div class="rtowns"><a href="/service-areas/">New Orleans</a><a href="/service-areas/metairie/">Metairie</a><a href="/service-areas/kenner/">Kenner</a><a href="/service-areas/gretna/">Gretna</a><a href="/service-areas/harahan/">Harahan</a><a href="/service-areas/river-ridge/">River Ridge</a><a href="/service-areas/slidell/">Slidell</a><a href="/service-areas/mandeville/">Mandeville</a><a href="/service-areas/covington/">Covington</a><a href="/service-areas/madisonville/">Madisonville</a><a href="/service-areas/laplace/">Laplace</a><a href="/service-areas/st-rose/">St. Rose</a><a href="/service-areas/hammond/">Hammond</a><a href="/service-areas/baton-rouge/">Baton Rouge</a><a class="rtcall" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
-        </section>
-
+          <ol class="rxrows rise" data-anim>
+            <li><a href="/residential-roofing/roof-repair/"><span class="rxrno" aria-hidden="true">01</span><span class="rxrpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/construction-and-building-768x490.jpg" alt="Roofers repairing a pitched shingle roof" loading="lazy"></span><h3>Roof Repair</h3><p>Targeted work on the section that failed, rather than a whole roof you did not need.</p><span class="rxrgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/residential-roofing/roof-inspection/"><span class="rxrno" aria-hidden="true">02</span><span class="rxrpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/asphalt-roof-768x512.jpg" alt="Close view of an asphalt shingle roof and dormer" loading="lazy"></span><h3>Roof Inspection</h3><p>A written condition report on the deck, the flashing, the valleys and every&nbsp;penetration.</p><span class="rxrgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/residential-roofing/hail-damage-roof-repair/"><span class="rxrno" aria-hidden="true">03</span><span class="rxrpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Damaged-roof-tiles-with-Hail-768x512.jpg" alt="Hailstones on damaged roof tiles" loading="lazy"></span><h3>Hail Damage Roof Repair</h3><p>Storm survey, a photo record of what the hail did, and a walk of the roof with your adjuster.</p><span class="rxrgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/residential-roofing/roof-leak-detection/"><span class="rxrno" aria-hidden="true">04</span><span class="rxrpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/House-Thermovision-Detection-768x654.jpg" alt="Thermal camera checking a house for roof leaks" loading="lazy"></span><h3>Roof Leak&nbsp;Detection</h3><p>Finding where the water is actually getting in, which is rarely where the ceiling stain is.</p><span class="rxrgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+          </ol>
   </div>
-</div>
+</section>
+
+<section class="sblock rxband rxtowns" data-anim>
+  <div class="wrap rxtgrid">
+    <div class="rxthead">
+      <span class="rxtnum" aria-hidden="true"><span class="count" data-to="14">14</span></span>
+      <p class="eyebrow">Service areas</p>
+      <h2>Roof Replacement Across 14 Towns</h2>
+      <p class="sintro">New Orleans plus 13 towns from Gretna to Baton Rouge. Pick yours for the local page.</p>
+      <a class="btn1" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
+    </div>
+    <ul class="rxtlist">
+      <li><a href="/service-areas/">New Orleans</a></li>
+      <li><a href="/service-areas/metairie/">Metairie</a></li>
+      <li><a href="/service-areas/kenner/">Kenner</a></li>
+      <li><a href="/service-areas/gretna/">Gretna</a></li>
+      <li><a href="/service-areas/harahan/">Harahan</a></li>
+      <li><a href="/service-areas/river-ridge/">River Ridge</a></li>
+      <li><a href="/service-areas/slidell/">Slidell</a></li>
+      <li><a href="/service-areas/mandeville/">Mandeville</a></li>
+      <li><a href="/service-areas/covington/">Covington</a></li>
+      <li><a href="/service-areas/madisonville/">Madisonville</a></li>
+      <li><a href="/service-areas/laplace/">Laplace</a></li>
+      <li><a href="/service-areas/st-rose/">St. Rose</a></li>
+      <li><a href="/service-areas/hammond/">Hammond</a></li>
+      <li><a href="/service-areas/baton-rouge/">Baton Rouge</a></li>
+    </ul>
+  </div>
+</section>
 
 <section class="fbband fbsx">
   <div class="wrap sblock sxband">
