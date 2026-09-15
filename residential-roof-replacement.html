@@ -1725,6 +1725,31 @@ body.navopen{overflow:hidden}
 .fpbody::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:56px;pointer-events:none;
   background:linear-gradient(0deg,var(--forest) 0%,rgba(31,77,67,0) 100%)}
 @media(max-width:560px){.fpbody{padding:20px 20px 18px}}
+/* FAQ, Sept 15: a photo fills the heading column down to the last question, so there is no empty block under the
+   call button. It stops growing at 440px when answers are opened, and is hidden once the columns stack. */
+@media(min-width:901px){
+  .rpfaq .rxfgrid{align-items:stretch}
+  .rpfaq .rxfhead{position:static;display:flex;flex-direction:column;align-items:flex-start}
+  .rpfpic{position:relative;flex:1 1 auto;align-self:stretch;min-height:150px;max-height:440px;margin:30px 0 0;overflow:hidden;
+    border-radius:var(--r);background:var(--forest2)}
+  .rpfpic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+}
+@media(max-width:900px){.rpfpic{display:none}}
+/* towns, Sept 15: a shorter band. 14 beside the heading, intro and call on the right, names across the full width */
+.rxtowns.rpt{padding:64px 0}
+.rptw{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,auto);gap:26px 56px;align-items:center}
+.rptw .rxthead{display:flex;align-items:center;gap:26px}
+.rptw .rxtnum{margin:0;font-size:clamp(80px,7.4vw,112px)}
+.rptw .rxthead .eyebrow{margin:0 0 8px}
+.rptw .rxthead h2{margin:0;font-size:clamp(28px,2.8vw,40px);line-height:1.1}
+.rptside{display:flex;align-items:center;gap:26px;justify-self:end}
+.rptside .sintro{margin:0;max-width:30ch;color:rgba(244,239,232,.86)}
+.rptside .btn1{flex:none}
+.rptw .rxtlist{grid-column:1 / -1;padding-top:26px;border-top:1px solid rgba(244,239,232,.16)}
+.rptw .rxtlist a{font-size:clamp(19px,1.7vw,24px)}
+@media(max-width:1100px){.rptw{grid-template-columns:1fr}.rptside{justify-self:start}}
+@media(max-width:620px){.rxtowns.rpt{padding:52px 0}.rptw .rxthead{gap:18px}.rptw .rxtnum{font-size:68px}
+  .rptside{flex-direction:column;align-items:flex-start;gap:18px}.rptw .rxtlist{padding-top:22px}}
 </style>
 </head>
 <body>
@@ -1937,13 +1962,14 @@ body.navopen{overflow:hidden}
   </div>
 </section>
 
-<section class="sblock rxband rxfaq">
+<section class="sblock rxband rxfaq rpfaq">
   <div class="wrap rxfgrid">
     <div class="rxfhead">
       <p class="eyebrow">Before you call</p>
       <h2>Roof Replacement&nbsp;Questions</h2>
       <p class="sintro">Short answers to what people ask first. For anything else, call <a class="rfaqtel" href="tel:5042267070">(504)&nbsp;226-7070</a>.</p>
       <a class="btn1" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
+      <figure class="rpfpic" aria-hidden="true"><img src="https://images.pexels.com/photos/37677394/pexels-photo-37677394.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1000" alt="" loading="lazy"></figure>
     </div>
     <div class="rxflist rise" data-anim>
       <details><summary>How Long Does a Roof Replacement Take?</summary><div class="rfa">Once payment is received, the roofing project is <b>completed within 24 hours</b>. The estimator&rsquo;s survey and your free estimate come before&nbsp;that.</div></details>
@@ -1974,12 +2000,16 @@ body.navopen{overflow:hidden}
   </div>
 </section>
 
-<section class="sblock rxband rxtowns" data-anim>
-  <div class="wrap rxtgrid">
+<section class="sblock rxband rxtowns rpt" data-anim>
+  <div class="wrap rptw">
     <div class="rxthead">
       <span class="rxtnum" aria-hidden="true"><span class="count" data-to="14">14</span></span>
-      <p class="eyebrow">Service areas</p>
-      <h2>Roof Replacement Across 14 Towns</h2>
+      <div>
+        <p class="eyebrow">Service areas</p>
+        <h2>Roof Replacement Across 14&nbsp;Towns</h2>
+      </div>
+    </div>
+    <div class="rptside">
       <p class="sintro">New Orleans plus 13 towns from Gretna to Baton Rouge. Pick yours for the local page.</p>
       <a class="btn1" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
     </div>
