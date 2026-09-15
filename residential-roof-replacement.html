@@ -1829,6 +1829,24 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
 .rpq .rrfeat blockquote{padding:4px 0 4px 26px;border-left:3px solid var(--clay);font-size:clamp(16.5px,1.45vw,19px);line-height:1.6}
 @media(max-width:760px){.fbquote.rpq{padding:40px 0 42px}.rpq .rrfeat{grid-template-columns:1fr}.rpq .rrfeat blockquote{padding-left:18px}}
 @media(max-width:620px){.fbquote.rpq{padding:34px 0 36px}.rpq .rrfeat{gap:14px}.rpq .rrfeat blockquote{padding-left:16px;font-size:15.5px;line-height:1.55}}
+/* ===== Process opener, Sept 15: no second hero. Heading left, framed photo card right, timeline underneath ===== */
+.rxflow.rpop{padding:88px 0}
+.rpophead{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:30px 64px;align-items:center}
+.rpophead .eyebrow{margin:0 0 12px}
+.rpophead h2{margin:0 0 14px;font-size:clamp(32px,3.4vw,48px);line-height:1.1}
+.rpophead .sintro{margin:0;max-width:44ch}
+.rpoppic{position:relative;margin:0;aspect-ratio:16/7;overflow:hidden;border-radius:var(--r);background:var(--forest2);
+  box-shadow:0 30px 60px -42px rgba(23,58,51,.7)}
+.rpoppic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;transition:transform 1.4s cubic-bezier(.22,.61,.36,1)}
+.rpoppic:hover img{transform:scale(1.04)}
+.rpopchip{position:absolute;left:18px;bottom:18px;padding:8px 14px;border-radius:100px;background:var(--forest);color:#f4efe8;
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 10px 24px -12px rgba(0,0,0,.55)}
+.rpopchip b{color:var(--clay2);font-weight:500}
+.rpop .rxtl{margin-top:60px}
+@media(min-width:901px) and (max-width:1280px){.rpoppic{aspect-ratio:16/6}}
+@media(max-width:900px){.rpophead{grid-template-columns:1fr}.rpoppic{aspect-ratio:21/9}.rpop .rxtl{margin-top:44px}}
+@media(max-width:620px){.rxflow.rpop{padding:64px 0}.rpoppic{aspect-ratio:16/9}}
+@media(prefers-reduced-motion:reduce){.rpoppic img{transition:none}.rpoppic:hover img{transform:none}}
 </style>
 </head>
 <body>
@@ -1944,16 +1962,16 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
   </div>
 </section>
 <main class="rxmain">
-<section class="sblock rxband rxflow">
-  <div class="rxflowtop">
-    <img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Roof-ready-for-reroofing.jpg" alt="Two roofers at work on a house roof" loading="lazy">
-    <div class="wrap">
-      <p class="eyebrow">How it runs</p>
-      <h2>From Estimate to <em>New Roof</em></h2>
-      <p class="sintro">Four steps from the first call to a finished roof.</p>
-    </div>
-  </div>
+<section class="sblock rxband rxflow rpop">
   <div class="wrap">
+    <div class="rpophead">
+      <div>
+        <p class="eyebrow">How it runs</p>
+        <h2>From Estimate to <em>New Roof</em></h2>
+        <p class="sintro">Four steps from the first call to a finished roof.</p>
+      </div>
+      <figure class="rpoppic rise" data-anim><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Roof-ready-for-reroofing.jpg" alt="Two roofers at work on a house roof" loading="lazy"><span class="rpopchip" aria-hidden="true"><b>4</b> steps</span></figure>
+    </div>
     <ol class="rxtl" data-anim>
       <li style="--i:0"><span class="rxdot" aria-hidden="true">01</span><div><h3>Book an Estimator</h3><p>Call or fill out the form to schedule an appointment with an estimator.</p></div></li>
       <li style="--i:1"><span class="rxdot" aria-hidden="true">02</span><div><h3>The Roof Survey</h3><p>The estimator comes out to survey your roof and give you a cost estimate. The estimate is free.</p></div></li>
