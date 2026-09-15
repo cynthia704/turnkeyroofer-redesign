@@ -1794,6 +1794,41 @@ body.navopen{overflow:hidden}
 @media(max-width:1100px){.rptw{grid-template-columns:1fr}.rptside{justify-self:start}}
 @media(max-width:620px){.rxtowns.rpt{padding:52px 0}.rptw .rxthead{gap:18px}.rptw .rxtnum{font-size:68px}
   .rptside{flex-direction:column;align-items:flex-start;gap:18px}.rptw .rxtlist{padding-top:22px}}
+/* ===== Service template, Sept 15: highlighted H2 terms, Benefits tiles, compact review ===== */
+main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
+.rxflowtop h2 em,.rpben h2 em,.rxtowns h2 em{color:var(--clay2)}
+/* Benefits: four icon tiles on one ruled line, not boxes */
+.rpbn{padding:88px 0;background:#fff}
+.rpbnl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rpbnl li{position:relative;padding:34px 28px 32px;border-left:1px solid var(--line);opacity:0;transform:translateY(18px);
+  transition:opacity .6s cubic-bezier(.22,.61,.36,1) calc(var(--i) * .1s),transform .6s cubic-bezier(.22,.61,.36,1) calc(var(--i) * .1s),background-color .35s}
+.rpbnl li:first-child{border-left:0}
+.rpbnl.in li{opacity:1;transform:none}
+.rpbnl li::before{content:"";position:absolute;left:0;right:0;top:-1px;height:3px;background:var(--clay);transform:scaleX(0);transform-origin:left center;
+  transition:transform .45s cubic-bezier(.22,.61,.36,1)}
+.rpbnl li:hover{background:var(--cream)}
+.rpbnl li:hover::before{transform:scaleX(1)}
+.rpbnic{display:grid;place-items:center;width:64px;height:64px;margin:0 0 22px;border-radius:50%;background:var(--cream2);color:var(--forest);transition:background-color .35s,color .35s}
+.rpbnl li:hover .rpbnic{background:var(--forest);color:var(--clay2)}
+.rpbnic svg{width:32px;height:32px;display:block;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.rpbnno{position:absolute;top:32px;right:26px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--clay)}
+.rpbnl h3{margin:0 0 8px;font-size:21px;line-height:1.25}
+.rpbnl p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
+@media(max-width:1000px){.rpbnl{grid-template-columns:repeat(2,minmax(0,1fr))}.rpbnl li:nth-child(3){border-left:0}
+  .rpbnl li:nth-child(n+3){border-top:1px solid var(--line)}}
+@media(max-width:620px){.rpbn{padding:64px 0}.rpbnl{grid-template-columns:1fr;border-bottom:0}
+  .rpbnl li{display:grid;grid-template-columns:52px minmax(0,1fr);column-gap:18px;align-items:start;padding:24px 0;border-left:0;border-bottom:1px solid var(--line)}
+  .rpbnl li:nth-child(n+3){border-top:0}.rpbnic{width:52px;height:52px;margin:0;grid-row:span 2}.rpbnic svg{width:26px;height:26px}
+  .rpbnno{top:26px;right:0}.rpbnl h3{padding-right:34px;margin-top:4px}}
+@media(prefers-reduced-motion:reduce){.rpbnl li{opacity:1;transform:none;transition:none}.rpbnl li::before,.rpbnic{transition:none}}
+/* compact review: reviewer on the left, quote on the right, smaller type and padding */
+.fbquote.rpq{padding:46px 0 48px}
+.rpq .rrfeat{display:grid;grid-template-columns:230px minmax(0,1fr);gap:16px 44px;align-items:center;padding:0}
+.rpq .rrfeat::before{display:none}
+.rpq .rrfeat .rrwho{order:-1;align-self:center}
+.rpq .rrfeat blockquote{padding:4px 0 4px 26px;border-left:3px solid var(--clay);font-size:clamp(16.5px,1.45vw,19px);line-height:1.6}
+@media(max-width:760px){.fbquote.rpq{padding:40px 0 42px}.rpq .rrfeat{grid-template-columns:1fr}.rpq .rrfeat blockquote{padding-left:18px}}
+@media(max-width:620px){.fbquote.rpq{padding:34px 0 36px}.rpq .rrfeat{gap:14px}.rpq .rrfeat blockquote{padding-left:16px;font-size:15.5px;line-height:1.55}}
 </style>
 </head>
 <body>
@@ -1878,7 +1913,7 @@ body.navopen{overflow:hidden}
     <a href="/">Home</a><span aria-hidden="true">&#47;</span><a href="/residential-roofing/">Residential&nbsp;Roofing</a><span aria-hidden="true">&#47;</span><span aria-current="page">Roof&nbsp;Replacement</span>
     </nav>
     <p class="eyebrow">Residential roof replacement</p>
-    <h1 class="shtitle">Residential Roof <em>Replacement</em> Services in New&nbsp;Orleans</h1>
+    <h1 class="shtitle shlong">New Orleans Roof <em>Replacement</em> With a 15-Year Unlimited Wind&nbsp;Warranty</h1>
     <p class="shlede">A free estimate after a survey of your roof, and a new roof completed within 24 hours of payment.</p>
     <div class="cta shcta">
     <a class="btn1" href="#estimate">Get a free estimate</a>
@@ -1914,7 +1949,7 @@ body.navopen{overflow:hidden}
     <img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Roof-ready-for-reroofing.jpg" alt="Two roofers at work on a house roof" loading="lazy">
     <div class="wrap">
       <p class="eyebrow">How it runs</p>
-      <h2>From Estimate to New Roof</h2>
+      <h2>From Estimate to <em>New Roof</em></h2>
       <p class="sintro">Four steps from the first call to a finished roof.</p>
     </div>
   </div>
@@ -1933,7 +1968,7 @@ body.navopen{overflow:hidden}
           <div class="svhead">
             <div>
               <p class="eyebrow">Warning signs</p>
-              <h2>Signs Your Roof Needs Replacing</h2>
+              <h2>Signs Your Roof <em>Needs Replacing</em></h2>
             </div>
             <p class="sintro">See one of these and it is time to have the roof looked at. The estimate is free.</p>
           </div>
@@ -1966,11 +2001,29 @@ body.navopen{overflow:hidden}
   </div>
 </section>
 
+<section class="sblock rxband rpbn">
+  <div class="wrap">
+          <div class="svhead">
+            <div>
+              <p class="eyebrow">Benefits</p>
+              <h2>Benefits of a <em>New Roof</em></h2>
+            </div>
+            <p class="sintro">What a roof replacement does for your home, from the material you pick to the way it&nbsp;looks.</p>
+          </div>
+    <ul class="rpbnl" data-anim>
+      <li style="--i:0"><span class="rpbnic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 5 4 11l12 6 12-6z"/><path d="m4 16 12 6 12-6"/><path d="m4 21 12 6 12-6"/></svg></span><span class="rpbnno" aria-hidden="true">01</span><h3>Your Choice of&nbsp;Material</h3><p>Shingle, metal, standing seam, slate or tile. The type of roof you choose affects what it&nbsp;costs.</p></li>
+      <li style="--i:1"><span class="rpbnic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 4 26 8v7c0 6.5-4.2 11-10 13C10.2 26 6 21.5 6 15V8z"/><path d="m11.5 16 3 3 6-6.5"/></svg></span><span class="rpbnno" aria-hidden="true">02</span><h3>Protection From Water&nbsp;Damage</h3><p>Leaks and water stains are signs of a failing roof, and water damage can lead to structural&nbsp;damage.</p></li>
+      <li style="--i:2"><span class="rpbnic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M26 12a10 10 0 0 0-18-3"/><path d="M8 4v5h5"/><path d="M6 20a10 10 0 0 0 18 3"/><path d="M24 28v-5h-5"/></svg></span><span class="rpbnno" aria-hidden="true">03</span><h3>End the Repair&nbsp;Cycle</h3><p>When leaks, cracks and stains keep coming back, a new roof replaces the patches with a whole new&nbsp;roof.</p></li>
+      <li style="--i:3"><span class="rpbnic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 17 15 8l11 9"/><path d="M7 15v12h16V15"/><path d="M26 3v5M23.5 5.5h5"/></svg></span><span class="rpbnno" aria-hidden="true">04</span><h3>Better Curb&nbsp;Appeal</h3><p>A new roof is designed to protect your home and enhance its curb&nbsp;appeal.</p></li>
+    </ul>
+  </div>
+</section>
+
 <section class="sblock rxband rpben">
   <div class="wrap rpbgrid">
     <div class="rpbtext">
       <p class="eyebrow">Why TurnKey Roofer</p>
-      <h2>Why Replace Your Roof With TurnKey&nbsp;Roofer</h2>
+      <h2>Why Replace Your Roof With <em>TurnKey&nbsp;Roofer</em></h2>
       <p class="sintro">Our team at TurnKey Roofer is ready to assist you and provide a free estimate for your roof&nbsp;replacement.</p>
       <ul class="rpbl" data-anim>
         <li style="--i:0"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20.5"/><path d="M14 22.5l5.5 5.5L30.5 16.5"/></svg><span>Completed within 24 hours once payment is&nbsp;received</span></li>
@@ -1989,7 +2042,7 @@ body.navopen{overflow:hidden}
           <div class="svhead">
             <div>
               <p class="eyebrow">Materials</p>
-              <h2>Choose the Roof That Goes On</h2>
+              <h2>Choose the <em>Roof That Goes On</em></h2>
             </div>
             <p class="sintro">Shingle, metal, standing seam, slate or tile. Ask the estimator when they survey your&nbsp;roof.</p>
           </div>
@@ -2003,7 +2056,7 @@ body.navopen{overflow:hidden}
   </div>
 </section>
 
-<section class="sblock fbband fbquote">
+<section class="sblock fbband fbquote rpq">
   <div class="wrap">
           <figure class="rrfeat">
             <blockquote>&ldquo;As a property manager responsible for multiple residential buildings, I often encounter various roofing issues that require immediate attention. This company has been my go-to roofing company for years, and they have never disappointed. Whether it’s repairing hail damage, replacing an aging roof, or conducting routine inspections, their team consistently delivers top-notch service. If you’re in need of reliable roofing solutions for residential properties, look no further than TurnKey Roofer.&rdquo;</blockquote>
@@ -2016,7 +2069,7 @@ body.navopen{overflow:hidden}
   <div class="wrap rxfgrid">
     <div class="rxfhead">
       <p class="eyebrow">Before you call</p>
-      <h2>Roof Replacement&nbsp;Questions</h2>
+      <h2><em>Roof Replacement</em>&nbsp;Questions</h2>
       <p class="sintro">Short answers to what people ask first. For anything else, call <a class="rfaqtel" href="tel:5042267070">(504)&nbsp;226-7070</a>.</p>
       <a class="btn1" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
       <figure class="rpfpic" aria-hidden="true"><img src="https://images.pexels.com/photos/37677394/pexels-photo-37677394.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1000" alt="" loading="lazy"></figure>
@@ -2037,7 +2090,7 @@ body.navopen{overflow:hidden}
           <div class="svhead">
             <div>
               <p class="eyebrow">Related services</p>
-              <h2>Other Work on the Same House</h2>
+              <h2>Other Work on the <em>Same House</em></h2>
             </div>
             <p class="sintro">Each of these has its own page, and the same free&nbsp;estimate.</p>
           </div>
@@ -2056,7 +2109,7 @@ body.navopen{overflow:hidden}
       <span class="rxtnum" aria-hidden="true"><span class="count" data-to="14">14</span></span>
       <div>
         <p class="eyebrow">Service areas</p>
-        <h2>Roof Replacement Across 14&nbsp;Towns</h2>
+        <h2>Roof Replacement Across <em>14&nbsp;Towns</em></h2>
       </div>
     </div>
     <div class="rptside">
@@ -2085,7 +2138,7 @@ body.navopen{overflow:hidden}
 <section class="fbband fbsx">
   <div class="wrap sblock sxband">
           <div>
-            <h2>Replacing a Commercial Roof?</h2>
+            <h2>Replacing a <em>Commercial Roof</em>?</h2>
             <p class="sintro">Flat and low-slope roofs are commercial work, under Louisiana commercial license #3667. Same phone&nbsp;number.</p>
           </div>
           <a class="sxlink" href="/commercial-roofing/roof-replacement/">Commercial roof replacement <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -2100,7 +2153,7 @@ body.navopen{overflow:hidden}
       <div class="fside rise" data-anim>
         <div class="fintro">
         <p class="eyebrow">Get the number before the next storm</p>
-        <h2 class="h2">Get a Free Roof Estimate in New Orleans</h2>
+        <h2 class="h2">Get a <em>Free Roof Estimate</em> in New Orleans</h2>
         <p class="lede">A roofing estimator comes out to survey your roof and gives you a cost estimate. No charge, and no obligation to book the work.</p>
         <ul class="checks fchecks">
           <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="#1f4d43" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Licensed residential <b>#890459</b> &nbsp;+&nbsp; commercial <b>#3667</b></span></li>

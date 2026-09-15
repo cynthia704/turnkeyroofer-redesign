@@ -1793,6 +1793,41 @@ body.navopen{overflow:hidden}
 @media(max-width:1100px){.rptw{grid-template-columns:1fr}.rptside{justify-self:start}}
 @media(max-width:620px){.rxtowns.rpt{padding:52px 0}.rptw .rxthead{gap:18px}.rptw .rxtnum{font-size:68px}
   .rptside{flex-direction:column;align-items:flex-start;gap:18px}.rptw .rxtlist{padding-top:22px}}
+/* ===== Service template, Sept 15: highlighted H2 terms, Benefits tiles, compact review ===== */
+main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
+.rxflowtop h2 em,.rpben h2 em,.rxtowns h2 em{color:var(--clay2)}
+/* Benefits: four icon tiles on one ruled line, not boxes */
+.rpbn{padding:88px 0;background:#fff}
+.rpbnl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rpbnl li{position:relative;padding:34px 28px 32px;border-left:1px solid var(--line);opacity:0;transform:translateY(18px);
+  transition:opacity .6s cubic-bezier(.22,.61,.36,1) calc(var(--i) * .1s),transform .6s cubic-bezier(.22,.61,.36,1) calc(var(--i) * .1s),background-color .35s}
+.rpbnl li:first-child{border-left:0}
+.rpbnl.in li{opacity:1;transform:none}
+.rpbnl li::before{content:"";position:absolute;left:0;right:0;top:-1px;height:3px;background:var(--clay);transform:scaleX(0);transform-origin:left center;
+  transition:transform .45s cubic-bezier(.22,.61,.36,1)}
+.rpbnl li:hover{background:var(--cream)}
+.rpbnl li:hover::before{transform:scaleX(1)}
+.rpbnic{display:grid;place-items:center;width:64px;height:64px;margin:0 0 22px;border-radius:50%;background:var(--cream2);color:var(--forest);transition:background-color .35s,color .35s}
+.rpbnl li:hover .rpbnic{background:var(--forest);color:var(--clay2)}
+.rpbnic svg{width:32px;height:32px;display:block;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.rpbnno{position:absolute;top:32px;right:26px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--clay)}
+.rpbnl h3{margin:0 0 8px;font-size:21px;line-height:1.25}
+.rpbnl p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
+@media(max-width:1000px){.rpbnl{grid-template-columns:repeat(2,minmax(0,1fr))}.rpbnl li:nth-child(3){border-left:0}
+  .rpbnl li:nth-child(n+3){border-top:1px solid var(--line)}}
+@media(max-width:620px){.rpbn{padding:64px 0}.rpbnl{grid-template-columns:1fr;border-bottom:0}
+  .rpbnl li{display:grid;grid-template-columns:52px minmax(0,1fr);column-gap:18px;align-items:start;padding:24px 0;border-left:0;border-bottom:1px solid var(--line)}
+  .rpbnl li:nth-child(n+3){border-top:0}.rpbnic{width:52px;height:52px;margin:0;grid-row:span 2}.rpbnic svg{width:26px;height:26px}
+  .rpbnno{top:26px;right:0}.rpbnl h3{padding-right:34px;margin-top:4px}}
+@media(prefers-reduced-motion:reduce){.rpbnl li{opacity:1;transform:none;transition:none}.rpbnl li::before,.rpbnic{transition:none}}
+/* compact review: reviewer on the left, quote on the right, smaller type and padding */
+.fbquote.rpq{padding:46px 0 48px}
+.rpq .rrfeat{display:grid;grid-template-columns:230px minmax(0,1fr);gap:16px 44px;align-items:center;padding:0}
+.rpq .rrfeat::before{display:none}
+.rpq .rrfeat .rrwho{order:-1;align-self:center}
+.rpq .rrfeat blockquote{padding:4px 0 4px 26px;border-left:3px solid var(--clay);font-size:clamp(16.5px,1.45vw,19px);line-height:1.6}
+@media(max-width:760px){.fbquote.rpq{padding:40px 0 42px}.rpq .rrfeat{grid-template-columns:1fr}.rpq .rrfeat blockquote{padding-left:18px}}
+@media(max-width:620px){.fbquote.rpq{padding:34px 0 36px}.rpq .rrfeat{gap:14px}.rpq .rrfeat blockquote{padding-left:16px;font-size:15.5px;line-height:1.55}}
 </style>
 </head>
 <body>
@@ -1877,7 +1912,7 @@ body.navopen{overflow:hidden}
     <a href="/">Home</a><span aria-hidden="true">&#47;</span><a href="/residential-roofing/">Residential&nbsp;Roofing</a><span aria-hidden="true">&#47;</span><span aria-current="page">Roof&nbsp;Repair</span>
     </nav>
     <p class="eyebrow">Residential roof repair</p>
-    <h1 class="shtitle shlong">Expert Roofing <em>Repairs</em> by Professional Experts for Home Owners in New&nbsp;Orleans</h1>
+    <h1 class="shtitle">Expert Roof <em>Repairs</em> for New Orleans&nbsp;Homeowners</h1>
     <p class="shlede">A diagnosis, an accurate estimate before any work is done, the repair, and a final inspection. On shingle, metal and tile&nbsp;roofs.</p>
     <div class="cta shcta">
     <a class="btn1" href="#estimate">Get a free estimate</a>
@@ -1913,7 +1948,7 @@ body.navopen{overflow:hidden}
     <img src="https://images.pexels.com/photos/37704246/pexels-photo-37704246.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Roofer kneeling on the ridge of a shingle roof" loading="lazy">
     <div class="wrap">
       <p class="eyebrow">How it runs</p>
-      <h2>Our Roof Repair Process</h2>
+      <h2>Our <em>Roof Repair</em> Process</h2>
       <p class="sintro">Four steps, from the first look at your roof to a final&nbsp;inspection.</p>
     </div>
   </div>
@@ -1932,7 +1967,7 @@ body.navopen{overflow:hidden}
           <div class="svhead">
             <div>
               <p class="eyebrow">Warning signs</p>
-              <h2>Common Signs You Should Repair Your Roof</h2>
+              <h2>Common Signs You Should <em>Repair Your Roof</em></h2>
             </div>
             <p class="sintro">Inspect your roof regularly and watch for changes. These four are the common&nbsp;ones.</p>
           </div>
@@ -1957,17 +1992,35 @@ body.navopen{overflow:hidden}
   </div>
 </section>
 
+<section class="sblock rxband rpbn">
+  <div class="wrap">
+          <div class="svhead">
+            <div>
+              <p class="eyebrow">Benefits</p>
+              <h2>Benefits of Repairing Your Roof <em>As Soon As&nbsp;Possible</em></h2>
+            </div>
+            <p class="sintro">We strongly recommend repairing your roof as soon as possible after you discover a leak or&nbsp;damage.</p>
+          </div>
+    <ul class="rpbnl" data-anim>
+      <li style="--i:0"><span class="rpbnic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 15 16 5l12 10"/><path d="M7 13v14h18V13"/><path d="M13 27v-8h6v8"/></svg></span><span class="rpbnno" aria-hidden="true">01</span><h3>Protects the&nbsp;Structure</h3><p>A leaking or damaged roof can cause further damage to your home if it is not taken care of&nbsp;promptly.</p></li>
+      <li style="--i:1"><span class="rpbnic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 4c5 6.5 8 11 8 15a8 8 0 0 1-16 0c0-4 3-8.5 8-15z"/><path d="M12.5 19.5a3.5 3.5 0 0 0 3.5 3.5"/></svg></span><span class="rpbnno" aria-hidden="true">02</span><h3>Keeps Water&nbsp;Out</h3><p>Even small leaks can cause major damage if they are not taken care of&nbsp;quickly.</p></li>
+      <li style="--i:2"><span class="rpbnic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 4 26 8v7c0 6.5-4.2 11-10 13C10.2 26 6 21.5 6 15V8z"/><path d="m11.5 16 3 3 6-6.5"/></svg></span><span class="rpbnno" aria-hidden="true">03</span><h3>Guards Against&nbsp;Mold</h3><p>A sound roof protects your home from mold and mildew&nbsp;buildup.</p></li>
+      <li style="--i:3"><span class="rpbnic" aria-hidden="true"><svg viewBox="0 0 32 32"><ellipse cx="16" cy="8" rx="9" ry="3.5"/><path d="M7 8v5c0 1.9 4 3.5 9 3.5s9-1.6 9-3.5V8"/><path d="M7 13v5c0 1.9 4 3.5 9 3.5s9-1.6 9-3.5v-5"/><path d="M7 18v5c0 1.9 4 3.5 9 3.5s9-1.6 9-3.5v-5"/></svg></span><span class="rpbnno" aria-hidden="true">04</span><h3>Saves Money Long&nbsp;Term</h3><p>Fixing the damage early can save you money in the long&nbsp;run.</p></li>
+    </ul>
+  </div>
+</section>
+
 <section class="sblock rxband rpben">
   <div class="wrap rpbgrid">
     <div class="rpbtext">
-      <p class="eyebrow">Repair it early</p>
-      <h2>Why Repair Your Roof As Soon As&nbsp;Possible</h2>
-      <p class="sintro">We strongly recommend having your roof repaired as soon as possible after you discover a leak or&nbsp;damage.</p>
+      <p class="eyebrow">Why TurnKey Roofer</p>
+      <h2>Why Choose TurnKey Roofer for <em>Roof&nbsp;Repair</em></h2>
+      <p class="sintro">Homeowners in New Orleans can trust TurnKey Roofer for all their roof repair&nbsp;needs.</p>
       <ul class="rpbl" data-anim>
-        <li style="--i:0"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20.5"/><path d="M14 22.5l5.5 5.5L30.5 16.5"/></svg><span>Prevents further damage to the structure of your&nbsp;home</span></li>
-        <li style="--i:1"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20.5"/><path d="M14 22.5l5.5 5.5L30.5 16.5"/></svg><span>Keeps water from getting into your&nbsp;home</span></li>
-        <li style="--i:2"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20.5"/><path d="M14 22.5l5.5 5.5L30.5 16.5"/></svg><span>Protects your home from mold and mildew&nbsp;buildup</span></li>
-        <li style="--i:3"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20.5"/><path d="M14 22.5l5.5 5.5L30.5 16.5"/></svg><span>Saves you money in the long&nbsp;run</span></li>
+        <li style="--i:0"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20.5"/><path d="M14 22.5l5.5 5.5L30.5 16.5"/></svg><span>An accurate estimate before any work is&nbsp;done</span></li>
+        <li style="--i:1"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20.5"/><path d="M14 22.5l5.5 5.5L30.5 16.5"/></svg><span>All types of residential roofs&nbsp;repaired</span></li>
+        <li style="--i:2"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20.5"/><path d="M14 22.5l5.5 5.5L30.5 16.5"/></svg><span>Free estimates and no-obligation&nbsp;quotes</span></li>
+        <li style="--i:3"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20.5"/><path d="M14 22.5l5.5 5.5L30.5 16.5"/></svg><span>Preventative maintenance to help extend the life of your&nbsp;roof</span></li>
       </ul>
       <a class="btn1" href="#estimate">Get a free estimate</a>
     </div>
@@ -1980,7 +2033,7 @@ body.navopen{overflow:hidden}
           <div class="svhead">
             <div>
               <p class="eyebrow">Roof types</p>
-              <h2>Types of Roof We Repair</h2>
+              <h2><em>Types of Roof</em> We Repair</h2>
             </div>
             <p class="sintro">TurnKey Roofer can repair all types of residential roofs, including these&nbsp;three.</p>
           </div>
@@ -1992,7 +2045,7 @@ body.navopen{overflow:hidden}
   </div>
 </section>
 
-<section class="sblock fbband fbquote">
+<section class="sblock fbband fbquote rpq">
   <div class="wrap">
           <figure class="rrfeat">
             <blockquote>&ldquo;After a recent storm, my home&rsquo;s roof suffered extensive hail damage, leaving me worried about the structural integrity of my property. I contacted this company based on a friend&rsquo;s recommendation, and I couldn&rsquo;t be happier with the results. Their team conducted a thorough assessment of the damage and provided a detailed plan for repairing and restoring my roof. If you&rsquo;re dealing with roof damage, don&rsquo;t hesitate to enlist their services.&rdquo;</blockquote>
@@ -2005,7 +2058,7 @@ body.navopen{overflow:hidden}
   <div class="wrap rxfgrid">
     <div class="rxfhead">
       <p class="eyebrow">Before you call</p>
-      <h2>Roof Repair&nbsp;Questions</h2>
+      <h2><em>Roof Repair</em>&nbsp;Questions</h2>
       <p class="sintro">Short answers to what people ask first. For anything else, call <a class="rfaqtel" href="tel:5042267070">(504)&nbsp;226-7070</a>.</p>
       <a class="btn1" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
       <figure class="rpfpic" aria-hidden="true"><img src="https://images.pexels.com/photos/9431615/pexels-photo-9431615.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1000" alt="" loading="lazy"></figure>
@@ -2026,7 +2079,7 @@ body.navopen{overflow:hidden}
           <div class="svhead">
             <div>
               <p class="eyebrow">Related services</p>
-              <h2>Other Work on the Same Roof</h2>
+              <h2>Other Work on the <em>Same Roof</em></h2>
             </div>
             <p class="sintro">Each of these has its own page, and the same free&nbsp;estimate.</p>
           </div>
@@ -2045,7 +2098,7 @@ body.navopen{overflow:hidden}
       <span class="rxtnum" aria-hidden="true"><span class="count" data-to="14">14</span></span>
       <div>
         <p class="eyebrow">Service areas</p>
-        <h2>Roof Repair Across 14&nbsp;Towns</h2>
+        <h2>Roof Repair Across <em>14&nbsp;Towns</em></h2>
       </div>
     </div>
     <div class="rptside">
@@ -2074,7 +2127,7 @@ body.navopen{overflow:hidden}
 <section class="fbband fbsx">
   <div class="wrap sblock sxband">
           <div>
-            <h2>Repairing a Commercial Roof?</h2>
+            <h2>Repairing a <em>Commercial Roof</em>?</h2>
             <p class="sintro">Commercial roofs are handled under Louisiana commercial license #3667. Same phone&nbsp;number.</p>
           </div>
           <a class="sxlink" href="/commercial-roofing/roof-repair/">Commercial roof repairs <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -2089,7 +2142,7 @@ body.navopen{overflow:hidden}
       <div class="fside rise" data-anim>
         <div class="fintro">
         <p class="eyebrow">Get the number before the next storm</p>
-        <h2 class="h2">Get a Free Roof Estimate in New Orleans</h2>
+        <h2 class="h2">Get a <em>Free Roof Estimate</em> in New Orleans</h2>
         <p class="lede">A roofing estimator comes out to survey your roof and gives you a cost estimate. No charge, and no obligation to book the work.</p>
         <ul class="checks fchecks">
           <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="#1f4d43" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Licensed residential <b>#890459</b> &nbsp;+&nbsp; commercial <b>#3667</b></span></li>
