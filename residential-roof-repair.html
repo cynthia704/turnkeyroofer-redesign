@@ -1859,6 +1859,40 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
 @media(min-width:901px) and (max-width:1100px){.rpingrid{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr)}.rpinbody p{font-size:16px}}
 @media(max-width:900px){.rpingrid{grid-template-columns:1fr}.rpinbody{padding-left:22px}}
 @media(max-width:620px){.rpin{padding:54px 0}.rpinbody{padding-left:18px}.rpinbody p{font-size:16px}}
+/* ===== Process band, Sept 15: green background, icon step cards joined by arrow badges (no numbered dots on a line) ===== */
+.rxflow.rpop{position:relative;overflow:hidden;background-color:var(--forest);color:#f4efe8;
+  background-image:repeating-linear-gradient(26.57deg,rgba(244,239,232,.045) 0 1px,transparent 1px 84px)}
+.rxflow.rpop::before{content:"";position:absolute;right:-14%;top:-30%;width:62%;height:130%;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(240,180,138,.13),rgba(240,180,138,0))}
+.rpop>.wrap{position:relative;z-index:1}
+.rpop .rpophead .eyebrow{color:var(--clay2)}
+.rpop .rpophead h2{color:#fff}
+.rpop .rpophead h2 em{color:var(--clay2)}
+.rpop .rpophead .sintro{color:rgba(244,239,232,.86)}
+.rpop .rpoppic{box-shadow:0 34px 60px -34px rgba(0,0,0,.6)}
+.rpop .rpopchip{background:var(--clay);color:#fff}
+.rpop .rpopchip b{color:#fff}
+.rpst{list-style:none;margin:60px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+.rpst li{position:relative;display:flex;flex-direction:column;padding:28px 24px 26px;border-radius:var(--r);
+  background:rgba(244,239,232,.06);border:1px solid rgba(244,239,232,.14);opacity:0;transform:translateY(22px);
+  transition:opacity .6s cubic-bezier(.22,.61,.36,1) calc(var(--i) * .12s),transform .6s cubic-bezier(.22,.61,.36,1) calc(var(--i) * .12s),background-color .35s,border-color .35s}
+.rpst.in li{opacity:1;transform:none}
+.rpst li:hover{background:rgba(244,239,232,.1);border-color:rgba(240,180,138,.5)}
+.rpstic{display:grid;place-items:center;width:62px;height:62px;margin:0 0 20px;border-radius:18px;background:rgba(240,180,138,.14);
+  color:var(--clay2);transition:background-color .35s,color .35s}
+.rpst li:hover .rpstic{background:var(--clay2);color:var(--forest2)}
+.rpstic svg{width:30px;height:30px;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.rpstno{position:absolute;top:30px;right:24px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,232,.72)}
+.rpst h3{margin:0 0 8px;font-size:20px;line-height:1.25;color:#fff}
+.rpst p{margin:0;font-size:15px;line-height:1.6;color:rgba(244,239,232,.84);text-wrap:pretty}
+.rpst p b{color:#fff}
+.rpst li:not(:last-child)::after{content:"";position:absolute;z-index:2;top:44px;right:-29px;width:30px;height:30px;border-radius:50%;
+  background:var(--clay) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4'/%3E%3C/svg%3E") center/14px no-repeat;box-shadow:0 0 0 5px var(--forest)}
+@media(max-width:1000px){.rpst{grid-template-columns:repeat(2,minmax(0,1fr))}.rpst li:nth-child(2)::after{display:none}}
+@media(max-width:900px){.rpst{margin-top:44px}}
+@media(max-width:620px){.rpst{grid-template-columns:1fr}
+  .rpst li:not(:last-child)::after,.rpst li:nth-child(2)::after{display:block;top:auto;right:auto;bottom:-29px;left:50%;margin-left:-15px;transform:rotate(90deg)}}
+@media(prefers-reduced-motion:reduce){.rpst li{opacity:1;transform:none;transition:none}.rpstic{transition:none}}
 </style>
 </head>
 <body>
@@ -1997,11 +2031,11 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
       </div>
       <figure class="rpoppic rise" data-anim><img src="https://images.pexels.com/photos/37704246/pexels-photo-37704246.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Roofer kneeling on the ridge of a shingle roof" loading="lazy"><span class="rpopchip" aria-hidden="true"><b>4</b> steps</span></figure>
     </div>
-    <ol class="rxtl" data-anim>
-      <li style="--i:0"><span class="rxdot" aria-hidden="true">01</span><div><h3>Diagnosis</h3><p>A thorough assessment of your roof to find existing damage, as well as any potential&nbsp;problems.</p></div></li>
-      <li style="--i:1"><span class="rxdot" aria-hidden="true">02</span><div><h3>Estimate</h3><p>An accurate estimate of the cost to repair your roof and any related expenses, before any work is&nbsp;done.</p></div></li>
-      <li style="--i:2"><span class="rxdot" aria-hidden="true">03</span><div><h3>Repair</h3><p>Experienced professionals complete the necessary repairs using quality&nbsp;materials.</p></div></li>
-      <li style="--i:3"><span class="rxdot" aria-hidden="true">04</span><div><h3>Inspection</h3><p>A final inspection to make sure all repairs were completed&nbsp;properly.</p></div></li>
+    <ol class="rpst" data-anim>
+      <li style="--i:0"><span class="rpstic" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="14" cy="14" r="8"/><path d="m20 20 7 7"/></svg></span><span class="rpstno" aria-hidden="true">Step 01</span><h3>Diagnosis</h3><p>A thorough assessment of your roof to find existing damage, as well as any potential&nbsp;problems.</p></li>
+      <li style="--i:1"><span class="rpstic" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="8" y="6" width="16" height="22" rx="2"/><path d="M12 6V4h8v2"/><path d="M12 13h8M12 18h8M12 23h5"/></svg></span><span class="rpstno" aria-hidden="true">Step 02</span><h3>Estimate</h3><p>An accurate estimate of the cost to repair your roof and any related expenses, before any work is&nbsp;done.</p></li>
+      <li style="--i:2"><span class="rpstic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M21 5a6 6 0 0 0-7.5 7.5L5 21a2.1 2.1 0 0 0 3 3l8.5-8.5A6 6 0 0 0 27 8l-3.5 3.5-3-3z"/></svg></span><span class="rpstno" aria-hidden="true">Step 03</span><h3>Repair</h3><p>Experienced professionals complete the necessary repairs using quality&nbsp;materials.</p></li>
+      <li style="--i:3"><span class="rpstic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 4 26 8v7c0 6.5-4.2 11-10 13C10.2 26 6 21.5 6 15V8z"/><path d="m11.5 16 3 3 6-6.5"/></svg></span><span class="rpstno" aria-hidden="true">Step 04</span><h3>Inspection</h3><p>A final inspection to make sure all repairs were completed&nbsp;properly.</p></li>
     </ol>
   </div>
 </section>
