@@ -1894,6 +1894,25 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
 @media(max-width:620px){.rpst{grid-template-columns:1fr}
   .rpst li:not(:last-child)::after,.rpst li:nth-child(2)::after{display:block;top:auto;right:auto;bottom:-29px;left:50%;margin-left:-15px;transform:rotate(90deg)}}
 @media(prefers-reduced-motion:reduce){.rpst li{opacity:1;transform:none;transition:none}.rpstic{transition:none}}
+/* ===== CTA in every section, Sept 15: a full-width ruled row at the foot of sections that had none ===== */
+.rpcta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;margin-top:44px;padding-top:28px;
+  border-top:1px solid var(--line)}
+.rpcta p{margin:0;font-family:var(--disp);font-size:clamp(19px,1.8vw,24px);font-weight:600;line-height:1.3;color:var(--ink);text-wrap:balance}
+.rpctabtns{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px}
+.rpctatel{padding-bottom:2px;font-weight:700;color:var(--forest);border-bottom:2px solid var(--clay2);white-space:nowrap;transition:color .25s,border-color .25s}
+.rpctatel:hover{color:var(--clay);border-color:var(--clay)}
+.rpin .rpcta{grid-column:1 / -1;margin-top:16px}
+.rpop .rpcta{border-top-color:rgba(244,239,232,.16)}
+.rpop .rpcta p{color:#fff}
+.rpop .rpctatel{color:#fff;border-color:rgba(240,180,138,.7)}
+.rpop .rpctatel:hover{color:var(--clay2);border-color:var(--clay2)}
+@media(max-width:760px){.rpcta{flex-direction:column;align-items:flex-start;margin-top:34px;padding-top:24px}}
+/* compact review: button under the reviewer, quote spans both rows */
+.rpq .rrfeat{grid-template-rows:auto auto}
+.rpq .rrfeat blockquote{grid-column:2;grid-row:1 / span 2}
+.rpq .rrfeat .rrwho{grid-column:1;grid-row:1;align-self:end}
+.rpq .rpqbtn{grid-column:1;grid-row:2;justify-self:start;align-self:start}
+@media(max-width:760px){.rpq .rrfeat blockquote,.rpq .rrfeat .rrwho,.rpq .rpqbtn{grid-column:1;grid-row:auto}}
 </style>
 </head>
 <body>
@@ -2019,6 +2038,10 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
       <p>If your roof is old and worn out, it&rsquo;s time to replace it. The next question is which material goes on: shingle, metal, standing seam, slate or&nbsp;tile.</p>
       <p>An estimator surveys your roof and gives you a free cost estimate. Once payment is received, the roofing project is completed within 24 hours, backed by a 15-Year Unlimited Wind&nbsp;Warranty.</p>
     </div>
+    <div class="rpcta">
+      <p>Ready to price a new roof? The estimate is&nbsp;free.</p>
+      <div class="rpctabtns"><a class="btn1" href="#estimate">Get a free estimate</a><a class="rpctatel" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
+    </div>
   </div>
 </section>
 
@@ -2038,6 +2061,10 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
       <li style="--i:2"><span class="rpstic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 5 4 11l12 6 12-6z"/><path d="m4 16 12 6 12-6"/><path d="m4 21 12 6 12-6"/></svg></span><span class="rpstno" aria-hidden="true">Step 03</span><h3>Choose the Roof</h3><p>Shingle, metal, standing seam, slate or tile. The type of roof you choose affects what it&nbsp;costs.</p></li>
       <li style="--i:3"><span class="rpstic" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><path d="M16 10v6l4 3"/></svg></span><span class="rpstno" aria-hidden="true">Step 04</span><h3>Payment Starts the Clock</h3><p>Once payment is received, the roofing project is <b>completed within 24 hours</b>.</p></li>
     </ol>
+    <div class="rpcta">
+      <p>Start with step one: book an&nbsp;estimator.</p>
+      <div class="rpctabtns"><a class="btn1" href="#estimate">Get a free estimate</a><a class="rpctatel" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
+    </div>
   </div>
 </section>
 
@@ -2076,6 +2103,10 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
               <div class="rpsgtxt"><h3>Black Smudges</h3><p>Dark streaks, especially near windows or vents, can be the start of rot.</p></div>
             </li>
           </ul>
+    <div class="rpcta">
+      <p>Seeing one of these signs? Have the roof looked&nbsp;at.</p>
+      <div class="rpctabtns"><a class="btn1" href="#estimate">Get a free estimate</a><a class="rpctatel" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
+    </div>
   </div>
 </section>
 
@@ -2094,6 +2125,10 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
       <li style="--i:2"><span class="rpbnic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M26 12a10 10 0 0 0-18-3"/><path d="M8 4v5h5"/><path d="M6 20a10 10 0 0 0 18 3"/><path d="M24 28v-5h-5"/></svg></span><span class="rpbnno" aria-hidden="true">03</span><h3>End the Repair&nbsp;Cycle</h3><p>When leaks, cracks and stains keep coming back, a new roof replaces the patches with a whole new&nbsp;roof.</p></li>
       <li style="--i:3"><span class="rpbnic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 17 15 8l11 9"/><path d="M7 15v12h16V15"/><path d="M26 3v5M23.5 5.5h5"/></svg></span><span class="rpbnno" aria-hidden="true">04</span><h3>Better Curb&nbsp;Appeal</h3><p>A new roof is designed to protect your home and enhance its curb&nbsp;appeal.</p></li>
     </ul>
+    <div class="rpcta">
+      <p>See what a new roof would cost for your&nbsp;home.</p>
+      <div class="rpctabtns"><a class="btn1" href="#estimate">Get a free estimate</a><a class="rpctatel" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
+    </div>
   </div>
 </section>
 
@@ -2131,6 +2166,10 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
             <li><a href="/roofing-types/slate-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/Slate-roof-against-the-sky.webp" alt="Slate roof against the sky" loading="lazy"><span class="rxpno" aria-hidden="true">04</span><span class="rxptxt"><b>Slate</b><small class="rxpline">Natural stone, used for centuries for its durability and long&nbsp;lifespan.</small><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
             <li><a href="/roofing-types/tile-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/rooftop-made-of-tile-roofing.webp" alt="Tile roof on a house" loading="lazy"><span class="rxpno" aria-hidden="true">05</span><span class="rxptxt"><b>Tile</b><small class="rxpline">Clay and concrete tile, put on by a team that specializes in tile&nbsp;roofs.</small><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
           </ul>
+    <div class="rpcta">
+      <p>Not sure which roof to choose? Ask the&nbsp;estimator.</p>
+      <div class="rpctabtns"><a class="btn1" href="#estimate">Get a free estimate</a><a class="rpctatel" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
+    </div>
   </div>
 </section>
 
@@ -2139,6 +2178,7 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
           <figure class="rrfeat">
             <blockquote>&ldquo;As a property manager responsible for multiple residential buildings, I often encounter various roofing issues that require immediate attention. This company has been my go-to roofing company for years, and they have never disappointed. Whether it’s repairing hail damage, replacing an aging roof, or conducting routine inspections, their team consistently delivers top-notch service. If you’re in need of reliable roofing solutions for residential properties, look no further than TurnKey Roofer.&rdquo;</blockquote>
             <figcaption class="rrwho"><span class="rrav" aria-hidden="true">MD</span><span><b>Michael Davis</b><span>Property manager &middot; Multiple buildings</span></span></figcaption>
+            <a class="btn1 rpqbtn" href="#estimate">Get a free estimate</a>
           </figure>
   </div>
 </section>
@@ -2178,6 +2218,10 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
             <li><a href="/residential-roofing/hail-damage-roof-repair/"><span class="rxrno" aria-hidden="true">03</span><span class="rxrpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Damaged-roof-tiles-with-Hail-768x512.jpg" alt="Hailstones on damaged roof tiles" loading="lazy"></span><h3>Hail Damage Roof Repair</h3><p>We inspect your roof and give you an estimate for the cost of the hail damage&nbsp;repairs.</p><span class="rxrgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
             <li><a href="/residential-roofing/roof-leak-detection/"><span class="rxrno" aria-hidden="true">04</span><span class="rxrpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/House-Thermovision-Detection-768x654.jpg" alt="Thermal camera checking a house for roof leaks" loading="lazy"></span><h3>Roof Leak&nbsp;Detection</h3><p>Pinpointing the source of a roof leak with a thorough inspection of your&nbsp;roof.</p><span class="rxrgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
           </ol>
+    <div class="rpcta">
+      <p>Not sure what you need? Call and describe the&nbsp;problem.</p>
+      <div class="rpctabtns"><a class="btn1" href="#estimate">Get a free estimate</a><a class="rpctatel" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
+    </div>
   </div>
 </section>
 

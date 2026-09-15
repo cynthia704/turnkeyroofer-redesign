@@ -1893,6 +1893,25 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
 @media(max-width:620px){.rpst{grid-template-columns:1fr}
   .rpst li:not(:last-child)::after,.rpst li:nth-child(2)::after{display:block;top:auto;right:auto;bottom:-29px;left:50%;margin-left:-15px;transform:rotate(90deg)}}
 @media(prefers-reduced-motion:reduce){.rpst li{opacity:1;transform:none;transition:none}.rpstic{transition:none}}
+/* ===== CTA in every section, Sept 15: a full-width ruled row at the foot of sections that had none ===== */
+.rpcta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;margin-top:44px;padding-top:28px;
+  border-top:1px solid var(--line)}
+.rpcta p{margin:0;font-family:var(--disp);font-size:clamp(19px,1.8vw,24px);font-weight:600;line-height:1.3;color:var(--ink);text-wrap:balance}
+.rpctabtns{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px}
+.rpctatel{padding-bottom:2px;font-weight:700;color:var(--forest);border-bottom:2px solid var(--clay2);white-space:nowrap;transition:color .25s,border-color .25s}
+.rpctatel:hover{color:var(--clay);border-color:var(--clay)}
+.rpin .rpcta{grid-column:1 / -1;margin-top:16px}
+.rpop .rpcta{border-top-color:rgba(244,239,232,.16)}
+.rpop .rpcta p{color:#fff}
+.rpop .rpctatel{color:#fff;border-color:rgba(240,180,138,.7)}
+.rpop .rpctatel:hover{color:var(--clay2);border-color:var(--clay2)}
+@media(max-width:760px){.rpcta{flex-direction:column;align-items:flex-start;margin-top:34px;padding-top:24px}}
+/* compact review: button under the reviewer, quote spans both rows */
+.rpq .rrfeat{grid-template-rows:auto auto}
+.rpq .rrfeat blockquote{grid-column:2;grid-row:1 / span 2}
+.rpq .rrfeat .rrwho{grid-column:1;grid-row:1;align-self:end}
+.rpq .rpqbtn{grid-column:1;grid-row:2;justify-self:start;align-self:start}
+@media(max-width:760px){.rpq .rrfeat blockquote,.rpq .rrfeat .rrwho,.rpq .rpqbtn{grid-column:1;grid-row:auto}}
 </style>
 </head>
 <body>
@@ -2018,6 +2037,10 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
       <p>We handle everything from small repairs, like patching a damaged area, to larger restorations, on asphalt shingles, metal, tile and&nbsp;more.</p>
       <p>A leaking or damaged roof can cause further damage if it isn&rsquo;t taken care of promptly. We also give preventative maintenance recommendations that help extend the life of your&nbsp;roof.</p>
     </div>
+    <div class="rpcta">
+      <p>Found a leak or damage? The estimate is&nbsp;free.</p>
+      <div class="rpctabtns"><a class="btn1" href="#estimate">Get a free estimate</a><a class="rpctatel" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
+    </div>
   </div>
 </section>
 
@@ -2037,6 +2060,10 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
       <li style="--i:2"><span class="rpstic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M21 5a6 6 0 0 0-7.5 7.5L5 21a2.1 2.1 0 0 0 3 3l8.5-8.5A6 6 0 0 0 27 8l-3.5 3.5-3-3z"/></svg></span><span class="rpstno" aria-hidden="true">Step 03</span><h3>Repair</h3><p>Experienced professionals complete the necessary repairs using quality&nbsp;materials.</p></li>
       <li style="--i:3"><span class="rpstic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 4 26 8v7c0 6.5-4.2 11-10 13C10.2 26 6 21.5 6 15V8z"/><path d="m11.5 16 3 3 6-6.5"/></svg></span><span class="rpstno" aria-hidden="true">Step 04</span><h3>Inspection</h3><p>A final inspection to make sure all repairs were completed&nbsp;properly.</p></li>
     </ol>
+    <div class="rpcta">
+      <p>Start with step one: a diagnosis of your&nbsp;roof.</p>
+      <div class="rpctabtns"><a class="btn1" href="#estimate">Get a free estimate</a><a class="rpctatel" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
+    </div>
   </div>
 </section>
 
@@ -2067,6 +2094,10 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
               <div class="rpsgtxt"><h3>Age</h3><p>Depending on the material, an older roof may be due for repair or&nbsp;replacement.</p></div>
             </li>
           </ul>
+    <div class="rpcta">
+      <p>Seeing one of these signs? Have the roof looked&nbsp;at.</p>
+      <div class="rpctabtns"><a class="btn1" href="#estimate">Get a free estimate</a><a class="rpctatel" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
+    </div>
   </div>
 </section>
 
@@ -2085,6 +2116,10 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
       <li style="--i:2"><span class="rpbnic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 4 26 8v7c0 6.5-4.2 11-10 13C10.2 26 6 21.5 6 15V8z"/><path d="m11.5 16 3 3 6-6.5"/></svg></span><span class="rpbnno" aria-hidden="true">03</span><h3>Guards Against&nbsp;Mold</h3><p>A sound roof protects your home from mold and mildew&nbsp;buildup.</p></li>
       <li style="--i:3"><span class="rpbnic" aria-hidden="true"><svg viewBox="0 0 32 32"><ellipse cx="16" cy="8" rx="9" ry="3.5"/><path d="M7 8v5c0 1.9 4 3.5 9 3.5s9-1.6 9-3.5V8"/><path d="M7 13v5c0 1.9 4 3.5 9 3.5s9-1.6 9-3.5v-5"/><path d="M7 18v5c0 1.9 4 3.5 9 3.5s9-1.6 9-3.5v-5"/></svg></span><span class="rpbnno" aria-hidden="true">04</span><h3>Saves Money Long&nbsp;Term</h3><p>Fixing the damage early can save you money in the long&nbsp;run.</p></li>
     </ul>
+    <div class="rpcta">
+      <p>Repair it early and keep the damage&nbsp;small.</p>
+      <div class="rpctabtns"><a class="btn1" href="#estimate">Get a free estimate</a><a class="rpctatel" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
+    </div>
   </div>
 </section>
 
@@ -2120,6 +2155,10 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
             <li><a href="/roofing-types/metal-roof/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/metal-roofing.jpg" alt="Metal roof on a house" loading="lazy"><span class="rxpno" aria-hidden="true">02</span><span class="rxptxt"><b>Metal Roofs</b><small class="rxpline">Superior durability and protection against the elements. We can help you maintain&nbsp;yours.</small><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
             <li><a href="/roofing-types/tile-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/rooftop-made-of-tile-roofing.webp" alt="Tile roof on a house" loading="lazy"><span class="rxpno" aria-hidden="true">03</span><span class="rxptxt"><b>Tile Roofs</b><small class="rxpline">Repair services as well as preventative maintenance options for tile&nbsp;roofs.</small><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
           </ul>
+    <div class="rpcta">
+      <p>Not sure what your roof is made of? Ask the&nbsp;estimator.</p>
+      <div class="rpctabtns"><a class="btn1" href="#estimate">Get a free estimate</a><a class="rpctatel" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
+    </div>
   </div>
 </section>
 
@@ -2128,6 +2167,7 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
           <figure class="rrfeat">
             <blockquote>&ldquo;After a recent storm, my home&rsquo;s roof suffered extensive hail damage, leaving me worried about the structural integrity of my property. I contacted this company based on a friend&rsquo;s recommendation, and I couldn&rsquo;t be happier with the results. Their team conducted a thorough assessment of the damage and provided a detailed plan for repairing and restoring my roof. If you&rsquo;re dealing with roof damage, don&rsquo;t hesitate to enlist their services.&rdquo;</blockquote>
             <figcaption class="rrwho"><span class="rrav" aria-hidden="true">IG</span><span><b>Irish Grand</b><span>Hail damage &middot; Residential</span></span></figcaption>
+            <a class="btn1 rpqbtn" href="#estimate">Get a free estimate</a>
           </figure>
   </div>
 </section>
@@ -2167,6 +2207,10 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
             <li><a href="/residential-roofing/hail-damage-roof-repair/"><span class="rxrno" aria-hidden="true">03</span><span class="rxrpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Damaged-roof-tiles-with-Hail-768x512.jpg" alt="Hailstones on damaged roof tiles" loading="lazy"></span><h3>Hail Damage Roof Repair</h3><p>We inspect your roof and give you an estimate for the cost of the hail damage&nbsp;repairs.</p><span class="rxrgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
             <li><a href="/residential-roofing/roof-inspection/"><span class="rxrno" aria-hidden="true">04</span><span class="rxrpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/asphalt-roof-768x512.jpg" alt="Close view of an asphalt shingle roof and dormer" loading="lazy"></span><h3>Roof Inspection</h3><p>Unbiased roof inspections and detailed roof condition&nbsp;reports.</p><span class="rxrgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
           </ol>
+    <div class="rpcta">
+      <p>Not sure what you need? Call and describe the&nbsp;problem.</p>
+      <div class="rpctabtns"><a class="btn1" href="#estimate">Get a free estimate</a><a class="rpctatel" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
+    </div>
   </div>
 </section>
 
