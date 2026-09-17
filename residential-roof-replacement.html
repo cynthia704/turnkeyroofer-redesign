@@ -1771,7 +1771,7 @@ body.navopen{overflow:hidden}
 @media(prefers-reduced-motion:reduce){.rpbl li{opacity:1;transform:none;transition:none}.rpbl path{stroke-dashoffset:0;transition:none}.rxptxt .rxpline{transition:none}}
 /* FAQ, Sept 15: a photo fills the heading column down to the last question, so there is no empty block under the
    call button. It stops growing at 440px when answers are opened, and is hidden once the columns stack. */
-@media(min-width:901px){
+@media(width>900px){
   .rpfaq .rxfgrid{align-items:stretch}
   .rpfaq .rxfhead{position:static;display:flex;flex-direction:column;align-items:flex-start}
   .rpfpic{position:relative;flex:1 1 auto;align-self:stretch;min-height:150px;max-height:440px;margin:30px 0 0;overflow:hidden;
@@ -1843,7 +1843,7 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
   font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 10px 24px -12px rgba(0,0,0,.55)}
 .rpopchip b{color:var(--clay2);font-weight:500}
 .rpop .rxtl{margin-top:60px}
-@media(min-width:901px) and (max-width:1280px){.rpoppic{aspect-ratio:16/6}}
+@media(width>900px) and (max-width:1280px){.rpoppic{aspect-ratio:16/6}}
 @media(max-width:900px){.rpophead{grid-template-columns:1fr}.rpoppic{aspect-ratio:21/9}.rpop .rxtl{margin-top:44px}}
 @media(max-width:620px){.rxflow.rpop{padding:64px 0}.rpoppic{aspect-ratio:16/9}}
 @media(prefers-reduced-motion:reduce){.rpoppic img{transition:none}.rpoppic:hover img{transform:none}}
@@ -1856,8 +1856,8 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
 .rpinbody{padding-left:30px;border-left:3px solid var(--clay)}
 .rpinbody p{margin:0 0 14px;font-size:17px;line-height:1.7;color:var(--ink2);text-wrap:pretty}
 .rpinbody p:last-child{margin-bottom:0}
-@media(min-width:901px) and (max-width:1280px){.rpingrid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:26px 56px}}
-@media(min-width:901px) and (max-width:1100px){.rpingrid{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr)}.rpinbody p{font-size:16px}}
+@media(width>900px) and (max-width:1280px){.rpingrid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:26px 56px}}
+@media(width>900px) and (max-width:1100px){.rpingrid{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr)}.rpinbody p{font-size:16px}}
 @media(max-width:900px){.rpingrid{grid-template-columns:1fr}.rpinbody{padding-left:22px}}
 @media(max-width:620px){.rpin{padding:54px 0}.rpinbody{padding-left:18px}.rpinbody p{font-size:16px}}
 /* ===== Process band, Sept 15: green background, icon step cards joined by arrow badges (no numbered dots on a line) ===== */
