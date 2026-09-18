@@ -1764,15 +1764,27 @@ body.navopen{overflow:hidden}
 @media(max-width:340px){.lc-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.lc-tab,.lc-grid a,.lc-grid a svg{transition:none}.lc-grid a:hover svg{transform:none}}
 
-.lc-local{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:40px 60px;align-items:center}
-.lc-local .btn1{display:inline-block;margin-top:26px}
+.lc-photobg{position:relative;isolation:isolate}
+.lc-photobg::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--bg) center/cover no-repeat}
+.lc-photobg::after{content:"";position:absolute;inset:0;z-index:-1}
+.lc-dark.lc-photobg::after{background:linear-gradient(90deg,rgba(23,58,51,.96) 0%,rgba(23,58,51,.9) 45%,rgba(23,58,51,.8) 100%)}
+.lc-light.lc-photobg::after{background:rgba(251,247,242,.9)}
+.lc-light .lc-grid a{background:#fff;box-shadow:0 10px 24px -18px rgba(23,58,51,.45)}
+.lc-light .lc-grid a:hover{background:#fff}
+.lc-local{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:36px 60px;align-items:stretch}
+.lc-localt{display:flex;flex-direction:column;gap:24px}
+.lc-lrow{display:flex;flex-wrap:wrap;align-items:center;gap:14px 16px}
+.lc-lrow .lc-chips{margin:0}
+.lc-lpic{margin:0;flex:1 1 auto;min-height:100px;position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(244,239,232,.16)}
+.lc-lpic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lc-local .btn1{display:inline-block}
 .lc-lcards{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.lc-lcards li{padding:24px 22px 22px;border-radius:18px;background:rgba(244,239,232,.06);border:1px solid rgba(244,239,232,.16)}
+.lc-lcards li{padding:22px 22px 20px;background:rgba(23,58,51,.55)!important;backdrop-filter:blur(2px);border-radius:18px;background:rgba(244,239,232,.06);border:1px solid rgba(244,239,232,.16)}
 .lc-lcards .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:var(--clay);color:#fff;margin-bottom:16px}
 .lc-lcards .ic svg{width:24px;height:24px}
 .lc-lcards b{display:block;font-family:var(--disp);font-size:20px;font-weight:600;color:#fff;margin:0 0 6px;line-height:1.25}
 .lc-lcards span{display:block;font-size:15px;line-height:1.6;color:rgba(244,239,232,.82)}
-@media(max-width:1000px){.lc-local{grid-template-columns:1fr}}
+@media(max-width:1000px){.lc-local{grid-template-columns:1fr}.lc-localt{gap:22px}.lc-lpic{flex:none;aspect-ratio:16/8;min-height:0}}
 @media(max-width:560px){.lc-lcards{grid-template-columns:1fr}}
 
 .lc-ab1{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:36px 56px;align-items:center;margin:0 0 56px}
@@ -1786,27 +1798,26 @@ body.navopen{overflow:hidden}
 .lc-abkv span{font-weight:600;color:var(--ink)}
 .lc-maplink{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-weight:700;color:var(--forest);border-bottom:1.5px solid rgba(168,85,42,.45)}
 .lc-maplink:hover{color:var(--clay)}
-.lc-todo{list-style:none;margin:0 0 56px;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.lc-todo{list-style:none;margin:0 0 56px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 .lc-todo li{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
 .lc-todo figure{margin:0}
-.lc-todo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.lc-todo img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
 .lc-todo figcaption{display:none}
-.lc-todo div{padding:18px 20px 20px}
-.lc-todo b{display:block;font-family:var(--disp);font-size:20px;font-weight:600;line-height:1.25;margin:0 0 6px}
+.lc-todo div{padding:20px 24px 22px}
+.lc-todo b{display:block;font-family:var(--disp);font-size:22px;font-weight:600;line-height:1.25;margin:0 0 6px}
 .lc-todo span{display:block;font-size:15px;line-height:1.55;color:var(--ink2)}
 .lc-ab3{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.lc-ab3>div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 28px}
+.lc-ab3>div{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.lc-ab3pic{margin:0;flex:1 1 auto;min-height:240px;position:relative}.lc-ab3pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lc-ab3t{padding:24px 28px 26px}
 .lc-facts{list-style:none;margin:0;padding:0;counter-reset:fa}
 .lc-facts li{position:relative;padding:12px 0 12px 44px;border-top:1px solid var(--line);font-size:15.5px;line-height:1.6;color:var(--ink2);counter-increment:fa}
 .lc-facts li:first-child{border-top:0;padding-top:4px}
 .lc-facts li::before{content:counter(fa,decimal-leading-zero);position:absolute;left:0;top:12px;font-family:var(--disp);font-weight:700;font-size:18px;color:var(--clay)}
 .lc-facts li:first-child::before{top:4px}
-.lc-credits{margin:26px 0 0;font-size:12px;line-height:1.7;color:var(--ink3)}
-.lc-credits a{text-decoration:underline;text-underline-offset:2px}
-@media(max-width:1100px){.lc-todo{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:1000px){.lc-ab1{grid-template-columns:1fr}}
 @media(max-width:760px){.lc-ab3{grid-template-columns:1fr}}
-@media(max-width:520px){.lc-todo{grid-template-columns:1fr}.lc-ab3>div{padding:22px 20px}}
+@media(max-width:620px){.lc-todo{grid-template-columns:1fr}.lc-ab3t{padding:20px 20px 22px}}
 </style>
 </head>
 <body>
@@ -1882,7 +1893,7 @@ body.navopen{overflow:hidden}
 <section class="shero mhero lc-hero">
   <div class="mhbg" aria-hidden="true">
     <img class="mhs on" src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="" fetchpriority="high">
-    <img class="mhs" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Lafreniere_Park_from_across_West_Napoleon_Avenue%2C_Metairie%2C_Louisiana_June_2025_-_1.jpg/1920px-Lafreniere_Park_from_across_West_Napoleon_Avenue%2C_Metairie%2C_Louisiana_June_2025_-_1.jpg" alt="" loading="lazy">
+    <img class="mhs" src="https://images.pexels.com/photos/209315/pexels-photo-209315.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="" loading="lazy">
     <img class="mhs" src="https://images.pexels.com/photos/10854909/pexels-photo-10854909.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="" loading="lazy">
   </div>
   <button class="mhpause" type="button" aria-pressed="false" aria-label="Pause the background photos"><svg class="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="8.5" y="2" width="3" height="10" rx="1" fill="currentColor"/></svg><svg class="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6a.6.6 0 0 0 .9.5l7.4-4.8a.6.6 0 0 0 0-1L4.9 1.7a.6.6 0 0 0-.9.5z" fill="currentColor"/></svg></button>
@@ -1940,7 +1951,7 @@ body.navopen{overflow:hidden}
   </div>
 </section>
 
-<section class="lc-sec lc-white lc-svc">
+<section class="lc-sec lc-svc lc-light lc-photobg" style="--bg:url(https://images.pexels.com/photos/3997060/pexels-photo-3997060.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920)">
   <div class="wrap">
     <div class="lc-head">
       <div>
@@ -2027,13 +2038,16 @@ body.navopen{overflow:hidden}
   </div>
 </section>
 
-<section class="lc-sec lc-dark">
+<section class="lc-sec lc-dark lc-photobg" style="--bg:url(https://images.pexels.com/photos/7937283/pexels-photo-7937283.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920)">
   <div class="wrap lc-local">
-    <div>
+    <div class="lc-localt">
+      <div>
       <p class="eyebrow">Why local matters</p>
       <h2>Why Hire a <em>Local Roofer</em></h2>
       <p class="lc-p">A roofer who works in Metairie knows what the weather here does to a roof, and what the local codes&nbsp;require.</p>
-      <a class="btn1" href="#estimate">Get a free estimate</a>
+      </div>
+      <div class="lc-lrow"><a class="btn1" href="#estimate">Get a free estimate</a><ul class="lc-chips"><li>Residential #890459</li><li>Commercial #3667</li></ul></div>
+      <figure class="lc-lpic"><img src="https://images.pexels.com/photos/26612731/pexels-photo-26612731.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Dark shingle roof above a brick wall and chimney" loading="lazy"></figure>
     </div>
     <ul class="lc-lcards">
         <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 4a2.5 2.5 0 0 1 5 0v10.5a4.5 4.5 0 1 1-5 0z"/><path d="M12.5 9v7"/></svg></span><b>Knows the&nbsp;Climate</b><span>Local roofers know the weather here and the materials that hold up to&nbsp;it.</span></li>
@@ -2078,32 +2092,31 @@ body.navopen{overflow:hidden}
         <p class="lc-p">Metairie is a suburb in Jefferson Parish, just west of New Orleans. It started as a small community along the Metairie Ridge and grew into a busy residential and commercial area, with a mix of suburban quiet and city&nbsp;amenities.</p>
         <ul class="lc-abkv"><li><small>Parish</small><span>Jefferson Parish</span></li><li><small>Location</small><span>Just west of New&nbsp;Orleans</span></li></ul>
       </div>
-      <figure class="lc-abpic"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Metairie_Louisiana_water_tower_8_March_2023_-_3.jpg/1280px-Metairie_Louisiana_water_tower_8_March_2023_-_3.jpg" alt="The Jefferson Parish water tower in Metairie" loading="lazy"><figcaption>The Jefferson Parish water tower in Metairie</figcaption></figure>
+      <figure class="lc-abpic"><img src="https://images.pexels.com/photos/28385865/pexels-photo-28385865.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Tree-lined suburban street on a sunny day" loading="lazy"></figure>
     </div>
     <h3 class="lc-abh">Things to Do in Metairie</h3>
     <ul class="lc-todo">
-      <li><figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Lafreniere_Park%2C_Metairie_Louisiana_-_9.83.jpg/960px-Lafreniere_Park%2C_Metairie_Louisiana_-_9.83.jpg" alt="Lake and walking path at Lafreniere Park" loading="lazy"></figure><div><b>Lafreniere Park</b><span>About 155 acres of walking trails, fishing ponds, picnic areas and&nbsp;playgrounds.</span></div></li>
-      <li><figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Lakeside_Mall_from_Causeway_Blvd%2C_Metairie%2C_Louisiana%2C_8_March_2023_-_1.jpg/960px-Lakeside_Mall_from_Causeway_Blvd%2C_Metairie%2C_Louisiana%2C_8_March_2023_-_1.jpg" alt="Lakeside Shopping Center seen from Causeway Boulevard" loading="lazy"></figure><div><b>Lakeside Shopping Center</b><span>One of the largest shopping malls in the New Orleans area, with stores and&nbsp;restaurants.</span></div></li>
-      <li><figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Mardi_Gras_in_Metairie_Louisiana_2006_04.jpg/960px-Mardi_Gras_in_Metairie_Louisiana_2006_04.jpg" alt="Mardi Gras float rolling through Metairie" loading="lazy"></figure><div><b>Mardi Gras Parades</b><span>Metairie rolls its own Mardi Gras parades, with floats, music and local&nbsp;tradition.</span></div></li>
-      <li><figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/CBD_Lot_Magazine_St_WWII_Museum.JPG/960px-CBD_Lot_Magazine_St_WWII_Museum.JPG" alt="The National WWII Museum building in New Orleans" loading="lazy"></figure><div><b>The National WWII Museum</b><span>A short drive away in New Orleans, with exhibits on World War&nbsp;II.</span></div></li>
+      <li><figure><img src="https://images.pexels.com/photos/6364085/pexels-photo-6364085.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Wooden footbridge over a park pond" loading="lazy"></figure><div><b>Lafreniere Park</b><span>About 155 acres of walking trails, fishing ponds, picnic areas and&nbsp;playgrounds.</span></div></li>
+      <li><figure><img src="https://images.pexels.com/photos/16155275/pexels-photo-16155275.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Modern shopping center entrance with palm trees" loading="lazy"></figure><div><b>Lakeside Shopping Center</b><span>One of the largest shopping malls in the New Orleans area, with stores and&nbsp;restaurants.</span></div></li>
+      <li><figure><img src="https://images.pexels.com/photos/8405007/pexels-photo-8405007.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Mardi Gras mask and beads" loading="lazy"></figure><div><b>Mardi Gras Parades</b><span>Metairie rolls its own Mardi Gras parades, with floats, music and local&nbsp;tradition.</span></div></li>
+      <li><figure><img src="https://images.pexels.com/photos/27571818/pexels-photo-27571818.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Vintage propeller aircraft on display" loading="lazy"></figure><div><b>The National WWII Museum</b><span>A short drive away in New Orleans, with exhibits on World War&nbsp;II.</span></div></li>
     </ul>
     <div class="lc-ab3">
-      <div>
+      <div><figure class="lc-ab3pic"><img src="https://images.pexels.com/photos/6761002/pexels-photo-6761002.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Live oaks draped in Spanish moss" loading="lazy"></figure><div class="lc-ab3t">
         <h3 class="lc-abh">Interesting Facts</h3>
         <ol class="lc-facts">
           <li>The name comes from the French word <i>métairie</i>, a farm or small&nbsp;estate.</li>
           <li>It began as a small community along the Metairie&nbsp;Ridge.</li>
           <li>It grew from a rural area into a busy suburb in the mid&#8209;1900s.</li>
         </ol>
-      </div>
-      <div>
+      </div></div>
+      <div><figure class="lc-ab3pic"><img src="https://images.pexels.com/photos/12542477/pexels-photo-12542477.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Tree-lined road in a quiet neighborhood" loading="lazy"></figure><div class="lc-ab3t">
         <h3 class="lc-abh">Getting Around</h3>
         <p class="lc-p">Jefferson Transit (JeT) buses serve Jefferson Parish, with routes that connect toward New Orleans. Most trips here are by car, and rideshare and taxis are easy to&nbsp;find.</p>
         <ul class="lc-abkv"><li><small>Nearby</small><span>Kenner, Harahan, River Ridge and New&nbsp;Orleans</span></li></ul>
         <a class="lc-maplink" href="https://www.google.com/maps/place/Metairie,+LA" target="_blank" rel="noopener">View Metairie on Google Maps <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
+      </div></div>
     </div>
-    <p class="lc-credits">Photos from Wikimedia Commons: <a href="https://commons.wikimedia.org/wiki/File:Lafreniere_Park_from_across_West_Napoleon_Avenue,_Metairie,_Louisiana_June_2025_-_1.jpg" target="_blank" rel="noopener">Lafreniere Park from across West Napoleon Avenue, Metairie, Louisiana June 2025 - 1</a> by Infrogmation (CC BY-SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:Lafreniere_Park,_Metairie_Louisiana_-_9.83.jpg" target="_blank" rel="noopener">Lafreniere Park, Metairie Louisiana - 9.83</a> by Jesse James (CC BY 2.0); <a href="https://commons.wikimedia.org/wiki/File:Lakeside_Mall_from_Causeway_Blvd,_Metairie,_Louisiana,_8_March_2023_-_1.jpg" target="_blank" rel="noopener">Lakeside Mall from Causeway Blvd, Metairie, Louisiana, 8 March 2023 - 1</a> by Infrogmation of New Orleans (CC BY-SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:Mardi_Gras_in_Metairie_Louisiana_2006_04.jpg" target="_blank" rel="noopener">Mardi Gras in Metairie Louisiana 2006 04</a> by holga_new_orleans (CC BY 2.0); <a href="https://commons.wikimedia.org/wiki/File:CBD_Lot_Magazine_St_WWII_Museum.JPG" target="_blank" rel="noopener">CBD Lot Magazine St WWII Museum</a> by Infrogmation of New Orleans (CC BY-SA 3.0); <a href="https://commons.wikimedia.org/wiki/File:Metairie_Louisiana_water_tower_8_March_2023_-_3.jpg" target="_blank" rel="noopener">Metairie Louisiana water tower 8 March 2023 - 3</a> by Infrogmation of New Orleans (CC BY-SA 4.0).</p>
   </div>
 </section>
 
