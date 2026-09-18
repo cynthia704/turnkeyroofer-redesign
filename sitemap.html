@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="TurnKey Roofer is a local, family-owned roofing company for homes and businesses in New Orleans, licensed in Louisiana: residential #890459, commercial #3667.">
-<title>A Family-Owned New Orleans Roofer | TurnKey Roofer</title>
+<meta name="description" content="Every page on the TurnKey Roofer site: residential and commercial roofing, roofing types, soffit, 14 service areas and all blog posts.">
+<title>Sitemap | TurnKey Roofer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Public+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -1614,6 +1614,88 @@ body.navopen{overflow:hidden}
 .fpbody::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:56px;pointer-events:none;
   background:linear-gradient(0deg,var(--forest) 0%,rgba(31,77,67,0) 100%)}
 @media(max-width:560px){.fpbody{padding:20px 20px 18px}}
+
+/* ===== one-off nav pages (contact, testimonials, wind warranty), September 18, 2026 ===== */
+.rsteps.rsplain li::after{display:none}
+.ctareas{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.ctareas a{display:inline-flex;align-items:center;min-height:44px;padding:9px 18px;background:#fff;border:1px solid var(--line);border-radius:100px;
+  font-weight:600;font-size:15px;color:var(--ink);transition:border-color .2s,color .2s}
+.ctareas a:hover{border-color:var(--clay);color:var(--clay)}
+.ctareas a:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.ctareas li:first-child a{background:var(--forest);border-color:var(--forest);color:#fff}
+.tmgrid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.tmgrid>li{display:flex;flex-direction:column;padding:26px 24px 22px;background:#fff;border:1px solid var(--line);border-radius:16px}
+.tmgrid blockquote{margin:0 0 22px;font-family:var(--disp);font-size:17px;line-height:1.55;color:var(--ink);text-wrap:pretty}
+.tmgrid .rrwho{margin:auto 0 0}
+.tmgrid>li.tmwide{grid-column:span 2}
+.tmgrid>li.tmwide blockquote{font-size:20px}
+.tmtag{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);display:flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--clay)}
+.tmtag:hover{color:var(--forest)}
+.tmtag svg{flex:none;transition:transform .3s}
+.tmtag:hover svg{transform:translateX(4px)}
+.tmgrid>li.tmcta{background:var(--forest);border-color:var(--forest);color:#f4efe8;justify-content:center}
+.tmcta .eyebrow{color:var(--clay2);margin:0 0 12px}
+.tmcta h3{color:#fff;font-size:24px;line-height:1.2;margin:0 0 10px}
+.tmcta p:not(.eyebrow){margin:0 0 22px;font-size:15.5px;line-height:1.6;color:rgba(244,239,232,.86)}
+.tmcta .btn1{align-self:flex-start}
+@media(max-width:1000px){.tmgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.tmgrid{grid-template-columns:1fr}.tmgrid>li.tmwide{grid-column:auto}}
+@media(prefers-reduced-motion:reduce){.ctareas a,.tmtag svg{transition:none}.tmtag:hover svg{transform:none}}
+
+/* ===== utility pages (blog, sitemap, thank you), September 18, 2026 ===== */
+.bgfeat{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.bgfeat figure{margin:0;min-height:340px;position:relative}
+.bgfeat figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bgfeat>div{padding:38px 40px;display:flex;flex-direction:column;justify-content:center}
+.bgfeat h3{font-size:clamp(24px,2.3vw,32px);line-height:1.18;margin:10px 0 14px}
+.bgfeat h3 a:hover{color:var(--clay)}
+.bgfeat p.bglead{margin:0 0 22px;font-size:16.5px;line-height:1.65;color:var(--ink2)}
+.bgfeat .btn1{align-self:flex-start}
+.bgmeta{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+.bgmeta b{font-weight:500;color:var(--clay)}
+.bgfilter{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}
+.bgfilter button{min-height:44px;padding:9px 18px;border-radius:100px;border:1.5px solid var(--line);background:#fff;font:inherit;font-size:15px;font-weight:600;color:var(--ink);cursor:pointer;
+  transition:border-color .2s,background .2s,color .2s}
+.bgfilter button small{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.1em;margin-left:6px;color:var(--ink3)}
+.bgfilter button[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:#fff}
+.bgfilter button[aria-pressed="true"] small{color:rgba(255,255,255,.75)}
+.bgfilter button:hover{border-color:var(--clay)}
+.bgfilter button:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.bggrid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.bggrid li{display:flex}
+.bggrid li[hidden]{display:none}
+.bggrid a{display:flex;flex-direction:column;width:100%;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;color:inherit;transition:border-color .2s,transform .25s}
+.bggrid a:hover{border-color:var(--clay);transform:translateY(-3px)}
+.bggrid a:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.bggrid img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.bggrid .bgbody{display:flex;flex-direction:column;flex:1;padding:18px 20px 20px}
+.bggrid h3{font-size:19px;line-height:1.3;margin:10px 0 8px}
+.bggrid p{margin:0 0 16px;font-size:14.5px;line-height:1.6;color:var(--ink2)}
+.bggo{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--clay)}
+.bggo svg{transition:transform .3s}
+.bggrid a:hover .bggo svg{transform:translateX(4px)}
+@media(max-width:1000px){.bgfeat{grid-template-columns:1fr}.bgfeat figure{min-height:0;aspect-ratio:16/9}.bgfeat>div{padding:28px 26px}.bggrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.bggrid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.bggrid a,.bggo svg,.bgfilter button{transition:none}.bggrid a:hover{transform:none}}
+
+.smgrid{columns:3;column-gap:18px}            /* stacked columns: no gaps under short groups */
+.smgrid .smcol{break-inside:avoid;margin:0 0 18px}
+.smcol{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 26px 20px}
+.smcol h3{font-size:21px;margin:0 0 4px}
+.smcol h3 a:hover{color:var(--clay)}
+.smcol ul{list-style:none;margin:10px 0 0;padding:0}
+.smcol li{border-top:1px solid var(--line)}
+.smcol li a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;padding:9px 0;font-size:15px;color:var(--ink)}
+.smcol li a:hover{color:var(--clay)}
+.smcol li a svg{flex:none;opacity:.45}
+.smcount{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+.smposts{columns:2;column-gap:28px}
+.smposts li{break-inside:avoid}
+@media(max-width:1000px){.smgrid{columns:2}}
+@media(max-width:640px){.smgrid{columns:1}.smposts{columns:1}}
+
+.tyhero .shcta .btn2{background:transparent}
 </style>
 </head>
 <body>
@@ -1630,7 +1712,7 @@ body.navopen{overflow:hidden}
     <nav class="nav" aria-label="Main">
       <ul class="navlist">
         <li><a href="/">Home</a></li>
-        <li class="hassub"><a href="/about/" aria-current="page">About</a><button class="subtog" type="button" aria-expanded="false" aria-label="About pages"><svg viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <li class="hassub"><a href="/about/">About</a><button class="subtog" type="button" aria-expanded="false" aria-label="About pages"><svg viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <ul class="sub"><li><a href="/the-team/">The Team</a></li></ul></li>
         <li><a href="/roof-insurance-claims/">Roof Insurance Claims</a></li>
         <li class="hassub"><a href="/residential-roofing/">Residential</a><button class="subtog" type="button" aria-expanded="false" aria-label="Residential pages"><svg viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -1665,7 +1747,7 @@ body.navopen{overflow:hidden}
   </div>
   <nav class="mnav-links" aria-label="Main">
     <a href="/">Home</a>
-    <details class="mgrp" open><summary>About</summary><div class="msub"><a href="/about/" aria-current="page">All about us</a><a href="/the-team/">The Team</a></div></details>
+    <details class="mgrp"><summary>About</summary><div class="msub"><a href="/about/">All about us</a><a href="/the-team/">The Team</a></div></details>
     <a href="/roof-insurance-claims/">Roof Insurance Claims</a>
     <details class="mgrp"><summary>Residential</summary><div class="msub"><a href="/residential-roofing/">All residential</a><a href="/residential-roofing/asbestos-roof-removal/">Asbestos Roof Removal</a><a href="/residential-roofing/fascia-board/">Fascia Board</a><a href="/residential-roofing/hail-damage-roof-repair/">Hail Damage Roof Repair</a><a href="/residential-roofing/roof-inspection/">Roof Inspection</a><a href="/residential-roofing/roof-leak-detection/">Roof Leak Detection</a><a href="/residential-roofing/roofing-insulation/">Roof Insulation</a><a href="/residential-roofing/roof-repair/">Roof Repair</a><a href="/residential-roofing/roof-replacement-services/">Roof Replacement</a><a href="/residential-roofing/roof-ventilation/">Roof Ventilation</a><a href="/residential-roofing/siding-installation/">Siding Installation</a></div></details>
     <details class="mgrp"><summary>Commercial</summary><div class="msub"><a href="/commercial-roofing/">All commercial</a><a href="/commercial-roofing/elastomeric-coatings/">Elastomeric Coatings</a><a href="/commercial-roofing/hail-damage/">Hail Damage Roof Repair</a><a href="/commercial-roofing/re-roofing/">Re-Roofing</a><a href="/commercial-roofing/roof-coating-services/">Roof Coating</a><a href="/commercial-roofing/roof-inspection/">Roof Inspection</a><a href="/commercial-roofing/roof-leak-detection/">Roof Leak Detection</a><a href="/commercial-roofing/roof-repair/">Roof Repairs</a><a href="/commercial-roofing/roof-replacement/">Roof Replacement</a><a href="/commercial-roofing/roof-ventilation/">Roof Ventilation</a><a href="/commercial-roofing/insulation/">Roof Insulation</a><a href="/commercial-roofing/siding-installation/">Siding Installation</a></div></details>
@@ -1688,27 +1770,27 @@ body.navopen{overflow:hidden}
 
 <section class="shero mhero">
   <div class="mhbg" aria-hidden="true">
-    <img class="mhs on" src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Close-up-photo-of-Professional-and-qualified-roofer-in-protective.jpg" alt="" fetchpriority="high">
-    <img class="mhs" src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/construction-and-building.jpg" alt="" loading="lazy">
-    <img class="mhs" src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/worker-on-a-roof.jpg" alt="" loading="lazy">
+    <img class="mhs on" src="https://images.pexels.com/photos/10854909/pexels-photo-10854909.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="" fetchpriority="high">
+    <img class="mhs" src="https://images.pexels.com/photos/209315/pexels-photo-209315.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="" loading="lazy">
+    <img class="mhs" src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/newly-installed-roof.jpg" alt="" loading="lazy">
   </div>
   <button class="mhpause" type="button" aria-pressed="false" aria-label="Pause the background photos"><svg class="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="8.5" y="2" width="3" height="10" rx="1" fill="currentColor"/></svg><svg class="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6a.6.6 0 0 0 .9.5l7.4-4.8a.6.6 0 0 0 0-1L4.9 1.7a.6.6 0 0 0-.9.5z" fill="currentColor"/></svg></button>
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb">
-      <a href="/">Home</a><span aria-hidden="true">&#47;</span><span aria-current="page">About</span>
+      <a href="/">Home</a><span aria-hidden="true">&#47;</span><span aria-current="page">Sitemap</span>
     </nav>
-    <p class="eyebrow">Local and family-owned</p>
-    <h1 class="shtitle"><em>TurnKey</em>&nbsp;Roofer</h1>
-    <p class="shlede">A local, family-owned roofing company for homes and businesses in New Orleans.</p>
+    <p class="eyebrow">Sitemap</p>
+    <h1 class="shtitle">Find Any <em>Roofing</em> Page in One&nbsp;Place</h1>
+    <p class="shlede">Every service, roofing type and service area, plus all 27 blog posts, grouped so you can jump straight to the page you&nbsp;need.</p>
     <div class="cta shcta">
       <a class="btn1" href="#estimate">Get a free estimate</a>
       <a class="btn2" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
     </div>
     <ul class="shfacts">
-      <li><b>#890459</b><span>Louisiana residential license</span></li>
-      <li><b>#3667</b><span>Louisiana commercial license</span></li>
-      <li><b>14 towns</b><span>New Orleans to Baton Rouge</span></li>
-      <li><b>24 hr</b><span>From payment to finished roof</span></li>
+      <li><b>11</b><span>Residential&nbsp;pages</span></li>
+      <li><b>12</b><span>Commercial&nbsp;pages</span></li>
+      <li><b>14</b><span>Service&nbsp;areas</span></li>
+      <li><b>27</b><span>Blog&nbsp;posts</span></li>
     </ul>
   </div>
 </section>
@@ -1733,125 +1815,146 @@ body.navopen{overflow:hidden}
 <div class="spage fbcream">
   <div class="wrap">
 
-        <section class="sblock" id="team">
-          <div class="svhead">
-            <div>
-              <p class="eyebrow">The team</p>
-              <h2>Meet the Team</h2>
-            </div>
-            <p class="sintro">Three of the people behind TurnKey Roofer.</p>
-          </div>
-          <ul class="abteam">
-            <li><figure><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/07/TurnKeyBrianHong1-348x424.png" alt="Brian Hong of TurnKey Roofer" loading="lazy"><figcaption>Brian Hong<span>TurnKey Roofer</span></figcaption></figure></li>
-            <li><figure><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/07/jose-pineda.jpg" alt="Jose Pineda of TurnKey Roofer" loading="lazy"><figcaption>Jose Pineda<span>TurnKey Roofer</span></figcaption></figure></li>
-            <li><figure><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/07/corey-gallagher.jpg" alt="Corey Gallagher of TurnKey Roofer" loading="lazy"><figcaption>Corey Gallagher<span>TurnKey Roofer</span></figcaption></figure></li>
-          </ul>
-        </section>
-
-        <section class="sblock">
-          <div class="abstory">
-            <div class="abstxt">
-              <p class="eyebrow">Our story</p>
-              <h2>Built on Local Knowledge</h2>
-              <p>TurnKey Roofer is a local, family-owned company built on expertise, integrity and customer satisfaction.</p>
-              <p>The team pairs deep local knowledge of New Orleans weather and roofing needs with the highest national roofing standards, so every project fits the property it is on.</p>
-              <div class="abspic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2022/12/Depositphotos_75384223_L-606x552.jpg" alt="Red metal tile roof with a dormer window" loading="lazy"></div>
-            </div>
-            <ol class="abvals">
-              <li><span class="abn" aria-hidden="true">01</span><div><b>Local Expertise, National Standards</b><span>New Orleans weather knowledge, held to national roofing standards.</span></div></li>
-              <li><span class="abn" aria-hidden="true">02</span><div><b>Quality Materials, Lasting Results</b><span>Top-tier roofing materials, chosen to stand up to the New Orleans climate.</span></div></li>
-              <li><span class="abn" aria-hidden="true">03</span><div><b>Your Vision, Our&nbsp;Expertise</b><span>We work closely with you on a roof that suits the home or business, in looks and in function.</span></div></li>
-            </ol>
-          </div>
-        </section>
-
         <section class="sblock">
           <div class="svhead">
             <div>
-              <p class="eyebrow">What we do</p>
-              <h2>What We Do</h2>
+              <p class="eyebrow">Every page</p>
+              <h2>The Whole Site, Section by&nbsp;Section</h2>
             </div>
-            <p class="sintro">Residential and commercial roofing, soffit work and roof insurance&nbsp;claims.</p>
+            <p class="sintro">Services first, then the towns we cover, then every post on the&nbsp;blog.</p>
           </div>
-          <ul class="abdo">
-            <li><a href="/residential-roofing/"><h3>Residential Roofing</h3><p>Ten services for homes, from repair to full replacement.</p><span class="abgo">See residential roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-            <li><a href="/commercial-roofing/"><h3>Commercial Roofing</h3><p>Eleven services for commercial buildings, from coatings to&nbsp;replacement.</p><span class="abgo">See commercial roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-            <li><a href="/roofing-types/"><h3>Roofing Types</h3><p>Eight roof types, from shingle and slate to&nbsp;single-ply.</p><span class="abgo">See roofing types <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-            <li><a href="/soffit-services/"><h3>Soffit Services</h3><p>Soffit installation and repair, and the fascia beside it.</p><span class="abgo">See soffit services <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-            <li><a href="/roof-insurance-claims/"><h3>Insurance Claims</h3><p>Unbiased roof inspections and detailed condition reports to support your&nbsp;claim.</p><span class="abgo">See insurance claims <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-            <li><a href="/service-areas/"><h3>Service Areas</h3><p>New Orleans plus 13 towns across seven parishes.</p><span class="abgo">See service areas <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-          </ul>
+          <div class="smgrid">
+          <div class="smcol">
+            <h3><a href="/residential-roofing/">Residential Roofing</a></h3>
+            <p class="smcount">10 pages</p>
+            <ul>
+            <li><a href="/residential-roofing/asbestos-roof-removal/"><span>Asbestos Roof Removal</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/residential-roofing/fascia-board/"><span>Fascia Board</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/residential-roofing/hail-damage-roof-repair/"><span>Hail Damage Roof Repair</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/residential-roofing/roof-inspection/"><span>Roof Inspection</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/residential-roofing/roof-leak-detection/"><span>Roof Leak Detection</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/residential-roofing/roofing-insulation/"><span>Roof Insulation</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/residential-roofing/roof-repair/"><span>Roof Repair</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/residential-roofing/roof-replacement-services/"><span>Roof Replacement</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/residential-roofing/roof-ventilation/"><span>Roof Ventilation</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/residential-roofing/siding-installation/"><span>Siding Installation</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="smcol">
+            <h3><a href="/roofing-types/">Roofing Types</a></h3>
+            <p class="smcount">8 pages</p>
+            <ul>
+            <li><a href="/roofing-types/built-up-roofing/"><span>Built-Up Roofing</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/roofing-types/flat-roof/"><span>Flat Roofing</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/roofing-types/metal-roof/"><span>Metal Roofing</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/roofing-types/metal-standing-seam-roofing/"><span>Metal Standing Seam Roofing</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/roofing-types/shingle/"><span>Shingle Roofing</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/roofing-types/single-ply/"><span>Single Ply Roofing</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/roofing-types/slate-roofing/"><span>Slate Roofing</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/roofing-types/tile-roofing/"><span>Tile Roofing</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="smcol">
+            <h3>Company</h3>
+            <p class="smcount">8 pages</p>
+            <ul>
+            <li><a href="/"><span>Home</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/about/"><span>About</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/the-team/"><span>The Team</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/testimonials/"><span>Testimonials</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/roof-insurance-claims/"><span>Roof Insurance Claims</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/unlimited-wind-warranty/"><span>Unlimited Wind Warranty</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/blog/"><span>Blog</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/contact/"><span>Contact</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="smcol">
+            <h3><a href="/commercial-roofing/">Commercial Roofing</a></h3>
+            <p class="smcount">11 pages</p>
+            <ul>
+            <li><a href="/commercial-roofing/elastomeric-coatings/"><span>Elastomeric Coatings</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/commercial-roofing/hail-damage/"><span>Hail Damage Roof Repair</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/commercial-roofing/re-roofing/"><span>Re-Roofing</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/commercial-roofing/roof-coating-services/"><span>Roof Coating</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/commercial-roofing/roof-inspection/"><span>Roof Inspection</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/commercial-roofing/roof-leak-detection/"><span>Roof Leak Detection</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/commercial-roofing/roof-repair/"><span>Roof Repairs</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/commercial-roofing/roof-replacement/"><span>Roof Replacement</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/commercial-roofing/roof-ventilation/"><span>Roof Ventilation</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/commercial-roofing/insulation/"><span>Roof Insulation</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/commercial-roofing/siding-installation/"><span>Siding Installation</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="smcol">
+            <h3><a href="/service-areas/">Service Areas</a></h3>
+            <p class="smcount">13 pages</p>
+            <ul>
+            <li><a href="/service-areas/baton-rouge/"><span>Baton Rouge</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/service-areas/covington/"><span>Covington</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/service-areas/gretna/"><span>Gretna</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/service-areas/hammond/"><span>Hammond</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/service-areas/harahan/"><span>Harahan</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/service-areas/kenner/"><span>Kenner</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/service-areas/laplace/"><span>LaPlace</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/service-areas/madisonville/"><span>Madisonville</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/service-areas/mandeville/"><span>Mandeville</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/service-areas/metairie/"><span>Metairie</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/service-areas/river-ridge/"><span>River Ridge</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/service-areas/slidell/"><span>Slidell</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/service-areas/st-rose/"><span>St. Rose</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="smcol">
+            <h3><a href="/soffit-services/">Soffit Services</a></h3>
+            <p class="smcount">2 pages</p>
+            <ul>
+            <li><a href="/soffit-services/soffit-installation/"><span>Soffit Installation</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/soffit-services/soffit-repair/"><span>Soffit Repair</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            </ul>
+          </div>
+          </div>
         </section>
-
-        <section class="sblock">
-          <div class="svhead">
-            <div>
-              <p class="eyebrow">How we work</p>
-              <h2>How We Work</h2>
-            </div>
-            <p class="sintro">Three steps, one phone number, and a price from someone who has been up on the roof.</p>
-          </div>
-          <ol class="rsteps">
-            <li>
-              <span class="rsico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></span>
-              <h3>You Call Us</h3>
-              <p>Call <b>(504) 226-7070</b> or send the form, and we book the estimator.</p>
-            </li>
-            <li>
-              <span class="rsico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12.5 12 5l9 7.5"/><path d="M5.5 10.5V19h13v-8.5"/><circle cx="12" cy="14" r="2.4"/><path d="m13.8 15.8 1.9 1.9"/></svg></span>
-              <h3>We Survey the Roof</h3>
-              <p>The estimator comes out to survey your roof and give you a cost estimate.</p>
-            </li>
-            <li>
-              <span class="rsico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12.5" r="8"/><path d="M12 8.5v4l2.6 1.6"/><path d="M9.5 2.5h5"/></svg></span>
-              <h3>We Do the Work</h3>
-              <p>Once payment is received, the roofing project is <b>completed within 24 hours</b>.</p>
-            </li>
-          </ol>
-        </section>
-
-  </div>
-</div>
-
-<section class="sblock fbband fbdark">
-  <div class="wrap">
-          <div class="ablic">
-            <p class="abn2">#890459<small>Residential license</small></p>
-            <p class="abn2">#3667<small>Commercial license</small></p>
-            <div>
-              <p class="eyebrow">Licensed in Louisiana</p>
-              <h2>Check Our Licenses First</h2>
-              <p>Both numbers are printed in the footer of every page on this site, so you can check them before you pay anyone.</p>
-            </div>
-          </div>
-  </div>
-</section>
-
-<section class="sblock fbband fbquote">
-  <div class="wrap">
-          <figure class="rrfeat">
-            <blockquote>&ldquo;As a property manager responsible for multiple residential buildings, I often encounter various roofing issues that require immediate attention. This company has been my go-to roofing company for years, and they have never&nbsp;disappointed.&rdquo;</blockquote>
-            <figcaption class="rrwho"><span class="rrav" aria-hidden="true">MD</span><span><b>Michael Davis</b><span>Property manager &middot; Multiple buildings</span></span></figcaption>
-          </figure>
-  </div>
-</section>
-
-<div class="spage fbcream">
-  <div class="wrap">
 
         <section class="sblock">
           <div class="svhead">
             <div>
-              <p class="eyebrow">Before you call</p>
-              <h2>Questions About the Company</h2>
+              <p class="eyebrow">Blog</p>
+              <h2>Every Post on the <em>Blog</em></h2>
             </div>
-            <p class="sintro">Short answers to what people ask first. For anything else, call <a class="rfaqtel" href="tel:5042267070">(504)&nbsp;226-7070</a>.</p>
+            <p class="sintro">Newest first. Each one opens on its own&nbsp;page.</p>
           </div>
-          <div class="rfaqlist">
-            <details><summary>Is TurnKey Roofer&nbsp;Family-Owned?</summary><div class="rfa">Yes. TurnKey Roofer is <b>a local, family-owned company</b> in New Orleans.</div></details>
-            <details><summary>Where Are You Based?</summary><div class="rfa">New Orleans, Louisiana. We work across <b>14 towns</b>, from the Northshore to Baton Rouge.</div></details>
-            <details><summary>Are You Licensed?</summary><div class="rfa">Yes. We are a licensed roofing contractor in Louisiana. <b>Residential License #890459</b> and <b>Commercial License #3667</b>. Both numbers are printed in the footer of every page on this site so you can check them before you pay anyone.</div></details>
-            <details><summary>Do You Work on Homes and Businesses?</summary><div class="rfa">Yes. <b>Residential and commercial roofing</b>, under two Louisiana licenses.</div></details>
+          <div class="smcol smwide">
+            <h3><a href="/blog/">Blog Posts</a></h3>
+            <p class="smcount">27 posts</p>
+            <ul class="smposts">
+            <li><a href="/handle-emergency-roof-repair-after-storm/"><span>Emergency Roof Repair in New Orleans: What to Do After a Storm</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/benefits-of-installing-an-energy-efficient-roof/"><span>Energy-Efficient Roofing for New Orleans Homes</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/roofing-considerations-for-homes-in-flood-zones/"><span>Roofing Considerations for New Orleans Homes in Flood Zones</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/how-your-roof-can-withstand-extreme-weather-in-new-orleans/"><span>How Your Roof Can Withstand Extreme Weather in New Orleans</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/roof-repair-vs-roof-replacement-whats-best-for-your-home/"><span>Roof Repair or Roof Replacement: What New Orleans Homes Need</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/how-to-properly-seal-your-roof-to-avoid-leaks/"><span>How to Seal a Roof Properly in New Orleans</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/how-to-maintain-your-roof-in-between-professional-inspections/"><span>How to Maintain a New Orleans Roof Between Inspections</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/how-to-maintain-a-wooden-roof-for-longevity/"><span>Maintaining a Wood Roof in New Orleans Humidity</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/how-to-check-your-roof-for-storm-damage-after-a-hurricane/"><span>How to Check a New Orleans Roof After a Hurricane</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/how-to-repair-roof-flashing-and-prevent-future-leaks/"><span>Roof Flashing Repair in New Orleans: Where Leaks Really Start</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/how-to-repair-roof-damage-caused-by-extreme-heat/"><span>Repairing Heat Damage to New Orleans Roofs</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/the-benefits-of-choosing-tile-roofing-for-your-home/"><span>Tile Roofing for New Orleans Homes</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/how-to-choose-the-right-roofing-contractor-for-your-insurance-claim/"><span>How to Choose a Roofing Contractor for a New Orleans Claim</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/the-common-mistakes-to-avoid-when-filing-a-roof-insurance-claim/"><span>Common Roof Insurance Claim Mistakes New Orleans Homeowners Make</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/how-to-file-a-roof-insurance-claim-after-storm-damage/"><span>How to File a Roof Insurance Claim in New Orleans</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/how-a-new-roof-can-boost-your-homes-value/"><span>How a New Roof Affects Your New Orleans Home’s Value</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/historic-homes-in-new-orleans-choosing-the-right-roof-to-preserve-charm-and-integrity/"><span>Historic Homes in New Orleans: Choosing the Right Roof to Preserve Charm and Integrity</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/how-hail-damage-affects-your-roof-and-what-you-should-do/"><span>How Hail Damage Affects Your Roof in New Orleans</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/common-fascia-board-problems-and-how-to-address-them-effectively/"><span>Fascia Board Problems in New Orleans: Rot, Termites and Water</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/exploring-the-latest-roofing-trends-and-technologies-of-2024/"><span>Roofing Technology Worth Having in New Orleans</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/types-of-roof-ventilation-systems-which-one-is-right-for-your-home/"><span>Roof Ventilation Systems for New Orleans Homes</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/flat-vs-sloped-roofs-pros-cons-and-which-is-best-for-your-home/"><span>Flat vs Sloped Roofs: What Works in New Orleans</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/top-roofing-materials-for-new-orleans-weather-what-lasts-the-longest/"><span>Top Roofing Materials for New Orleans Weather: What Lasts the Longest?</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/how-to-identify-common-roofing-problems-before-they-become-costly/"><span>Common Roofing Problems in New Orleans and How to Spot Them Early</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/the-impact-of-weather-on-your-roof-how-to-protect-your-home/"><span>How New Orleans Weather Damages Your Roof, Season by Season</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/the-role-of-roof-inspections-in-preventing-issues-regular-checks-for-residential-and-commercial-properties/"><span>Why Regular Roof Inspections Matter More in New Orleans</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="/how-to-choose-the-right-roofing-contractor/"><span>How to Choose a Roofing Contractor in New Orleans</span><svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            </ul>
           </div>
         </section>
 
@@ -1861,10 +1964,10 @@ body.navopen{overflow:hidden}
 <section class="fbband fbsx">
   <div class="wrap sblock sxband">
           <div>
-            <h2>Ready to Talk About Your Roof?</h2>
-            <p class="sintro">Call or fill out the form to schedule an appointment with an estimator.</p>
+            <h2>Can&rsquo;t Find What You Need?</h2>
+            <p class="sintro">Call and tell us about the roof. We&rsquo;ll point you to the right service or book an&nbsp;estimator.</p>
           </div>
-          <a class="sxlink" href="#estimate">Get a free estimate <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="sxlink" href="tel:5042267070">Call (504)&nbsp;226&#8209;7070 <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
 </section>
 

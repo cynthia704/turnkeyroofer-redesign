@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="TurnKey Roofer is a local, family-owned roofing company for homes and businesses in New Orleans, licensed in Louisiana: residential #890459, commercial #3667.">
-<title>A Family-Owned New Orleans Roofer | TurnKey Roofer</title>
+<meta name="robots" content="noindex, follow">
+<meta name="description" content="Thanks for your estimate request. TurnKey Roofer will call you back to schedule an estimator. Need us sooner? Call (504) 226-7070.">
+<title>Thank You | TurnKey Roofer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Public+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -1614,13 +1615,95 @@ body.navopen{overflow:hidden}
 .fpbody::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:56px;pointer-events:none;
   background:linear-gradient(0deg,var(--forest) 0%,rgba(31,77,67,0) 100%)}
 @media(max-width:560px){.fpbody{padding:20px 20px 18px}}
+
+/* ===== one-off nav pages (contact, testimonials, wind warranty), September 18, 2026 ===== */
+.rsteps.rsplain li::after{display:none}
+.ctareas{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.ctareas a{display:inline-flex;align-items:center;min-height:44px;padding:9px 18px;background:#fff;border:1px solid var(--line);border-radius:100px;
+  font-weight:600;font-size:15px;color:var(--ink);transition:border-color .2s,color .2s}
+.ctareas a:hover{border-color:var(--clay);color:var(--clay)}
+.ctareas a:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.ctareas li:first-child a{background:var(--forest);border-color:var(--forest);color:#fff}
+.tmgrid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.tmgrid>li{display:flex;flex-direction:column;padding:26px 24px 22px;background:#fff;border:1px solid var(--line);border-radius:16px}
+.tmgrid blockquote{margin:0 0 22px;font-family:var(--disp);font-size:17px;line-height:1.55;color:var(--ink);text-wrap:pretty}
+.tmgrid .rrwho{margin:auto 0 0}
+.tmgrid>li.tmwide{grid-column:span 2}
+.tmgrid>li.tmwide blockquote{font-size:20px}
+.tmtag{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);display:flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--clay)}
+.tmtag:hover{color:var(--forest)}
+.tmtag svg{flex:none;transition:transform .3s}
+.tmtag:hover svg{transform:translateX(4px)}
+.tmgrid>li.tmcta{background:var(--forest);border-color:var(--forest);color:#f4efe8;justify-content:center}
+.tmcta .eyebrow{color:var(--clay2);margin:0 0 12px}
+.tmcta h3{color:#fff;font-size:24px;line-height:1.2;margin:0 0 10px}
+.tmcta p:not(.eyebrow){margin:0 0 22px;font-size:15.5px;line-height:1.6;color:rgba(244,239,232,.86)}
+.tmcta .btn1{align-self:flex-start}
+@media(max-width:1000px){.tmgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.tmgrid{grid-template-columns:1fr}.tmgrid>li.tmwide{grid-column:auto}}
+@media(prefers-reduced-motion:reduce){.ctareas a,.tmtag svg{transition:none}.tmtag:hover svg{transform:none}}
+
+/* ===== utility pages (blog, sitemap, thank you), September 18, 2026 ===== */
+.bgfeat{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.bgfeat figure{margin:0;min-height:340px;position:relative}
+.bgfeat figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bgfeat>div{padding:38px 40px;display:flex;flex-direction:column;justify-content:center}
+.bgfeat h3{font-size:clamp(24px,2.3vw,32px);line-height:1.18;margin:10px 0 14px}
+.bgfeat h3 a:hover{color:var(--clay)}
+.bgfeat p.bglead{margin:0 0 22px;font-size:16.5px;line-height:1.65;color:var(--ink2)}
+.bgfeat .btn1{align-self:flex-start}
+.bgmeta{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+.bgmeta b{font-weight:500;color:var(--clay)}
+.bgfilter{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}
+.bgfilter button{min-height:44px;padding:9px 18px;border-radius:100px;border:1.5px solid var(--line);background:#fff;font:inherit;font-size:15px;font-weight:600;color:var(--ink);cursor:pointer;
+  transition:border-color .2s,background .2s,color .2s}
+.bgfilter button small{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.1em;margin-left:6px;color:var(--ink3)}
+.bgfilter button[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:#fff}
+.bgfilter button[aria-pressed="true"] small{color:rgba(255,255,255,.75)}
+.bgfilter button:hover{border-color:var(--clay)}
+.bgfilter button:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.bggrid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.bggrid li{display:flex}
+.bggrid li[hidden]{display:none}
+.bggrid a{display:flex;flex-direction:column;width:100%;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;color:inherit;transition:border-color .2s,transform .25s}
+.bggrid a:hover{border-color:var(--clay);transform:translateY(-3px)}
+.bggrid a:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.bggrid img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.bggrid .bgbody{display:flex;flex-direction:column;flex:1;padding:18px 20px 20px}
+.bggrid h3{font-size:19px;line-height:1.3;margin:10px 0 8px}
+.bggrid p{margin:0 0 16px;font-size:14.5px;line-height:1.6;color:var(--ink2)}
+.bggo{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--clay)}
+.bggo svg{transition:transform .3s}
+.bggrid a:hover .bggo svg{transform:translateX(4px)}
+@media(max-width:1000px){.bgfeat{grid-template-columns:1fr}.bgfeat figure{min-height:0;aspect-ratio:16/9}.bgfeat>div{padding:28px 26px}.bggrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.bggrid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.bggrid a,.bggo svg,.bgfilter button{transition:none}.bggrid a:hover{transform:none}}
+
+.smgrid{columns:3;column-gap:18px}            /* stacked columns: no gaps under short groups */
+.smgrid .smcol{break-inside:avoid;margin:0 0 18px}
+.smcol{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 26px 20px}
+.smcol h3{font-size:21px;margin:0 0 4px}
+.smcol h3 a:hover{color:var(--clay)}
+.smcol ul{list-style:none;margin:10px 0 0;padding:0}
+.smcol li{border-top:1px solid var(--line)}
+.smcol li a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;padding:9px 0;font-size:15px;color:var(--ink)}
+.smcol li a:hover{color:var(--clay)}
+.smcol li a svg{flex:none;opacity:.45}
+.smcount{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+.smposts{columns:2;column-gap:28px}
+.smposts li{break-inside:avoid}
+@media(max-width:1000px){.smgrid{columns:2}}
+@media(max-width:640px){.smgrid{columns:1}.smposts{columns:1}}
+
+.tyhero .shcta .btn2{background:transparent}
 </style>
 </head>
 <body>
 
 <div class="mock">SERVICE PAGE TEMPLATE &nbsp;·&nbsp; mockup for review. <b>Not live.</b> Scroll slowly. Every fact shown is published on turnkeyroofer.com today.</div>
 
-<div class="topbar"><div class="wrap topbar-in"><span class="tblic">Licensed in Louisiana &middot; Residential #890459 &middot; Commercial #3667</span><span class="tbact"><a href="#estimate">Get a free estimate</a><a class="tbtel" href="tel:5042267070">(504)&nbsp;226-7070</a></span></div></div>
+<div class="topbar"><div class="wrap topbar-in"><span class="tblic">Licensed in Louisiana &middot; Residential #890459 &middot; Commercial #3667</span><span class="tbact"><a href="/contact/#estimate">Get a free estimate</a><a class="tbtel" href="tel:5042267070">(504)&nbsp;226-7070</a></span></div></div>
 
 <header class="hdr" id="hdr">
   <div class="wrap hdr-in">
@@ -1630,7 +1713,7 @@ body.navopen{overflow:hidden}
     <nav class="nav" aria-label="Main">
       <ul class="navlist">
         <li><a href="/">Home</a></li>
-        <li class="hassub"><a href="/about/" aria-current="page">About</a><button class="subtog" type="button" aria-expanded="false" aria-label="About pages"><svg viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <li class="hassub"><a href="/about/">About</a><button class="subtog" type="button" aria-expanded="false" aria-label="About pages"><svg viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <ul class="sub"><li><a href="/the-team/">The Team</a></li></ul></li>
         <li><a href="/roof-insurance-claims/">Roof Insurance Claims</a></li>
         <li class="hassub"><a href="/residential-roofing/">Residential</a><button class="subtog" type="button" aria-expanded="false" aria-label="Residential pages"><svg viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -1665,7 +1748,7 @@ body.navopen{overflow:hidden}
   </div>
   <nav class="mnav-links" aria-label="Main">
     <a href="/">Home</a>
-    <details class="mgrp" open><summary>About</summary><div class="msub"><a href="/about/" aria-current="page">All about us</a><a href="/the-team/">The Team</a></div></details>
+    <details class="mgrp"><summary>About</summary><div class="msub"><a href="/about/">All about us</a><a href="/the-team/">The Team</a></div></details>
     <a href="/roof-insurance-claims/">Roof Insurance Claims</a>
     <details class="mgrp"><summary>Residential</summary><div class="msub"><a href="/residential-roofing/">All residential</a><a href="/residential-roofing/asbestos-roof-removal/">Asbestos Roof Removal</a><a href="/residential-roofing/fascia-board/">Fascia Board</a><a href="/residential-roofing/hail-damage-roof-repair/">Hail Damage Roof Repair</a><a href="/residential-roofing/roof-inspection/">Roof Inspection</a><a href="/residential-roofing/roof-leak-detection/">Roof Leak Detection</a><a href="/residential-roofing/roofing-insulation/">Roof Insulation</a><a href="/residential-roofing/roof-repair/">Roof Repair</a><a href="/residential-roofing/roof-replacement-services/">Roof Replacement</a><a href="/residential-roofing/roof-ventilation/">Roof Ventilation</a><a href="/residential-roofing/siding-installation/">Siding Installation</a></div></details>
     <details class="mgrp"><summary>Commercial</summary><div class="msub"><a href="/commercial-roofing/">All commercial</a><a href="/commercial-roofing/elastomeric-coatings/">Elastomeric Coatings</a><a href="/commercial-roofing/hail-damage/">Hail Damage Roof Repair</a><a href="/commercial-roofing/re-roofing/">Re-Roofing</a><a href="/commercial-roofing/roof-coating-services/">Roof Coating</a><a href="/commercial-roofing/roof-inspection/">Roof Inspection</a><a href="/commercial-roofing/roof-leak-detection/">Roof Leak Detection</a><a href="/commercial-roofing/roof-repair/">Roof Repairs</a><a href="/commercial-roofing/roof-replacement/">Roof Replacement</a><a href="/commercial-roofing/roof-ventilation/">Roof Ventilation</a><a href="/commercial-roofing/insulation/">Roof Insulation</a><a href="/commercial-roofing/siding-installation/">Siding Installation</a></div></details>
@@ -1681,34 +1764,34 @@ body.navopen{overflow:hidden}
   </div>
   <div class="mnav-foot">
     <a class="mnav-call" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
-    <a class="mnav-est" href="#estimate">Get a free estimate</a>
+    <a class="mnav-est" href="/contact/#estimate">Get a free estimate</a>
     <p class="mnav-lic">Residential #890459 &nbsp;&middot;&nbsp; Commercial #3667</p>
   </div>
 </div>
 
 <section class="shero mhero">
   <div class="mhbg" aria-hidden="true">
-    <img class="mhs on" src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Close-up-photo-of-Professional-and-qualified-roofer-in-protective.jpg" alt="" fetchpriority="high">
-    <img class="mhs" src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/construction-and-building.jpg" alt="" loading="lazy">
-    <img class="mhs" src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/worker-on-a-roof.jpg" alt="" loading="lazy">
+    <img class="mhs on" src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/newly-installed-roof.jpg" alt="" fetchpriority="high">
+    <img class="mhs" src="https://images.pexels.com/photos/34933247/pexels-photo-34933247.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="" loading="lazy">
+    <img class="mhs" src="https://images.pexels.com/photos/10854909/pexels-photo-10854909.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="" loading="lazy">
   </div>
   <button class="mhpause" type="button" aria-pressed="false" aria-label="Pause the background photos"><svg class="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="8.5" y="2" width="3" height="10" rx="1" fill="currentColor"/></svg><svg class="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6a.6.6 0 0 0 .9.5l7.4-4.8a.6.6 0 0 0 0-1L4.9 1.7a.6.6 0 0 0-.9.5z" fill="currentColor"/></svg></button>
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb">
-      <a href="/">Home</a><span aria-hidden="true">&#47;</span><span aria-current="page">About</span>
+      <a href="/">Home</a><span aria-hidden="true">&#47;</span><span aria-current="page">Thank You</span>
     </nav>
-    <p class="eyebrow">Local and family-owned</p>
-    <h1 class="shtitle"><em>TurnKey</em>&nbsp;Roofer</h1>
-    <p class="shlede">A local, family-owned roofing company for homes and businesses in New Orleans.</p>
+    <p class="eyebrow">Request received</p>
+    <h1 class="shtitle">Thanks, Your <em>Estimate Request</em> Is&nbsp;In</h1>
+    <p class="shlede">We&rsquo;ll call you back to schedule your appointment with an estimator. Need us sooner? Call <b>(504)&nbsp;226&#8209;7070</b>.</p>
     <div class="cta shcta">
-      <a class="btn1" href="#estimate">Get a free estimate</a>
-      <a class="btn2" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
+      <a class="btn1" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
+      <a class="btn2" href="/">Back to the home page</a>
     </div>
     <ul class="shfacts">
-      <li><b>#890459</b><span>Louisiana residential license</span></li>
-      <li><b>#3667</b><span>Louisiana commercial license</span></li>
-      <li><b>14 towns</b><span>New Orleans to Baton Rouge</span></li>
-      <li><b>24 hr</b><span>From payment to finished roof</span></li>
+      <li><b>Next</b><span>We call you&nbsp;back</span></li>
+      <li><b>Then</b><span>The estimator&nbsp;visits</span></li>
+      <li><b>Free</b><span>Cost&nbsp;estimate</span></li>
+      <li><b>#890459</b><span>Residential&nbsp;license</span></li>
     </ul>
   </div>
 </section>
@@ -1733,126 +1816,46 @@ body.navopen{overflow:hidden}
 <div class="spage fbcream">
   <div class="wrap">
 
-        <section class="sblock" id="team">
-          <div class="svhead">
-            <div>
-              <p class="eyebrow">The team</p>
-              <h2>Meet the Team</h2>
-            </div>
-            <p class="sintro">Three of the people behind TurnKey Roofer.</p>
-          </div>
-          <ul class="abteam">
-            <li><figure><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/07/TurnKeyBrianHong1-348x424.png" alt="Brian Hong of TurnKey Roofer" loading="lazy"><figcaption>Brian Hong<span>TurnKey Roofer</span></figcaption></figure></li>
-            <li><figure><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/07/jose-pineda.jpg" alt="Jose Pineda of TurnKey Roofer" loading="lazy"><figcaption>Jose Pineda<span>TurnKey Roofer</span></figcaption></figure></li>
-            <li><figure><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/07/corey-gallagher.jpg" alt="Corey Gallagher of TurnKey Roofer" loading="lazy"><figcaption>Corey Gallagher<span>TurnKey Roofer</span></figcaption></figure></li>
-          </ul>
-        </section>
-
-        <section class="sblock">
-          <div class="abstory">
-            <div class="abstxt">
-              <p class="eyebrow">Our story</p>
-              <h2>Built on Local Knowledge</h2>
-              <p>TurnKey Roofer is a local, family-owned company built on expertise, integrity and customer satisfaction.</p>
-              <p>The team pairs deep local knowledge of New Orleans weather and roofing needs with the highest national roofing standards, so every project fits the property it is on.</p>
-              <div class="abspic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2022/12/Depositphotos_75384223_L-606x552.jpg" alt="Red metal tile roof with a dormer window" loading="lazy"></div>
-            </div>
-            <ol class="abvals">
-              <li><span class="abn" aria-hidden="true">01</span><div><b>Local Expertise, National Standards</b><span>New Orleans weather knowledge, held to national roofing standards.</span></div></li>
-              <li><span class="abn" aria-hidden="true">02</span><div><b>Quality Materials, Lasting Results</b><span>Top-tier roofing materials, chosen to stand up to the New Orleans climate.</span></div></li>
-              <li><span class="abn" aria-hidden="true">03</span><div><b>Your Vision, Our&nbsp;Expertise</b><span>We work closely with you on a roof that suits the home or business, in looks and in function.</span></div></li>
-            </ol>
-          </div>
-        </section>
-
         <section class="sblock">
           <div class="svhead">
             <div>
-              <p class="eyebrow">What we do</p>
-              <h2>What We Do</h2>
+              <p class="eyebrow">What happens next</p>
+              <h2>Your Next <em>Three</em>&nbsp;Steps</h2>
             </div>
-            <p class="sintro">Residential and commercial roofing, soffit work and roof insurance&nbsp;claims.</p>
-          </div>
-          <ul class="abdo">
-            <li><a href="/residential-roofing/"><h3>Residential Roofing</h3><p>Ten services for homes, from repair to full replacement.</p><span class="abgo">See residential roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-            <li><a href="/commercial-roofing/"><h3>Commercial Roofing</h3><p>Eleven services for commercial buildings, from coatings to&nbsp;replacement.</p><span class="abgo">See commercial roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-            <li><a href="/roofing-types/"><h3>Roofing Types</h3><p>Eight roof types, from shingle and slate to&nbsp;single-ply.</p><span class="abgo">See roofing types <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-            <li><a href="/soffit-services/"><h3>Soffit Services</h3><p>Soffit installation and repair, and the fascia beside it.</p><span class="abgo">See soffit services <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-            <li><a href="/roof-insurance-claims/"><h3>Insurance Claims</h3><p>Unbiased roof inspections and detailed condition reports to support your&nbsp;claim.</p><span class="abgo">See insurance claims <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-            <li><a href="/service-areas/"><h3>Service Areas</h3><p>New Orleans plus 13 towns across seven parishes.</p><span class="abgo">See service areas <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-          </ul>
-        </section>
-
-        <section class="sblock">
-          <div class="svhead">
-            <div>
-              <p class="eyebrow">How we work</p>
-              <h2>How We Work</h2>
-            </div>
-            <p class="sintro">Three steps, one phone number, and a price from someone who has been up on the roof.</p>
+            <p class="sintro">Nothing else to fill out. Keep your phone close and we&rsquo;ll take it from&nbsp;here.</p>
           </div>
           <ol class="rsteps">
             <li>
-              <span class="rsico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></span>
-              <h3>You Call Us</h3>
-              <p>Call <b>(504) 226-7070</b> or send the form, and we book the estimator.</p>
+              <span class="rsico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></span>
+              <h3>We Call You Back</h3>
+              <p>We call to schedule your appointment with an&nbsp;estimator.</p>
             </li>
             <li>
-              <span class="rsico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12.5 12 5l9 7.5"/><path d="M5.5 10.5V19h13v-8.5"/><circle cx="12" cy="14" r="2.4"/><path d="m13.8 15.8 1.9 1.9"/></svg></span>
+              <span class="rsico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.2-4.2"/></svg></span>
               <h3>We Survey the Roof</h3>
-              <p>The estimator comes out to survey your roof and give you a cost estimate.</p>
+              <p>The estimator comes out to survey your roof and see what it&nbsp;needs.</p>
             </li>
             <li>
-              <span class="rsico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12.5" r="8"/><path d="M12 8.5v4l2.6 1.6"/><path d="M9.5 2.5h5"/></svg></span>
-              <h3>We Do the Work</h3>
-              <p>Once payment is received, the roofing project is <b>completed within 24 hours</b>.</p>
+              <span class="rsico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-1.5-3 1.5-3-1.5L6 21z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span>
+              <h3>You Get an Estimate</h3>
+              <p>You get a cost estimate, with no obligation to book the&nbsp;work.</p>
             </li>
           </ol>
         </section>
 
-  </div>
-</div>
-
-<section class="sblock fbband fbdark">
-  <div class="wrap">
-          <div class="ablic">
-            <p class="abn2">#890459<small>Residential license</small></p>
-            <p class="abn2">#3667<small>Commercial license</small></p>
-            <div>
-              <p class="eyebrow">Licensed in Louisiana</p>
-              <h2>Check Our Licenses First</h2>
-              <p>Both numbers are printed in the footer of every page on this site, so you can check them before you pay anyone.</p>
-            </div>
-          </div>
-  </div>
-</section>
-
-<section class="sblock fbband fbquote">
-  <div class="wrap">
-          <figure class="rrfeat">
-            <blockquote>&ldquo;As a property manager responsible for multiple residential buildings, I often encounter various roofing issues that require immediate attention. This company has been my go-to roofing company for years, and they have never&nbsp;disappointed.&rdquo;</blockquote>
-            <figcaption class="rrwho"><span class="rrav" aria-hidden="true">MD</span><span><b>Michael Davis</b><span>Property manager &middot; Multiple buildings</span></span></figcaption>
-          </figure>
-  </div>
-</section>
-
-<div class="spage fbcream">
-  <div class="wrap">
-
         <section class="sblock">
           <div class="svhead">
             <div>
-              <p class="eyebrow">Before you call</p>
-              <h2>Questions About the Company</h2>
+              <p class="eyebrow">While we&rsquo;re on your roof</p>
+              <h2>Add Soffit Installation to Your <em>Roof&nbsp;Job</em></h2>
             </div>
-            <p class="sintro">Short answers to what people ask first. For anything else, call <a class="rfaqtel" href="tel:5042267070">(504)&nbsp;226-7070</a>.</p>
+            <p class="sintro">Soffit gives a new roof system the ventilation it needs, helps keep water out and gives the exterior a finished&nbsp;look.</p>
           </div>
-          <div class="rfaqlist">
-            <details><summary>Is TurnKey Roofer&nbsp;Family-Owned?</summary><div class="rfa">Yes. TurnKey Roofer is <b>a local, family-owned company</b> in New Orleans.</div></details>
-            <details><summary>Where Are You Based?</summary><div class="rfa">New Orleans, Louisiana. We work across <b>14 towns</b>, from the Northshore to Baton Rouge.</div></details>
-            <details><summary>Are You Licensed?</summary><div class="rfa">Yes. We are a licensed roofing contractor in Louisiana. <b>Residential License #890459</b> and <b>Commercial License #3667</b>. Both numbers are printed in the footer of every page on this site so you can check them before you pay anyone.</div></details>
-            <details><summary>Do You Work on Homes and Businesses?</summary><div class="rfa">Yes. <b>Residential and commercial roofing</b>, under two Louisiana licenses.</div></details>
-          </div>
+          <ul class="abdo">
+            <li><a href="/soffit-services/soffit-installation/"><h3>Ventilation for the New&nbsp;Roof</h3><p>Properly vented soffits help regulate attic temperature, which the rest of the roof system depends&nbsp;on.</p><span class="abgo">Soffit installation <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/soffit-services/soffit-repair/"><h3>Keep Water and Pests&nbsp;Out</h3><p>Damaged or missing soffit lets in water and pests and can lead to attic moisture&nbsp;problems.</p><span class="abgo">Soffit repair <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="/soffit-services/"><h3>One Crew, One&nbsp;Visit</h3><p>The crew is already at your home, so new soffit can be color-matched to the roof and done in the same&nbsp;visit.</p><span class="abgo">All soffit services <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+          </ul>
         </section>
 
   </div>
@@ -1861,150 +1864,16 @@ body.navopen{overflow:hidden}
 <section class="fbband fbsx">
   <div class="wrap sblock sxband">
           <div>
-            <h2>Ready to Talk About Your Roof?</h2>
-            <p class="sintro">Call or fill out the form to schedule an appointment with an estimator.</p>
+            <h2>Questions Before We Call?</h2>
+            <p class="sintro">Call us now. It&rsquo;s the same number whether it&rsquo;s a home or a&nbsp;business.</p>
           </div>
-          <a class="sxlink" href="#estimate">Get a free estimate <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="sxlink" href="tel:5042267070">Call (504)&nbsp;226&#8209;7070 <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
 </section>
 
 </main>
 
-<section class="sec formsec" id="estimate">
-  <div class="wrap">
-    <div class="fgrid">
-      <div class="fside rise" data-anim>
-        <div class="fintro">
-        <p class="eyebrow">Get the number before the next storm</p>
-        <h2 class="h2">Get a Free Roof Estimate in New Orleans</h2>
-        <p class="lede">A roofing estimator comes out to survey your roof and gives you a cost estimate. No charge, and no obligation to book the work.</p>
-        <ul class="checks fchecks">
-          <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="#1f4d43" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Licensed residential <b>#890459</b> &nbsp;+&nbsp; commercial <b>#3667</b></span></li>
-          <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="#1f4d43" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Roof now, pay later:</b> ask what the monthly number looks&nbsp;like</span></li>
-        </ul>
-        <p class="fcall">Rather talk to someone now? <a href="tel:5042267070">(504)&nbsp;226-7070</a></p>
-        </div>
-        <div class="afterform">
-          <h3>What happens after you send this</h3>
-          <ol>
-            <li><b>We call you back</b> to schedule your appointment with an estimator.</li>
-            <li><b>An estimator comes out</b> to survey your roof.</li>
-            <li><b>You get a cost estimate.</b> No obligation to book the work.</li>
-          </ol>
-        </div>
-        <div class="fpromise fpphoto">
-          <div class="fpbody">
-            <h3>What to expect</h3>
-            <ul>
-              <li>
-                <span class="fpico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12.6" r="8.4"/><path d="M12 7.5v5.4l3.5 2"/></svg></span>
-                <span><b>Completed within 24 hours</b><span>Once payment is received, the roofing project is finished inside a day.</span></span>
-              </li>
-              <li>
-                <span class="fpico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 20.5 12 13l9.4 7.5"/><path d="M3 6h7.6a2.1 2.1 0 1 0-2.1-2.1"/><path d="M3 10h11a2.1 2.1 0 1 1-2.1 2.1"/></svg></span>
-                <span><b>15-year wind warranty</b><span>No maximum wind speed, even during named storms.</span></span>
-              </li>
-              <li>
-                <span class="fpico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="4" width="15" height="16.5" rx="2.2"/><path d="M9 4V2.6h6V4"/><path d="M8.4 12.4l2.2 2.2 4.6-4.8"/></svg></span>
-                <span><b>Free estimates</b><span>An estimator surveys your roof and gives you a cost estimate.</span></span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <form class="fform rise fwide" data-anim novalidate>
-        <h3 class="ftitle">Request a Free Estimate</h3>
-        <div class="frow2">
-          <div class="frow">
-            <label for="f-name">Full name <span class="req">*</span></label>
-            <input id="f-name" name="full_name" type="text" autocomplete="name" placeholder="First and last name" required>
-          </div>
-          <div class="frow">
-            <label for="f-phone">Phone <span class="req">*</span></label>
-            <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="(504) 000-0000" required>
-          </div>
-        </div>
-        <div class="frow2">
-          <div class="frow">
-            <label for="f-email">Email <span class="req">*</span></label>
-            <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-          </div>
-          <div class="frow">
-            <label for="f-service">Service type <span class="req">*</span></label>
-            <select id="f-service" name="service_type" required>
-              <option value="">Choose one</option>
-              <option>Residential</option>
-              <option>Commercial</option>
-            </select>
-          </div>
-        </div>
-        <div class="frow svc-resi" hidden>
-          <label for="f-resi">Residential service</label>
-          <select id="f-resi" name="residential_service">
-            <option value="">Choose one</option>
-            <option>Asbestos Roof Removal</option>
-            <option>Hail Damage Roof Repair</option>
-            <option>Metal Roofing</option>
-            <option>Metal Standing Seam Roofing</option>
-            <option>Roof Leak Detection</option>
-            <option>Roofing Insulation</option>
-            <option>Shingle Roofing</option>
-            <option>Soffit Installation</option>
-            <option>Tile Roofing</option>
-          </select>
-        </div>
-        <div class="frow svc-comm" hidden>
-          <label for="f-comm">Commercial services</label>
-          <select id="f-comm" name="commercial_services">
-            <option value="">Choose one</option>
-            <option>Hail Damage Roof</option>
-            <option>Roof Inspection</option>
-            <option>Roof Repairs</option>
-            <option>Roof Leak Detection</option>
-            <option>Roof Replacement</option>
-            <option>Roof Ventilation</option>
-            <option>Roofing Insulation</option>
-            <option>Shingle Roofing</option>
-            <option>Siding Installation</option>
-            <option>Slate Roofing</option>
-          </select>
-        </div>
-        <div class="frow">
-          <label for="f-address">Property address</label>
-          <input id="f-address" name="address" type="text" autocomplete="street-address" placeholder="Start typing the address">
-        </div>
-        <div class="frow3">
-          <div class="frow">
-            <label for="f-city">City</label>
-            <input id="f-city" name="city" type="text" autocomplete="address-level2">
-          </div>
-          <div class="frow">
-            <label for="f-state">State</label>
-            <input id="f-state" name="state" type="text" autocomplete="address-level1" placeholder="LA">
-          </div>
-          <div class="frow">
-            <label for="f-zip">ZIP</label>
-            <input id="f-zip" name="postal_code" type="text" autocomplete="postal-code">
-          </div>
-        </div>
-        <div class="frow">
-          <label for="f-msg">What are you seeing on the roof?</label>
-          <textarea id="f-msg" name="message" rows="3" placeholder="Stain on the ceiling, missing shingles after the storm, water in the attic..."></textarea>
-        </div>
-        <div class="frow">
-          <label for="f-file">Photos or video <span class="opt">optional</span></label>
-          <input id="f-file" name="upload" type="file" accept="image/*,video/*" multiple>
-        </div>
-        <label class="fcheck"><input type="checkbox" name="terms_and_conditions" required><span>I agree to the terms and conditions. <span class="req">*</span></span></label>
-        <label class="fcheck"><input type="checkbox" name="sms_optin"><span>Opt in to receive SMS notifications, alerts and occasional marketing communication.</span></label>
-        <p class="fconsent">By submitting this form, I consent to receive calls, including automated calls using AI-generated voice technology, from TurnKey Roofer at the phone number provided above. Consent is not required as a condition of receiving a quote or service. I can revoke consent at any time.</p>
-        <button class="fsubmit" type="submit">Request my free estimate</button>
-        <p class="fstatus" role="status" aria-live="polite"></p>
-        <p class="fsmall">Louisiana Residential License #890459 &middot; Commercial License #3667</p>
-      </form>
-    </div>
-  </div>
-</section>
+
 
 <footer class="ft">
   <div class="wrap">
@@ -2045,7 +1914,7 @@ body.navopen{overflow:hidden}
 <button class="totop" id="totop" type="button" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 <div class="callbar" id="callbar">
   <a class="c1" href="tel:5042267070">Call (504) 226-7070</a>
-  <a class="c2" href="#estimate">Free estimate</a>
+  <a class="c2" href="/contact/#estimate">Free estimate</a>
 </div>
 
 <script>

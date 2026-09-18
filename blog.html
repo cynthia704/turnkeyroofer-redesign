@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="TurnKey Roofer is a local, family-owned roofing company for homes and businesses in New Orleans, licensed in Louisiana: residential #890459, commercial #3667.">
-<title>A Family-Owned New Orleans Roofer | TurnKey Roofer</title>
+<meta name="description" content="Roofing advice for New Orleans homeowners: storms and insurance claims, repairs and upkeep, materials and home value. Read the latest posts.">
+<title>Expert Roofing Insights &amp; Tips | TurnKey Roofer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Public+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -1614,6 +1614,88 @@ body.navopen{overflow:hidden}
 .fpbody::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:56px;pointer-events:none;
   background:linear-gradient(0deg,var(--forest) 0%,rgba(31,77,67,0) 100%)}
 @media(max-width:560px){.fpbody{padding:20px 20px 18px}}
+
+/* ===== one-off nav pages (contact, testimonials, wind warranty), September 18, 2026 ===== */
+.rsteps.rsplain li::after{display:none}
+.ctareas{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.ctareas a{display:inline-flex;align-items:center;min-height:44px;padding:9px 18px;background:#fff;border:1px solid var(--line);border-radius:100px;
+  font-weight:600;font-size:15px;color:var(--ink);transition:border-color .2s,color .2s}
+.ctareas a:hover{border-color:var(--clay);color:var(--clay)}
+.ctareas a:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.ctareas li:first-child a{background:var(--forest);border-color:var(--forest);color:#fff}
+.tmgrid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.tmgrid>li{display:flex;flex-direction:column;padding:26px 24px 22px;background:#fff;border:1px solid var(--line);border-radius:16px}
+.tmgrid blockquote{margin:0 0 22px;font-family:var(--disp);font-size:17px;line-height:1.55;color:var(--ink);text-wrap:pretty}
+.tmgrid .rrwho{margin:auto 0 0}
+.tmgrid>li.tmwide{grid-column:span 2}
+.tmgrid>li.tmwide blockquote{font-size:20px}
+.tmtag{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);display:flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--clay)}
+.tmtag:hover{color:var(--forest)}
+.tmtag svg{flex:none;transition:transform .3s}
+.tmtag:hover svg{transform:translateX(4px)}
+.tmgrid>li.tmcta{background:var(--forest);border-color:var(--forest);color:#f4efe8;justify-content:center}
+.tmcta .eyebrow{color:var(--clay2);margin:0 0 12px}
+.tmcta h3{color:#fff;font-size:24px;line-height:1.2;margin:0 0 10px}
+.tmcta p:not(.eyebrow){margin:0 0 22px;font-size:15.5px;line-height:1.6;color:rgba(244,239,232,.86)}
+.tmcta .btn1{align-self:flex-start}
+@media(max-width:1000px){.tmgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.tmgrid{grid-template-columns:1fr}.tmgrid>li.tmwide{grid-column:auto}}
+@media(prefers-reduced-motion:reduce){.ctareas a,.tmtag svg{transition:none}.tmtag:hover svg{transform:none}}
+
+/* ===== utility pages (blog, sitemap, thank you), September 18, 2026 ===== */
+.bgfeat{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.bgfeat figure{margin:0;min-height:340px;position:relative}
+.bgfeat figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bgfeat>div{padding:38px 40px;display:flex;flex-direction:column;justify-content:center}
+.bgfeat h3{font-size:clamp(24px,2.3vw,32px);line-height:1.18;margin:10px 0 14px}
+.bgfeat h3 a:hover{color:var(--clay)}
+.bgfeat p.bglead{margin:0 0 22px;font-size:16.5px;line-height:1.65;color:var(--ink2)}
+.bgfeat .btn1{align-self:flex-start}
+.bgmeta{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+.bgmeta b{font-weight:500;color:var(--clay)}
+.bgfilter{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}
+.bgfilter button{min-height:44px;padding:9px 18px;border-radius:100px;border:1.5px solid var(--line);background:#fff;font:inherit;font-size:15px;font-weight:600;color:var(--ink);cursor:pointer;
+  transition:border-color .2s,background .2s,color .2s}
+.bgfilter button small{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.1em;margin-left:6px;color:var(--ink3)}
+.bgfilter button[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:#fff}
+.bgfilter button[aria-pressed="true"] small{color:rgba(255,255,255,.75)}
+.bgfilter button:hover{border-color:var(--clay)}
+.bgfilter button:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.bggrid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.bggrid li{display:flex}
+.bggrid li[hidden]{display:none}
+.bggrid a{display:flex;flex-direction:column;width:100%;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;color:inherit;transition:border-color .2s,transform .25s}
+.bggrid a:hover{border-color:var(--clay);transform:translateY(-3px)}
+.bggrid a:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.bggrid img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.bggrid .bgbody{display:flex;flex-direction:column;flex:1;padding:18px 20px 20px}
+.bggrid h3{font-size:19px;line-height:1.3;margin:10px 0 8px}
+.bggrid p{margin:0 0 16px;font-size:14.5px;line-height:1.6;color:var(--ink2)}
+.bggo{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--clay)}
+.bggo svg{transition:transform .3s}
+.bggrid a:hover .bggo svg{transform:translateX(4px)}
+@media(max-width:1000px){.bgfeat{grid-template-columns:1fr}.bgfeat figure{min-height:0;aspect-ratio:16/9}.bgfeat>div{padding:28px 26px}.bggrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.bggrid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.bggrid a,.bggo svg,.bgfilter button{transition:none}.bggrid a:hover{transform:none}}
+
+.smgrid{columns:3;column-gap:18px}            /* stacked columns: no gaps under short groups */
+.smgrid .smcol{break-inside:avoid;margin:0 0 18px}
+.smcol{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 26px 20px}
+.smcol h3{font-size:21px;margin:0 0 4px}
+.smcol h3 a:hover{color:var(--clay)}
+.smcol ul{list-style:none;margin:10px 0 0;padding:0}
+.smcol li{border-top:1px solid var(--line)}
+.smcol li a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;padding:9px 0;font-size:15px;color:var(--ink)}
+.smcol li a:hover{color:var(--clay)}
+.smcol li a svg{flex:none;opacity:.45}
+.smcount{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+.smposts{columns:2;column-gap:28px}
+.smposts li{break-inside:avoid}
+@media(max-width:1000px){.smgrid{columns:2}}
+@media(max-width:640px){.smgrid{columns:1}.smposts{columns:1}}
+
+.tyhero .shcta .btn2{background:transparent}
 </style>
 </head>
 <body>
@@ -1630,7 +1712,7 @@ body.navopen{overflow:hidden}
     <nav class="nav" aria-label="Main">
       <ul class="navlist">
         <li><a href="/">Home</a></li>
-        <li class="hassub"><a href="/about/" aria-current="page">About</a><button class="subtog" type="button" aria-expanded="false" aria-label="About pages"><svg viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <li class="hassub"><a href="/about/">About</a><button class="subtog" type="button" aria-expanded="false" aria-label="About pages"><svg viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <ul class="sub"><li><a href="/the-team/">The Team</a></li></ul></li>
         <li><a href="/roof-insurance-claims/">Roof Insurance Claims</a></li>
         <li class="hassub"><a href="/residential-roofing/">Residential</a><button class="subtog" type="button" aria-expanded="false" aria-label="Residential pages"><svg viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -1643,7 +1725,7 @@ body.navopen{overflow:hidden}
           <ul class="sub"><li><a href="/soffit-services/soffit-installation/">Soffit Installation</a></li><li><a href="/soffit-services/soffit-repair/">Soffit Repair</a></li></ul></li>
         <li class="hassub"><a href="/service-areas/">Service Areas</a><button class="subtog" type="button" aria-expanded="false" aria-label="Service Areas pages"><svg viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <ul class="sub subcols"><li><a href="/service-areas/baton-rouge/">Baton Rouge</a></li><li><a href="/service-areas/covington/">Covington</a></li><li><a href="/service-areas/gretna/">Gretna</a></li><li><a href="/service-areas/hammond/">Hammond</a></li><li><a href="/service-areas/harahan/">Harahan</a></li><li><a href="/service-areas/kenner/">Kenner</a></li><li><a href="/service-areas/laplace/">Laplace</a></li><li><a href="/service-areas/madisonville/">Madisonville</a></li><li><a href="/service-areas/mandeville/">Mandeville</a></li><li><a href="/service-areas/metairie/">Metairie</a></li><li><a href="/service-areas/river-ridge/">River Ridge</a></li><li><a href="/service-areas/slidell/">Slidell</a></li><li><a href="/service-areas/st-rose/">St. Rose</a></li></ul></li>
-        <li><a href="/blog/">Blog</a></li>
+        <li><a aria-current="page" href="/blog/">Blog</a></li>
         <li><a href="/contact/">Contact</a></li>
       </ul>
     </nav>
@@ -1665,14 +1747,14 @@ body.navopen{overflow:hidden}
   </div>
   <nav class="mnav-links" aria-label="Main">
     <a href="/">Home</a>
-    <details class="mgrp" open><summary>About</summary><div class="msub"><a href="/about/" aria-current="page">All about us</a><a href="/the-team/">The Team</a></div></details>
+    <details class="mgrp"><summary>About</summary><div class="msub"><a href="/about/">All about us</a><a href="/the-team/">The Team</a></div></details>
     <a href="/roof-insurance-claims/">Roof Insurance Claims</a>
     <details class="mgrp"><summary>Residential</summary><div class="msub"><a href="/residential-roofing/">All residential</a><a href="/residential-roofing/asbestos-roof-removal/">Asbestos Roof Removal</a><a href="/residential-roofing/fascia-board/">Fascia Board</a><a href="/residential-roofing/hail-damage-roof-repair/">Hail Damage Roof Repair</a><a href="/residential-roofing/roof-inspection/">Roof Inspection</a><a href="/residential-roofing/roof-leak-detection/">Roof Leak Detection</a><a href="/residential-roofing/roofing-insulation/">Roof Insulation</a><a href="/residential-roofing/roof-repair/">Roof Repair</a><a href="/residential-roofing/roof-replacement-services/">Roof Replacement</a><a href="/residential-roofing/roof-ventilation/">Roof Ventilation</a><a href="/residential-roofing/siding-installation/">Siding Installation</a></div></details>
     <details class="mgrp"><summary>Commercial</summary><div class="msub"><a href="/commercial-roofing/">All commercial</a><a href="/commercial-roofing/elastomeric-coatings/">Elastomeric Coatings</a><a href="/commercial-roofing/hail-damage/">Hail Damage Roof Repair</a><a href="/commercial-roofing/re-roofing/">Re-Roofing</a><a href="/commercial-roofing/roof-coating-services/">Roof Coating</a><a href="/commercial-roofing/roof-inspection/">Roof Inspection</a><a href="/commercial-roofing/roof-leak-detection/">Roof Leak Detection</a><a href="/commercial-roofing/roof-repair/">Roof Repairs</a><a href="/commercial-roofing/roof-replacement/">Roof Replacement</a><a href="/commercial-roofing/roof-ventilation/">Roof Ventilation</a><a href="/commercial-roofing/insulation/">Roof Insulation</a><a href="/commercial-roofing/siding-installation/">Siding Installation</a></div></details>
     <details class="mgrp"><summary>Roofing Types</summary><div class="msub"><a href="/roofing-types/">All roofing types</a><a href="/roofing-types/built-up-roofing/">Built-Up Roofing</a><a href="/roofing-types/flat-roof/">Flat Roofing</a><a href="/roofing-types/metal-roof/">Metal Roofing</a><a href="/roofing-types/metal-standing-seam-roofing/">Metal Standing Seam Roofing</a><a href="/roofing-types/shingle/">Shingle Roofing</a><a href="/roofing-types/single-ply/">Single Ply Roofing</a><a href="/roofing-types/slate-roofing/">Slate Roofing</a><a href="/roofing-types/tile-roofing/">Tile Roofing</a></div></details>
     <details class="mgrp"><summary>Soffit Services</summary><div class="msub"><a href="/soffit-services/">All soffit services</a><a href="/soffit-services/soffit-installation/">Soffit Installation</a><a href="/soffit-services/soffit-repair/">Soffit Repair</a></div></details>
     <details class="mgrp"><summary>Service Areas</summary><div class="msub"><a href="/service-areas/">All service areas</a><a href="/service-areas/baton-rouge/">Baton Rouge</a><a href="/service-areas/covington/">Covington</a><a href="/service-areas/gretna/">Gretna</a><a href="/service-areas/hammond/">Hammond</a><a href="/service-areas/harahan/">Harahan</a><a href="/service-areas/kenner/">Kenner</a><a href="/service-areas/laplace/">Laplace</a><a href="/service-areas/madisonville/">Madisonville</a><a href="/service-areas/mandeville/">Mandeville</a><a href="/service-areas/metairie/">Metairie</a><a href="/service-areas/river-ridge/">River Ridge</a><a href="/service-areas/slidell/">Slidell</a><a href="/service-areas/st-rose/">St. Rose</a></div></details>
-    <a href="/blog/">Blog</a>
+    <a aria-current="page" href="/blog/">Blog</a>
     <a href="/contact/">Contact</a>
   </nav>
   <div class="mnav-note">
@@ -1688,27 +1770,27 @@ body.navopen{overflow:hidden}
 
 <section class="shero mhero">
   <div class="mhbg" aria-hidden="true">
-    <img class="mhs on" src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Close-up-photo-of-Professional-and-qualified-roofer-in-protective.jpg" alt="" fetchpriority="high">
-    <img class="mhs" src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/construction-and-building.jpg" alt="" loading="lazy">
-    <img class="mhs" src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/worker-on-a-roof.jpg" alt="" loading="lazy">
+    <img class="mhs on" src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="" fetchpriority="high">
+    <img class="mhs" src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/asphalt-roof.jpg" alt="" loading="lazy">
+    <img class="mhs" src="https://images.pexels.com/photos/19187101/pexels-photo-19187101.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="" loading="lazy">
   </div>
   <button class="mhpause" type="button" aria-pressed="false" aria-label="Pause the background photos"><svg class="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="8.5" y="2" width="3" height="10" rx="1" fill="currentColor"/></svg><svg class="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6a.6.6 0 0 0 .9.5l7.4-4.8a.6.6 0 0 0 0-1L4.9 1.7a.6.6 0 0 0-.9.5z" fill="currentColor"/></svg></button>
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb">
-      <a href="/">Home</a><span aria-hidden="true">&#47;</span><span aria-current="page">About</span>
+      <a href="/">Home</a><span aria-hidden="true">&#47;</span><span aria-current="page">Blog</span>
     </nav>
-    <p class="eyebrow">Local and family-owned</p>
-    <h1 class="shtitle"><em>TurnKey</em>&nbsp;Roofer</h1>
-    <p class="shlede">A local, family-owned roofing company for homes and businesses in New Orleans.</p>
+    <p class="eyebrow">Blog</p>
+    <h1 class="shtitle">Roofing Tips and Advice for <em>New Orleans</em>&nbsp;Homeowners</h1>
+    <p class="shlede">Guides on storms, insurance claims, repairs and roofing materials, written for the weather and the houses in New&nbsp;Orleans.</p>
     <div class="cta shcta">
       <a class="btn1" href="#estimate">Get a free estimate</a>
       <a class="btn2" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
     </div>
     <ul class="shfacts">
-      <li><b>#890459</b><span>Louisiana residential license</span></li>
-      <li><b>#3667</b><span>Louisiana commercial license</span></li>
-      <li><b>14 towns</b><span>New Orleans to Baton Rouge</span></li>
-      <li><b>24 hr</b><span>From payment to finished roof</span></li>
+      <li><b>27</b><span>Posts</span></li>
+      <li><b>4</b><span>Topics</span></li>
+      <li><b>Newest</b><span>March&nbsp;30,&nbsp;2026</span></li>
+      <li><b>Free</b><span>Roof&nbsp;estimates</span></li>
     </ul>
   </div>
 </section>
@@ -1733,126 +1815,62 @@ body.navopen{overflow:hidden}
 <div class="spage fbcream">
   <div class="wrap">
 
-        <section class="sblock" id="team">
+        <section class="sblock">
           <div class="svhead">
             <div>
-              <p class="eyebrow">The team</p>
-              <h2>Meet the Team</h2>
+              <p class="eyebrow">Newest post</p>
+              <h2>Latest From the&nbsp;Blog</h2>
             </div>
-            <p class="sintro">Three of the people behind TurnKey Roofer.</p>
+            <p class="sintro">Written for New Orleans roofs: the weather, the insurance claims and the houses&nbsp;here.</p>
           </div>
-          <ul class="abteam">
-            <li><figure><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/07/TurnKeyBrianHong1-348x424.png" alt="Brian Hong of TurnKey Roofer" loading="lazy"><figcaption>Brian Hong<span>TurnKey Roofer</span></figcaption></figure></li>
-            <li><figure><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/07/jose-pineda.jpg" alt="Jose Pineda of TurnKey Roofer" loading="lazy"><figcaption>Jose Pineda<span>TurnKey Roofer</span></figcaption></figure></li>
-            <li><figure><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/07/corey-gallagher.jpg" alt="Corey Gallagher of TurnKey Roofer" loading="lazy"><figcaption>Corey Gallagher<span>TurnKey Roofer</span></figcaption></figure></li>
+          <article class="bgfeat">
+            <figure><img src="https://www.turnkeyroofer.com/wp-content/uploads/2026/03/ruined-rooftop-in-need-of-repair-wind-damaged-hou-2026-03-17-03-59-19-utc-768x511.jpg" alt="Roof with missing asphalt shingles after storm damage" loading="lazy"></figure>
+            <div>
+              <p class="bgmeta"><b>Storms and Claims</b><span>March 30, 2026</span></p>
+              <h3><a href="/handle-emergency-roof-repair-after-storm/">Emergency Roof Repair in New Orleans: What to Do After a&nbsp;Storm</a></h3>
+              <p class="bglead">Water is coming through the ceiling and the storm has not fully passed.</p>
+              <a class="btn1" href="/handle-emergency-roof-repair-after-storm/">Read the post</a>
+            </div>
+          </article>
+        </section>
+
+        <section class="sblock">
+          <div class="svhead">
+            <div>
+              <p class="eyebrow">All posts</p>
+              <h2>Browse Every <em>Roofing</em>&nbsp;Guide</h2>
+            </div>
+            <p class="sintro">Pick a topic, or scroll the full list. Every post opens on its own&nbsp;page.</p>
+          </div>
+          <div class="bgfilter" role="group" aria-label="Filter posts by topic" hidden><button type="button" data-topic="all" aria-pressed="true">All posts<small>26</small></button><button type="button" data-topic="storm" aria-pressed="false">Storms and Claims<small>7</small></button><button type="button" data-topic="care" aria-pressed="false">Repairs and Care<small>9</small></button><button type="button" data-topic="build" aria-pressed="false">Materials and Design<small>8</small></button><button type="button" data-topic="hire" aria-pressed="false">Hiring and Home Value<small>2</small></button></div>
+          <ul class="bggrid">
+            <li data-topic="build"><a href="/benefits-of-installing-an-energy-efficient-roof/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2026/03/view-of-dusk-from-a-roof-2026-01-07-06-31-37-utc-768x576.jpg" alt="View of dusk from above the roof" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Materials and Design</b><span>March 12, 2026</span></span><h3>Energy-Efficient Roofing for New Orleans&nbsp;Homes</h3><p>Air conditioning is the largest line on a New Orleans power bill for a good part of the year, and a significant share of the heat it fights comes in through the roof.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="build"><a href="/roofing-considerations-for-homes-in-flood-zones/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/roof-galvanized-e1762879770946.jpg" alt="metal roofing for coastal homes" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Materials and Design</b><span>November 11, 2025</span></span><h3>Roofing Considerations for New Orleans Homes in Flood&nbsp;Zones</h3><p>Large parts of the New Orleans metro sit at or below sea level.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="storm"><a href="/how-your-roof-can-withstand-extreme-weather-in-new-orleans/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/12/Depositphotos_522946932_L.jpg" alt="Latest roofing technologies" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Storms and Claims</b><span>November 11, 2025</span></span><h3>How Your Roof Can Withstand Extreme Weather in New&nbsp;Orleans</h3><p>A roof withstands New Orleans&rsquo; rough weather with material that is strong enough and properly designed for the conditions here.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="care"><a href="/roof-repair-vs-roof-replacement-whats-best-for-your-home/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/09/roof-of-old-timber-framed-house-in-19s-century-sty-2024-09-26-02-08-05-utc-768x492.jpg" alt="energy-efficient roofing" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Repairs and Care</b><span>October 24, 2025</span></span><h3>Roof Repair or Roof Replacement: What New Orleans Homes&nbsp;Need</h3><p>In New Orleans the honest answer depends on how old the roof already is, whether a named storm caused the damage and what your insurance policy will actually pay.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="care"><a href="/how-to-properly-seal-your-roof-to-avoid-leaks/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/metal-roofing-e1762879820668.jpg" alt="metal roof" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Repairs and Care</b><span>October 8, 2025</span></span><h3>How to Seal a Roof Properly in New&nbsp;Orleans</h3><p>Rain in a New Orleans storm does not fall down.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="care"><a href="/how-to-maintain-your-roof-in-between-professional-inspections/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2022/12/Depositphotos_117725748_L-768x518.jpg" alt="Roof maintenance New Orleans" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Repairs and Care</b><span>September 19, 2025</span></span><h3>How to Maintain a New Orleans Roof Between&nbsp;Inspections</h3><p>Two professional inspections a year leaves ten months where you are the one watching the roof.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="care"><a href="/how-to-maintain-a-wooden-roof-for-longevity/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/08/closeup-of-metal-montage-anchor-for-installation-o-2023-11-27-05-27-55-utc-768x512.jpg" alt="roof inspection tips" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Repairs and Care</b><span>September 19, 2025</span></span><h3>Maintaining a Wood Roof in New Orleans&nbsp;Humidity</h3><p>Wood shingles and shakes are handsome, and New Orleans is close to the worst climate in the country to own them in.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="storm"><a href="/how-to-check-your-roof-for-storm-damage-after-a-hurricane/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2025/01/a-photo-of-a-roof-with-extensive-hail-da_HNNgQnQoRw2E1PyEeBWE-w_RCyjffykRj-lp1WlzdWCbw-e1758248233138.png" alt="Roof inspection after hailstorm" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Storms and Claims</b><span>September 19, 2025</span></span><h3>How to Check a New Orleans Roof After a&nbsp;Hurricane</h3><p>The wind drops. The power may still be out.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="care"><a href="/how-to-repair-roof-flashing-and-prevent-future-leaks/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2022/12/Depositphotos_28283961_XL-1-768x512.jpg" alt="View of a rooftop with a working roofer assembling pieces to the dormer wall" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Repairs and Care</b><span>August 30, 2025</span></span><h3>Roof Flashing Repair in New Orleans: Where Leaks Really&nbsp;Start</h3><p>If your New Orleans roof is leaking and the shingles look fine, the flashing is the first place to look.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="care"><a href="/how-to-repair-roof-damage-caused-by-extreme-heat/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/House-Thermovision-Detection-768x654.jpg" alt="Leak Detection with Infrared Camera" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Repairs and Care</b><span>August 24, 2025</span></span><h3>Repairing Heat Damage to New Orleans&nbsp;Roofs</h3><p>Storms get the attention in New Orleans. Heat does more cumulative damage.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="build"><a href="/the-benefits-of-choosing-tile-roofing-for-your-home/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2022/12/Depositphotos_89583382_XL-e1756010544549.jpg" alt="Builder performs installation gable roof tiles of metal - benefits of choosing tile roofing" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Materials and Design</b><span>August 22, 2025</span></span><h3>Tile Roofing for New Orleans&nbsp;Homes</h3><p>Clay and concrete tile have been on New Orleans roofs for a very long time, and the reason is not decoration.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="storm"><a href="/how-to-choose-the-right-roofing-contractor-for-your-insurance-claim/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/12/Depositphotos_87246592_L-768x509.jpg" alt="Roofing innovations 2024" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Storms and Claims</b><span>August 22, 2025</span></span><h3>How to Choose a Roofing Contractor for a New Orleans&nbsp;Claim</h3><p>The week after a named storm, New Orleans fills up with roofers.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="storm"><a href="/the-common-mistakes-to-avoid-when-filing-a-roof-insurance-claim/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/roof-insurancve-768x512.jpg" alt="roof insurance" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Storms and Claims</b><span>July 11, 2025</span></span><h3>Common Roof Insurance Claim Mistakes New Orleans Homeowners&nbsp;Make</h3><p>A roof claim in New Orleans is not usually lost because the damage was not real.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="storm"><a href="/how-to-file-a-roof-insurance-claim-after-storm-damage/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/08/roofer-repair-replace-shingle-that-has-been-damage-2023-11-27-05-19-13-utc-768x575.jpg" alt="Roof protection from high winds and hurricanes New Orleans" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Storms and Claims</b><span>July 11, 2025</span></span><h3>How to File a Roof Insurance Claim in New&nbsp;Orleans</h3><p>The storm passes, the wind drops, and you walk outside to look at your roof.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="hire"><a href="/how-a-new-roof-can-boost-your-homes-value/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/lee-county-home-768x466.jpg" alt="siding installation" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Hiring and Home Value</b><span>July 6, 2025</span></span><h3>How a New Roof Affects Your New Orleans Home’s&nbsp;Value</h3><p>A new roof helps a house sell in any market.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="build"><a href="/historic-homes-in-new-orleans-choosing-the-right-roof-to-preserve-charm-and-integrity/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/09/roof-of-old-timber-framed-house-in-19s-century-sty-2024-09-26-02-08-05-utc-768x492.jpg" alt="energy-efficient roofing" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Materials and Design</b><span>July 6, 2025</span></span><h3>Historic Homes in New Orleans: Choosing the Right Roof to Preserve Charm and&nbsp;Integrity</h3><p>When deciding what type of roof to fit onto your old house in New Orleans, be very careful with this choice so the house still exudes character and remains safe structurally.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="storm"><a href="/how-hail-damage-affects-your-roof-and-what-you-should-do/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2025/01/a-photo-of-a-roof-with-significant-hail-_2f9n0B8tSceDLCYAXTsFfQ_RCyjffykRj-lp1WlzdWCbw-768x431.png" alt="Hail damage roof repair" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Storms and Claims</b><span>January 3, 2025</span></span><h3>How Hail Damage Affects Your Roof in New&nbsp;Orleans</h3><p>New Orleans homeowners think about wind and water.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="care"><a href="/common-fascia-board-problems-and-how-to-address-them-effectively/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/12/building-fasade-under-construction-with-unfinished-2024-12-06-22-48-29-utc-768x511.jpg" alt="Fascia board problems" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Repairs and Care</b><span>December 23, 2024</span></span><h3>Fascia Board Problems in New Orleans: Rot, Termites and&nbsp;Water</h3><p>The fascia is the board running along the roof edge, behind the gutter.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="build"><a href="/exploring-the-latest-roofing-trends-and-technologies-of-2024/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/12/Depositphotos_37825537_L-768x511.jpg" alt="Roofing trends 2024" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Materials and Design</b><span>December 1, 2024</span></span><h3>Roofing Technology Worth Having in New&nbsp;Orleans</h3><p>Plenty of roofing technology is genuinely useful.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="build"><a href="/types-of-roof-ventilation-systems-which-one-is-right-for-your-home/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/11/chimney-on-house-roof-top-covered-with-metallic-sh-2023-11-27-04-58-39-utc-768x512.jpg" alt="Roof ventilation options" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Materials and Design</b><span>November 3, 2024</span></span><h3>Roof Ventilation Systems for New Orleans&nbsp;Homes</h3><p>If you fix one thing on a New Orleans roof, fix the ventilation.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="build"><a href="/flat-vs-sloped-roofs-pros-cons-and-which-is-best-for-your-home/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/10/modern-building-with-glass-windows-against-a-blue-2023-11-27-05-06-05-utc-768x476.jpg" alt="Flat vs. Sloped Roofs" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Materials and Design</b><span>October 23, 2024</span></span><h3>Flat vs Sloped Roofs: What Works in New&nbsp;Orleans</h3><p>New Orleans has more flat and low-slope roofing than most American cities its size.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="build"><a href="/top-roofing-materials-for-new-orleans-weather-what-lasts-the-longest/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/09/tile-roofing-worker-2023-11-27-05-35-06-utc-768x488.jpg" alt="energy-efficient roofing" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Materials and Design</b><span>September 11, 2024</span></span><h3>Top Roofing Materials for New Orleans Weather: What Lasts the&nbsp;Longest?</h3><p>Choosing the right roof for New Orleans&rsquo; challenging weather is critical.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="care"><a href="/how-to-identify-common-roofing-problems-before-they-become-costly/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/08/construction-crew-member-preparing-roof-for-solar-2023-11-27-05-21-46-utc-768x512.jpg" alt="common roofing problem" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Repairs and Care</b><span>August 6, 2024</span></span><h3>Common Roofing Problems in New Orleans and How to Spot Them&nbsp;Early</h3><p>Most expensive roof repairs in New Orleans started as something small and visible that nobody looked at for two years.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="storm"><a href="/the-impact-of-weather-on-your-roof-how-to-protect-your-home/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2022/12/Depositphotos_117725748_L-768x518.jpg" alt="Roof maintenance New Orleans" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Storms and Claims</b><span>June 15, 2024</span></span><h3>How New Orleans Weather Damages Your Roof, Season by&nbsp;Season</h3><p>Ask a New Orleans homeowner what damages roofs here and they will say hurricanes.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="care"><a href="/the-role-of-roof-inspections-in-preventing-issues-regular-checks-for-residential-and-commercial-properties/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/05/Depositphotos_28282961_S-768x512.jpg" alt="Roof inpection New Orleans" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Repairs and Care</b><span>May 15, 2024</span></span><h3>Why Regular Roof Inspections Matter More in New&nbsp;Orleans</h3><p>A roof inspection is an easy thing to skip.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
+            <li data-topic="hire"><a href="/how-to-choose-the-right-roofing-contractor/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2024/03/Professional-Roofing-Contractor-768x510.jpg" alt="Professional roofing contractor for how to choose the right roofing contractor: essential tips for homeowners - turnkey" loading="lazy"><span class="bgbody"><span class="bgmeta"><b>Hiring and Home Value</b><span>March 14, 2024</span></span><h3>How to Choose a Roofing Contractor in New&nbsp;Orleans</h3><p>Hiring a roofer in New Orleans is not the same as hiring one in a mild climate.</p><span class="bggo">Read the post <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
           </ul>
-        </section>
-
-        <section class="sblock">
-          <div class="abstory">
-            <div class="abstxt">
-              <p class="eyebrow">Our story</p>
-              <h2>Built on Local Knowledge</h2>
-              <p>TurnKey Roofer is a local, family-owned company built on expertise, integrity and customer satisfaction.</p>
-              <p>The team pairs deep local knowledge of New Orleans weather and roofing needs with the highest national roofing standards, so every project fits the property it is on.</p>
-              <div class="abspic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2022/12/Depositphotos_75384223_L-606x552.jpg" alt="Red metal tile roof with a dormer window" loading="lazy"></div>
-            </div>
-            <ol class="abvals">
-              <li><span class="abn" aria-hidden="true">01</span><div><b>Local Expertise, National Standards</b><span>New Orleans weather knowledge, held to national roofing standards.</span></div></li>
-              <li><span class="abn" aria-hidden="true">02</span><div><b>Quality Materials, Lasting Results</b><span>Top-tier roofing materials, chosen to stand up to the New Orleans climate.</span></div></li>
-              <li><span class="abn" aria-hidden="true">03</span><div><b>Your Vision, Our&nbsp;Expertise</b><span>We work closely with you on a roof that suits the home or business, in looks and in function.</span></div></li>
-            </ol>
-          </div>
-        </section>
-
-        <section class="sblock">
-          <div class="svhead">
-            <div>
-              <p class="eyebrow">What we do</p>
-              <h2>What We Do</h2>
-            </div>
-            <p class="sintro">Residential and commercial roofing, soffit work and roof insurance&nbsp;claims.</p>
-          </div>
-          <ul class="abdo">
-            <li><a href="/residential-roofing/"><h3>Residential Roofing</h3><p>Ten services for homes, from repair to full replacement.</p><span class="abgo">See residential roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-            <li><a href="/commercial-roofing/"><h3>Commercial Roofing</h3><p>Eleven services for commercial buildings, from coatings to&nbsp;replacement.</p><span class="abgo">See commercial roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-            <li><a href="/roofing-types/"><h3>Roofing Types</h3><p>Eight roof types, from shingle and slate to&nbsp;single-ply.</p><span class="abgo">See roofing types <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-            <li><a href="/soffit-services/"><h3>Soffit Services</h3><p>Soffit installation and repair, and the fascia beside it.</p><span class="abgo">See soffit services <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-            <li><a href="/roof-insurance-claims/"><h3>Insurance Claims</h3><p>Unbiased roof inspections and detailed condition reports to support your&nbsp;claim.</p><span class="abgo">See insurance claims <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-            <li><a href="/service-areas/"><h3>Service Areas</h3><p>New Orleans plus 13 towns across seven parishes.</p><span class="abgo">See service areas <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-          </ul>
-        </section>
-
-        <section class="sblock">
-          <div class="svhead">
-            <div>
-              <p class="eyebrow">How we work</p>
-              <h2>How We Work</h2>
-            </div>
-            <p class="sintro">Three steps, one phone number, and a price from someone who has been up on the roof.</p>
-          </div>
-          <ol class="rsteps">
-            <li>
-              <span class="rsico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></span>
-              <h3>You Call Us</h3>
-              <p>Call <b>(504) 226-7070</b> or send the form, and we book the estimator.</p>
-            </li>
-            <li>
-              <span class="rsico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12.5 12 5l9 7.5"/><path d="M5.5 10.5V19h13v-8.5"/><circle cx="12" cy="14" r="2.4"/><path d="m13.8 15.8 1.9 1.9"/></svg></span>
-              <h3>We Survey the Roof</h3>
-              <p>The estimator comes out to survey your roof and give you a cost estimate.</p>
-            </li>
-            <li>
-              <span class="rsico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12.5" r="8"/><path d="M12 8.5v4l2.6 1.6"/><path d="M9.5 2.5h5"/></svg></span>
-              <h3>We Do the Work</h3>
-              <p>Once payment is received, the roofing project is <b>completed within 24 hours</b>.</p>
-            </li>
-          </ol>
-        </section>
-
-  </div>
-</div>
-
-<section class="sblock fbband fbdark">
-  <div class="wrap">
-          <div class="ablic">
-            <p class="abn2">#890459<small>Residential license</small></p>
-            <p class="abn2">#3667<small>Commercial license</small></p>
-            <div>
-              <p class="eyebrow">Licensed in Louisiana</p>
-              <h2>Check Our Licenses First</h2>
-              <p>Both numbers are printed in the footer of every page on this site, so you can check them before you pay anyone.</p>
-            </div>
-          </div>
-  </div>
-</section>
-
-<section class="sblock fbband fbquote">
-  <div class="wrap">
-          <figure class="rrfeat">
-            <blockquote>&ldquo;As a property manager responsible for multiple residential buildings, I often encounter various roofing issues that require immediate attention. This company has been my go-to roofing company for years, and they have never&nbsp;disappointed.&rdquo;</blockquote>
-            <figcaption class="rrwho"><span class="rrav" aria-hidden="true">MD</span><span><b>Michael Davis</b><span>Property manager &middot; Multiple buildings</span></span></figcaption>
-          </figure>
-  </div>
-</section>
-
-<div class="spage fbcream">
-  <div class="wrap">
-
-        <section class="sblock">
-          <div class="svhead">
-            <div>
-              <p class="eyebrow">Before you call</p>
-              <h2>Questions About the Company</h2>
-            </div>
-            <p class="sintro">Short answers to what people ask first. For anything else, call <a class="rfaqtel" href="tel:5042267070">(504)&nbsp;226-7070</a>.</p>
-          </div>
-          <div class="rfaqlist">
-            <details><summary>Is TurnKey Roofer&nbsp;Family-Owned?</summary><div class="rfa">Yes. TurnKey Roofer is <b>a local, family-owned company</b> in New Orleans.</div></details>
-            <details><summary>Where Are You Based?</summary><div class="rfa">New Orleans, Louisiana. We work across <b>14 towns</b>, from the Northshore to Baton Rouge.</div></details>
-            <details><summary>Are You Licensed?</summary><div class="rfa">Yes. We are a licensed roofing contractor in Louisiana. <b>Residential License #890459</b> and <b>Commercial License #3667</b>. Both numbers are printed in the footer of every page on this site so you can check them before you pay anyone.</div></details>
-            <details><summary>Do You Work on Homes and Businesses?</summary><div class="rfa">Yes. <b>Residential and commercial roofing</b>, under two Louisiana licenses.</div></details>
-          </div>
         </section>
 
   </div>
@@ -1861,13 +1879,26 @@ body.navopen{overflow:hidden}
 <section class="fbband fbsx">
   <div class="wrap sblock sxband">
           <div>
-            <h2>Ready to Talk About Your Roof?</h2>
-            <p class="sintro">Call or fill out the form to schedule an appointment with an estimator.</p>
+            <h2>A Question the Posts Don&rsquo;t Cover?</h2>
+            <p class="sintro">Call and ask. We&rsquo;ll talk it through and book an estimator if the roof needs a&nbsp;look.</p>
           </div>
-          <a class="sxlink" href="#estimate">Get a free estimate <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="sxlink" href="tel:5042267070">Call (504)&nbsp;226&#8209;7070 <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
 </section>
 
+<script>
+/* blog topic filter: without JS every post shows */
+(function(){
+  var bar = document.querySelector('.bgfilter'); if(!bar) return;
+  var btns = [].slice.call(bar.querySelectorAll('button')), cards = [].slice.call(document.querySelectorAll('.bggrid li'));
+  bar.hidden = false;
+  btns.forEach(function(b){ b.addEventListener('click', function(){
+    var t = b.getAttribute('data-topic');
+    btns.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+    cards.forEach(function(c){ c.hidden = !(t === 'all' || c.getAttribute('data-topic') === t); });
+  }); });
+})();
+</script>
 </main>
 
 <section class="sec formsec" id="estimate">
