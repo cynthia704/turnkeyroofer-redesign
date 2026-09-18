@@ -1821,7 +1821,10 @@ body.navopen{overflow:hidden}
 .lc-facts li:first-child::before{top:4px}
 @media(max-width:1000px){.lc-ab1{grid-template-columns:1fr}}
 @media(max-width:760px){.lc-ab3{grid-template-columns:1fr}}
-@media(max-width:620px){.lc-todo{grid-template-columns:1fr}.lc-ab3t{padding:20px 20px 22px}}
+.lc-todo.n3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.lc-todo.n3 b{font-size:20px}
+@media(max-width:1000px){.lc-todo.n3{grid-template-columns:repeat(2,minmax(0,1fr))}.lc-todo.n3 li:first-child{grid-column:1/-1}.lc-todo.n3 li:first-child img{aspect-ratio:21/9}}
+@media(max-width:620px){.lc-todo,.lc-todo.n3{grid-template-columns:1fr}.lc-todo.n3 li:first-child img{aspect-ratio:16/9}.lc-ab3t{padding:20px 20px 22px}}
 </style>
 </head>
 <body>
@@ -2333,7 +2336,7 @@ body.navopen{overflow:hidden}
           <div>RESIDENTIAL #890459</div>
           <div>COMMERCIAL #3667</div>
         </div>
-        <div class="flag">HOURS PENDING. The live site prints two different sets (footer says 8am–6pm, /contact/ says 8am–3pm). Needs settling before launch.</div>
+        <div class="flag">HOURS PENDING. Business hours are being confirmed with the client and will be added before launch.</div>
       </div>
       <div>
         <h5>Residential</h5>

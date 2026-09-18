@@ -1435,24 +1435,15 @@ body.navopen{overflow:hidden}
 .rptl p{margin:0;font-size:15px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
 .rptl b{color:var(--ink)}
 @media(max-width:1000px){.rpflow{grid-template-columns:1fr}.rpflowpic{flex:none;height:240px}}
-/* warning signs: one photo per sign, 3 x 2, then 2 x 3, then one column */
-.rpsgs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.rpsg{display:flex;flex-direction:column;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:18px;
-  box-shadow:0 22px 44px -38px rgba(23,58,51,.55)}
-.rpsgpic{position:relative;margin:0;aspect-ratio:16/10;overflow:hidden;background:var(--forest2)}
-.rpsgpic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.4s cubic-bezier(.22,.61,.36,1)}
-.rpsg:hover .rpsgpic img{transform:scale(1.07)}
-.rpsgpic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,28,24,.5) 0%,rgba(12,28,24,0) 42%)}
-.rpsgno{position:absolute;z-index:1;top:14px;left:14px;min-width:38px;height:38px;padding:0 8px;border-radius:12px;display:grid;place-items:center;
-  background:var(--clay);color:#fff;font-family:var(--disp);font-size:17px;font-weight:700;box-shadow:0 8px 18px -8px rgba(0,0,0,.5)}
-.rpsgtag{position:absolute;z-index:1;top:18px;right:14px;padding:5px 11px;border-radius:100px;background:rgba(12,28,24,.72);
-  font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#f4efe8}
-.rpsgtxt{flex:1;padding:18px 22px 20px;border-top:3px solid var(--clay)}
-.rpsg h3{margin:0 0 6px;font-size:20px;line-height:1.25}
-.rpsg p{margin:0;font-size:15px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
-@media(max-width:1000px){.rpsgs{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:620px){.rpsgs{grid-template-columns:1fr}.rpsgpic{aspect-ratio:16/9}.rpsgtxt{padding:16px 18px 18px}}
-@media(prefers-reduced-motion:reduce){.rpsgpic img{transition:none}.rpsg:hover .rpsgpic img{transform:none}}
+/* warning signs: six cards, 3 x 2, then 2 x 3, then one column */
+.rpsigns{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.rpsigns li{padding:22px 22px 20px;background:#fff;border:1px solid var(--line);border-radius:16px}
+.rpsico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--cream2);color:var(--clay);margin-bottom:14px}
+.rpsico svg{width:22px;height:22px}
+.rpsigns h3{margin:0 0 6px;font-size:19px;line-height:1.25}
+.rpsigns p{margin:0;font-size:15px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
+@media(max-width:900px){.rpsigns{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.rpsigns{grid-template-columns:1fr}}
 /* wind warranty band: the number on the left, the words on the right */
 .rpwarr{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px 48px;align-items:center;padding:36px 44px;
   border-radius:var(--r);background:var(--forest);color:#f4efe8;
@@ -1467,6 +1458,48 @@ body.navopen{overflow:hidden}
 /* related services: the hub's photo tiles, two across */
 .svlist.rprel{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:280px}
 @media(max-width:560px){.svlist.rprel{grid-template-columns:1fr}}
+/* ===== about: the team, our story beside the values, what we do, the licenses band ===== */
+.abteam{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.abteam figure{margin:0;height:100%;border-radius:var(--r);overflow:hidden;background:#fff;border:1px solid var(--line)}
+.abteam img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%}
+.abteam figcaption{padding:16px 20px 18px;font-family:var(--disp);font-size:21px;font-weight:600;line-height:1.2;color:var(--ink)}
+.abteam figcaption span{display:block;margin-top:5px;font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--clay)}
+@media(max-width:560px){.abteam{grid-template-columns:1fr}.abteam img{aspect-ratio:1/1}}
+.abstory{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px 52px;align-items:stretch}
+.abstxt{display:flex;flex-direction:column;min-width:0}
+.abstxt .eyebrow{margin:0 0 12px}
+.abstxt h2{margin:0 0 14px}
+.abstxt>p:not(.eyebrow){margin:0 0 14px;font-size:16.5px;line-height:1.7;color:var(--ink2);text-wrap:pretty}
+.abspic{position:relative;flex:1;min-height:200px;margin-top:8px;border-radius:18px;overflow:hidden;background:var(--forest2)}
+.abspic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.abvals{list-style:none;margin:0;padding:0;display:grid;grid-auto-rows:1fr;gap:12px}
+.abvals li{display:flex;gap:18px;align-items:center;padding:20px 22px;background:#fff;border:1px solid var(--line);border-radius:16px}
+.abvals .abn{flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--forest);color:#fff;
+  font-family:var(--mono);font-size:13px;letter-spacing:.04em}
+.abvals b{display:block;margin-bottom:5px;font-family:var(--disp);font-size:19px;font-weight:600;line-height:1.25;color:var(--ink)}
+.abvals li div>span{display:block;font-size:15px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
+@media(max-width:900px){.abstory{grid-template-columns:1fr}.abspic{flex:none;height:240px}}
+.abdo{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.abdo a{display:flex;flex-direction:column;height:100%;padding:22px 22px 18px;background:#fff;border:1px solid var(--line);border-radius:16px;
+  color:var(--ink);transition:border-color .2s,transform .2s}
+.abdo a:hover{border-color:var(--clay);transform:translateY(-2px)}
+.abdo a:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.abdo h3{margin:0 0 6px;font-size:20px;line-height:1.25}
+.abdo p{margin:0 0 16px;font-size:15px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
+.abgo{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--forest)}
+@media(max-width:900px){.abdo{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.abdo{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.abdo a{transition:none}.abdo a:hover{transform:none}}
+.ablic{display:grid;grid-template-columns:auto auto minmax(0,1fr);gap:18px 44px;align-items:center;padding:34px 40px;border-radius:var(--r);
+  background:var(--forest);color:#f4efe8;background-image:repeating-linear-gradient(26.57deg,rgba(244,239,232,.055) 0 1px,transparent 1px 84px)}
+.abn2{margin:0;font-family:var(--disp);font-weight:700;font-size:clamp(38px,4.2vw,56px);line-height:1;color:var(--clay2);letter-spacing:-.02em}
+.abn2 small{display:block;margin-top:9px;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,232,.82)}
+.ablic .eyebrow{color:var(--clay2);margin:0 0 10px}
+.ablic h2{color:#fff;margin:0 0 10px}
+.ablic div>p:not(.eyebrow){margin:0;font-size:16px;line-height:1.65;color:rgba(244,239,232,.86);text-wrap:pretty}
+@media(max-width:1000px){.ablic{grid-template-columns:auto auto}.ablic>div{grid-column:1/-1}}
+@media(max-width:480px){.ablic{grid-template-columns:1fr;padding:28px 24px}}
 /* ===== header: the live site's menu, a top bar on desktop, the phone in the header on phones =====
    Ten items plus the phone button do not fit one row at 1280, so on desktop the phone sits in the
    top bar. Below 1240 the menu collapses to the panel and the phone returns to the header row. */
@@ -1570,150 +1603,6 @@ body.navopen{overflow:hidden}
 .mhero.paused .mhpause .i-play{display:block}
 @media(max-width:620px){.mhpause{top:16px;right:16px}}
 @media(prefers-reduced-motion:reduce){.mhs{transition:none}.mhs.on,.mhs.out{animation:none;transform:none}.mhpause{display:none}}
-/* ===== Roof Replacement, Sept 15: every section its own layout, not rows of boxes ===== */
-.sblock.rxband{margin:0}
-/* 1 how it runs: photo opener, then a timeline whose line fills in */
-.rxflow{background:var(--cream);padding:0 0 88px}
-.rxflowtop{position:relative;overflow:hidden;min-height:400px;display:flex;align-items:flex-end;background:var(--forest2)}
-.rxflowtop>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
-.rxflowtop::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(14,36,31,.94) 0%,rgba(14,36,31,.8) 42%,rgba(14,36,31,.2) 100%),linear-gradient(0deg,rgba(14,36,31,.55) 0%,rgba(14,36,31,0) 60%)}
-.rxflowtop>.wrap{position:relative;z-index:1;width:100%;padding-top:72px;padding-bottom:60px}
-.rxflowtop .eyebrow{margin:0 0 12px;color:var(--clay2)}
-.rxflowtop h2{margin:0 0 14px;color:#fff;font-size:clamp(32px,4.2vw,52px);line-height:1.1}
-.rxflowtop .sintro{margin:0;max-width:46ch;color:rgba(244,239,232,.9)}
-.rxtl{position:relative;list-style:none;margin:64px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 28px}
-.rxtl::before,.rxtl::after{content:"";position:absolute;left:34px;right:calc((100% - 84px) / 4 - 34px);top:33px;height:3px;border-radius:3px;background:rgba(168,85,42,.2)}
-.rxtl::after{background:var(--clay);transform-origin:left center;transform:scaleX(0);transition:transform 1.8s cubic-bezier(.22,.61,.36,1) .15s}
-.rxtl.in::after{transform:scaleX(1)}
-.rxtl li{position:relative;z-index:1}
-.rxdot{display:grid;place-items:center;width:68px;height:68px;margin:0 0 22px;border-radius:50%;background:var(--forest);color:#fff;
-  font-family:var(--disp);font-size:22px;font-weight:700;box-shadow:0 0 0 8px var(--cream);transform:scale(.7);opacity:.35;
-  transition:transform .6s cubic-bezier(.22,.61,.36,1),opacity .6s;transition-delay:calc(var(--i) * .3s + .2s)}
-.rxtl.in .rxdot{transform:none;opacity:1}
-.rxtl h3{margin:0 0 6px;font-size:19px;line-height:1.25}
-.rxtl p{margin:0;font-size:15px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
-@media(max-width:1000px){
-  .rxtl{grid-template-columns:1fr;gap:26px;margin-top:48px}
-  .rxtl::before,.rxtl::after{display:none}
-  .rxtl li:not(:last-child)::before{content:"";position:absolute;left:33px;top:68px;bottom:-26px;width:3px;border-radius:3px;background:var(--clay)}
-  .rxtl li{display:grid;grid-template-columns:68px minmax(0,1fr);gap:0 20px;align-items:start}
-  .rxdot{margin:0}
-  .rxtl h3{margin-top:10px}}
-@media(max-width:760px){.rxflowtop{min-height:340px}
-  .rxflowtop::after{background:linear-gradient(0deg,rgba(14,36,31,.92) 0%,rgba(14,36,31,.84) 100%)}
-  .rxflowtop>.wrap{padding-top:56px;padding-bottom:44px}}
-/* 2 signs: the photo cards on a tinted band */
-.rxsigns{padding:88px 0;background:var(--cream2);background-image:repeating-linear-gradient(26.57deg,rgba(23,58,51,.035) 0 1px,transparent 1px 84px)}
-/* 3 materials: expanding photo panels */
-.rxmat{padding:88px 0;background:var(--cream)}
-.rxpanels{list-style:none;margin:0;padding:0;display:flex;gap:12px;height:470px}
-.rxpanels li{flex:1 1 0;min-width:0;transition:flex-grow .7s cubic-bezier(.22,.61,.36,1)}
-.rxpanels li.on{flex-grow:3.4}
-.rxpanels:hover li.on,.rxpanels:focus-within li.on{flex-grow:1}
-.rxpanels li:hover,.rxpanels li:focus-within{flex-grow:3.4!important}
-.rxpanels a{position:relative;display:block;height:100%;overflow:hidden;border-radius:20px;background:var(--forest2);color:#fff;
-  box-shadow:0 26px 50px -38px rgba(23,58,51,.7)}
-.rxpanels a:focus-visible{outline:3px solid var(--clay);outline-offset:3px}
-.rxpanels img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.22,.61,.36,1)}
-.rxpanels li:hover img{transform:scale(1.05)}
-.rxpanels a::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(12,28,24,.92) 0%,rgba(12,28,24,.35) 50%,rgba(12,28,24,.12) 100%)}
-.rxpno{position:absolute;z-index:1;top:18px;left:18px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:#f4efe8}
-.rxptxt{position:absolute;z-index:1;left:20px;right:18px;bottom:20px}
-.rxptxt b{display:block;font-family:var(--disp);font-size:clamp(19px,1.9vw,26px);line-height:1.15;color:#fff}
-.rxptxt>span{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--clay2);opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s}
-.rxpanels li.on .rxptxt>span,.rxpanels li:hover .rxptxt>span,.rxpanels li:focus-within .rxptxt>span{opacity:1;transform:none}
-.rxpanels:hover li.on:not(:hover) .rxptxt>span{opacity:0}
-@media(max-width:1000px){.rxpanels{flex-direction:column;height:auto;gap:10px}
-  .rxpanels li,.rxpanels li.on,.rxpanels li:hover,.rxpanels li:focus-within{flex:none!important}
-  .rxpanels a{height:150px}
-  .rxptxt>span,.rxpanels:hover li.on:not(:hover) .rxptxt>span{opacity:1;transform:none}}
-/* 4 wind warranty: giant number, wind gusts past */
-.rxwind{position:relative;overflow:hidden;padding:100px 0;background:var(--forest);color:#f4efe8}
-.rxwind::before{content:"";position:absolute;right:-12%;top:-45%;width:62%;height:190%;pointer-events:none;
-  background:radial-gradient(closest-side,rgba(240,180,138,.17),rgba(240,180,138,0))}
-.rxstreaks{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-.rxstreaks i{position:absolute;left:-45%;width:40%;height:2px;border-radius:2px;opacity:0;
-  background:linear-gradient(90deg,rgba(240,180,138,0),rgba(240,180,138,.55),rgba(244,239,232,0))}
-.rxstreaks i:nth-child(1){top:16%;animation-delay:0s}
-.rxstreaks i:nth-child(2){top:28%;width:55%;animation-delay:.35s}
-.rxstreaks i:nth-child(3){top:41%;width:30%;animation-delay:.8s}
-.rxstreaks i:nth-child(4){top:52%;animation-delay:.15s}
-.rxstreaks i:nth-child(5){top:63%;width:50%;animation-delay:.55s}
-.rxstreaks i:nth-child(6){top:74%;width:34%;animation-delay:1s}
-.rxstreaks i:nth-child(7){top:85%;animation-delay:.25s}
-.rxstreaks i:nth-child(8){top:35%;width:26%;animation-delay:1.2s}
-.rxwind.in .rxstreaks i{animation-name:rxgust;animation-duration:2.2s;animation-timing-function:cubic-bezier(.45,.05,.3,1);animation-iteration-count:2;animation-fill-mode:both}
-@keyframes rxgust{0%{transform:translateX(0);opacity:0}18%{opacity:1}100%{transform:translateX(390%);opacity:0}}
-.rxwgrid{position:relative;z-index:1;display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px 72px;align-items:center}
-.rxwnum{margin:0;font-family:var(--disp);font-size:clamp(130px,16vw,236px);font-weight:700;line-height:.86;letter-spacing:-.05em;color:var(--clay2);text-align:center}
-.rxwnum small{display:block;margin-top:16px;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:rgba(244,239,232,.82)}
-.rxwind .eyebrow{margin:0 0 12px;color:var(--clay2)}
-.rxwind h2{margin:0 0 16px;color:#fff;font-size:clamp(32px,4.2vw,54px);line-height:1.08}
-.rxwind p:not(.eyebrow):not(.rxwnum){margin:0;font-size:18px;line-height:1.7;color:rgba(244,239,232,.88);text-wrap:pretty}
-@media(max-width:760px){.rxwind{padding:68px 0}.rxwgrid{grid-template-columns:1fr}.rxwnum{text-align:left}}
-/* 6 FAQ: sticky heading left, divider-line questions right */
-.rxfaq{padding:92px 0;background:var(--cream)}
-.rxfgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:40px 76px;align-items:start}
-.rxfhead{position:sticky;top:124px}
-.rxfhead .eyebrow{margin:0 0 12px}
-.rxfhead h2{margin:0 0 14px;font-size:clamp(28px,2.6vw,38px);line-height:1.12}
-.rxfhead .sintro{margin:0 0 26px}
-.rxflist details{border-bottom:1px solid var(--line)}
-.rxflist details:first-child{border-top:1px solid var(--line)}
-.rxflist summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) 36px;gap:20px;align-items:center;padding:24px 0;
-  font-family:var(--disp);font-size:clamp(18px,1.7vw,22px);font-weight:600;line-height:1.3;color:var(--ink);transition:color .25s}
-.rxflist summary::-webkit-details-marker{display:none}
-.rxflist summary::after{content:"";width:36px;height:36px;border-radius:50%;border:1px solid rgba(168,85,42,.35);
-  background:linear-gradient(var(--clay),var(--clay)) center/13px 2px no-repeat,linear-gradient(var(--clay),var(--clay)) center/2px 13px no-repeat;
-  transition:transform .35s cubic-bezier(.22,.61,.36,1),background-color .25s}
-.rxflist details[open] summary::after{transform:rotate(45deg);background-color:var(--cream2)}
-.rxflist summary:hover{color:var(--clay)}
-.rxflist summary:focus-visible{outline:2px solid var(--clay);outline-offset:4px;border-radius:4px}
-.rxflist .rfa{max-width:none;padding:0 56px 26px 0;font-size:16px;line-height:1.7;color:var(--ink2)}
-@media(max-width:900px){.rxfgrid{grid-template-columns:1fr}.rxfhead{position:static}.rxflist .rfa{padding-right:0}}
-/* 7 related services: numbered editorial rows */
-.rxrel{padding:92px 0;background:#fff}
-.rxrows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.rxrows li{border-bottom:1px solid var(--line)}
-.rxrows a{display:grid;grid-template-columns:44px 200px minmax(0,.9fr) minmax(0,1.3fr) auto;gap:30px;align-items:center;padding:22px 14px;color:inherit;
-  transition:background-color .35s}
-.rxrows a:hover{background:var(--cream)}
-.rxrows a:focus-visible{outline:2px solid var(--clay);outline-offset:-2px}
-.rxrno{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--clay)}
-.rxrpic{position:relative;display:block;height:112px;overflow:hidden;border-radius:14px;background:var(--forest2)}
-.rxrpic img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.8);transition:transform .9s cubic-bezier(.22,.61,.36,1),filter .5s}
-.rxrows a:hover .rxrpic img{transform:scale(1.08);filter:none}
-.rxrows h3{margin:0;font-size:clamp(20px,2vw,27px);line-height:1.2}
-.rxrows p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
-.rxrgo{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);white-space:nowrap}
-.rxrgo svg{transition:transform .3s}
-.rxrows a:hover .rxrgo svg{transform:translateX(5px)}
-@media(max-width:1000px){.rxrows a{grid-template-columns:132px minmax(0,1fr);gap:6px 22px;padding:20px 0}
-  .rxrno{display:none}.rxrpic{grid-row:span 3;height:100%;min-height:118px}.rxrows h3{align-self:end}.rxrgo{margin-top:6px}}
-@media(max-width:560px){.rxrows a{grid-template-columns:96px minmax(0,1fr);gap:4px 16px}.rxrpic{min-height:104px}}
-/* 8 towns: counting 14, names as large inline links */
-.rxtowns{position:relative;overflow:hidden;padding:96px 0;background:var(--forest2);color:#f4efe8}
-.rxtowns::before{content:"";position:absolute;left:-14%;bottom:-60%;width:64%;height:170%;pointer-events:none;
-  background:radial-gradient(closest-side,rgba(240,180,138,.14),rgba(240,180,138,0))}
-.rxtgrid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.3fr);gap:40px 76px;align-items:center}
-.rxtnum{display:block;margin:0 0 14px;font-family:var(--disp);font-size:clamp(100px,11vw,164px);font-weight:700;line-height:.85;letter-spacing:-.04em;color:var(--clay2)}
-.rxtowns .eyebrow{margin:0 0 12px;color:var(--clay2)}
-.rxtowns h2{margin:0 0 14px;color:#fff}
-.rxtowns .sintro{margin:0 0 26px;color:rgba(244,239,232,.86)}
-.rxtlist{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;row-gap:8px}
-.rxtlist li{display:flex;align-items:center}
-.rxtlist li:not(:last-child)::after{content:"";flex:none;width:7px;height:7px;margin:0 18px;border-radius:50%;background:var(--clay)}
-.rxtlist a{padding:2px 0;font-family:var(--disp);font-size:clamp(22px,2.4vw,33px);line-height:1.3;color:#f4efe8;
-  background:linear-gradient(var(--clay2),var(--clay2)) 0 100%/0 2px no-repeat;transition:background-size .35s,color .25s}
-.rxtlist a:hover{color:var(--clay2);background-size:100% 2px}
-.rxtlist a:focus-visible{outline:2px solid var(--clay2);outline-offset:3px}
-@media(max-width:900px){.rxtgrid{grid-template-columns:1fr}.rxtlist li:not(:last-child)::after{margin:0 13px}}
-@media(prefers-reduced-motion:reduce){
-  .rxtl::after,.rxdot,.rxpanels li,.rxpanels img,.rxptxt>span,.rxrows a,.rxrpic img,.rxrgo svg,.rxflist summary::after,.rxtlist a{transition:none}
-  .rxwind.in .rxstreaks i{animation:none}
-  .rxpanels li:hover img,.rxrows a:hover .rxrpic img{transform:none}}
 /* form column, Sept 15: the "What to expect" panel stretches to the foot of the column. A finished-roof photo is the
    panel background, showing above its text block only where the column has spare height, so there is never a gap. */
 .fside{justify-content:flex-start}
@@ -1725,193 +1614,217 @@ body.navopen{overflow:hidden}
 .fpbody::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:56px;pointer-events:none;
   background:linear-gradient(0deg,var(--forest) 0%,rgba(31,77,67,0) 100%)}
 @media(max-width:560px){.fpbody{padding:20px 20px 18px}}
-/* ===== Roof Repair, Sept 15: four sign cards, a benefits split band, a line under each type panel ===== */
-.rpsgs.rp4{grid-template-columns:repeat(4,minmax(0,1fr))}
-@media(max-width:1100px){.rpsgs.rp4{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:620px){.rpsgs.rp4{grid-template-columns:1fr}}
-.rpben{position:relative;overflow:hidden;padding:96px 0;background:var(--forest);color:#f4efe8;
-  background-image:repeating-linear-gradient(26.57deg,rgba(244,239,232,.045) 0 1px,transparent 1px 84px)}
-.rpben::before{content:"";position:absolute;left:-14%;top:-40%;width:60%;height:160%;pointer-events:none;
-  background:radial-gradient(closest-side,rgba(240,180,138,.13),rgba(240,180,138,0))}
-.rpbgrid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:40px 76px;align-items:stretch}
-.rpben .eyebrow{margin:0 0 12px;color:var(--clay2)}
-.rpben h2{margin:0 0 16px;color:#fff;font-size:clamp(30px,3.4vw,46px);line-height:1.1}
-.rpben .sintro{margin:0 0 28px;max-width:52ch;color:rgba(244,239,232,.88)}
-.rpbl{list-style:none;margin:0 0 34px;padding:0}
-.rpbl li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:18px;align-items:center;padding:16px 0;border-top:1px solid rgba(244,239,232,.16);
-  font-size:18px;line-height:1.45;color:#fff;opacity:0;transform:translateX(-14px);
-  transition:opacity .6s cubic-bezier(.22,.61,.36,1),transform .6s cubic-bezier(.22,.61,.36,1);transition-delay:calc(var(--i) * .12s)}
-.rpbl li:last-child{border-bottom:1px solid rgba(244,239,232,.16)}
-.rpbl.in li{opacity:1;transform:none}
-.rpbl svg{width:44px;height:44px;display:block}
-.rpbl circle{fill:rgba(240,180,138,.1);stroke:rgba(240,180,138,.45);stroke-width:1.5}
-.rpbl path{fill:none;stroke:var(--clay2);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:26;stroke-dashoffset:26;
-  transition:stroke-dashoffset .55s ease-out;transition-delay:calc(var(--i) * .12s + .35s)}
-.rpbl.in path{stroke-dashoffset:0}
-/* the live H1 is long: a step smaller on phones so it stays at four lines or fewer */
-@media(max-width:620px){.shtitle.shlong{font-size:28px;line-height:1.14}}
-/* the type panels carry a line of text, so the shade reaches higher up the photo than on the model page.
-   On wide screens the text sits low in a tall panel, so the upper photo can stay brighter. */
-.rp3 a::after{background:linear-gradient(0deg,rgba(12,28,24,.94) 0%,rgba(12,28,24,.84) 55%,rgba(12,28,24,.36) 100%)}
-@media(width>1000px){.rp3 a::after{background:linear-gradient(0deg,rgba(12,28,24,.94) 0%,rgba(12,28,24,.78) 30%,rgba(12,28,24,.3) 62%,rgba(12,28,24,.08) 100%)}}
-/* phones: this breadcrumb is short enough to sit on one line, so keep it clear of the photo pause button */
-@media(max-width:620px){.mhero .crumbs{padding-right:52px}}
-.rpbpic{position:relative;margin:0 22px 22px 0;min-height:440px}
-.rpbpic::before{content:"";position:absolute;top:22px;left:22px;right:-22px;bottom:-22px;border:2px solid rgba(240,180,138,.45);border-radius:var(--r)}
-.rpbpic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;border-radius:var(--r);
-  box-shadow:0 34px 60px -34px rgba(0,0,0,.65)}
-@media(max-width:900px){.rpbgrid{grid-template-columns:1fr}.rpbpic{min-height:0;aspect-ratio:16/10}}
-@media(max-width:760px){.rpben{padding:68px 0}.rpbl li{font-size:16.5px;gap:14px;grid-template-columns:38px minmax(0,1fr)}.rpbl svg{width:38px;height:38px}}
-.rxptxt .rxpline{display:block;max-width:34ch;margin-top:8px;font-size:15px;line-height:1.5;color:rgba(244,239,232,.9);
-  opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s}
-.rxpanels li.on .rxpline,.rxpanels li:hover .rxpline,.rxpanels li:focus-within .rxpline{opacity:1;transform:none}
-.rxpanels:hover li.on:not(:hover) .rxpline{opacity:0}
-@media(max-width:1000px){.rp3 a{height:196px}.rxpanels .rxpline,.rxpanels:hover li.on:not(:hover) .rxpline{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){.rpbl li{opacity:1;transform:none;transition:none}.rpbl path{stroke-dashoffset:0;transition:none}.rxptxt .rxpline{transition:none}}
-/* FAQ, Sept 15: a photo fills the heading column down to the last question, so there is no empty block under the
-   call button. It stops growing at 440px when answers are opened, and is hidden once the columns stack. */
-@media(width>900px){
-  .rpfaq .rxfgrid{align-items:stretch}
-  .rpfaq .rxfhead{position:static;display:flex;flex-direction:column;align-items:flex-start}
-  .rpfpic{position:relative;flex:1 1 auto;align-self:stretch;min-height:150px;max-height:440px;margin:30px 0 0;overflow:hidden;
-    border-radius:var(--r);background:var(--forest2)}
-  .rpfpic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
-}
-@media(max-width:900px){.rpfpic{display:none}}
-/* towns, Sept 15: a shorter band. 14 beside the heading, intro and call on the right, names across the full width */
-.rxtowns.rpt{padding:64px 0}
-.rptw{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,auto);gap:26px 56px;align-items:center}
-.rptw .rxthead{display:flex;align-items:center;gap:26px}
-.rptw .rxtnum{margin:0;font-size:clamp(80px,7.4vw,112px)}
-.rptw .rxthead .eyebrow{margin:0 0 8px}
-.rptw .rxthead h2{margin:0;font-size:clamp(28px,2.8vw,40px);line-height:1.1}
-.rptside{display:flex;align-items:center;gap:26px;justify-self:end}
-.rptside .sintro{margin:0;max-width:30ch;color:rgba(244,239,232,.86)}
-.rptside .btn1{flex:none}
-.rptw .rxtlist{grid-column:1 / -1;padding-top:26px;border-top:1px solid rgba(244,239,232,.16)}
-.rptw .rxtlist a{font-size:clamp(19px,1.7vw,24px)}
-@media(max-width:1100px){.rptw{grid-template-columns:1fr}.rptside{justify-self:start}}
-@media(max-width:620px){.rxtowns.rpt{padding:52px 0}.rptw .rxthead{gap:18px}.rptw .rxtnum{font-size:68px}
-  .rptside{flex-direction:column;align-items:flex-start;gap:18px}.rptw .rxtlist{padding-top:22px}}
-/* ===== Service template, Sept 15: highlighted H2 terms, Benefits tiles, compact review ===== */
-main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
-.rxflowtop h2 em,.rpben h2 em,.rxtowns h2 em{color:var(--clay2)}
-/* Benefits: four icon tiles on one ruled line, not boxes */
-.rpbn{padding:88px 0;background:#fff}
-.rpbnl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.rpbnl li{position:relative;padding:34px 28px 32px;border-left:1px solid var(--line);opacity:0;transform:translateY(18px);
-  transition:opacity .6s cubic-bezier(.22,.61,.36,1) calc(var(--i) * .1s),transform .6s cubic-bezier(.22,.61,.36,1) calc(var(--i) * .1s),background-color .35s}
-.rpbnl li:first-child{border-left:0}
-.rpbnl.in li{opacity:1;transform:none}
-.rpbnl li::before{content:"";position:absolute;left:0;right:0;top:-1px;height:3px;background:var(--clay);transform:scaleX(0);transform-origin:left center;
-  transition:transform .45s cubic-bezier(.22,.61,.36,1)}
-.rpbnl li:hover{background:var(--cream)}
-.rpbnl li:hover::before{transform:scaleX(1)}
-.rpbnic{display:grid;place-items:center;width:64px;height:64px;margin:0 0 22px;border-radius:50%;background:var(--cream2);color:var(--forest);transition:background-color .35s,color .35s}
-.rpbnl li:hover .rpbnic{background:var(--forest);color:var(--clay2)}
-.rpbnic svg{width:32px;height:32px;display:block;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.rpbnno{position:absolute;top:32px;right:26px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--clay)}
-.rpbnl h3{margin:0 0 8px;font-size:21px;line-height:1.25}
-.rpbnl p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink2);text-wrap:pretty}
-@media(max-width:1000px){.rpbnl{grid-template-columns:repeat(2,minmax(0,1fr))}.rpbnl li:nth-child(3){border-left:0}
-  .rpbnl li:nth-child(n+3){border-top:1px solid var(--line)}}
-@media(max-width:620px){.rpbn{padding:64px 0}.rpbnl{grid-template-columns:1fr;border-bottom:0}
-  .rpbnl li{display:grid;grid-template-columns:52px minmax(0,1fr);column-gap:18px;align-items:start;padding:24px 0;border-left:0;border-bottom:1px solid var(--line)}
-  .rpbnl li:nth-child(n+3){border-top:0}.rpbnic{width:52px;height:52px;margin:0;grid-row:span 2}.rpbnic svg{width:26px;height:26px}
-  .rpbnno{top:26px;right:0}.rpbnl h3{padding-right:34px;margin-top:4px}}
-@media(prefers-reduced-motion:reduce){.rpbnl li{opacity:1;transform:none;transition:none}.rpbnl li::before,.rpbnic{transition:none}}
-/* compact review: reviewer on the left, quote on the right, smaller type and padding */
-.fbquote.rpq{padding:46px 0 48px}
-.rpq .rrfeat{display:grid;grid-template-columns:230px minmax(0,1fr);gap:16px 44px;align-items:center;padding:0}
-.rpq .rrfeat::before{display:none}
-.rpq .rrfeat .rrwho{order:-1;align-self:center}
-.rpq .rrfeat blockquote{padding:4px 0 4px 26px;border-left:3px solid var(--clay);font-size:clamp(16.5px,1.45vw,19px);line-height:1.6}
-@media(max-width:760px){.fbquote.rpq{padding:40px 0 42px}.rpq .rrfeat{grid-template-columns:1fr}.rpq .rrfeat blockquote{padding-left:18px}}
-@media(max-width:620px){.fbquote.rpq{padding:34px 0 36px}.rpq .rrfeat{gap:14px}.rpq .rrfeat blockquote{padding-left:16px;font-size:15.5px;line-height:1.55}}
-/* ===== Process opener, Sept 15: no second hero. Heading left, framed photo card right, timeline underneath ===== */
-.rxflow.rpop{padding:88px 0}
-.rpophead{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:30px 64px;align-items:center}
-.rpophead .eyebrow{margin:0 0 12px}
-.rpophead h2{margin:0 0 14px;font-size:clamp(32px,3.4vw,48px);line-height:1.1}
-.rpophead .sintro{margin:0;max-width:44ch}
-.rpoppic{position:relative;margin:0;aspect-ratio:16/7;overflow:hidden;border-radius:var(--r);background:var(--forest2);
-  box-shadow:0 30px 60px -42px rgba(23,58,51,.7)}
-.rpoppic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;transition:transform 1.4s cubic-bezier(.22,.61,.36,1)}
-.rpoppic:hover img{transform:scale(1.04)}
-.rpopchip{position:absolute;left:18px;bottom:18px;padding:8px 14px;border-radius:100px;background:var(--forest);color:#f4efe8;
-  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 10px 24px -12px rgba(0,0,0,.55)}
-.rpopchip b{color:var(--clay2);font-weight:500}
-.rpop .rxtl{margin-top:60px}
-@media(width>900px) and (max-width:1280px){.rpoppic{aspect-ratio:16/6}}
-@media(max-width:900px){.rpophead{grid-template-columns:1fr}.rpoppic{aspect-ratio:21/9}.rpop .rxtl{margin-top:44px}}
-@media(max-width:620px){.rxflow.rpop{padding:64px 0}.rpoppic{aspect-ratio:16/9}}
-@media(prefers-reduced-motion:reduce){.rpoppic img{transition:none}.rpoppic:hover img{transform:none}}
-/* ===== Intro, Sept 15: short opening text right after the hero, before the process section ===== */
-.rpin{padding:76px 0;background:var(--cream2);background-image:repeating-linear-gradient(26.57deg,rgba(23,58,51,.03) 0 1px,transparent 1px 84px)}
-.rpingrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px 72px;align-items:center}
-.rpinlead .eyebrow{margin:0 0 14px}
-.rpinbig{margin:0;font-family:var(--disp);font-size:clamp(26px,2.5vw,36px);font-weight:600;line-height:1.25;letter-spacing:-.015em;color:var(--ink);text-wrap:balance}
-.rpinbig em{font-style:italic;color:var(--clay)}
-.rpinbody{padding-left:30px;border-left:3px solid var(--clay)}
-.rpinbody p{margin:0 0 14px;font-size:17px;line-height:1.7;color:var(--ink2);text-wrap:pretty}
-.rpinbody p:last-child{margin-bottom:0}
-@media(width>900px) and (max-width:1280px){.rpingrid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:26px 56px}}
-@media(width>900px) and (max-width:1100px){.rpingrid{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr)}.rpinbody p{font-size:16px}}
-@media(max-width:900px){.rpingrid{grid-template-columns:1fr}.rpinbody{padding-left:22px}}
-@media(max-width:620px){.rpin{padding:54px 0}.rpinbody{padding-left:18px}.rpinbody p{font-size:16px}}
-/* ===== Process band, Sept 15: green background, icon step cards joined by arrow badges (no numbered dots on a line) ===== */
-.rxflow.rpop{position:relative;overflow:hidden;background-color:var(--forest);color:#f4efe8;
-  background-image:repeating-linear-gradient(26.57deg,rgba(244,239,232,.045) 0 1px,transparent 1px 84px)}
-.rxflow.rpop::before{content:"";position:absolute;right:-14%;top:-30%;width:62%;height:130%;pointer-events:none;
-  background:radial-gradient(closest-side,rgba(240,180,138,.13),rgba(240,180,138,0))}
-.rpop>.wrap{position:relative;z-index:1}
-.rpop .rpophead .eyebrow{color:var(--clay2)}
-.rpop .rpophead h2{color:#fff}
-.rpop .rpophead h2 em{color:var(--clay2)}
-.rpop .rpophead .sintro{color:rgba(244,239,232,.86)}
-.rpop .rpoppic{box-shadow:0 34px 60px -34px rgba(0,0,0,.6)}
-.rpop .rpopchip{background:var(--clay);color:#fff}
-.rpop .rpopchip b{color:#fff}
-.rpst{list-style:none;margin:60px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
-.rpst li{position:relative;display:flex;flex-direction:column;padding:28px 24px 26px;border-radius:var(--r);
-  background:rgba(244,239,232,.06);border:1px solid rgba(244,239,232,.14);opacity:0;transform:translateY(22px);
-  transition:opacity .6s cubic-bezier(.22,.61,.36,1) calc(var(--i) * .12s),transform .6s cubic-bezier(.22,.61,.36,1) calc(var(--i) * .12s),background-color .35s,border-color .35s}
-.rpst.in li{opacity:1;transform:none}
-.rpst li:hover{background:rgba(244,239,232,.1);border-color:rgba(240,180,138,.5)}
-.rpstic{display:grid;place-items:center;width:62px;height:62px;margin:0 0 20px;border-radius:18px;background:rgba(240,180,138,.14);
-  color:var(--clay2);transition:background-color .35s,color .35s}
-.rpst li:hover .rpstic{background:var(--clay2);color:var(--forest2)}
-.rpstic svg{width:30px;height:30px;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.rpstno{position:absolute;top:30px;right:24px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,232,.72)}
-.rpst h3{margin:0 0 8px;font-size:20px;line-height:1.25;color:#fff}
-.rpst p{margin:0;font-size:15px;line-height:1.6;color:rgba(244,239,232,.84);text-wrap:pretty}
-.rpst p b{color:#fff}
-.rpst li:not(:last-child)::after{content:"";position:absolute;z-index:2;top:44px;right:-29px;width:30px;height:30px;border-radius:50%;
-  background:var(--clay) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4'/%3E%3C/svg%3E") center/14px no-repeat;box-shadow:0 0 0 5px var(--forest)}
-@media(max-width:1000px){.rpst{grid-template-columns:repeat(2,minmax(0,1fr))}.rpst li:nth-child(2)::after{display:none}}
-@media(max-width:900px){.rpst{margin-top:44px}}
-@media(max-width:620px){.rpst{grid-template-columns:1fr}
-  .rpst li:not(:last-child)::after,.rpst li:nth-child(2)::after{display:block;top:auto;right:auto;bottom:-29px;left:50%;margin-left:-15px;transform:rotate(90deg)}}
-@media(prefers-reduced-motion:reduce){.rpst li{opacity:1;transform:none;transition:none}.rpstic{transition:none}}
-/* ===== CTA in every section, Sept 15: a full-width ruled row at the foot of sections that had none ===== */
-.rpcta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;margin-top:44px;padding-top:28px;
-  border-top:1px solid var(--line)}
-.rpcta p{margin:0;font-family:var(--disp);font-size:clamp(19px,1.8vw,24px);font-weight:600;line-height:1.3;color:var(--ink);text-wrap:balance}
-.rpctabtns{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px}
-.rpctatel{padding-bottom:2px;font-weight:700;color:var(--forest);border-bottom:2px solid var(--clay2);white-space:nowrap;transition:color .25s,border-color .25s}
-.rpctatel:hover{color:var(--clay);border-color:var(--clay)}
-.rpin .rpcta{grid-column:1 / -1;margin-top:16px}
-.rpop .rpcta{border-top-color:rgba(244,239,232,.16)}
-.rpop .rpcta p{color:#fff}
-.rpop .rpctatel{color:#fff;border-color:rgba(240,180,138,.7)}
-.rpop .rpctatel:hover{color:var(--clay2);border-color:var(--clay2)}
-@media(max-width:760px){.rpcta{flex-direction:column;align-items:flex-start;margin-top:34px;padding-top:24px}}
-/* compact review: button under the reviewer, quote spans both rows */
-.rpq .rrfeat{grid-template-rows:auto auto}
-.rpq .rrfeat blockquote{grid-column:2;grid-row:1 / span 2}
-.rpq .rrfeat .rrwho{grid-column:1;grid-row:1;align-self:end}
-.rpq .rpqbtn{grid-column:1;grid-row:2;justify-self:start;align-self:start}
-@media(max-width:760px){.rpq .rrfeat blockquote,.rpq .rrfeat .rrwho,.rpq .rpqbtn{grid-column:1;grid-row:auto}}
+
+/* ===== location page v2 (service areas), September 18, 2026 ===== */
+.lc-hgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:40px 52px;align-items:center}
+.lc-kicker{display:inline-flex;align-items:center;gap:8px;margin:0 0 16px;font-size:12.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--clay2)}
+.lc-hero h1{font-size:clamp(34px,4.4vw,56px);line-height:1.06;margin:0;color:#fff;letter-spacing:-.024em;text-wrap:balance}
+.lc-hero h1 em{font-style:italic;color:var(--clay2)}
+.lc-lede{margin:18px 0 0;font-size:18px;line-height:1.6;color:rgba(244,239,232,.86);max-width:46ch;text-wrap:pretty}
+.lc-hero .cta{margin-top:28px}
+.lc-chips{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.lc-chips li{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,239,232,.82);
+  border:1px solid rgba(244,239,232,.26);border-radius:100px;padding:7px 13px}
+.lc-map{margin:0;background:var(--forest2);border:1px solid rgba(244,239,232,.14);border-radius:var(--r);padding:16px 18px 14px;
+  box-shadow:0 30px 60px -30px rgba(0,0,0,.55)}
+.lc-maphead,.lc-mapfoot{display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:rgba(244,239,232,.66)}
+.lc-maphead{margin-bottom:8px}.lc-mapfoot{margin-top:8px}
+.lc-maphead b{color:var(--clay2);font-weight:500}
+.lc-map svg{display:block;width:100%;height:auto;overflow:visible}
+.lc-map .lk{fill:rgba(244,239,232,.07);stroke:rgba(244,239,232,.3);stroke-width:1.2}
+.lc-map .rv{fill:none;stroke:rgba(240,180,138,.55);stroke-width:2.4;stroke-linecap:round}
+.lc-map .lkl{font-family:var(--disp);font-style:italic;font-size:14px;fill:rgba(244,239,232,.46)}
+.lc-map .rvl{font-family:var(--disp);font-style:italic;font-size:12px;fill:rgba(240,180,138,.62)}
+.lc-map .hit{fill:transparent}
+.lc-map .pt{fill:#f4efe8;transition:fill .2s}
+.lc-map .lb{font-family:var(--mono);font-size:11px;letter-spacing:.05em;fill:rgba(244,239,232,.8)}
+.lc-map a:hover .pt,.lc-map a:focus-visible .pt{fill:var(--clay2)}
+.lc-map a:hover .lb{fill:#fff}
+.lc-map a:focus-visible{outline:none}
+.lc-map a:focus-visible .hit{stroke:var(--clay2);stroke-width:2}
+.lc-map .hl .pt{fill:var(--clay2)}
+.lc-map .rg{fill:none;stroke:var(--clay2);stroke-width:1.6;opacity:.6;transform-box:fill-box;transform-origin:center;animation:lcping 2.6s ease-out infinite}
+.lc-map .lbh{font-family:var(--disp);font-size:17px;font-weight:700;letter-spacing:0;fill:#fff}
+@keyframes lcping{0%{transform:scale(.55);opacity:.9}80%,100%{transform:scale(1.45);opacity:0}}
+@media(prefers-reduced-motion:reduce){.lc-map .rg{animation:none}.lc-map .pt{transition:none}}
+@media(max-width:1000px){.lc-hgrid{grid-template-columns:1fr}.lc-lede{max-width:60ch}}
+@media(max-width:560px){.lc-map{padding:12px 12px 10px}.lc-map .lb{display:none}.lc-map .lbk,.lc-map .lbh{display:inline}.lc-map .lbk{font-size:20px}.lc-map .lbh{font-size:27px}.lc-map .lkl{font-size:21px}.lc-map .rvl{display:none}
+  .lc-mapfoot span+span{display:none}}
+
+.lc-sec{padding:84px 0}
+.lc-cream{background:var(--cream)}.lc-cream2{background:var(--cream2)}.lc-white{background:#fff}
+@media(max-width:760px){.lc-sec{padding:60px 0}}
+.lc-sec h2{font-size:clamp(27px,3.2vw,40px);line-height:1.14;margin:0 0 14px;text-wrap:balance}
+.lc-sec h2 em{font-style:italic;color:var(--clay)}
+.lc-sec .eyebrow{margin:0 0 12px}
+.lc-p{margin:0;font-size:17px;line-height:1.7;color:var(--ink2);max-width:60ch;text-wrap:pretty}
+.lc-p+.lc-p{margin-top:14px}
+
+
+.lc-head{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:16px 56px;align-items:end;margin:0 0 34px}
+.lc-head .lc-p{margin:0}
+@media(max-width:1000px){.lc-head{grid-template-columns:1fr}}
+.lc-dirall{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--forest);font-weight:500}
+.lc-dirall:hover{color:var(--clay)}
+
+.lc-wx{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:40px 60px;align-items:stretch}
+.lc-wxpic{margin:0;position:relative;border-radius:var(--r);overflow:hidden;min-height:420px}
+.lc-wxpic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lc-wxpic figcaption{position:absolute;left:16px;bottom:16px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  color:#fff;background:rgba(23,58,51,.82);padding:7px 12px;border-radius:100px}
+.lc-wxlist{list-style:none;margin:26px 0 0;padding:0;counter-reset:wx}
+.lc-wxlist li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:4px 16px;padding:18px 0;border-top:1px solid var(--line);counter-increment:wx}
+.lc-wxlist li:last-child{border-bottom:1px solid var(--line)}
+.lc-wxlist li::before{content:counter(wx,decimal-leading-zero);grid-row:span 2;font-family:var(--disp);font-size:30px;font-weight:700;line-height:1;color:var(--clay)}
+.lc-wxlist b{font-family:var(--disp);font-size:20px;font-weight:600;line-height:1.3}
+.lc-wxlist span{font-size:15.5px;line-height:1.6;color:var(--ink2)}
+.lc-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:26px}
+.lc-row .lc-tel{font-weight:700;color:var(--forest);border-bottom:1.5px solid rgba(168,85,42,.45);white-space:nowrap}
+.lc-row .lc-tel:hover{color:var(--clay)}
+@media(max-width:1000px){.lc-wx{grid-template-columns:1fr}.lc-wxpic{min-height:0;aspect-ratio:16/9}}
+
+.lc-dark{background:var(--forest);color:#f4efe8;background-image:repeating-linear-gradient(26.57deg,rgba(244,239,232,.05) 0 1px,transparent 1px 84px)}
+.lc-dark h2{color:#fff}.lc-dark h2 em{color:var(--clay2)}.lc-dark .eyebrow{color:var(--clay2)}.lc-dark .lc-p{color:rgba(244,239,232,.84)}
+
+.lc-tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px;position:relative}
+.lc-tl::before{content:"";position:absolute;left:24px;right:calc((100% - 78px) / 4 - 24px);top:24px;height:2px;background:repeating-linear-gradient(90deg,var(--clay) 0 8px,transparent 8px 14px)}
+.lc-tl li{position:relative}
+.lc-tl .n{position:relative;z-index:1;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--forest);color:#fff;
+  font-family:var(--disp);font-weight:700;font-size:19px;box-shadow:0 0 0 6px #fff}
+.lc-tl h3{margin:20px 0 8px;font-size:21px;line-height:1.25}
+.lc-tl p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink2)}
+@media(max-width:900px){.lc-tl{grid-template-columns:1fr;gap:24px}
+  .lc-tl::before{left:23px;right:auto;top:24px;bottom:24px;width:2px;height:auto;background:repeating-linear-gradient(180deg,var(--clay) 0 8px,transparent 8px 14px)}
+  .lc-tl li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:4px 18px}.lc-tl .n{grid-row:span 2}.lc-tl h3{margin:10px 0 4px}}
+
+.lc-near{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.lc-near a{display:flex;flex-direction:column;height:100%;padding:24px 22px 20px;background:#fff;border:1px solid var(--line);border-radius:16px;
+  transition:border-color .2s,transform .2s}
+.lc-near a:hover{border-color:var(--clay);transform:translateY(-2px)}
+.lc-near a:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.lc-near .pn{color:var(--clay);margin-bottom:14px}
+.lc-near b{font-family:var(--disp);font-size:24px;font-weight:600;line-height:1.2;color:var(--ink)}
+.lc-near span{margin:8px 0 18px;font-size:15px;line-height:1.55;color:var(--ink2)}
+.lc-near em{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--forest)}
+@media(max-width:1000px){.lc-near{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.lc-near{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.lc-near a{transition:none}.lc-near a:hover{transform:none}}
+
+.lc-faq{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:36px 64px;align-items:start}
+.lc-faqh{position:sticky;top:120px}
+.lc-faqh .btn1{display:inline-block;margin-top:24px}
+@media(max-width:1000px){.lc-faq{grid-template-columns:1fr}.lc-faqh{position:static}}
+
+/* ===== location page v3 additions, September 18, 2026 ===== */
+.lc-hero{padding-bottom:64px}
+.lc-hero .wrap{position:relative;z-index:2}
+.lc-hero .lc-map{background:rgba(23,58,51,.9);backdrop-filter:blur(3px)}
+
+.lc-intro{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px 64px;align-items:stretch}
+.lc-ipic{margin:0;position:relative;border-radius:var(--r);overflow:hidden;min-height:460px}
+.lc-ipic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.lc-ibadge{position:absolute;left:16px;right:16px;bottom:16px;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;justify-content:space-between;
+  background:rgba(23,58,51,.9);color:#f4efe8;border-radius:14px;padding:14px 18px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase}
+.lc-ibadge b{font-family:var(--disp);font-size:20px;letter-spacing:0;text-transform:none;color:var(--clay2)}
+.lc-stats{list-style:none;margin:28px 0 0;padding:22px 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.lc-stats li{padding:0 20px;border-left:1px solid var(--line)}
+.lc-stats li:first-child{padding-left:0;border-left:0}
+.lc-stats b{display:block;font-family:var(--disp);font-size:20px;font-weight:600;line-height:1.25;color:var(--ink)}
+.lc-stats span{display:block;margin-top:6px;font-size:14.5px;line-height:1.5;color:var(--ink2)}
+@media(max-width:1000px){.lc-intro{grid-template-columns:1fr}.lc-ipic{min-height:0;aspect-ratio:16/10}}
+@media(max-width:560px){.lc-stats{grid-template-columns:1fr;gap:16px}.lc-stats li{padding:0;border-left:0}}
+
+.lc-tabs{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.lc-tab{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:12px 22px 12px 14px;border-radius:100px;border:1.5px solid var(--line);
+  background:#fff;color:var(--ink);font-family:var(--body);font-weight:700;font-size:16px;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.lc-tab svg{width:30px;height:30px;padding:6px;border-radius:50%;background:var(--cream2);color:var(--forest)}
+.lc-tab small{font-family:var(--mono);font-weight:500;font-size:10px;letter-spacing:.12em;color:var(--ink3)}
+.lc-tab[aria-selected="true"]{background:var(--forest);border-color:var(--forest);color:#fff}
+.lc-tab[aria-selected="true"] svg{background:rgba(255,255,255,.14);color:#fff}
+.lc-tab[aria-selected="true"] small{color:var(--clay2)}
+.lc-tab:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.lc-panel+.lc-panel{margin-top:30px}
+.lc-panel[hidden]{display:none}
+.lc-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.lc-js .lc-panel+.lc-panel{margin-top:0}
+.lc-plic{margin:0 0 14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3)}
+.lc-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.lc-grid a{display:flex;align-items:center;justify-content:space-between;gap:12px;height:100%;min-height:74px;padding:18px 20px;background:var(--cream);
+  border:1px solid var(--line);border-radius:14px;font-weight:600;font-size:15.5px;line-height:1.35;color:var(--ink);transition:border-color .2s,background .2s,color .2s}
+.lc-grid a svg{flex:none;color:var(--clay);transition:transform .25s}
+.lc-grid a:hover{border-color:var(--clay);background:#fff}
+.lc-grid a:hover svg{transform:translateX(4px)}
+.lc-grid a:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.lc-grid li.all a{background:var(--forest);border-color:var(--forest);color:#fff}
+.lc-grid li.all a svg{color:var(--clay2)}
+@media(max-width:1000px){.lc-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.lc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.lc-grid{gap:10px}.lc-grid a{min-height:64px;padding:14px 14px;font-size:14.5px}}
+@media(max-width:340px){.lc-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.lc-tab,.lc-grid a,.lc-grid a svg{transition:none}.lc-grid a:hover svg{transform:none}}
+
+.lc-hrow{margin-top:18px}
+.lc-hrow .lc-dirall{margin-top:0}
+.lc-light .lc-tel{background:rgba(251,247,242,.92);border-radius:100px;padding:6px 12px;border-bottom:0}
+.lc-photobg{position:relative;isolation:isolate}
+.lc-photobg::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--bg) center/cover no-repeat}
+.lc-photobg::after{content:"";position:absolute;inset:0;z-index:-1}
+.lc-dark.lc-photobg::after{background:linear-gradient(90deg,rgba(23,58,51,.96) 0%,rgba(23,58,51,.9) 45%,rgba(23,58,51,.8) 100%)}
+.lc-light.lc-photobg::after{background:linear-gradient(180deg,rgba(251,247,242,.9) 0%,rgba(251,247,242,.78) 38%,rgba(251,247,242,.34) 62%,rgba(251,247,242,.3) 100%)}
+.lc-light .lc-plic{display:inline-block;background:rgba(251,247,242,.92);border-radius:100px;padding:6px 12px}
+.lc-light .lc-grid a{background:#fff;box-shadow:0 10px 24px -18px rgba(23,58,51,.45)}
+.lc-light .lc-grid a:hover{background:#fff}
+.lc-local{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:36px 60px;align-items:stretch}
+.lc-localt{display:flex;flex-direction:column;gap:24px}
+.lc-lrow{display:flex;flex-wrap:wrap;align-items:center;gap:14px 16px}
+.lc-lrow .lc-chips{margin:0}
+.lc-lpic{margin:0;flex:1 1 auto;min-height:100px;position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(244,239,232,.16)}
+.lc-lpic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lc-local .btn1{display:inline-block}
+.lc-lcards{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.lc-lcards li{padding:22px 22px 20px;background:rgba(23,58,51,.55)!important;backdrop-filter:blur(2px);border-radius:18px;background:rgba(244,239,232,.06);border:1px solid rgba(244,239,232,.16)}
+.lc-lcards .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:var(--clay);color:#fff;margin-bottom:16px}
+.lc-lcards .ic svg{width:24px;height:24px}
+.lc-lcards b{display:block;font-family:var(--disp);font-size:20px;font-weight:600;color:#fff;margin:0 0 6px;line-height:1.25}
+.lc-lcards span{display:block;font-size:15px;line-height:1.6;color:rgba(244,239,232,.82)}
+@media(max-width:1000px){.lc-local{grid-template-columns:1fr}.lc-localt{gap:22px}.lc-lpic{flex:none;aspect-ratio:16/8;min-height:0}}
+@media(max-width:560px){.lc-lcards{grid-template-columns:1fr}}
+
+.lc-ab1{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:36px 56px;align-items:center;margin:0 0 56px}
+.lc-ab1 h3,.lc-abh{font-size:clamp(22px,2.4vw,28px);margin:0 0 12px}
+.lc-abpic{margin:0;border-radius:var(--r);overflow:hidden;background:#fff;border:1px solid var(--line)}
+.lc-abpic img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.lc-abpic figcaption,.lc-todo figcaption{padding:10px 14px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)}
+.lc-abkv{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:10px}
+.lc-abkv li{display:flex;gap:14px;align-items:baseline;padding:12px 0;border-top:1px solid var(--line)}
+.lc-abkv small{flex:none;width:92px;font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--clay)}
+.lc-abkv span{font-weight:600;color:var(--ink)}
+.lc-maplink{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-weight:700;color:var(--forest);border-bottom:1.5px solid rgba(168,85,42,.45)}
+.lc-maplink:hover{color:var(--clay)}
+.lc-todo{list-style:none;margin:0 0 56px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.lc-todo li{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.lc-todo figure{margin:0}
+.lc-todo img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.lc-todo figcaption{display:none}
+.lc-todo div{padding:20px 24px 22px}
+.lc-todo b{display:block;font-family:var(--disp);font-size:22px;font-weight:600;line-height:1.25;margin:0 0 6px}
+.lc-todo span{display:block;font-size:15px;line-height:1.55;color:var(--ink2)}
+.lc-ab3{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.lc-ab3>div{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.lc-ab3pic{margin:0;flex:1 1 auto;min-height:240px;position:relative}.lc-ab3pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lc-ab3t{padding:24px 28px 26px}
+.lc-facts{list-style:none;margin:0;padding:0;counter-reset:fa}
+.lc-facts li{position:relative;padding:12px 0 12px 44px;border-top:1px solid var(--line);font-size:15.5px;line-height:1.6;color:var(--ink2);counter-increment:fa}
+.lc-facts li:first-child{border-top:0;padding-top:4px}
+.lc-facts li::before{content:counter(fa,decimal-leading-zero);position:absolute;left:0;top:12px;font-family:var(--disp);font-weight:700;font-size:18px;color:var(--clay)}
+.lc-facts li:first-child::before{top:4px}
+@media(max-width:1000px){.lc-ab1{grid-template-columns:1fr}}
+@media(max-width:760px){.lc-ab3{grid-template-columns:1fr}}
+.lc-todo.n3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.lc-todo.n3 b{font-size:20px}
+@media(max-width:1000px){.lc-todo.n3{grid-template-columns:repeat(2,minmax(0,1fr))}.lc-todo.n3 li:first-child{grid-column:1/-1}.lc-todo.n3 li:first-child img{aspect-ratio:21/9}}
+@media(max-width:620px){.lc-todo,.lc-todo.n3{grid-template-columns:1fr}.lc-todo.n3 li:first-child img{aspect-ratio:16/9}.lc-ab3t{padding:20px 20px 22px}}
 </style>
 </head>
 <body>
@@ -1984,30 +1897,34 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
   </div>
 </div>
 
-<section class="shero mhero">
+<section class="shero mhero lc-hero">
   <div class="mhbg" aria-hidden="true">
-    <img class="mhs on" src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/asphalt-roof.jpg" alt="" fetchpriority="high">
-    <img class="mhs" src="https://images.pexels.com/photos/10854909/pexels-photo-10854909.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="" loading="lazy">
-    <img class="mhs" src="https://images.pexels.com/photos/34933247/pexels-photo-34933247.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="" loading="lazy">
+    <img class="mhs on" src="https://images.pexels.com/photos/34933247/pexels-photo-34933247.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="" fetchpriority="high">
+    <img class="mhs" src="https://images.pexels.com/photos/19187101/pexels-photo-19187101.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="" loading="lazy">
+    <img class="mhs" src="https://images.pexels.com/photos/30316930/pexels-photo-30316930.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="" loading="lazy">
   </div>
   <button class="mhpause" type="button" aria-pressed="false" aria-label="Pause the background photos"><svg class="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="8.5" y="2" width="3" height="10" rx="1" fill="currentColor"/></svg><svg class="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6a.6.6 0 0 0 .9.5l7.4-4.8a.6.6 0 0 0 0-1L4.9 1.7a.6.6 0 0 0-.9.5z" fill="currentColor"/></svg></button>
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a><span aria-hidden="true">&#47;</span><a href="/service-areas/">Service&nbsp;Areas</a><span aria-hidden="true">&#47;</span><span aria-current="page">Kenner</span>
+      <a href="/">Home</a><span aria-hidden="true">&#47;</span><a href="/service-areas/">Service&nbsp;Areas</a><span aria-hidden="true">&#47;</span><span aria-current="page">Kenner</span>
     </nav>
-    <p class="eyebrow">Roofing in Kenner, LA</p>
-    <h1 class="shtitle">Roofing Contractor for <em>Kenner</em> Homes and&nbsp;Businesses</h1>
-    <p class="shlede">Roof repair, replacement and inspections for homes and businesses in Kenner, with a free estimate before any work&nbsp;begins.</p>
-    <div class="cta shcta">
-    <a class="btn1" href="#estimate">Get a free estimate</a>
-    <a class="btn2" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
+    <div class="lc-hgrid">
+      <div>
+        <p class="lc-kicker"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z"/><circle cx="12" cy="10" r="2.4"/></svg> Service area &middot; Jefferson Parish</p>
+        <h1>Roofing Contractor in <em>Kenner</em>,&nbsp;LA</h1>
+        <p class="lc-lede">Roof repair, replacement and inspections for homes and businesses in Kenner, with a free estimate before any work&nbsp;begins.</p>
+        <div class="cta">
+          <a class="btn1" href="#estimate">Get a free estimate</a>
+          <a class="btn2" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
+        </div>
+        <ul class="lc-chips"><li>Residential #890459</li><li>Commercial #3667</li><li>Free estimates</li></ul>
+      </div>
+      <figure class="lc-map">
+        <div class="lc-maphead"><span>Our service area</span><b>Kenner highlighted</b></div>
+        <svg viewBox="0 0 640 330" role="group" aria-label="Simplified map of our 14 service areas, Kenner highlighted"><path class="lk" d="M335.6,214.5 C331.1,199.7 336.2,156.7 347.3,140.2 C358.4,123.7 385.1,122.0 402.0,115.5 C418.9,109.0 433.9,103.2 448.8,101.1 C463.8,99.0 477.4,100.0 491.7,103.1 C506.0,106.2 520.3,113.4 534.6,119.6 C548.9,125.8 567.2,131.9 577.6,140.2 C588.0,148.4 599.7,159.5 597.1,169.1 C594.5,178.7 575.0,189.1 562.0,198.0 C549.0,206.9 532.7,216.6 519.0,222.8 C505.3,229.0 495.6,233.1 480.0,235.1 C464.4,237.1 443.0,236.1 425.4,235.1 C407.8,234.1 389.6,232.3 374.6,228.9 C359.6,225.5 340.2,229.3 335.6,214.5 Z"/><text class="lkl" x="468.3" y="165.0" text-anchor="middle">Lake Pontchartrain</text><path class="rv" d="M39.0,41.3 C39.6,46.8 36.4,60.5 42.9,74.2 C49.4,88.0 61.1,105.9 78.0,123.8 C94.9,141.7 119.7,167.1 144.4,181.5 C169.1,195.9 199.6,202.2 226.3,210.4 C253.0,218.7 283.6,224.1 304.4,231.0 C325.2,237.9 336.9,245.1 351.2,251.6 C365.5,258.1 377.8,265.7 390.2,270.2 C402.6,274.7 414.3,277.0 425.4,278.4 C436.5,279.8 447.5,279.1 456.6,278.4 C465.7,277.7 473.5,272.9 480.0,274.3 C486.5,275.7 488.5,282.6 495.6,286.7 C502.8,290.8 510.5,296.0 522.9,299.1 C535.3,302.2 562.0,304.3 569.8,305.3"/><text class="rvl" x="163.9" y="239.3" text-anchor="middle" transform="rotate(14 163.9 239.3)">Mississippi River</text><a class="dt" href="/service-areas/"><title>New Orleans</title><circle class="hit" cx="479.6" cy="267.7" r="13"/><circle class="pt" cx="479.6" cy="267.7" r="4.5"/><text class="lb lbk" x="488.6" y="284.7" text-anchor="start">New Orleans</text></a><a class="dt" href="/service-areas/metairie/"><title>Metairie</title><circle class="hit" cx="447.6" cy="254.1" r="13"/><circle class="pt" cx="447.6" cy="254.1" r="4.5"/></a><a class="dt" href="/service-areas/river-ridge/"><title>River Ridge</title><circle class="hit" cx="423.0" cy="264.0" r="13"/><circle class="pt" cx="423.0" cy="264.0" r="4.5"/></a><a class="dt" href="/service-areas/harahan/"><title>Harahan</title><circle class="hit" cx="428.1" cy="272.2" r="13"/><circle class="pt" cx="428.1" cy="272.2" r="4.5"/></a><a class="dt" href="/service-areas/gretna/"><title>Gretna</title><circle class="hit" cx="486.2" cy="282.6" r="13"/><circle class="pt" cx="486.2" cy="282.6" r="4.5"/></a><a class="dt" href="/service-areas/st-rose/"><title>St. Rose</title><circle class="hit" cx="381.3" cy="269.4" r="13"/><circle class="pt" cx="381.3" cy="269.4" r="4.5"/></a><a class="dt" href="/service-areas/laplace/"><title>LaPlace</title><circle class="hit" cx="319.6" cy="219.9" r="13"/><circle class="pt" cx="319.6" cy="219.9" r="4.5"/><text class="lb" x="310.6" y="236.9" text-anchor="end">LaPlace</text></a><a class="dt" href="/service-areas/baton-rouge/"><title>Baton Rouge</title><circle class="hit" cx="44.1" cy="61.5" r="13"/><circle class="pt" cx="44.1" cy="61.5" r="4.5"/><text class="lb lbk" x="54.1" y="77.5" text-anchor="start">Baton Rouge</text></a><a class="dt" href="/service-areas/hammond/"><title>Hammond</title><circle class="hit" cx="327.0" cy="39.6" r="13"/><circle class="pt" cx="327.0" cy="39.6" r="4.5"/><text class="lb" x="327.0" y="26.6" text-anchor="middle">Hammond</text></a><a class="dt" href="/service-areas/madisonville/"><title>Madisonville</title><circle class="hit" cx="445.7" cy="80.4" r="13"/><circle class="pt" cx="445.7" cy="80.4" r="4.5"/><text class="lb" x="435.7" y="75.4" text-anchor="end">Madisonville</text></a><a class="dt" href="/service-areas/covington/"><title>Covington</title><circle class="hit" cx="468.3" cy="51.6" r="13"/><circle class="pt" cx="468.3" cy="51.6" r="4.5"/><text class="lb" x="478.3" y="45.6" text-anchor="start">Covington</text></a><a class="dt" href="/service-areas/mandeville/"><title>Mandeville</title><circle class="hit" cx="481.6" cy="99.8" r="13"/><circle class="pt" cx="481.6" cy="99.8" r="4.5"/><text class="lb" x="491.6" y="109.8" text-anchor="start">Mandeville</text></a><a class="dt" href="/service-areas/slidell/"><title>Slidell</title><circle class="hit" cx="592.8" cy="134.1" r="13"/><circle class="pt" cx="592.8" cy="134.1" r="4.5"/><text class="lb" x="586.8" y="153.1" text-anchor="end">Slidell</text></a><a class="dt hl" href="/service-areas/kenner/"><title>Kenner</title><circle class="rg" cx="412.9" cy="250.0" r="15"/><circle class="hit" cx="412.9" cy="250.0" r="13"/><circle class="pt" cx="412.9" cy="250.0" r="7"/><text class="lb lbh" x="404.9" y="238.0" text-anchor="end">Kenner</text></a></svg>
+        <figcaption class="lc-mapfoot"><span>Simplified map. Tap a town for its&nbsp;page.</span><span>14 areas &middot; 1 phone&nbsp;number</span></figcaption>
+      </figure>
     </div>
-    <ul class="shfacts">
-    <li><b>#890459</b><span>Residential&nbsp;license</span></li>
-    <li><b>#3667</b><span>Commercial&nbsp;license</span></li>
-    <li><b>Homes</b><span>And&nbsp;businesses</span></li>
-    <li><b>Free</b><span>Estimate before work&nbsp;begins</span></li>
-    </ul>
   </div>
 </section>
 
@@ -2026,230 +1943,240 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
     </div>
   </div>
 </section>
-<main class="rxmain">
-<section class="sblock rxband rpin">
-  <div class="wrap rpingrid">
-    <div class="rpinlead">
+<main class="fbmain">
+
+<section class="lc-sec lc-cream">
+  <div class="wrap lc-intro">
+    <figure class="lc-ipic"><img src="https://images.pexels.com/photos/34802849/pexels-photo-34802849.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Red tile roof with a dormer above arched windows" loading="lazy"><figcaption class="lc-ibadge"><span>Licensed in Louisiana</span><b>#890459 &middot; #3667</b></figcaption></figure>
+    <div>
       <p class="eyebrow">Roofing in Kenner</p>
-      <p class="rpinbig">Wind, hail, heavy rain and summer sun all wear down <em>roofs in Kenner</em>.</p>
-    </div>
-    <div class="rpinbody">
-      <p>Kenner sits along the Mississippi in Jefferson Parish. It&rsquo;s home to Louis Armstrong New Orleans International Airport, the Rivertown Historic District and the Pontchartrain&nbsp;Center.</p>
-      <p>TurnKey Roofer handles roof repair, replacement, inspections and leak detection for homes and businesses in Kenner, with a free estimate before any work&nbsp;begins.</p>
-    </div>
-    <div class="rpcta">
-      <p>Roof trouble in Kenner? The estimate is&nbsp;free.</p>
-      <div class="rpctabtns"><a class="btn1" href="#estimate">Get a free estimate</a><a class="rpctatel" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
+      <h2>From Minor Repairs to New Roofs in <em>Kenner</em></h2>
+      <p class="lc-p">Your roof protects you and your belongings from the elements, and it adds value to your property. TurnKey Roofer handles roofing for homes and businesses in&nbsp;Kenner.</p>
+      <p class="lc-p">From minor repairs to complete installations, we look at the whole roof and give a free estimate before any work&nbsp;begins.</p>
+      <ul class="lc-stats"><li><b>Homes and&nbsp;businesses</b><span>Residential and commercial&nbsp;roofing</span></li><li><b>New roofs to&nbsp;repairs</b><span>Reroofs, maintenance and&nbsp;inspections</span></li><li><b>Free&nbsp;estimates</b><span>Before any work&nbsp;begins</span></li></ul>
+      <div class="lc-row"><a class="btn1" href="#estimate">Get a free estimate</a><a class="lc-tel" href="tel:5042267070">or call (504)&nbsp;226&#8209;7070</a></div>
     </div>
   </div>
 </section>
 
-<section class="sblock rxband rxflow rpop">
+<section class="lc-sec lc-svc lc-light lc-photobg" style="--bg:url(https://images.pexels.com/photos/3997060/pexels-photo-3997060.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920)">
   <div class="wrap">
-    <div class="rpophead">
+    <div class="lc-head">
+      <div>
+        <p class="eyebrow">Services in Kenner</p>
+        <h2>Roofing Services in <em>Kenner</em></h2>
+      </div>
+      <div><p class="lc-p">Every service we offer is available in Kenner. Pick one for the details, the process and the free&nbsp;estimate.</p><div class="lc-row lc-hrow"><a class="btn1" href="#estimate">Get a free estimate</a><a class="lc-tel" href="tel:5042267070">or call (504)&nbsp;226&#8209;7070</a></div></div>
+    </div>
+    <div class="lc-tabs" role="tablist" aria-label="Service type" hidden><button class="lc-tab" type="button" role="tab" id="lc-homes-tab" aria-controls="lc-homes-panel" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-6h4v6"/></svg>For Homes <small>11 services</small></button><button class="lc-tab" type="button" role="tab" id="lc-biz-tab" aria-controls="lc-biz-panel" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5l8-2v18"/><path d="M12 8h8v13"/><path d="M7 8h2M7 12h2M7 16h2M15 12h2M15 16h2"/><path d="M2 21h20"/></svg>For Businesses <small>11 services</small></button></div>
+      <div class="lc-panel" id="lc-homes-panel" role="tabpanel" aria-labelledby="lc-homes-tab">
+        <h3 class="lc-sr">For Homes</h3>
+        <p class="lc-plic">Residential license #890459</p>
+        <ul class="lc-grid">
+          <li><a href="/residential-roofing/asbestos-roof-removal/">Asbestos Roof Removal <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="/residential-roofing/fascia-board/">Fascia Board <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="/residential-roofing/hail-damage-roof-repair/">Hail Damage Roof Repair <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="/residential-roofing/roof-inspection/">Roof Inspection <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="/residential-roofing/roof-leak-detection/">Roof Leak Detection <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="/residential-roofing/roofing-insulation/">Roof Insulation <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="/residential-roofing/roof-repair/">Roof Repair <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="/residential-roofing/roof-replacement-services/">Roof Replacement <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="/residential-roofing/roof-ventilation/">Roof Ventilation <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="/residential-roofing/siding-installation/">Siding Installation <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="/soffit-services/">Soffit Services <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li class="all"><a href="/residential-roofing/">All residential roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+        </ul>
+      </div>
+      <div class="lc-panel" id="lc-biz-panel" role="tabpanel" aria-labelledby="lc-biz-tab">
+        <h3 class="lc-sr">For Businesses</h3>
+        <p class="lc-plic">Commercial license #3667</p>
+        <ul class="lc-grid">
+          <li><a href="/commercial-roofing/elastomeric-coatings/">Elastomeric Coatings <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="/commercial-roofing/hail-damage/">Hail Damage Roof Repair <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="/commercial-roofing/re-roofing/">Re-Roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="/commercial-roofing/roof-coating-services/">Roof Coating <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="/commercial-roofing/roof-inspection/">Roof Inspection <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="/commercial-roofing/roof-leak-detection/">Roof Leak Detection <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="/commercial-roofing/roof-repair/">Roof Repairs <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="/commercial-roofing/roof-replacement/">Roof Replacement <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="/commercial-roofing/roof-ventilation/">Roof Ventilation <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="/commercial-roofing/insulation/">Roof Insulation <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="/commercial-roofing/siding-installation/">Siding Installation <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li class="all"><a href="/commercial-roofing/">All commercial roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+        </ul>
+      </div>
+  </div>
+</section>
+<script>
+/* service tabs on location pages: without JS both lists show, one under the other */
+(function(){
+  var root = document.querySelector('.lc-svc'); if(!root) return;
+  var tabs = [].slice.call(root.querySelectorAll('.lc-tab')), panels = [].slice.call(root.querySelectorAll('.lc-panel'));
+  root.classList.add('lc-js'); root.querySelector('.lc-tabs').hidden = false;
+  function show(i, focus){
+    tabs.forEach(function(t, k){ t.setAttribute('aria-selected', k === i ? 'true' : 'false'); t.tabIndex = k === i ? 0 : -1; });
+    panels.forEach(function(p, k){ p.hidden = k !== i; });
+    if(focus) tabs[i].focus();
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ show(i); });
+    t.addEventListener('keydown', function(e){
+      if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){ e.preventDefault(); show((i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length, true); }
+    });
+  });
+  show(0);
+})();
+</script>
+
+<section class="lc-sec lc-cream">
+  <div class="wrap lc-wx">
+    <figure class="lc-wxpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2026/03/ruined-rooftop-in-need-of-repair-wind-damaged-hou-2026-03-17-03-59-19-utc.jpg" alt="Roof with missing asphalt shingles after a storm" loading="lazy"><figcaption>After a storm</figcaption></figure>
+    <div>
+      <p class="eyebrow">Local weather</p>
+      <h2>What Wears Down <em>Kenner Roofs</em></h2>
+      <p class="lc-p">From torrential rain to hot summers, a roof here is always exposed to the elements. These four do the most&nbsp;damage.</p>
+      <ol class="lc-wxlist">
+        <li><b>High Winds</b><span>Strong winds can lift or tear off shingles, leaving the roof open to water and&nbsp;debris.</span></li>
+        <li><b>Hailstorms</b><span>Hail can dent metal roofs and crack, fracture or puncture&nbsp;shingles.</span></li>
+        <li><b>Rain and Humidity</b><span>Heavy rain and high humidity grow mold and mildew that damage shingles and the structure&nbsp;below.</span></li>
+        <li><b>Sun Exposure</b><span>Long exposure to UV rays can fade and break down roofing materials over&nbsp;time.</span></li>
+      </ol>
+      <div class="lc-row"><a class="btn1" href="#estimate">Book a roof inspection</a><a class="lc-tel" href="tel:5042267070">or call (504)&nbsp;226&#8209;7070</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="lc-sec lc-dark lc-photobg" style="--bg:url(https://images.pexels.com/photos/7937283/pexels-photo-7937283.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920)">
+  <div class="wrap lc-local">
+    <div class="lc-localt">
+      <div>
+      <p class="eyebrow">Why local matters</p>
+      <h2>Why Hire a <em>Local Roofer</em></h2>
+      <p class="lc-p">A roofer who works in Kenner knows what the weather here does to a roof, and what the local codes&nbsp;require.</p>
+      </div>
+      <div class="lc-lrow"><a class="btn1" href="#estimate">Get a free estimate</a><ul class="lc-chips"><li>Residential #890459</li><li>Commercial #3667</li></ul></div>
+      <figure class="lc-lpic"><img src="https://images.pexels.com/photos/16158284/pexels-photo-16158284.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Brick house with a slate upper story and dormers" loading="lazy"></figure>
+    </div>
+    <ul class="lc-lcards">
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 4a2.5 2.5 0 0 1 5 0v10.5a4.5 4.5 0 1 1-5 0z"/><path d="M12.5 9v7"/></svg></span><b>Knows the&nbsp;Climate</b><span>Local roofers know the weather here and the materials that hold up to&nbsp;it.</span></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M9 10h6M9 14h6M9 18h3"/></svg></span><b>Knows the&nbsp;Codes</b><span>We understand the local building codes and regulations before the work&nbsp;starts.</span></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4 3 8.5l9 4.5 9-4.5z"/><path d="m3 12.5 9 4.5 9-4.5"/><path d="m3 16.5 9 4.5 9-4.5"/></svg></span><b>Better&nbsp;Advice</b><span>Work on nearby homes means sound advice on materials and&nbsp;techniques.</span></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><b>Flexible&nbsp;Scheduling</b><span>Work is scheduled around your availability, including jobs that can&rsquo;t&nbsp;wait.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="lc-sec lc-white">
+  <div class="wrap">
+    <div class="lc-head">
       <div>
         <p class="eyebrow">How it runs</p>
-        <h2>How a <em>Roofing Job</em> Runs</h2>
-        <p class="sintro">Four steps, from your first call to a checked, clean&nbsp;site.</p>
+        <h2>From Your Call to a <em>Finished Roof</em></h2>
       </div>
-      <figure class="rpoppic rise" data-anim><img src="https://images.pexels.com/photos/15852571/pexels-photo-15852571.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Green standing seam roofs on hillside houses" loading="lazy"><span class="rpopchip" aria-hidden="true"><b>4</b> steps</span></figure>
+      <p class="lc-p">The same four steps for every job in Kenner, big or&nbsp;small.</p>
     </div>
-    <ol class="rpst" data-anim>
-      <li style="--i:0"><span class="rpstic" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="8" y="6" width="16" height="22" rx="2"/><path d="M12 6V4h8v2"/><path d="M12 13h8M12 18h8M12 23h5"/></svg></span><span class="rpstno" aria-hidden="true">Step 01</span><h3>You Call&nbsp;Us</h3><p>Call (504)&nbsp;226-7070 or send the form, and we book a visit to your&nbsp;property.</p></li>
-      <li style="--i:1"><span class="rpstic" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="14" cy="14" r="8"/><path d="m20 20 7 7"/></svg></span><span class="rpstno" aria-hidden="true">Step 02</span><h3>Roof&nbsp;Inspection</h3><p>We inspect the roof and find what needs fixing before any work is&nbsp;agreed.</p></li>
-      <li style="--i:2"><span class="rpstic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M8 4h16v24l-4-2-4 2-4-2-4 2z"/><path d="M12 11h8M12 16h8M12 21h5"/></svg></span><span class="rpstno" aria-hidden="true">Step 03</span><h3>Free&nbsp;Estimate</h3><p>You get a free estimate with the scope and the cost before any work&nbsp;begins.</p></li>
-      <li style="--i:3"><span class="rpstic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 4 26 8v7c0 6.5-4.2 11-10 13C10.2 26 6 21.5 6 15V8z"/><path d="m11.5 16 3 3 6-6.5"/></svg></span><span class="rpstno" aria-hidden="true">Step 04</span><h3>The&nbsp;Work</h3><p>The crew does the repair or replacement, checks the work and cleans&nbsp;up.</p></li>
+    <ol class="lc-tl">
+      <li><span class="n" aria-hidden="true">1</span><h3>You Call&nbsp;Us</h3><p>Call (504)&nbsp;226-7070 or send the form, and we book a visit to your&nbsp;property.</p></li>
+      <li><span class="n" aria-hidden="true">2</span><h3>Roof&nbsp;Inspection</h3><p>We inspect the roof and find what needs fixing before any work is&nbsp;agreed.</p></li>
+      <li><span class="n" aria-hidden="true">3</span><h3>Free&nbsp;Estimate</h3><p>You get a free estimate with the scope and the cost before any work&nbsp;begins.</p></li>
+      <li><span class="n" aria-hidden="true">4</span><h3>The&nbsp;Work</h3><p>The crew does the repair or replacement, checks the work and cleans&nbsp;up.</p></li>
     </ol>
-    <div class="rpcta">
-      <p>Step one is a phone call. The estimate is&nbsp;free.</p>
-      <div class="rpctabtns"><a class="btn1" href="#estimate">Get a free estimate</a><a class="rpctatel" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
-    </div>
+    <div class="lc-row"><a class="btn1" href="#estimate">Start with a free estimate</a></div>
   </div>
 </section>
 
-<section class="sblock rxband rxsigns">
+<section class="lc-sec lc-cream">
   <div class="wrap">
-          <div class="svhead">
-            <div>
-              <p class="eyebrow">Local weather</p>
-              <h2>What Wears Down <em>Roofs in Kenner</em></h2>
-            </div>
-            <p class="sintro">From torrential rain to hot summers, a roof here is always exposed to the elements. Watch for these&nbsp;four.</p>
-          </div>
-          <ul class="rpsgs rp4">
-            <li class="rpsg rise" data-anim style="transition-delay:0.00s">
-              <figure class="rpsgpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2026/03/ruined-rooftop-in-need-of-repair-wind-damaged-hou-2026-03-17-03-59-19-utc.jpg" alt="Roof with missing asphalt shingles after a storm" loading="lazy"><span class="rpsgno" aria-hidden="true">01</span><span class="rpsgtag">Wind</span></figure>
-              <div class="rpsgtxt"><h3>High&nbsp;Winds</h3><p>Strong winds can lift or tear off shingles, leaving the roof open to water and&nbsp;debris.</p></div>
-            </li>
-            <li class="rpsg rise" data-anim style="transition-delay:0.07s">
-              <figure class="rpsgpic"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/Damaged-roof-tiles-with-Hail.jpg" alt="Roof tiles cracked by hail" loading="lazy"><span class="rpsgno" aria-hidden="true">02</span><span class="rpsgtag">Hail</span></figure>
-              <div class="rpsgtxt"><h3>Hailstorms</h3><p>Hail can dent metal roofs and crack, fracture or puncture&nbsp;shingles.</p></div>
-            </li>
-            <li class="rpsg rise" data-anim style="transition-delay:0.14s">
-              <figure class="rpsgpic"><img src="https://images.pexels.com/photos/13307118/pexels-photo-13307118.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Rainwater pouring off a roof edge" loading="lazy"><span class="rpsgno" aria-hidden="true">03</span><span class="rpsgtag">Moisture</span></figure>
-              <div class="rpsgtxt"><h3>Rain and&nbsp;Humidity</h3><p>Heavy rain and high humidity grow mold and mildew that damage shingles and the structure&nbsp;below.</p></div>
-            </li>
-            <li class="rpsg rise" data-anim style="transition-delay:0.21s">
-              <figure class="rpsgpic"><img src="https://images.pexels.com/photos/17606783/pexels-photo-17606783.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Red tile roof edge against a blue sky" loading="lazy"><span class="rpsgno" aria-hidden="true">04</span><span class="rpsgtag">Sun</span></figure>
-              <div class="rpsgtxt"><h3>Sun&nbsp;Exposure</h3><p>Long exposure to UV rays can fade and break down roofing materials over&nbsp;time.</p></div>
-            </li>
-          </ul>
-    <div class="rpcta">
-      <p>Seeing damage after a storm? Have the roof&nbsp;inspected.</p>
-      <div class="rpctabtns"><a class="btn1" href="#estimate">Get a free estimate</a><a class="rpctatel" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
+    <div class="lc-head">
+      <div>
+        <p class="eyebrow">Know the area</p>
+        <h2>All About <em>Kenner</em>, LA</h2>
+      </div>
+      <p class="lc-p">A little about the community we roof in, from its parks to how people get&nbsp;around.</p>
     </div>
-  </div>
-</section>
-
-<section class="sblock rxband rpbn">
-  <div class="wrap">
-          <div class="svhead">
-            <div>
-              <p class="eyebrow">Benefits</p>
-              <h2>Benefits of Hiring a <em>Local Roofer</em></h2>
-            </div>
-            <p class="sintro">A roofer who works in Kenner knows what the weather here does to a&nbsp;roof.</p>
-          </div>
-    <ul class="rpbnl" data-anim>
-      <li style="--i:0"><span class="rpbnic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M14 5a2.5 2.5 0 0 1 5 0v13.5a5.5 5.5 0 1 1-5 0z"/><path d="M16.5 12v9"/></svg></span><span class="rpbnno" aria-hidden="true">01</span><h3>Knows the&nbsp;Climate</h3><p>Local roofers know the weather here and the materials that hold up to&nbsp;it.</p></li>
-      <li style="--i:1"><span class="rpbnic" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="8" y="6" width="16" height="22" rx="2"/><path d="M12 6V4h8v2"/><path d="M12 13h8M12 18h8M12 23h5"/></svg></span><span class="rpbnno" aria-hidden="true">02</span><h3>Knows the&nbsp;Codes</h3><p>We understand the local building codes and regulations before the work&nbsp;starts.</p></li>
-      <li style="--i:2"><span class="rpbnic" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 5 4 11l12 6 12-6z"/><path d="m4 16 12 6 12-6"/><path d="m4 21 12 6 12-6"/></svg></span><span class="rpbnno" aria-hidden="true">03</span><h3>Better&nbsp;Advice</h3><p>Work on nearby homes means sound advice on materials and&nbsp;techniques.</p></li>
-      <li style="--i:3"><span class="rpbnic" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="5" y="7" width="22" height="20" rx="2"/><path d="M5 13h22M11 4v6M21 4v6"/><path d="M11 18h4v4h-4z"/></svg></span><span class="rpbnno" aria-hidden="true">04</span><h3>Flexible&nbsp;Scheduling</h3><p>Work is scheduled around your availability, including jobs that can&rsquo;t&nbsp;wait.</p></li>
+    <div class="lc-ab1">
+      <div>
+        <h3>About Kenner</h3>
+        <p class="lc-p">Kenner is a city in Jefferson Parish that stretches from the Mississippi River to Lake Pontchartrain. It&rsquo;s home to Louis Armstrong New Orleans International Airport and the Rivertown Historic&nbsp;District.</p>
+        <ul class="lc-abkv"><li><small>Parish</small><span>Jefferson Parish</span></li><li><small>Location</small><span>Between the river and Lake Pontchartrain</span></li></ul>
+      </div>
+      <figure class="lc-abpic"><img src="https://images.pexels.com/photos/38872270/pexels-photo-38872270.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Aerial view of a wide river at sunset" loading="lazy"></figure>
+    </div>
+    <h3 class="lc-abh">Things to Do in Kenner</h3>
+    <ul class="lc-todo n3">
+      <li><figure><img src="https://images.pexels.com/photos/31229978/pexels-photo-31229978.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Riverside walkway with a railing under shade trees" loading="lazy"></figure><div><b>Rivertown Historic District</b><span>Historic streets with shops, museums and&nbsp;restaurants.</span></div></li>
+      <li><figure><img src="https://images.pexels.com/photos/33596987/pexels-photo-33596987.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Concert hall with rows of red seats" loading="lazy"></figure><div><b>Pontchartrain Center</b><span>Concerts, trade shows and sporting&nbsp;events.</span></div></li>
+      <li><figure><img src="https://images.pexels.com/photos/6049286/pexels-photo-6049286.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Wooden pier over a lake at sunset" loading="lazy"></figure><div><b>Laketown</b><span>Fishing, picnics and walking trails on Lake&nbsp;Pontchartrain.</span></div></li>
     </ul>
-    <div class="rpcta">
-      <p>Want a local roofer to look at yours? Get a free&nbsp;estimate.</p>
-      <div class="rpctabtns"><a class="btn1" href="#estimate">Get a free estimate</a><a class="rpctatel" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
+    <div class="lc-ab3">
+      <div><figure class="lc-ab3pic"><img src="https://images.pexels.com/photos/11047510/pexels-photo-11047510.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Airfield under an orange sunset sky" loading="lazy"></figure><div class="lc-ab3t">
+        <h3 class="lc-abh">Interesting Facts</h3>
+        <ol class="lc-facts">
+          <li>Kenner runs from the Mississippi River in the south to Lake Pontchartrain in the&nbsp;north.</li>
+          <li>Louis Armstrong New Orleans International Airport is in&nbsp;Kenner.</li>
+          <li>The airport code, MSY, comes from Moisant Stock Yards, the site&rsquo;s old&nbsp;name.</li>
+        </ol>
+      </div></div>
+      <div><figure class="lc-ab3pic"><img src="https://images.pexels.com/photos/36376791/pexels-photo-36376791.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200" alt="Empty airport terminal with tall windows" loading="lazy"></figure><div class="lc-ab3t">
+        <h3 class="lc-abh">Getting Around</h3>
+        <p class="lc-p">Jefferson Transit (JeT) buses cover Jefferson Parish, with routes linking Kenner to nearby communities. Taxis and rideshare are easy to&nbsp;find.</p>
+        <ul class="lc-abkv"><li><small>Nearby</small><span>Metairie, River Ridge, Harahan and New&nbsp;Orleans</span></li></ul>
+        <a class="lc-maplink" href="https://www.google.com/maps/place/Kenner,+LA" target="_blank" rel="noopener">View Kenner on Google Maps <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div></div>
     </div>
   </div>
 </section>
 
-<section class="sblock rxband rpben">
-  <div class="wrap rpbgrid">
-    <div class="rpbtext">
-      <p class="eyebrow">Why TurnKey Roofer</p>
-      <h2>Why Choose TurnKey Roofer in <em>Kenner</em></h2>
-      <p class="sintro">Homes and businesses in Kenner get a free estimate and a clear scope before any work&nbsp;begins.</p>
-      <ul class="rpbl" data-anim>
-        <li style="--i:0"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20.5"/><path d="M14 22.5l5.5 5.5L30.5 16.5"/></svg><span>Residential license&nbsp;#890459</span></li>
-        <li style="--i:1"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20.5"/><path d="M14 22.5l5.5 5.5L30.5 16.5"/></svg><span>Commercial license&nbsp;#3667</span></li>
-        <li style="--i:2"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20.5"/><path d="M14 22.5l5.5 5.5L30.5 16.5"/></svg><span>Repair, replacement, inspection and leak&nbsp;detection</span></li>
-        <li style="--i:3"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20.5"/><path d="M14 22.5l5.5 5.5L30.5 16.5"/></svg><span>Help with roof insurance&nbsp;claims</span></li>
-      </ul>
-      <a class="btn1" href="#estimate">Get a free estimate</a>
-    </div>
-    <figure class="rpbpic rise" data-anim><img src="https://images.pexels.com/photos/37083482/pexels-photo-37083482.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Dark eaves and trim on a white house" loading="lazy"></figure>
-  </div>
-</section>
-
-<section class="sblock rxband rxmat">
-  <div class="wrap">
-          <div class="svhead">
-            <div>
-              <p class="eyebrow">Roof types</p>
-              <h2>Roof Types for <em>Kenner Properties</em></h2>
-            </div>
-            <p class="sintro">The right roof depends on your budget and your building. Read about three common&nbsp;choices.</p>
-          </div>
-          <ul class="rxpanels rp3 rise" data-anim>
-            <li class="on"><a href="/roofing-types/shingle/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/shingle-roof.jpg" alt="Asphalt shingle roof on a house" loading="lazy"><span class="rxpno" aria-hidden="true">01</span><span class="rxptxt"><b>Shingle&nbsp;Roofing</b><small class="rxpline">Three&#8209;tab and laminated asphalt shingles, installed on&nbsp;homes.</small><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
-            <li><a href="/roofing-types/tile-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/09/rooftop-made-of-tile-roofing.webp" alt="Tile roof on a house" loading="lazy"><span class="rxpno" aria-hidden="true">02</span><span class="rxptxt"><b>Tile&nbsp;Roofing</b><small class="rxpline">Clay and concrete tile that sheds rain and resists&nbsp;fire.</small><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
-            <li><a href="/roofing-types/metal-standing-seam-roofing/"><img src="https://www.turnkeyroofer.com/wp-content/uploads/2023/06/roof-galvanized.jpg" alt="Standing seam metal roof" loading="lazy"><span class="rxpno" aria-hidden="true">03</span><span class="rxptxt"><b>Standing&nbsp;Seam</b><small class="rxpline">Metal panels joined at raised seams, built for harsh&nbsp;weather.</small><span>Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></li>
-          </ul>
-    <div class="rpcta">
-      <p>Not sure which roof fits? Ask the&nbsp;estimator.</p>
-      <div class="rpctabtns"><a class="btn1" href="#estimate">Get a free estimate</a><a class="rpctatel" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
-    </div>
-  </div>
-</section>
-
-<section class="sblock fbband fbquote rpq">
+<section class="sblock fbband fbquote">
   <div class="wrap">
           <figure class="rrfeat">
             <blockquote>&ldquo;As a property manager responsible for multiple residential buildings, I often encounter various roofing issues that require immediate attention. This company has been my go-to roofing company for years, and they have never&nbsp;disappointed.&rdquo;</blockquote>
             <figcaption class="rrwho"><span class="rrav" aria-hidden="true">MD</span><span><b>Michael Davis</b><span>Property manager &middot; Multiple buildings</span></span></figcaption>
-            <a class="btn1 rpqbtn" href="#estimate">Get a free estimate</a>
           </figure>
   </div>
 </section>
 
-<section class="sblock rxband rxfaq rpfaq">
-  <div class="wrap rxfgrid">
-    <div class="rxfhead">
-      <p class="eyebrow">Before you call</p>
-      <h2><em>Kenner Roofing</em>&nbsp;Questions</h2>
-      <p class="sintro">Short answers to what people ask first. For anything else, call <a class="rfaqtel" href="tel:5042267070">(504)&nbsp;226-7070</a>.</p>
-      <a class="btn1" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
-      <figure class="rpfpic" aria-hidden="true"><img src="https://images.pexels.com/photos/26612731/pexels-photo-26612731.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1000" alt="" loading="lazy"></figure>
-    </div>
-    <div class="rxflist rise" data-anim>
-      <details><summary>Do You Work in Kenner?</summary><div class="rfa">Yes. <b>Kenner is one of the 14 areas we serve</b>, for homes under license #890459 and businesses under license&nbsp;#3667.</div></details>
-      <details><summary>Are Roof Repairs Covered by Homeowners Insurance?</summary><div class="rfa">It depends on your policy. <b>If the damage came from a covered event like a fire or a storm, the repairs may be covered.</b> Check your policy&rsquo;s specific&nbsp;terms.</div></details>
-      <details><summary>Can a New Roof Go Over My Existing One?</summary><div class="rfa">Sometimes. <b>A roofing professional should check the condition of the current roof first</b> to see whether it&rsquo;s an&nbsp;option.</div></details>
-      <details><summary>Should the Old Shingles Come Off First?</summary><div class="rfa">In most cases, yes. <b>Removing the old shingles allows a thorough inspection of the roof deck</b> and a proper&nbsp;installation.</div></details>
-      <details><summary>When Is the Best Time to Replace a Roof in Kenner?</summary><div class="rfa">Usually <b>spring or fall</b>, when temperatures are moderate and the weather is more stable. A damaged roof should be replaced whatever the&nbsp;season.</div></details>
-      <details><summary>How Much Does a New Roof Cost in Kenner?</summary><div class="rfa">It depends on <b>the size of the roof, the material and the complexity of the installation</b>. You get a detailed estimate before any work&nbsp;begins.</div></details>
-    </div>
-  </div>
-</section>
-
-<section class="sblock rxband rxrel">
+<section class="lc-sec lc-white">
   <div class="wrap">
-          <div class="svhead">
-            <div>
-              <p class="eyebrow">Nearby service areas</p>
-              <h2>Roofing in <em>Nearby Towns</em></h2>
-            </div>
-            <p class="sintro">Each town has its own page, and the same free&nbsp;estimate.</p>
-          </div>
-          <ol class="rxrows rise" data-anim>
-            <li><a href="/service-areas/metairie/"><span class="rxrno" aria-hidden="true">01</span><span class="rxrpic"><img src="https://images.pexels.com/photos/9951822/pexels-photo-9951822.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="White corrugated metal roof on a small building" loading="lazy"></span><h3>Roofing in&nbsp;Metairie</h3><p>Jefferson Parish, just west of New&nbsp;Orleans.</p><span class="rxrgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-            <li><a href="/service-areas/river-ridge/"><span class="rxrno" aria-hidden="true">02</span><span class="rxrpic"><img src="https://images.pexels.com/photos/19603110/pexels-photo-19603110.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Clay tile roof with a dormer window" loading="lazy"></span><h3>Roofing in River&nbsp;Ridge</h3><p>Jefferson Parish, along the Mississippi near&nbsp;Kenner.</p><span class="rxrgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-            <li><a href="/service-areas/harahan/"><span class="rxrno" aria-hidden="true">03</span><span class="rxrpic"><img src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Two-story houses with gray shingle roofs" loading="lazy"></span><h3>Roofing in&nbsp;Harahan</h3><p>Jefferson Parish, on the east bank of the&nbsp;Mississippi.</p><span class="rxrgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-            <li><a href="/service-areas/st-rose/"><span class="rxrno" aria-hidden="true">04</span><span class="rxrpic"><img src="https://images.pexels.com/photos/3095718/pexels-photo-3095718.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Blue metal roof on a white building" loading="lazy"></span><h3>Roofing in St.&nbsp;Rose</h3><p>St. Charles Parish, on the Mississippi west of New&nbsp;Orleans.</p><span class="rxrgo">Read more <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
-          </ol>
-    <div class="rpcta">
-      <p>Not sure whether we cover your street? Call and&nbsp;ask.</p>
-      <div class="rpctabtns"><a class="btn1" href="#estimate">Get a free estimate</a><a class="rpctatel" href="tel:5042267070">Call (504)&nbsp;226-7070</a></div>
+    <div class="lc-head">
+      <div>
+        <p class="eyebrow">Nearby</p>
+        <h2>Roofing Near <em>Kenner</em></h2>
+      </div>
+      <div><p class="lc-p">Same phone number, same licenses, same free estimate.</p><div class="lc-row lc-hrow"><a class="btn1" href="#estimate">Get a free estimate</a><a class="lc-dirall" href="/service-areas/">All 14 service areas <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div>
     </div>
+    <ul class="lc-near">
+      <li><a href="/service-areas/metairie/"><span class="pn"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z"/><circle cx="12" cy="10" r="2.4"/></svg></span><b>Metairie</b><span>Jefferson Parish, just west of New&nbsp;Orleans.</span><em>Roofing in Metairie <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></em></a></li>
+      <li><a href="/service-areas/river-ridge/"><span class="pn"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z"/><circle cx="12" cy="10" r="2.4"/></svg></span><b>River&nbsp;Ridge</b><span>Jefferson Parish, along the Mississippi near&nbsp;Kenner.</span><em>Roofing in River&nbsp;Ridge <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></em></a></li>
+      <li><a href="/service-areas/harahan/"><span class="pn"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z"/><circle cx="12" cy="10" r="2.4"/></svg></span><b>Harahan</b><span>Jefferson Parish, on the east bank of the&nbsp;Mississippi.</span><em>Roofing in Harahan <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></em></a></li>
+      <li><a href="/service-areas/st-rose/"><span class="pn"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z"/><circle cx="12" cy="10" r="2.4"/></svg></span><b>St.&nbsp;Rose</b><span>St. Charles Parish, on the Mississippi west of New&nbsp;Orleans.</span><em>Roofing in St.&nbsp;Rose <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></em></a></li>
+    </ul>
   </div>
 </section>
 
-<section class="sblock rxband rxtowns rpt" data-anim>
-  <div class="wrap rptw">
-    <div class="rxthead">
-      <span class="rxtnum" aria-hidden="true"><span class="count" data-to="14">14</span></span>
-      <div>
-        <p class="eyebrow">Service areas</p>
-        <h2>Serving Kenner and <em>13 Other&nbsp;Areas</em></h2>
-      </div>
-    </div>
-    <div class="rptside">
-      <p class="sintro">New Orleans plus 13 towns from Gretna to Baton Rouge. Pick yours for the local page.</p>
+<section class="lc-sec lc-cream">
+  <div class="wrap lc-faq">
+    <div class="lc-faqh">
+      <p class="eyebrow">Before you call</p>
+      <h2><em>Kenner Roofing</em> Questions</h2>
+      <p class="lc-p">Short answers to what people in Kenner ask first. For anything else, call and&nbsp;ask.</p>
       <a class="btn1" href="tel:5042267070">Call (504)&nbsp;226-7070</a>
     </div>
-    <ul class="rxtlist">
-      <li><a href="/service-areas/">New Orleans</a></li>
-      <li><a href="/service-areas/metairie/">Metairie</a></li>
-      <li><a href="/service-areas/kenner/">Kenner</a></li>
-      <li><a href="/service-areas/gretna/">Gretna</a></li>
-      <li><a href="/service-areas/harahan/">Harahan</a></li>
-      <li><a href="/service-areas/river-ridge/">River Ridge</a></li>
-      <li><a href="/service-areas/slidell/">Slidell</a></li>
-      <li><a href="/service-areas/mandeville/">Mandeville</a></li>
-      <li><a href="/service-areas/covington/">Covington</a></li>
-      <li><a href="/service-areas/madisonville/">Madisonville</a></li>
-      <li><a href="/service-areas/laplace/">Laplace</a></li>
-      <li><a href="/service-areas/st-rose/">St. Rose</a></li>
-      <li><a href="/service-areas/hammond/">Hammond</a></li>
-      <li><a href="/service-areas/baton-rouge/">Baton Rouge</a></li>
-    </ul>
+    <div class="rfaqlist">
+            <details><summary>Do You Work in Kenner?</summary><div class="rfa">Yes. <b>Kenner is one of the 14 areas we serve</b>, for homes under license #890459 and businesses under license&nbsp;#3667.</div></details>
+            <details><summary>Are Roof Repairs Covered by Homeowners Insurance?</summary><div class="rfa">It depends on your policy. <b>If the damage came from a covered event like a fire or a storm, the repairs may be covered.</b> Check your policy&rsquo;s specific&nbsp;terms.</div></details>
+            <details><summary>Can a New Roof Go Over My Existing One?</summary><div class="rfa">Sometimes. <b>A roofing professional should check the condition of the current roof first</b> to see whether it&rsquo;s an&nbsp;option.</div></details>
+            <details><summary>Should the Old Shingles Come Off First?</summary><div class="rfa">In most cases, yes. <b>Removing the old shingles allows a thorough inspection of the roof deck</b> and a proper&nbsp;installation.</div></details>
+            <details><summary>When Is the Best Time to Replace a Roof in Kenner?</summary><div class="rfa">Usually <b>spring or fall</b>, when temperatures are moderate and the weather is more stable. A damaged roof should be replaced whatever the&nbsp;season.</div></details>
+            <details><summary>How Much Does a New Roof Cost in Kenner?</summary><div class="rfa">It depends on <b>the size of the roof, the material and the complexity of the installation</b>. You get a detailed estimate before any work&nbsp;begins.</div></details>
+    </div>
   </div>
 </section>
 
 <section class="fbband fbsx">
   <div class="wrap sblock sxband">
           <div>
-            <h2>Need a <em>Commercial Roof</em> in Kenner?</h2>
+            <h2>Need a Commercial Roof in Kenner?</h2>
             <p class="sintro">Flat, built&#8209;up, single&#8209;ply and metal roofs for businesses, under commercial license #3667. Same phone&nbsp;number.</p>
           </div>
           <a class="sxlink" href="/commercial-roofing/">Commercial roofing <svg width="15" height="11" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -2264,7 +2191,7 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
       <div class="fside rise" data-anim>
         <div class="fintro">
         <p class="eyebrow">Get the number before the next storm</p>
-        <h2 class="h2">Get a <em>Free Roof Estimate</em> in New Orleans</h2>
+        <h2 class="h2">Get a Free Roof Estimate in New Orleans</h2>
         <p class="lede">A roofing estimator comes out to survey your roof and gives you a cost estimate. No charge, and no obligation to book the work.</p>
         <ul class="checks fchecks">
           <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5l4 4 8-9" stroke="#1f4d43" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Licensed residential <b>#890459</b> &nbsp;+&nbsp; commercial <b>#3667</b></span></li>
@@ -2321,7 +2248,7 @@ main h2 em,.formsec .h2 em{font-style:italic;color:var(--clay)}
             <label for="f-service">Service type <span class="req">*</span></label>
             <select id="f-service" name="service_type" required>
               <option value="">Choose one</option>
-              <option selected>Residential</option>
+              <option>Residential</option>
               <option>Commercial</option>
             </select>
           </div>
